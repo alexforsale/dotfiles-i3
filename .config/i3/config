@@ -25,6 +25,21 @@ bindsym XF86AudioMute exec --no-startup-id dunst-volume toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id dunst-backlight +5
 bindsym XF86MonBrightnessDown exec --no-startup-id dunst-backlight -5
 
+# browser
+bindsym XF86MyComputer exec ${BROWSER}
+bindsym $mod+b exec ${BROWSER}
+
+# mail
+bindsym XF86Mail exec ${MAIL_APP}
+bindsym $mod+m exec ${MAIL_APP}
+
+# text editor
+bindsym $mod+n exec ${VISUAL}
+bindsym $mod+Shift+n exec ${TERMINAL} -e ${EDITOR}
+
+# file manager
+bindsym $mod+e ${FILE}
+
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up k
