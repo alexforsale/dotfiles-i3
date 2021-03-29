@@ -38,7 +38,7 @@ bindsym $mod+n exec ${VISUAL}
 bindsym $mod+Shift+n exec ${TERMINAL} -e ${EDITOR}
 
 # file manager
-bindsym $mod+e ${FILE}
+bindsym $mod+e exec ${FILE}
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
