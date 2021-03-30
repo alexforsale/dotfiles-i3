@@ -168,10 +168,10 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+F11 reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+F11 restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec prompt "Exit i3? This will end your X session." "i3-msg exit"
