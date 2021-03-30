@@ -57,7 +57,8 @@ bindsym $mod+Return exec ${TERMINAL}
 bindsym $mod+Shift+Return exec ${TERMINAL} -e screen -m
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+F4 kill
+bindsym Mod1+F4 kill
 
 # start polybar-menu
 bindsym $mod+d exec --no-startup-id polybar-menu
