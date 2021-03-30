@@ -177,6 +177,12 @@ bindsym $mod+F11 restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec prompt "Exit i3? This will end your X session." "i3-msg exit"
 
+# reboot
+bindsym $mod+Shift+r exec prompt "Reboot computer?" "shutdown -r now"
+
+# shutdown
+bindsym $mod+Shift+q exec prompt "Shutdown computer?" "shutdown -h now"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
