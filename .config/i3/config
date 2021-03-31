@@ -211,3 +211,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# application autostart
+
+# nm-applet
+exec --no-startup-id nm-aplet
