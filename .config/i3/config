@@ -364,7 +364,7 @@ mode "$mode_gaps_left" {
 # application autostart
 
 # nm-applet
-exec --no-startup-id nm-aplet
+exec --no-startup-id nm-applet
 
 # window rule
 for_window [class=".*"] border pixel 0
