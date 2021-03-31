@@ -11,6 +11,8 @@
 
 set $mod Mod4
 
+set $notify exec notify-send -t 1000
+
 font pango:Fantasque Sans Mono Regular 7
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id dunst-volume 1%+
@@ -88,37 +90,37 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Control+h split h
+bindsym $mod+Control+h split h; exec $notify "Horizontal split"
 
 # split in vertical orientation
-bindsym $mod+Control+v split v
+bindsym $mod+Control+v split v exec $notify "Vertical split"
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f fullscreen toggle; exec $notify "Fullscreen toggle"
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Control+s layout stacking
-bindsym $mod+Control+w layout tabbed
-bindsym $mod+Control+e layout toggle split
+bindsym $mod+Control+s layout stacking; exec $notify "Stacking layout"
+bindsym $mod+Control+w layout tabbed; exec $notify "Tabbed layout"
+bindsym $mod+Control+e layout toggle split; exec $notify "Split toggle"
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle; exec $notify "Floating toggle"
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle; exec $notify "Window focus toggle"
 
 # focus the parent container
-bindsym $mod+Control+a focus parent
+bindsym $mod+Control+a focus parent; exec $notify "Focus parentcontainer"
 
 # focus the child container
-bindsym $mod+Control+d focus child
+bindsym $mod+Control+d focus child; exec $notify "Focus child container"
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+minus move scratchpad; exec $notify "Moved to scratchpad"
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show; exec $notify "Show scratchpad"
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
