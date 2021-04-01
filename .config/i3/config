@@ -408,7 +408,7 @@ assign [class="(?)emacs"] $ws2
 assign [class="(?)leafpad"] $ws2
 assign [class="(?)l3afpad"] $ws2
 assign [class="(?)gedit"] $ws2
-assign [name="(?)libreoffice"] $ws2
+assign [title="(?)libreoffice"] $ws2
 
 # 3
 assign [class="(?)qutebrowser"] $ws3
