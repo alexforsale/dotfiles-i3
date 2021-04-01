@@ -372,8 +372,17 @@ mode "$mode_gaps_left" {
 
 # application autostart
 
+# polybar
+exec --no-startup-id polybar-launch
+
+# light-locker
+exec --no-startup-id light-locker
+
 # nm-applet
 exec --no-startup-id nm-applet
+
+# setwallpaper script
+exec --no-startup-id setwallpaper
 
 # window rule
 for_window [class=".*"] border pixel 0
