@@ -19,9 +19,17 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id dunst-volume up
 bindsym XF86AudioLowerVolume exec --no-startup-id dunst-volume down
 bindsym XF86AudioMute exec --no-startup-id dunst-volume toggle
 
+bindsym $mod+F9 exec --no-startup-id dunst-volume up
+bindsym $mod+F8 exec --no-startup-id dunst-volume down
+bindsym $mod+f7 exec --no-startup-id dunst-volume toggle
+
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+bindsym $mod+F11 exec playerctl play-pause
+bindsym $mod+F12 exec playerctl next
+bindsym $mod+F10 exec playerctl previous
 
 # brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id dunst-backlight up
@@ -201,7 +209,7 @@ bindsym $mod+Control+Shift+2 move workspace to output right
 bindsym $mod+Shift+F11 reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+F11 restart
+bindsym $mod+Control+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec prompt "Exit i3? This will end your X session." "i3-msg exit"
