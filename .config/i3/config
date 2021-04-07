@@ -207,7 +207,7 @@ bindsym $mod+Shift+e exec prompt "Exit i3? This will end your X session." "i3-ms
 bindsym $mod+Shift+r exec prompt "Reboot computer?" "shutdown -r now"
 
 # shutdown
-bindsym $mod+Shift+q exec prompt "Shutdown computer?" "shutdown -h now"
+bindsym $mod+Shift+q exec prompt "Shutdown computer?" "poweroff"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
