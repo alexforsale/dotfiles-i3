@@ -24,8 +24,11 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id dunst-backlight +5
-bindsym XF86MonBrightnessDown exec --no-startup-id dunst-backlight -5
+bindsym XF86MonBrightnessUp exec --no-startup-id dunst-backlight up
+bindsym XF86MonBrightnessDown exec --no-startup-id dunst-backlight down
+
+bindsym $mod+F3 exec --no-startup-id dunst-backlight up
+bindsym $mod+F2 exec --no-startup-id dunst-backlight down
 
 # browser
 bindsym XF86MyComputer exec ${BROWSER}
