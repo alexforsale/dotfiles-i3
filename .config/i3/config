@@ -383,6 +383,9 @@ mode "$mode_gaps_left" {
 
 # application autostart
 
+# picom
+exec --no-startup-id picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
+
 # polybar
 exec --no-startup-id polybar-launch
 
