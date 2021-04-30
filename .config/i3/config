@@ -67,7 +67,7 @@ floating_modifier $mod
 bindsym $mod+Return exec ${TERMINAL}
 
 # start terminal + screen
-bindsym $mod+Shift+Return exec ${TERMINAL} -e screen -mRDD
+bindsym $mod+Shift+Return exec ${TERMINAL} -e screen -m
 
 # kill focused window
 bindsym $mod+Shift+F4 kill
