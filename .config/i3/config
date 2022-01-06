@@ -73,8 +73,9 @@ bindsym $mod+Shift+Return exec ${TERMINAL} -e screen -m
 bindsym $mod+Shift+F4 kill
 bindsym Mod1+F4 kill
 
-# start polybar-menu
-bindsym $mod+d exec --no-startup-id polybar-menu
+# start rofi-menu
+bindsym $mod+d exec --no-startup-id rofi-menu
+bindsym $mod+Shift-d exec --no-startup-id rofi-menu_full
 
 # wifi-helper script
 bindsym $mod+w exec wifi-helper
