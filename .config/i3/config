@@ -381,13 +381,20 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
+bar {
+    status_command i3status
+    position bottom
+    workspace_buttons yes
+}
+
+bindsym $mod+Control+m bar mode toggle
 # application autostart
 
 # picom
 exec --no-startup-id picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
 
 # polybar
-exec --no-startup-id polybar-launch
+#exec --no-startup-id polybar-launch
 
 # light-locker
 exec --no-startup-id light-locker
