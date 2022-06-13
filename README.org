@@ -381,7 +381,7 @@
 **** wallpaper
      #+begin_src conf
        # setwallpaper script
-       exec --no-startup-id setwallpaper
+       exec --no-startup-id wal -R
      #+end_src
 *** window rules
     #+begin_src conf
