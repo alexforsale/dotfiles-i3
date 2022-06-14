@@ -52,6 +52,42 @@
       set $ws9 "Games"
       set $ws10 "Others"
     #+end_src
+*** Xresources
+    #+begin_src conf
+      # Xresources file
+      # https://build.i3wm.org/docs/userguide.html#xresources
+      set_from_resource         $background_i3wm	background      #000000
+      set_from_resource         $foreground_i3wm	foreground      #000000
+      set_from_resource         $color00_i3wm         color0          #000000
+      set_from_resource         $color01_i3wm         color1          #000000
+      set_from_resource         $color02_i3wm         color2          #000000
+      set_from_resource         $color03_i3wm         color3          #000000
+      set_from_resource         $color04_i3wm         color4          #000000
+      set_from_resource         $color05_i3wm         color5          #000000
+      set_from_resource         $color06_i3wm		color6          #000000
+      set_from_resource         $color07_i3wm		color7          #000000
+      set_from_resource         $color08_i3wm		color8          #000000
+      set_from_resource         $color09_i3wm		color9          #000000
+      set_from_resource         $color10_i3wm         color10         #000000
+      set_from_resource         $color11_i3wm         color11         #000000
+      set_from_resource         $color12_i3wm         color12         #000000
+      set_from_resource         $color13_i3wm         color13         #000000
+      set_from_resource         $color14_i3wm         color14         #000000
+      set_from_resource         $color15_i3wm         color15         #000000
+
+      # Theme colors
+      # class                 border          backgr.         text            indic.                  child_border
+      # My colors
+      client.background	$background_i3wm
+
+      client.focused          $foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
+      client.unfocused        $foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
+      client.focused_inactive	$foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
+      client.urgent		$foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
+      client.placeholder      $foreground_i3wm        $background_i3wm        $foreground_i3wm        $background_i3wm        $background_i3wm
+
+
+    #+end_src
 *** font
     #+begin_src conf
       font pango:Fantasque Sans Mono Regular 7
@@ -352,6 +388,17 @@
           position bottom
           workspace_buttons yes
           mode hide
+          colors {
+              statusline          $color04_i3wm
+              background          $background_i3wm
+              separator           $color03_i3wm
+                #                  BORDER         BACKGROUND        TEXT
+              focused_workspace   $color03_i3wm   $color00_i3wm     $color02_i3wm
+              inactive_workspace  $color00_i3wm   $color00_i3wm     $color02_i3wm
+              active_workspace    $color00_i3wm   $color00_i3wm     $color01_i3wm
+              urgent_workspace    $color01_i3wm   $background_i3wm  $color00_i3wm
+              binding_mode        $color03_i3wm   $background_i3wm  $color00_i3wm
+          }
       }
 
       bindsym $mod+Control+m bar mode toggle
