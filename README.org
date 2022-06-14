@@ -438,7 +438,7 @@
     #+end_src
 * ~/.local/bin/prompt
   :PROPERTIES:
-  :header-args: :tangle .local/bin/prompt :mkdirp t :shebang #!/bin/sh
+  :header-args: :tangle ~/.local/bin/prompt :mkdirp t :shebang #!/bin/sh
   :END:
 ** header
    #+begin_src sh
