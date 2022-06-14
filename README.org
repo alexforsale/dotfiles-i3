@@ -14,7 +14,7 @@
 #+cite_export:
 * ~/.config/i3/config
   :PROPERTIES:
-  :header-args: :tangle .config/i3/config :mkdirp t
+  :header-args: :tangle ~/.config/i3/config :mkdirp t
   :END:
 ** header
    #+begin_src conf
