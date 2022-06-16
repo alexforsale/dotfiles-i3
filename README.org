@@ -387,7 +387,7 @@
           status_command i3status
           position bottom
           workspace_buttons yes
-          mode hide
+          mode dock
           colors {
               statusline          $color04_i3wm
               background          $background_i3wm
