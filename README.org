@@ -115,7 +115,7 @@
       bindsym $mod+F8 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
       bindsym $mod+f7 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
     #+end_src
-*** playerct.
+*** playerctl
     #+begin_src conf
       bindsym XF86AudioPlay exec playerctl play-pause
       bindsym XF86AudioNext exec playerctl next
