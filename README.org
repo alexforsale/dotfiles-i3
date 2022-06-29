@@ -128,11 +128,11 @@
 *** fn keys - backlight
     #+begin_src conf
       # brightness
-      bindsym XF86MonBrightnessUp exec --no-startup-id dunst-backlight up
-      bindsym XF86MonBrightnessDown exec --no-startup-id dunst-backlight down
+      bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1%
+      bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set -1%
 
-      bindsym $mod+F3 exec --no-startup-id dunst-backlight up
-      bindsym $mod+F2 exec --no-startup-id dunst-backlight down
+      bindsym $mod+F3 exec --no-startup-id brightnessctl set +1%
+      bindsym $mod+F2 exec --no-startup-id brightnessctl set -1%
     #+end_src
 *** browser
     #+begin_src conf
