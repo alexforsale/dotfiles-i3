@@ -403,86 +403,116 @@
 
       bindsym $mod+Control+m bar mode toggle
     #+end_src
-*** app autostart
-**** picom
-     #+begin_src conf
-       # application autostart
-       # picom
-       exec --no-startup-id picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
-     #+end_src
-**** polybar
-     #+begin_src conf
-       # polybar
-       #exec --no-startup-id polybar-launch
-     #+end_src
-**** lightlocker
-     #+begin_src conf
-       # light-locker
-       exec --no-startup-id light-locker
-     #+end_src
-**** nm-applet
-     #+begin_src conf
-       # nm-applet
-       exec --no-startup-id nm-applet
-     #+end_src
-**** wallpaper
-     #+begin_src conf
-       # setwallpaper script
-       exec --no-startup-id wal -R
-     #+end_src
-*** window rules
+** app autostart
+*** X stuffs
+    - xsetroot
+      #+begin_src conf
+        exec --no-startup-id xsetrot -cursor_name left_ptr
+      #+end_src
+    - xset
+      #+begin_src conf
+        exec --no-startup-id xset r rate 300 30
+      #+end_src
+*** picom
     #+begin_src conf
-      # window rule
-      for_window [class=".*"] border pixel 0
-      for_window [instance="(?)pavucontrol"] floating enable
-      for_window [window_role="pop-up"] floating enable
-      for_window [instance="(?)engrampa"] floating enable
-      for_window [window_role="GtkFileChooserDialog"] floating enable
-      for_window [title="(?)alsamixer"] floating enable
-      for_window [class="(?)Qtconfig-qt4"] floating enable
-      for_window [title="(?)nmtui"] floating enable
-      for_window [window_role="buddy_list"] floating enable, resize set 360 680
-      for_window [window_role="conversation"] floating enable, resize set 480 680
-      for_window [class="(?)blueman-manager"] floating enable, resize set 512 256
+      # application autostart
+      # picom
+      exec --no-startup-id picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
     #+end_src
-*** workspace assignments
+*** polkit
     #+begin_src conf
-      # windows workspace assignment
-      # 1
-      assign [class="(?)uxterm"] $ws1
-      assign [class="(?)urxvt"] $ws1
-      assign [class="(?)gnome-terminal"] $ws1
-
-      # 2
-      assign [class="(?)emacs"] $ws2
-      assign [class="(?)leafpad"] $ws2
-      assign [class="(?)l3afpad"] $ws2
-      assign [class="(?)gedit"] $ws2
-      assign [title="(?)libreoffice"] $ws2
-
-      # 3
-      assign [class="(?)qutebrowser"] $ws3
-      assign [class="(?)firefox"] $ws3
-      assign [class="(?)google-chrome"] $ws3
-
-      # 4
-      assign [class="(?)evolution"] $ws4
-      assign [class="(?)thunderbird"] $ws4
-
-      # 5
-      assign [class="(?)rhythmbox"] $ws5
-      assign [class="(?)vlc"] $ws5
-      assign [class="(?)mpv"] $ws5
-
-      # 6
-      assign [class="(?)org.remmina.remmina"] $ws6
-
-      # 7
-      assign [class="(?)pidgin"] $ws7
-
-      # 10
-      assign [class="(?)gucharmap"] $ws10
+      exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
     #+end_src
+*** udiskie
+    #+begin_src conf
+      exec --no-startup-id udiskie -t
+    #+end_src
+*** polybar
+    #+begin_src conf
+      # polybar
+      #exec --no-startup-id polybar-launch
+    #+end_src
+*** lightlocker
+    #+begin_src conf
+      # light-locker
+      exec --no-startup-id light-locker
+    #+end_src
+*** nm-applet
+    #+begin_src conf
+      # nm-applet
+      exec --no-startup-id nm-applet
+    #+end_src
+*** xsettingsd
+    #+begin_src conf
+      # nm-applet
+      exec --no-startup-id xsettingsd
+    #+end_src
+*** wallpaper
+    #+begin_src conf
+      # setwallpaper script
+      exec --no-startup-id wal -R
+    #+end_src
+*** blueman
+    #+begin_src conf
+      exec --no-startup-id blueman-applet
+    #+end_src
+*** unclutter
+    #+begin_src conf
+      exec  --no-startup-id unclutter
+    #+end_src
+** window rules
+   #+begin_src conf
+     # window rule
+     for_window [class=".*"] border pixel 0
+     for_window [instance="(?)pavucontrol"] floating enable
+     for_window [window_role="pop-up"] floating enable
+     for_window [instance="(?)engrampa"] floating enable
+     for_window [window_role="GtkFileChooserDialog"] floating enable
+     for_window [title="(?)alsamixer"] floating enable
+     for_window [class="(?)Qtconfig-qt4"] floating enable
+     for_window [title="(?)nmtui"] floating enable
+     for_window [window_role="buddy_list"] floating enable, resize set 360 680
+     for_window [window_role="conversation"] floating enable, resize set 480 680
+     for_window [class="(?)blueman-manager"] floating enable, resize set 512 256
+   #+end_src
+** workspace assignments
+   #+begin_src conf
+     # windows workspace assignment
+     # 1
+     assign [class="(?)uxterm"] $ws1
+     assign [class="(?)urxvt"] $ws1
+     assign [class="(?)gnome-terminal"] $ws1
+
+     # 2
+     assign [class="(?)emacs"] $ws2
+     assign [class="(?)leafpad"] $ws2
+     assign [class="(?)l3afpad"] $ws2
+     assign [class="(?)gedit"] $ws2
+     assign [title="(?)libreoffice"] $ws2
+
+     # 3
+     assign [class="(?)qutebrowser"] $ws3
+     assign [class="(?)firefox"] $ws3
+     assign [class="(?)google-chrome"] $ws3
+
+     # 4
+     assign [class="(?)evolution"] $ws4
+     assign [class="(?)thunderbird"] $ws4
+
+     # 5
+     assign [class="(?)rhythmbox"] $ws5
+     assign [class="(?)vlc"] $ws5
+     assign [class="(?)mpv"] $ws5
+
+     # 6
+     assign [class="(?)org.remmina.remmina"] $ws6
+
+     # 7
+     assign [class="(?)pidgin"] $ws7
+
+     # 10
+     assign [class="(?)gucharmap"] $ws10
+   #+end_src
 * ~/.config/i3status/config
   :PROPERTIES:
   :header-args: :tangle ~/.config/i3status/config :mkdirp t :padline no
