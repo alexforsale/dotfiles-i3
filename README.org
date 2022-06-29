@@ -182,7 +182,7 @@
 *** wifi helper script
     #+begin_src conf
       # wifi-helper script
-      bindsym $mod+w exec wifi-helper
+      bindsym $mod+w exec $TERMINAL -e nmtui
     #+end_src
 *** change focus
     #+begin_src conf
