@@ -90,7 +90,7 @@
     #+end_src
 *** font
     #+begin_src conf
-      font pango:Fantasque Sans Mono Regular 7
+      font pango:Fira Code Regular 7
     #+end_src
 *** refresh i3status
     #+begin_src conf
@@ -645,7 +645,7 @@
 ** the script
    #+begin_src sh
      if [ "$(command -v rofi)" ];then
-        [ "$(printf "No\\nYes" | rofi -font "Fanstasque Sans Mono 10" \
+        [ "$(printf "No\\nYes" | rofi -font "Fira Code 10" \
              -lines 2 -width 25 -hide-scrollbar true -bw 0 -line-padding 10 \
              -padding 20 -xoffset 0 -yoffset 0 -location 0 -columns 2 -color-enabled true \
              -dmenu -i -p "$1" -nb darkred -sb red -sf white -nf gray )" = "Yes" ] && $2
