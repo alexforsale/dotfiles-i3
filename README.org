@@ -56,18 +56,18 @@
     #+begin_src conf
       # Xresources file
       # https://build.i3wm.org/docs/userguide.html#xresources
-      set_from_resource         $background_i3wm	background      #000000
-      set_from_resource         $foreground_i3wm	foreground      #000000
+      set_from_resource         $background_i3wm  background      #000000
+      set_from_resource         $foreground_i3wm  foreground      #000000
       set_from_resource         $color00_i3wm         color0          #000000
       set_from_resource         $color01_i3wm         color1          #000000
       set_from_resource         $color02_i3wm         color2          #000000
       set_from_resource         $color03_i3wm         color3          #000000
       set_from_resource         $color04_i3wm         color4          #000000
       set_from_resource         $color05_i3wm         color5          #000000
-      set_from_resource         $color06_i3wm		color6          #000000
-      set_from_resource         $color07_i3wm		color7          #000000
-      set_from_resource         $color08_i3wm		color8          #000000
-      set_from_resource         $color09_i3wm		color9          #000000
+      set_from_resource         $color06_i3wm   color6          #000000
+      set_from_resource         $color07_i3wm   color7          #000000
+      set_from_resource         $color08_i3wm   color8          #000000
+      set_from_resource         $color09_i3wm   color9          #000000
       set_from_resource         $color10_i3wm         color10         #000000
       set_from_resource         $color11_i3wm         color11         #000000
       set_from_resource         $color12_i3wm         color12         #000000
@@ -78,13 +78,13 @@
       # Theme colors
       # class                 border          backgr.         text            indic.                  child_border
       # My colors
-      client.background	$background_i3wm
+      client.background $background_i3wm
 
-      client.focused          $foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
-      client.unfocused        $foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
-      client.focused_inactive	$foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
-      client.urgent		$foreground_i3wm	$background_i3wm	$foreground_i3wm	$background_i3wm        $background_i3wm
-      client.placeholder      $foreground_i3wm        $background_i3wm        $foreground_i3wm        $background_i3wm        $background_i3wm
+      client.focused          $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+      client.unfocused        $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+      client.focused_inactive $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+      client.urgent           $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+      client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
 
 
     #+end_src
@@ -356,27 +356,27 @@
     #+begin_src conf
       # resize window (you can also use the mouse for that)
       mode "resize" {
-      # These bindings trigger as soon as you enter the resize mode
+          # These bindings trigger as soon as you enter the resize mode
 
-      # Pressing left will shrink the window’s width.
-      # Pressing right will grow the window’s width.
-      # Pressing up will shrink the window’s height.
-      # Pressing down will grow the window’s height.
-      bindsym $left       resize shrink width 10 px or 10 ppt
-      bindsym $down       resize grow height 10 px or 10 ppt
-      bindsym $up         resize shrink height 10 px or 10 ppt
-      bindsym $right      resize grow width 10 px or 10 ppt
+          # Pressing left will shrink the window’s width.
+          # Pressing right will grow the window’s width.
+          # Pressing up will shrink the window’s height.
+          # Pressing down will grow the window’s height.
+          bindsym $left       resize shrink width 10 px or 10 ppt
+          bindsym $down       resize grow height 10 px or 10 ppt
+          bindsym $up         resize shrink height 10 px or 10 ppt
+          bindsym $right      resize grow width 10 px or 10 ppt
 
-      # same bindings, but for the arrow keys
-      bindsym Left        resize shrink width 10 px or 10 ppt
-      bindsym Down        resize grow height 10 px or 10 ppt
-      bindsym Up          resize shrink height 10 px or 10 ppt
-      bindsym Right       resize grow width 10 px or 10 ppt
+          # same bindings, but for the arrow keys
+          bindsym Left        resize shrink width 10 px or 10 ppt
+          bindsym Down        resize grow height 10 px or 10 ppt
+          bindsym Up          resize shrink height 10 px or 10 ppt
+          bindsym Right       resize grow width 10 px or 10 ppt
 
-      # back to normal: Enter or Escape or $mod+r
-      bindsym Return mode "default"
-      bindsym Escape mode "default"
-      bindsym $mod+r mode "default"
+          # back to normal: Enter or Escape or $mod+r
+          bindsym Return mode "default"
+          bindsym Escape mode "default"
+          bindsym $mod+r mode "default"
       }
 
       bindsym $mod+r mode "resize"
@@ -392,13 +392,13 @@
               statusline          $color04_i3wm
               background          $background_i3wm
               separator           $color03_i3wm
-                #                  BORDER         BACKGROUND        TEXT
+              #                   BORDER          BACKGROUND        TEXT
               focused_workspace   $color03_i3wm   $color00_i3wm     $color02_i3wm
               inactive_workspace  $color00_i3wm   $color00_i3wm     $color02_i3wm
               active_workspace    $color00_i3wm   $color00_i3wm     $color01_i3wm
               urgent_workspace    $color01_i3wm   $background_i3wm  $color00_i3wm
               binding_mode        $color03_i3wm   $background_i3wm  $color00_i3wm
-          }
+              }
       }
 
       bindsym $mod+Control+m bar mode toggle
@@ -495,9 +495,9 @@
 ** general
    #+begin_src conf
      general {
-       colors = true
-       interval = 5
-       markup = pango
+         colors = true
+         interval = 5
+         markup = pango
      }
    #+end_src
 ** order
@@ -543,44 +543,44 @@
      #+name: net
      #+begin_src conf  :tangle (unless (string= "arch-server" system-name) "no")
        ethernet extern0 {
-       #color_good = "#859900"
-       format_up = " %ip (%speed)"
-       format_down = ""
+           #color_good = "#859900"
+           format_up = " %ip (%speed)"
+           format_down = ""
        }
 
        ethernet intern0 {
-       #color_good = "#859900"
-       format_up = " %ip (%speed)"
-       format_down = ""
+           #color_good = "#859900"
+           format_up = " %ip (%speed)"
+           format_down = ""
        }
      #+end_src
 **** freebsd-4420s
      #+name: net
      #+begin_src conf  :tangle (unless (string= "freebsd-4420s" system-name) "no")
        wireless wlan0 {
-       #color_good = "#859900"
-       format_up = " (%essid  %bitrate) %ip"
-       format_down = ""
+           #color_good = "#859900"
+           format_up = " (%essid  %bitrate) %ip"
+           format_down = ""
        }
        ethernet re0 {
-       #color_good = "#859900"
-       format_up = " %ip (%speed)"
-       format_down = ""
+           #color_good = "#859900"
+           format_up = " %ip (%speed)"
+           format_down = ""
        }
      #+end_src
 **** arch-4420s
      #+name: net
      #+begin_src conf  :tangle (unless (string= "freebsd-4420s" system-name) "no")
        wireless _first_ {
-       #color_good = "#859900"
-       format_up = " (%essid  %bitrate) %ip"
-       format_down = ""
+           #color_good = "#859900"
+           format_up = " (%essid  %bitrate) %ip"
+           format_down = ""
        }
 
        ethernet _first_ {
-       #color_good = "#859900"
-       format_up = " %ip (%speed)"
-       format_down = ""
+           #color_good = "#859900"
+           format_up = " %ip (%speed)"
+           format_down = ""
        }
      #+end_src
 *** The Modules
@@ -591,36 +591,36 @@
 **** battery
      #+begin_src conf
        battery all {
-       format = "<span foreground='#b58900'>%status %percentage %remaining</span>"
-       format_down = ""
-       status_chr = ""
-       status_bat = ""
-       status_full = ""
-       status_unk = ""
+           format = "<span foreground='#b58900'>%status %percentage %remaining</span>"
+           format_down = ""
+           status_chr = ""
+           status_bat = ""
+           status_full = ""
+           status_unk = ""
        }
      #+end_src
 **** disk
      #+begin_src conf
        disk "/" {
-       #color_good = "#268bd2"
-       format = " %avail"
+           #color_good = "#268bd2"
+           format = " %avail"
        }
      #+end_src
 **** memory / load
-    #+name: memory_mod
-    #+begin_src conf :tangle (when (string= "freebsd-4420s" system-name) "no")
-      memory {
-      #color_good = "#6c71c4"
-      #format = "<span foreground='#6c71c4' %used RAM %available available</span>"
-      format = " %used RAM %available available"
-      threshold_degraded = "1G"
-      format_degraded = "MEMORY < %available"
-      }
+     #+name: memory_mod
+     #+begin_src conf :tangle (when (string= "freebsd-4420s" system-name) "no")
+       memory {
+           #color_good = "#6c71c4"
+           #format = "<span foreground='#6c71c4' %used RAM %available available</span>"
+           format = " %used RAM %available available"
+           threshold_degraded = "1G"
+           format_degraded = "MEMORY < %available"
+       }
 
-      load {
-      format = "<span foreground='#6c71c4'> %1min %5min %15min</span>"
-      }
-    #+end_src
+       load {
+           format = "<span foreground='#6c71c4'> %1min %5min %15min</span>"
+       }
+     #+end_src
 **** tztime
      #+begin_src conf
        tztime local {
@@ -645,14 +645,14 @@
 ** the script
    #+begin_src sh
      if [ "$(command -v rofi)" ];then
-         [ "$(printf "No\\nYes" | rofi -font "Fanstasque Sans Mono 10" \
+        [ "$(printf "No\\nYes" | rofi -font "Fanstasque Sans Mono 10" \
              -lines 2 -width 25 -hide-scrollbar true -bw 0 -line-padding 10 \
              -padding 20 -xoffset 0 -yoffset 0 -location 0 -columns 2 -color-enabled true \
              -dmenu -i -p "$1" -nb darkred -sb red -sf white -nf gray )" = "Yes" ] && $2
-     elif [ "$(command -v dmenu)" ];then
-         [ "$(printf "No\\nYes" | dmenu -i -p "$1" -nb darkred -sb red -sf white -nf gray )" = "Yes" ] && $2
-     else
-         notify-send -t 300 "${HOME}/.local/bin/prompt needs either rofi or dmenu installed!"
-         exit 1
-     fi
+        elif [ "$(command -v dmenu)" ];then
+             [ "$(printf "No\\nYes" | dmenu -i -p "$1" -nb darkred -sb red -sf white -nf gray )" = "Yes" ] && $2
+        else
+            notify-send -t 300 "${HOME}/.local/bin/prompt needs either rofi or dmenu installed!"
+            exit 1
+        fi
    #+end_src
