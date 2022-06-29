@@ -90,7 +90,7 @@
     #+end_src
 *** font
     #+begin_src conf
-      font pango:Fira Code Regular 7
+      font pango:Fira Code Regular 10
     #+end_src
 *** refresh i3status
     #+begin_src conf
