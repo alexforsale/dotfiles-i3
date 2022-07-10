@@ -157,13 +157,10 @@
       # file manager
       bindsym $mod+e exec ${FILE}
     #+end_src
-
+*** terminal
     #+begin_src conf
       # start a terminal
       bindsym $mod+Return exec ${TERMINAL}
-    #+end_src
-*** terminal
-    #+begin_src conf
       # start terminal + screen
       bindsym $mod+Shift+Return exec ${TERMINAL} -e screen -m
     #+end_src
