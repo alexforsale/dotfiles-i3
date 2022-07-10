@@ -545,9 +545,9 @@
        order += "wireless wlan0"
        order += "ethernet re0"
      #+end_src
-**** arch-4420s
+**** ethiopia
      #+name: net_order
-     #+begin_src conf  :tangle (unless (string= "freebsd-4420s" system-name) "no")
+     #+begin_src conf  :tangle (unless (string= "ethiopia" system-name) "no")
        order += "wireless _first_"
        order += "ethernet _first_"
      #+end_src
