@@ -533,9 +533,9 @@
    #+end_src
 ** order
 *** host-specifics
-**** arch-server
+**** morocco
      #+name: net_order
-     #+begin_src conf  :tangle (unless (string= "arch-server" system-name) "no")
+     #+begin_src conf  :tangle (unless (string= "morocco" system-name) "no")
        order += "ethernet extern0"
        order += "ethernet intern0"
      #+end_src
