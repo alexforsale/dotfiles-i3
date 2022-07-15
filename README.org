@@ -595,8 +595,7 @@ ethernet _first_ {
   volume master {
     format = "♪: (%devicename) %volume"
     format_muted = "♪: (%devicename) muted (%volume)"
-    device = "default"
-    mixer = "master"
+    device = "pulse:1"
   }
 #+end_src
 **** tztime
@@ -677,8 +676,7 @@ general {
   volume master {
     format = "♪: (%devicename) %volume"
     format_muted = "♪: (%devicename) muted (%volume)"
-    device = "default"
-    mixer = "master"
+    device = "pulse:1"
   }
 #+end_src
 **** tztime
