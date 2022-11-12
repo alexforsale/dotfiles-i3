@@ -305,7 +305,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec --no-startup-id udiskie -t
 exec --no-startup-id iwgtk -i
-exec --no-startup-id dunst
+exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # polybar
