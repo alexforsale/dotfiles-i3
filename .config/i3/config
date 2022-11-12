@@ -55,7 +55,7 @@ client.focused_inactive $foreground_i3wm  $background_i3wm  $foreground_i3wm $ba
 client.urgent           $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
 client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
 
-font pango:Fira Code Retina 8
+font pango:Fira Code Retina 6
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
