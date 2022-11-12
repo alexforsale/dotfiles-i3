@@ -294,40 +294,22 @@ bindsym $mod+Control+m bar mode toggle
 
 # application autostart
 exec --no-startup-id xsetroot -cursor_name left_ptr
-
 exec --no-startup-id xset r rate 300 30
-
 exec --no-startup-id xrdb -merge ~/.Xresources
-# picom
 exec --no-startup-id picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
-
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
 exec --no-startup-id udiskie -t
 exec --no-startup-id iwgtk -i
 exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-
-# polybar
 #exec --no-startup-id polybar-launch
-
-# light-locker
 exec --no-startup-id light-locker
-
-# nm-applet
 exec --no-startup-id nm-applet
-
-# nm-applet
 exec --no-startup-id xsettingsd
-
-# setwallpaper script
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id wal --theme solarized
-
 exec --no-startup-id blueman-applet
-
 exec --no-startup-id unclutter
-
 exec --no-startup-id volumeicon
 
 # window rule
