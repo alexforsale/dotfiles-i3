@@ -19,7 +19,7 @@ set $ws4 "4: Mail"
 set $ws5 "5: Media"
 set $ws6 "6: Remote"
 set $ws7 "7: Games"
-set $ws8 "8: Work"
+set $ws8 "8: Misc1"
 set $ws9 "9: Misc2"
 set $ws10 "0: Misc3"
 
@@ -339,45 +339,52 @@ for_window [class="(?)lueman-manager"] floating enable, resize set 512 256
 # "5: Media"
 # "6: Remote"
 # "7: Games"
-# "8: Work"
+# "8: Misc1"
 # "9: Misc2"
 # "0: Misc3"
 
 # 1
-assign [class="(?)xterm"] $ws1
-assign [class="(?)term"] $ws1
+assign [class="XTerm"] $ws1
 assign [class="URxvt"] $ws1
-assign [class="(?)nome-terminal"] $ws1
-assign [class="(?)ermite"] $ws1
+assign [class="Gnome-terminal"] $ws1
+assign [class="Termite"] $ws1
 
 # 2
-assign [class="(?)macs"] $ws2
-assign [class="(?)eafpad"] $ws2
-assign [class="(?)3afpad"] $ws2
-assign [class="(?)edit"] $ws2
+assign [class="Emacs"] $ws2
+assign [class="Leafpad"] $ws2
+assign [class="L3afpad"] $ws2
+assign [class="Gedit"] $ws2
+assign [class="code-oss"] $ws2
 
 # 3
-assign [class="(?)utebrowser"] $ws3
-assign [class="(?)irefox"] $ws3
-assign [class="(?)oogle-chrome"] $ws3
+assign [class="qutebrowser"] $ws3
+assign [class="firefox"] $ws3
+assign [class="google-chrome"] $ws3
+assign [class="Nyxt"] $ws3
+assign [class="pidgin"] $ws7
 
 # 4
-assign [class="(?)volution"] $ws4
-assign [class="(?)hunderbird"] $ws4
+assign [class="Evolution"] $ws4
+assign [class="thunderbird"] $ws4
 
 # 5
-assign [class="(?)hythmbox"] $ws5
+assign [class="Rhythmbox"] $ws5
 assign [class="vlc"] $ws5
-assign [class="(?)pv"] $ws5
+assign [class="mpv"] $ws5
+assign [class="Cheese"] $ws5
+assign [class="Spotify"] $ws5
+assign [class="Picard"] $ws5
 
 # 6
 assign [class="org.remmina.remmina"] $ws6
+assign [class="Virt-manager"] $ws6
+assign [class="Vncviewer"] $ws6
 
 # 7
-assign [class="(?)pidgin"] $ws7
+assign [class="Steam"] $ws7
 
 # 8
-assign [title="(?)ibreoffice"] $ws8
+assign [title="Libreoffice"] $ws8
 
-# 10
-assign [class="(?)gucharmap"] $ws10
+# 9
+assign [class="Gucharmap"] $ws9
