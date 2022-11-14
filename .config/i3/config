@@ -382,9 +382,17 @@ assign [class="Vncviewer"] $ws6
 
 # 7
 assign [class="Steam"] $ws7
+assign [title="Steam"] $ws7
 
 # 8
 assign [title="Libreoffice"] $ws8
+assign [title="com-sonicwall-NetExtender"] $ws8
+assign [title="Bitwarden"] $ws8
 
 # 9
 assign [class="Gucharmap"] $ws9
+assign [class="org.gnome.Characters"] $ws9
+assign [class="Thunar"] $ws9
+
+#0
+assign [class="winbox.exe"] $ws10
