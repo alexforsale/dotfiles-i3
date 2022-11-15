@@ -397,3 +397,7 @@ assign [class="Thunar"] $ws9
 
 #0
 assign [class="winbox.exe"] $ws10
+
+# floating
+for_window [class="evolution-alarm-notify"] floating enable
+for_window [class="Evolution-alarm-notify"] floating enable
