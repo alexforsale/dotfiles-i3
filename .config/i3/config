@@ -117,6 +117,9 @@ bindsym Mod1+F4 kill
 bindsym $mod+d exec --no-startup-id rofi -show drun -theme i3
 #bindsym $mod+Shift-d exec --no-startup-id rofi-menu_full
 
+# rofi-greenclip
+bindsym $mod+c exec --no-startup-id rofi -theme i3 -modi "clipboard:greenclip print" -show clipboard
+
 bindsym $mod+shift+w exec rofi -theme i3 -show windowcd
 bindsym $mod+w exec rofi -theme i3 -show window
 
@@ -317,6 +320,7 @@ exec --no-startup-id wal --theme solarized
 exec --no-startup-id blueman-applet
 exec --no-startup-id unclutter
 exec --no-startup-id volumeicon
+exec --no-startup-id greenclip daemon>/dev/null
 
 # window rule
 for_window [class=".*"] border pixel 0
