@@ -388,6 +388,7 @@ assign [title="Steam"] $ws7
 assign [title="Libreoffice"] $ws8
 assign [title="com-sonicwall-NetExtender"] $ws8
 assign [title="Bitwarden"] $ws8
+assign [title="zoom"] $ws8
 
 # 9
 assign [class="Gucharmap"] $ws9
