@@ -69,7 +69,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 bindsym $mod+F9 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym $mod+F8 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym $mod+f7 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+F7 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -86,8 +86,8 @@ bindsym Print exec flameshot gui
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%-
 
-bindsym $mod+F3 exec --no-startup-id brightnessctl set +1%
-bindsym $mod+F2 exec --no-startup-id brightnessctl set 1%-
+bindsym $mod+Shift+F3 exec --no-startup-id brightnessctl set +1%
+bindsym $mod+Shift+F2 exec --no-startup-id brightnessctl set 1%-
 
 # browser
 bindsym XF86MyComputer exec ${BROWSER}
@@ -253,6 +253,10 @@ bindsym $mod+Shift+r exec prompt "Reboot computer?" "shutdown -r now"
 
 # shutdown
 bindsym $mod+Shift+q exec prompt "Shutdown computer?" "poweroff"
+
+# picom-trans
+bindsym $mod+F3 exec picom-trans -c +5
+bindsym $mod+F2 exec picom-trans -c -5
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
