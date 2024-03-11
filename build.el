@@ -29,7 +29,7 @@
       org-src-fontify-natively t)
 
 (setq org-publish-project-alist
-      '(("literate-emacs"
+      '(("dotfiles-i3"
          :components ("pages" "static"))
         ("pages"
          :recursive t
