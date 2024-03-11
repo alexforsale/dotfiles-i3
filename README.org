@@ -17,13 +17,13 @@
 #+setupfile: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * About
-This is my personal /i3wm/ configuration.
+This is my personal /i3wm/ configuration. The actual code itself is inside this one /org-mode/ file that can be /tangled/ from inside /Emacs/ with the command =org-babel-tangle-file=.
 [[./assets/img/i3wm.png][file:./assets/img/i3wm.png]]
 * i3wm
 :PROPERTIES:
 :header-args: :tangle ./.config/i3/config :mkdirp t
 :END:
-
+The [[https://wiki.archlinux.org/title/i3][i3-wm]] package that I used is from the default repository in /archlinux/.
 ** header                                                         :noexport:
 #+begin_src conf +n
   # i3 config file (v4) -*- eval: (rainbow-mode 1) -*-
@@ -33,23 +33,26 @@ This is my personal /i3wm/ configuration.
 #+end_src
 
 ** variables
-
+Mostly these variables are set to avoid repetion.
 *** mod key
+=Mod4= is the =Super= key, or =Win= key for the rest of the world. =Mod1= is =Alt=[fn:1]. You don't have to set this variable, but by using variable, we can change the /mod/ key without having to change each individual lines of keybindings.
 #+begin_src conf -n
   set $mod Mod4
 #+end_src
-
 *** notify
+I used [[https://wiki.archlinux.org/title/Dunst][dunst]] as a desktop notification, though there's many other packages that can replace it. I prefer /dunst/ because it's easier to configure.
 #+begin_src conf -n
   set $notify exec notify-send -t 1000
 #+end_src
 
 *** refresh i3status
+The preferred status bar for /i3/, I like the simplicity of [[https://github.com/i3/i3status][i3status]].
 #+begin_src conf -n
   set $refresh_i3status killall -SIGUSR1 i3status
 #+end_src
 
 *** navigation keys
+I use /vim/ keys obviously.
 #+begin_src conf -n
   set $up k
   set $down j
@@ -58,6 +61,7 @@ This is my personal /i3wm/ configuration.
 #+end_src
 
 *** workspaces
+I tried to have a uniformed workspaces across all my window manager configurations. Some
 #+begin_src conf -n
   set $ws1 "1: Term"
   set $ws2 "2: Code"
@@ -68,7 +72,7 @@ This is my personal /i3wm/ configuration.
   set $ws7 "7: Games"
   set $ws8 "8: Remote"
   set $ws9 "9: Torrent"
-  set $ws10 "0: Chat"
+  set $ws10 "10: Chat"
 #+end_src
 
 Set ==workspace_back_and_forth=
@@ -173,18 +177,18 @@ Also set keybinding for toggling bar.
   exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc &
   exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
   exec --no-startup-id /usr/lib/kdeconnectd &
-  #exec --no-startup-id polybar-launch
   exec --no-startup-id light-locker
   exec --no-startup-id nm-applet --indicator &
   exec --no-startup-id xsettingsd &
   exec --no-startup-id ~/.fehbg
-  #exec --no-startup-id wal --theme solarized
   exec --no-startup-id blueman-applet
   exec --no-startup-id unclutter
   exec --no-startup-id volumeicon
   exec --no-startup-id greenclip daemon>/dev/null
   exec --no-startup-id $file --daemon &
-  exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pointer=win --ignore-empty-password --color=2E3440 --show-failed-attempts
+  #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pointer=win --ignore-empty-password --color=2E3440 --show-failed-attempts
+  exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+  exec --no-startup-id dbus-launch --exit-with-session redshift
 #+end_src
 
 ** window rule
@@ -407,7 +411,7 @@ For keyboard with no media keys:
 #+end_src
 *** rofi-greenclip
 #+begin_src conf -n
-  bindsym $mod+c exec --no-startup-id rofi -theme i3 -modi "clipboard:greenclip print" -show clipboard
+  bindsym $mod+c exec --no-startup-id rofi -theme i3-apps -modi "clipboard:greenclip print" -show clipboard
 #+end_src
 *** rofi window menu
 #+begin_src conf -n
@@ -675,6 +679,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 :PROPERTIES:
 :header-args: :tangle ./.local/bin/ocr :mkdirp t :shebang #!/usr/bin/env bash
 :END:
+This utilize the [[https://github.com/tesseract-ocr/tesseract/][tesseract]] package. The script simply select an area in the desktop with /[[https://github.com/naelstrof/maim/][maim]]/, /pipe/ it into /tesseract/, which also pipes it into /[[https://github.com/astrand/xclip/][xclip]]/.
 #+begin_src sh
   maim -u -s -b 5 -l -c 0.3,0.4,0.6,0.4 -d 0.1 | tesseract -l eng - - | xclip -selection clipboard
   notify-send -i ebook-reader "OCR" "Saved to clipboard"
@@ -684,6 +689,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 :PROPERTIES:
 :header-args: :tangle ./.config/rofi/themes/i3-nord.rasi :mkdirp t
 :END:
+I separate the main /nord/ theme here so I can make changes to it without 'disturbing' other window manager settings.
 #+begin_src css -n
   /* -*-css-*- */
   /**
@@ -826,7 +832,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
       location: southwest;
       /* anchor: center; */
       width: 40%;
-      x-offset: 380;
+      x-offset: 480;
       y-offset: -140;
       /* padding-right: 25px; */
   }
@@ -931,3 +937,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
           ;;
   esac
 #+end_src
+
+* Footnotes
+
+[fn:1] https://unix.stackexchange.com/questions/119212/understanding-window-manager-terminology-mod-keys-meta-keys-and-key-naming-co
