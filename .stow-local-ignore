@@ -1,4 +1,5 @@
 ^/README.*
+^/index.*
 ^/assets
 ^/\.git.*
 ^/public
