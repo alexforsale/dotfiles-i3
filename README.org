@@ -165,26 +165,26 @@ Also set keybinding for toggling bar.
 
 ** application autostart
 #+begin_src conf -n
+  exec --no-startup-id ~/.local/bin/monitor-setup
   exec --no-startup-id systemctl --user import-environment DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME QT_XCB_GL_INTEGRATION
   exec --no-startup-id dbus-update-activation-environment --systemd --all
-  exec --no-startup-id gnome-keyring-daemon --components=pkcs11,secrets,ssh -r -d
-  exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &
+  exec --no-startup-id dbus-launch --exit-with-session gnome-keyring-daemon --components=pkcs11,secrets,ssh -r -d
+  exec --no-startup-id dbus-launch --exit-with-session /usr/lib/polkit-kde-authentication-agent-1 &
   exec --no-startup-id xsetroot -cursor_name left_ptr
   exec --no-startup-id xset r rate 300 30
   exec --no-startup-id xrdb -merge ~/.Xresources
-  exec --no-startup-id picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
-  exec --no-startup-id udiskie -t &
-  exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc &
+  exec --no-startup-id dbus-launch --exit-with-session picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
+  exec --no-startup-id dbus-launch --exit-with-session udiskie -t &
+  exec --no-startup-id dbus-launch --exit-with-session dunst -conf ~/.config/dunst/dunstrc &
   exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
-  exec --no-startup-id /usr/lib/kdeconnectd &
-  exec --no-startup-id light-locker
-  exec --no-startup-id nm-applet --indicator &
-  exec --no-startup-id xsettingsd &
+  exec --no-startup-id dbus-launch --exit-with-session /usr/lib/kdeconnectd &
+  exec --no-startup-id dbus-launch --exit-with-session nm-applet --indicator &
+  exec --no-startup-id dbus-launch --exit-with-session xsettingsd &
   exec --no-startup-id ~/.fehbg
-  exec --no-startup-id blueman-applet
-  exec --no-startup-id unclutter
-  exec --no-startup-id volumeicon
-  exec --no-startup-id greenclip daemon>/dev/null
+  exec --no-startup-id dbus-launch --exit-with-session blueman-applet
+  exec --no-startup-id dbus-launch --exit-with-session unclutter
+  exec --no-startup-id dbus-launch --exit-with-session volumeicon
+  exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null
   exec --no-startup-id $file --daemon &
   #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pointer=win --ignore-empty-password --color=2E3440 --show-failed-attempts
   exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
@@ -761,7 +761,7 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
   inputbar {
       color: @nord6;
       padding: 11px;
-      background-color: #3b4252;
+      background-color: @nord1;
 
       border: 1px;
       border-radius:  6px 6px 0px 0px;
@@ -868,8 +868,8 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
       padding: 10px;
       border:  0px;
       border-radius: 6px;
-      x-offset: -90;
-      y-offset: 90;
+      x-offset: -120;
+      y-offset: 100;
       spacing: 0;
       children: [mainbox];
   }
