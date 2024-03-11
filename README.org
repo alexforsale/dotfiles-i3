@@ -881,7 +881,7 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
       lines: 4;
   }
 #+end_src
-*** i3-logout
+** i3-logout
 :PROPERTIES:
 :header-args: :tangle ./.local/bin/rofi-i3-logout :mkdirp t :shebang #!/usr/bin/env bash
 :END:
