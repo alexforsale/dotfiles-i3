@@ -169,7 +169,7 @@ Also set keybinding for toggling bar.
   exec --no-startup-id systemctl --user import-environment DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME QT_XCB_GL_INTEGRATION
   exec --no-startup-id dbus-update-activation-environment --systemd --all
   exec --no-startup-id dbus-launch --exit-with-session gnome-keyring-daemon --components=pkcs11,secrets,ssh -r -d
-  exec --no-startup-id dbus-launch --exit-with-session /usr/lib/polkit-kde-authentication-agent-1 &
+  exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &
   exec --no-startup-id xsetroot -cursor_name left_ptr
   exec --no-startup-id xset r rate 300 30
   exec --no-startup-id xrdb -merge ~/.Xresources
@@ -180,15 +180,17 @@ Also set keybinding for toggling bar.
   exec --no-startup-id dbus-launch --exit-with-session /usr/lib/kdeconnectd &
   exec --no-startup-id dbus-launch --exit-with-session nm-applet --indicator &
   exec --no-startup-id dbus-launch --exit-with-session xsettingsd &
-  exec --no-startup-id ~/.fehbg
-  exec --no-startup-id dbus-launch --exit-with-session blueman-applet
-  exec --no-startup-id dbus-launch --exit-with-session unclutter
-  exec --no-startup-id dbus-launch --exit-with-session volumeicon
-  exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null
+  exec --no-startup-id dbus-launch --exit-with-session blueman-applet &
+  exec --no-startup-id dbus-launch --exit-with-session unclutter &
+  exec --no-startup-id dbus-launch --exit-with-session volumeicon &
+  exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null &
   exec --no-startup-id $file --daemon &
   #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pointer=win --ignore-empty-password --color=2E3440 --show-failed-attempts
   exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
-  exec --no-startup-id dbus-launch --exit-with-session redshift
+  exec --no-startup-id systemctl --user start redshift-gtk
+  exec --no-startup-id wal -R
+  exec --no-startup-id ~/.fehbg
+  #exec --no-startup-id feh --no-fehbg --bg-fill '/home/mkncorp.com/kristian.alexander/.local/share/wallpapers/manga/Sora-no-Otoshimono/angels_sora_no_otoshimono_ikaros_anime_anime_g_by_kardolen65_d6wp5ec.jpg'
 #+end_src
 
 ** window rule
