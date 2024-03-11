@@ -374,6 +374,8 @@ For keyboard with no media keys:
   bindsym $mod+Mod1+e exec emacsclient -c -a emacs -e '(dired (getenv "HOME"))'
 #+end_src
 *** rofi-pass
+[[./assets/img/rofi-pass.png][file:./assets/img/rofi-pass.png]]
+Rofi front end for [[https://www.passwordstore.org/][pass]]. It stores passwords using /git/ and encrypted with /GnuPG/. It also has an /OTP/ extensions.
 #+begin_src conf -n
   bindsym $mod+Mod1+p exec rofi-pass
 #+end_src
