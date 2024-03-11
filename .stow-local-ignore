@@ -1,0 +1,8 @@
+^/README.*
+^/assets
+^/\.git.*
+^/public
+^/publish.*
+\.packages
+^/content
+^/build.*
