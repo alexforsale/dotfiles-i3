@@ -18,7 +18,7 @@
 
 * About
 This is my personal /i3wm/ configuration.
-
+[[./assets/img/i3wm.png][file:./assets/img/i3wm.png]]
 * i3wm
 :PROPERTIES:
 :header-args: :tangle ./.config/i3/config :mkdirp t
