@@ -577,6 +577,13 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   bindsym $mod+F3 exec picom-trans -c +5
   bindsym $mod+F2 exec picom-trans -c -5
 #+end_src
+*** dunst
+#+begin_src conf -n
+  bindsym $mod+Mod1+grave exec dunstctl history-pop
+  bindsym $mod+Shift+grave exec dunstctl context
+  bindsym $mod+Control+grave exec dunstctl close
+  bindsym $mod+grave exec dunstctl action
+#+end_src
 *** modes
 **** resize
 #+begin_src conf -n
