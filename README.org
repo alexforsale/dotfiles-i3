@@ -13,7 +13,7 @@
 #+creator: Emacs 27.2 (Org mode 9.5.4)
 #+cite_export:
 #+startup: indent fold
-* I3 Window Manager Configuration
+
 #+begin_html
 <a href="https://raw.githubusercontent.com/alexforsale/dotfiles-i3/main/LICENSE.md">
 <img alt="GPLv3" src="https://img.shields.io/github/license/alexforsale/dotfiles-i3" />
@@ -24,5 +24,7 @@
 </a>
 #+end_html
 
+
+* I3 Window Manager Configuration
 This is my personal /i3wm/ configuration. The actual code itself is inside this one /org-mode/ file that can be /tangled/ from inside /Emacs/ with the command =org-babel-tangle-file=. I'm using [[https://www.gnu.org/software/stow/][Gnu Stow]] to create symlinks from the files tangled in this /org/ file into my home directory since not all the files in this repository needs to be symlinked.
 [[./assets/img/i3wm.png][file:./assets/img/i3wm.png]]
