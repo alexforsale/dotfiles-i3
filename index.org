@@ -387,7 +387,7 @@ Rofi front end for [[https://www.passwordstore.org/][pass]]. It stores passwords
   bindsym $mod+Mod1+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme calculator
 #+end_src
 *** rofi-rbw
-Similar to [[id:b21c3c96-1325-4ed5-b699-4d56c7e8e044][rofi-pass]], but for /bitwarden/.
+Similar to rofi-pass, but for /bitwarden/.
 #+begin_src conf -n
   bindsym $mod+Mod1+b exec rofi-rbw
 #+end_src
