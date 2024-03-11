@@ -618,7 +618,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 :PROPERTIES:
 :header-args: :tangle ./.config/i3status/config :mkdirp t
 :END:
-** header
+** header                                                         :noexport:
 #+begin_src conf -n
   # i3status configuration file.
   # see "man i3status" for documentation.
