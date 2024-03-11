@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-03-11 Mon 03:54 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>i3wm Configuration Files</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Kristian Alexander P" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">i3wm Configuration Files</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org559405e">About</a></li>
+<li><a href="#org594b6c1">i3wm</a>
+<ul>
+<li><a href="#orgde42686">variables</a></li>
+<li><a href="#orgc28686e">bar</a></li>
+<li><a href="#org8736ea6">application autostart</a></li>
+<li><a href="#org3b68338">window rule</a></li>
+<li><a href="#org00a0c8c">workspace assignment</a></li>
+<li><a href="#org4aa0a4c">Keybindings</a></li>
+</ul>
+</li>
+<li><a href="#orge93893a">i3status</a>
+<ul>
+<li><a href="#orgd3780fd">header</a></li>
+<li><a href="#org7e88fff">general</a></li>
+<li><a href="#org6661623">order</a></li>
+<li><a href="#org8b52e9e">wireless</a></li>
+<li><a href="#org78f799d">ethernet</a></li>
+<li><a href="#org4e8465b">battery</a></li>
+<li><a href="#org5ac9863">memory</a></li>
+<li><a href="#orgf198ad9">time</a></li>
+</ul>
+</li>
+<li><a href="#org00d1e62">Scripts</a>
+<ul>
+<li><a href="#org2dd5fc0">ocr</a></li>
+<li><a href="#org40dfef8">Rofi</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org559405e" class="outline-2">
+<h2 id="org559405e">About</h2>
+<div class="outline-text-2" id="text-org559405e">
+<p>
+This is my personal <i>i3wm</i> configuration.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org594b6c1" class="outline-2">
+<h2 id="org594b6c1">i3wm</h2>
+<div class="outline-text-2" id="text-org594b6c1">
+</div>
+
+<div id="outline-container-orgde42686" class="outline-3">
+<h3 id="orgde42686">variables</h3>
+<div class="outline-text-3" id="text-orgde42686">
+</div>
+<ul class="org-ul">
+<li><a id="orgbab6641"></a>mod key<br />
+<div class="outline-text-4" id="text-orgbab6641">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>set $mod Mod4
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgd6f2942"></a>notify<br />
+<div class="outline-text-4" id="text-orgd6f2942">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>set $notify exec notify-send -t 1000
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgf257499"></a>refresh i3status<br />
+<div class="outline-text-4" id="text-orgf257499">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>set $refresh_i3status killall -SIGUSR1 i3status
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org7ecc2eb"></a>navigation keys<br />
+<div class="outline-text-4" id="text-org7ecc2eb">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>set $up k
+<span class="linenr">2: </span>set $down j
+<span class="linenr">3: </span>set $left h
+<span class="linenr">4: </span>set $right l
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org3976cdb"></a>workspaces<br />
+<div class="outline-text-4" id="text-org3976cdb">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span>set $ws1 <span style="color: #bc8f8f;">"1: Term"</span>
+<span class="linenr"> 2: </span>set $ws2 <span style="color: #bc8f8f;">"2: Code"</span>
+<span class="linenr"> 3: </span>set $ws3 <span style="color: #bc8f8f;">"3: Web"</span>
+<span class="linenr"> 4: </span>set $ws4 <span style="color: #bc8f8f;">"4: Mail"</span>
+<span class="linenr"> 5: </span>set $ws5 <span style="color: #bc8f8f;">"5: File"</span>
+<span class="linenr"> 6: </span>set $ws6 <span style="color: #bc8f8f;">"6: Office"</span>
+<span class="linenr"> 7: </span>set $ws7 <span style="color: #bc8f8f;">"7: Games"</span>
+<span class="linenr"> 8: </span>set $ws8 <span style="color: #bc8f8f;">"8: Remote"</span>
+<span class="linenr"> 9: </span>set $ws9 <span style="color: #bc8f8f;">"9: Torrent"</span>
+<span class="linenr">10: </span>set $ws10 <span style="color: #bc8f8f;">"0: Chat"</span>
+</pre>
+</div>
+
+<p>
+Set <code>=workspace_back_and_forth</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>workspace_auto_back_and_forth yes
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org4a4a436"></a>applications<br />
+<div class="outline-text-4" id="text-org4a4a436">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>set $terminal alacritty
+<span class="linenr">2: </span>set $browser firefox
+<span class="linenr">3: </span>set $mail thunderbird
+<span class="linenr">4: </span>set $guiemacs emacsclient -c -a emacs
+<span class="linenr">5: </span>set $tuiemacs emacsclient -t -a emacs
+<span class="linenr">6: </span>set $file thunar
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgb47d4bb"></a>Xresouces<br />
+<div class="outline-text-4" id="text-orgb47d4bb">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span><span style="color: #b22222;">#### </span><span style="color: #b22222;">https://build.i3wm.org/docs/userguide.html#xresources</span>
+<span class="linenr"> 2: </span>set_from_resource         $background_i3wm  background      <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr"> 3: </span>set_from_resource         $foreground_i3wm  foreground      <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr"> 4: </span>set_from_resource         $color00_i3wm         color0          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr"> 5: </span>set_from_resource         $color01_i3wm         color1          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr"> 6: </span>set_from_resource         $color02_i3wm         color2          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr"> 7: </span>set_from_resource         $color03_i3wm         color3          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr"> 8: </span>set_from_resource         $color04_i3wm         color4          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr"> 9: </span>set_from_resource         $color05_i3wm         color5          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">10: </span>set_from_resource         $color06_i3wm   color6          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">11: </span>set_from_resource         $color07_i3wm   color7          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">12: </span>set_from_resource         $color08_i3wm   color8          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">13: </span>set_from_resource         $color09_i3wm   color9          <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">14: </span>set_from_resource         $color10_i3wm         color10         <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">15: </span>set_from_resource         $color11_i3wm         color11         <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">16: </span>set_from_resource         $color12_i3wm         color12         <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">17: </span>set_from_resource         $color13_i3wm         color13         <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">18: </span>set_from_resource         $color14_i3wm         color14         <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+<span class="linenr">19: </span>set_from_resource         $color15_i3wm         color15         <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org2d3b631"></a>Colors<br />
+<div class="outline-text-4" id="text-org2d3b631">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">Theme colors</span>
+<span class="linenr"> 2: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">class                 border          backgr.         text            indic.                  child_border</span>
+<span class="linenr"> 3: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">My colors</span>
+<span class="linenr"> 4: </span>client.background $background_i3wm
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span>client.focused          $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+<span class="linenr"> 7: </span>client.unfocused        $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+<span class="linenr"> 8: </span>client.focused_inactive $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+<span class="linenr"> 9: </span>client.urgent           $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+<span class="linenr">10: </span>client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org5eee626"></a>font<br />
+<div class="outline-text-4" id="text-org5eee626">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">font</span>
+<span class="linenr">2: </span>font pango:JetBrainsMonoNL Nerd Font Mono 10
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgf2aafca"></a>floating modifier<br />
+<div class="outline-text-4" id="text-orgf2aafca">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>floating_modifier $mod
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgc28686e" class="outline-3">
+<h3 id="orgc28686e">bar</h3>
+<div class="outline-text-3" id="text-orgc28686e">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span><span style="color: #228b22;">bar</span> {
+<span class="linenr"> 2: </span>  status_command i3status
+<span class="linenr"> 3: </span>  position bottom
+<span class="linenr"> 4: </span>  workspace_buttons yes
+<span class="linenr"> 5: </span>  mode dock
+<span class="linenr"> 6: </span>  <span style="color: #228b22;">colors</span> {
+<span class="linenr"> 7: </span>    statusline          $color04_i3wm
+<span class="linenr"> 8: </span>    background          $background_i3wm
+<span class="linenr"> 9: </span>    separator           $color03_i3wm
+<span class="linenr">10: </span>    <span style="color: #b22222;">#                   </span><span style="color: #b22222;">BORDER          BACKGROUND        TEXT</span>
+<span class="linenr">11: </span>    focused_workspace   $color03_i3wm   $color00_i3wm     $color02_i3wm
+<span class="linenr">12: </span>    inactive_workspace  $color00_i3wm   $color00_i3wm     $color02_i3wm
+<span class="linenr">13: </span>    active_workspace    $color00_i3wm   $color00_i3wm     $color01_i3wm
+<span class="linenr">14: </span>    urgent_workspace    $color01_i3wm   $background_i3wm  $color00_i3wm
+<span class="linenr">15: </span>    binding_mode        $color03_i3wm   $background_i3wm  $color00_i3wm
+<span class="linenr">16: </span>    }
+<span class="linenr">17: </span>}
+</pre>
+</div>
+
+<p>
+Also set keybinding for toggling bar.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+m bar mode toggle
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8736ea6" class="outline-3">
+<h3 id="org8736ea6">application autostart</h3>
+<div class="outline-text-3" id="text-org8736ea6">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span>exec --no-startup-id systemctl --user import-environment DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME QT_XCB_GL_INTEGRATION
+<span class="linenr"> 2: </span>exec --no-startup-id dbus-update-activation-environment --systemd --all
+<span class="linenr"> 3: </span><span style="color: #b8860b;">exec --no-startup-id gnome-keyring-daemon --components</span>=pkcs11,secrets,ssh -r -d
+<span class="linenr"> 4: </span>exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &amp;
+<span class="linenr"> 5: </span>exec --no-startup-id xsetroot -cursor_name left_ptr
+<span class="linenr"> 6: </span>exec --no-startup-id xset r rate 300 30
+<span class="linenr"> 7: </span>exec --no-startup-id xrdb -merge ~/.Xresources
+<span class="linenr"> 8: </span>exec --no-startup-id picom -b --config <span style="color: #bc8f8f;">"${XDG_CONFIG_HOME}"</span>/picom/picom.conf &amp;
+<span class="linenr"> 9: </span>exec --no-startup-id udiskie -t &amp;
+<span class="linenr">10: </span>exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc &amp;
+<span class="linenr">11: </span>exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &amp;
+<span class="linenr">12: </span>exec --no-startup-id /usr/lib/kdeconnectd &amp;
+<span class="linenr">13: </span><span style="color: #b22222;">#</span><span style="color: #b22222;">exec --no-startup-id polybar-launch</span>
+<span class="linenr">14: </span>exec --no-startup-id light-locker
+<span class="linenr">15: </span>exec --no-startup-id nm-applet --indicator &amp;
+<span class="linenr">16: </span>exec --no-startup-id xsettingsd &amp;
+<span class="linenr">17: </span>exec --no-startup-id ~/.fehbg
+<span class="linenr">18: </span><span style="color: #b22222;">#</span><span style="color: #b22222;">exec --no-startup-id wal --theme solarized</span>
+<span class="linenr">19: </span>exec --no-startup-id blueman-applet
+<span class="linenr">20: </span>exec --no-startup-id unclutter
+<span class="linenr">21: </span>exec --no-startup-id volumeicon
+<span class="linenr">22: </span>exec --no-startup-id greenclip daemon&gt;/dev/null
+<span class="linenr">23: </span>exec --no-startup-id $file --daemon &amp;
+<span class="linenr">24: </span><span style="color: #b8860b;">exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --pointer</span>=win --ignore-empty-password --color=2E3440 --show-failed-attempts
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3b68338" class="outline-3">
+<h3 id="org3b68338">window rule</h3>
+<div class="outline-text-3" id="text-org3b68338">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">".*"</span>] border pixel 0
+<span class="linenr"> 2: </span><span style="color: #b8860b;">for_window [instance</span>=<span style="color: #bc8f8f;">"(?i)pavucontrol"</span>] floating enable
+<span class="linenr"> 3: </span><span style="color: #b8860b;">for_window [window_role</span>=<span style="color: #bc8f8f;">"pop-up"</span>] floating enable
+<span class="linenr"> 4: </span><span style="color: #b8860b;">for_window [instance</span>=<span style="color: #bc8f8f;">"(?i)engrampa"</span>] floating enable
+<span class="linenr"> 5: </span><span style="color: #b8860b;">for_window [window_role</span>=<span style="color: #bc8f8f;">"GtkFileChooserDialog"</span>] floating enable
+<span class="linenr"> 6: </span><span style="color: #b8860b;">for_window [title</span>=<span style="color: #bc8f8f;">"(?i)alsamixer"</span>] floating enable
+<span class="linenr"> 7: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)qtconfig-qt4"</span>] floating enable
+<span class="linenr"> 8: </span><span style="color: #b8860b;">for_window [title</span>=<span style="color: #bc8f8f;">"(?i)nmtui"</span>] floating enable
+<span class="linenr"> 9: </span><span style="color: #b8860b;">for_window [window_role</span>=<span style="color: #bc8f8f;">"buddy_list"</span>] floating enable, resize set 360 680
+<span class="linenr">10: </span><span style="color: #b8860b;">for_window [window_role</span>=<span style="color: #bc8f8f;">"conversation"</span>] floating enable, resize set 480 680
+<span class="linenr">11: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)blueman.*"</span>] floating enable, resize set 512 256
+<span class="linenr">12: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"evolution-alarm-notify"</span>] floating enable
+<span class="linenr">13: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"Evolution-alarm-notify"</span>] floating enable
+<span class="linenr">14: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)kooha"</span>] floating enable
+<span class="linenr">15: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"^org.kde.polkit-kde-authentication-agent-1"</span>] floating enable
+<span class="linenr">16: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"thunderbird"</span> title=<span style="color: #bc8f8f;">"status"</span>] floating enable
+<span class="linenr">17: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"thunderbird"</span> title=<span style="color: #bc8f8f;">"(.*)Reminders"</span>] floating enable
+<span class="linenr">18: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"thunderbird"</span> title=<span style="color: #bc8f8f;">"Write.*"</span>] floating enable
+<span class="linenr">19: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"thunderbird"</span> title=<span style="color: #bc8f8f;">"Send.*"</span>] floating enable
+<span class="linenr">20: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"Msgcompose.*"</span>] floating enable
+<span class="linenr">21: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"QtPass"</span>] floating enable
+<span class="linenr">22: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)zoom"</span>] floating enable
+<span class="linenr">23: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)file-roller"</span>] floating enable
+<span class="linenr">24: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)ncmpcpp"</span>] floating enable
+<span class="linenr">25: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)khal"</span>] floating enable
+<span class="linenr">26: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)htop"</span>] floating enable
+<span class="linenr">27: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)nmtui"</span>] floating enable
+<span class="linenr">28: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)vim"</span>] floating enable
+<span class="linenr">29: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)org.kde.kdeconnect.app"</span>] floating enable
+<span class="linenr">30: </span><span style="color: #b8860b;">for_window [title</span>=<span style="color: #bc8f8f;">"(?i)File Operation Progress"</span>] floating enable
+<span class="linenr">31: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)showmethekey-gtk"</span>] floating enable
+<span class="linenr">32: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)screenkey"</span>] floating enable
+<span class="linenr">33: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)bitwarden"</span>] floating enable
+<span class="linenr">34: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)authy.*"</span>] floating enable
+<span class="linenr">35: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)transmission.*"</span>] floating enable
+<span class="linenr">36: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)anydesk.*"</span>] floating enable
+<span class="linenr">37: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)lxappearance"</span>] floating enable
+<span class="linenr">38: </span><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)steam.*"</span>] floating enable
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org00a0c8c" class="outline-3">
+<h3 id="org00a0c8c">workspace assignment</h3>
+<div class="outline-text-3" id="text-org00a0c8c">
+</div>
+<ul class="org-ul">
+<li><a id="org4993d6c"></a>workspace 1<br />
+<div class="outline-text-4" id="text-org4993d6c">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"XTerm"</span>] $ws1
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"URxvt"</span>] $ws1
+<span class="linenr">3: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Gnome-terminal"</span>] $ws1
+<span class="linenr">4: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Termite"</span>] $ws1
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org246d6a1"></a>workspace 2<br />
+<div class="outline-text-4" id="text-org246d6a1">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Emacs"</span>] $ws2
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Leafpad"</span>] $ws2
+<span class="linenr">3: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"L3afpad"</span>] $ws2
+<span class="linenr">4: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Gedit"</span>] $ws2
+<span class="linenr">5: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"code-oss"</span>] $ws2
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org26662d2"></a>workspace 3<br />
+<div class="outline-text-4" id="text-org26662d2">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"qutebrowser"</span>] $ws3
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"firefox"</span>] $ws3
+<span class="linenr">3: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"google-chrome"</span>] $ws3
+<span class="linenr">4: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Nyxt"</span>] $ws3
+<span class="linenr">5: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"pidgin"</span>] $ws7
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org2a86c89"></a>workspace 4<br />
+<div class="outline-text-4" id="text-org2a86c89">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Evolution"</span>] $ws4
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"thunderbird"</span>] $ws4
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgc41ddb2"></a>workspace 5<br />
+<div class="outline-text-4" id="text-orgc41ddb2">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Rhythmbox"</span>] $ws5
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"vlc"</span>] $ws5
+<span class="linenr">3: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"mpv"</span>] $ws5
+<span class="linenr">4: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Cheese"</span>] $ws5
+<span class="linenr">5: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Spotify"</span>] $ws5
+<span class="linenr">6: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Picard"</span>] $ws5
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org1810080"></a>workspace 6<br />
+<div class="outline-text-4" id="text-org1810080">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"org.remmina.remmina"</span>] $ws6
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Virt-manager"</span>] $ws6
+<span class="linenr">3: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Vncviewer"</span>] $ws6
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orge589238"></a>workspace 7<br />
+<div class="outline-text-4" id="text-orge589238">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Steam"</span>] $ws7
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"Steam"</span>] $ws7
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org39cae17"></a>workspace 8<br />
+<div class="outline-text-4" id="text-org39cae17">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"Libreoffice"</span>] $ws8
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"com-sonicwall-NetExtender"</span>] $ws8
+<span class="linenr">3: </span><span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"Bitwarden"</span>] $ws8
+<span class="linenr">4: </span><span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"zoom"</span>] $ws8
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgd262ff8"></a>workspace 9<br />
+<div class="outline-text-4" id="text-orgd262ff8">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Gucharmap"</span>] $ws9
+<span class="linenr">2: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"org.gnome.Characters"</span>] $ws9
+<span class="linenr">3: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Thunar"</span>] $ws9
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org20a2a51"></a>workspace 0<br />
+<div class="outline-text-4" id="text-org20a2a51">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"winbox.exe"</span>] $ws10
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org4aa0a4c" class="outline-3">
+<h3 id="org4aa0a4c">Keybindings</h3>
+<div class="outline-text-3" id="text-org4aa0a4c">
+</div>
+<ul class="org-ul">
+<li><a id="org3f331b4"></a>media keys<br />
+<div class="outline-text-4" id="text-org3f331b4">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span>bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/dunst-volume -i 1 &amp;&amp; $refresh_i3status
+<span class="linenr"> 2: </span>bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/dunst-volume -d 1 &amp;&amp; $refresh_i3status
+<span class="linenr"> 3: </span>bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/dunst-volume -t &amp;&amp; $refresh_i3status
+<span class="linenr"> 4: </span>bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle &amp;&amp; $refresh_i3status
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span>bindsym XF86AudioPlay exec playerctl play-pause
+<span class="linenr"> 7: </span>bindsym XF86AudioNext exec playerctl next
+<span class="linenr"> 8: </span>bindsym XF86AudioPrev exec playerctl previous
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span>bindsym XF86MonBrightnessUp exec --no-startup-id ~/.local/bin/dunst-backlight +1%
+<span class="linenr">11: </span>bindsym XF86MonBrightnessDown exec --no-startup-id ~/.local/bin/dunst-backlight 1%-
+<span class="linenr">12: </span>
+<span class="linenr">13: </span>bindsym Print exec flameshot gui
+</pre>
+</div>
+
+<p>
+For keyboard with no media keys:
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span>bindsym $mod+F9 exec --no-startup-id ~/.local/bin/dunst-volume -i 1 &amp;&amp; $refresh_i3status
+<span class="linenr"> 2: </span>bindsym $mod+F8 exec --no-startup-id ~/.local/bin/dunst-volume -d 1 &amp;&amp; $refresh_i3status
+<span class="linenr"> 3: </span>bindsym $mod+F7 exec --no-startup-id ~/.local/bin/dunst-volume -t &amp;&amp; $refresh_i3status
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span>bindsym $mod+F11 exec playerctl play-pause
+<span class="linenr"> 6: </span>bindsym $mod+F12 exec playerctl next
+<span class="linenr"> 7: </span>bindsym $mod+F10 exec playerctl previous
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span>bindsym $mod+Shift+F3 exec --no-startup-id brightnessctl set +1%
+<span class="linenr">10: </span>bindsym $mod+Shift+F2 exec --no-startup-id brightnessctl set 1%-
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org9ed596f"></a>browser<br />
+<div class="outline-text-4" id="text-org9ed596f">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym XF86MyComputer exec $browser
+<span class="linenr">2: </span>bindsym $mod+Mod1+f exec $browser
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org4eb1616"></a>mail<br />
+<div class="outline-text-4" id="text-org4eb1616">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym XF86Mail exec $mail
+<span class="linenr">2: </span>bindsym $mod+Mod1+t exec $mail
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgdd91a67"></a>music<br />
+<div class="outline-text-4" id="text-orgdd91a67">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+m exec $terminal --class ncmpcpp -e ncmpcpp
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org4627c79"></a>htop<br />
+<div class="outline-text-4" id="text-org4627c79">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+h exec $terminal --class htop -e htop
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org61079c4"></a>nmtui<br />
+<div class="outline-text-4" id="text-org61079c4">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+w exec $terminal --class nmtui -e nmtui
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgb322e98"></a>khal<br />
+<div class="outline-text-4" id="text-orgb322e98">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+k exec $terminal --class khal -e khal interactive
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgb40f2ab"></a>vim<br />
+<div class="outline-text-4" id="text-orgb40f2ab">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+v exec $terminal --class vim -e vim
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgd98bf68"></a>dired<br />
+<div class="outline-text-4" id="text-orgd98bf68">
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+Mod1+e exec emacsclient -c -a emacs -e <span style="color: #bc8f8f;">'(dired (getenv "HOME"))'</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org11c8792"></a>rofi-pass<br />
+<div class="outline-text-4" id="text-org11c8792">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+p exec rofi-pass
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgcfe30e3"></a>rofi-calc<br />
+<div class="outline-text-4" id="text-orgcfe30e3">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme calculator
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org91b7982"></a>rofi-rbw<br />
+<div class="outline-text-4" id="text-org91b7982">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+b exec rofi-rbw
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orged965aa"></a>text editor<br />
+<div class="outline-text-4" id="text-orged965aa">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+n exec $guiemacs
+<span class="linenr">2: </span>bindsym $mod+Control+n exec $terminal -e $tuiemacs
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org61be92b"></a>file manager<br />
+<div class="outline-text-4" id="text-org61be92b">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+e exec $file
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org21cc3bf"></a>terminal<br />
+<div class="outline-text-4" id="text-org21cc3bf">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Return exec $terminal
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgaf33943"></a>terminal + screen<br />
+<div class="outline-text-4" id="text-orgaf33943">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Shift+Return exec $terminal -e screen -m
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgebece7b"></a>kill focused window<br />
+<div class="outline-text-4" id="text-orgebece7b">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Shift+F4 kill
+<span class="linenr">2: </span>bindsym Mod1+F4 kill
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgcd2dcb5"></a>rofi-menu<br />
+<div class="outline-text-4" id="text-orgcd2dcb5">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+d exec --no-startup-id rofi -show drun -theme i3-apps
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org0a8e8b4"></a>rofi-greenclip<br />
+<div class="outline-text-4" id="text-org0a8e8b4">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+c exec --no-startup-id rofi -theme i3 -modi <span style="color: #bc8f8f;">"clipboard:greenclip print"</span> -show clipboard
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org4ded8e2"></a>rofi window menu<br />
+<div class="outline-text-4" id="text-org4ded8e2">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+shift+w exec rofi -theme i3-apps -show windowcd
+<span class="linenr">2: </span>bindsym $mod+w exec rofi -theme i3-apps -show window
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga3b6c02"></a>tesseract<br />
+<div class="outline-text-4" id="text-orga3b6c02">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+shift+t exec ~/.local/bin/ocr
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org61ac6cc"></a>screenkey<br />
+<div class="outline-text-4" id="text-org61ac6cc">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Mod1+s exec screenkey
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgd3a7a5b"></a>window management<br />
+<ul class="org-ul">
+<li><a id="orge96a98f"></a>change focus<br />
+<div class="outline-text-5" id="text-orge96a98f">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+$left focus left
+<span class="linenr">2: </span>bindsym $mod+$down focus down
+<span class="linenr">3: </span>bindsym $mod+$up focus up
+<span class="linenr">4: </span>bindsym $mod+$right focus right
+</pre>
+</div>
+<p>
+Alternatively, with arrow keys:
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Left focus left
+<span class="linenr">2: </span>bindsym $mod+Down focus down
+<span class="linenr">3: </span>bindsym $mod+Up focus up
+<span class="linenr">4: </span>bindsym $mod+Right focus right
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgf979dad"></a>move focused window<br />
+<div class="outline-text-5" id="text-orgf979dad">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Shift+$left move left
+<span class="linenr">2: </span>bindsym $mod+Shift+$down move down
+<span class="linenr">3: </span>bindsym $mod+Shift+$up move up
+<span class="linenr">4: </span>bindsym $mod+Shift+$right move right
+</pre>
+</div>
+<p>
+Also, with arrow keys:
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Shift+Left move left
+<span class="linenr">2: </span>bindsym $mod+Shift+Down move down
+<span class="linenr">3: </span>bindsym $mod+Shift+Up move up
+<span class="linenr">4: </span>bindsym $mod+Shift+Right move right
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org06f0a04"></a>split<br />
+<div class="outline-text-5" id="text-org06f0a04">
+<p>
+horizontally
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+h split h; exec $notify <span style="color: #bc8f8f;">"Horizontal split"</span>
+</pre>
+</div>
+<p>
+vertically
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+v split v exec $notify <span style="color: #bc8f8f;">"Vertical split"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgf65d566"></a>fullscreen toggle<br />
+<div class="outline-text-5" id="text-orgf65d566">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+f fullscreen toggle; exec $notify <span style="color: #bc8f8f;">"Fullscreen toggle"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orge760aab"></a>container layout<br />
+<div class="outline-text-5" id="text-orge760aab">
+<p>
+stacked
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+s layout stacking; exec $notify <span style="color: #bc8f8f;">"Stacking layout"</span>
+</pre>
+</div>
+<p>
+tabbed
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+w layout tabbed; exec $notify <span style="color: #bc8f8f;">"Tabbed layout"</span>
+</pre>
+</div>
+<p>
+split
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+e layout toggle split; exec $notify <span style="color: #bc8f8f;">"Split toggle"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga404377"></a>toggle tiling / floating<br />
+<div class="outline-text-5" id="text-orga404377">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Shift+space floating toggle; exec $notify <span style="color: #bc8f8f;">"Floating toggle"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga77f071"></a>change focus between tiling / floating windows<br />
+<div class="outline-text-5" id="text-orga77f071">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+space focus mode_toggle; exec $notify <span style="color: #bc8f8f;">"Window focus toggle"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org4836afd"></a>focus parent container<br />
+<div class="outline-text-5" id="text-org4836afd">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+a focus parent; exec $notify <span style="color: #bc8f8f;">"Focus parentcontainer"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org62688ac"></a>focus child container<br />
+<div class="outline-text-5" id="text-org62688ac">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+d focus child; exec $notify <span style="color: #bc8f8f;">"Focus child container"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org5d146a5"></a>move to scratchpad<br />
+<div class="outline-text-5" id="text-org5d146a5">
+<p>
+Move the current focused window into the scratchpad
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Shift+minus move scratchpad; exec $notify <span style="color: #bc8f8f;">"Moved to scratchpad"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgf027064"></a>show scratchpad<br />
+<div class="outline-text-5" id="text-orgf027064">
+<p>
+Show the next scratchpad window or hide the focused scratchpad window. If there are multiple scratchpad windows, this command cycles through them.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+minus scratchpad show; exec $notify <span style="color: #bc8f8f;">"Show scratchpad"</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org167b365"></a>workspace management<br />
+<div class="outline-text-4" id="text-org167b365">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span>bindsym $mod+1 workspace $ws1
+<span class="linenr"> 2: </span>bindsym $mod+2 workspace $ws2
+<span class="linenr"> 3: </span>bindsym $mod+3 workspace $ws3
+<span class="linenr"> 4: </span>bindsym $mod+4 workspace $ws4
+<span class="linenr"> 5: </span>bindsym $mod+5 workspace $ws5
+<span class="linenr"> 6: </span>bindsym $mod+6 workspace $ws6
+<span class="linenr"> 7: </span>bindsym $mod+7 workspace $ws7
+<span class="linenr"> 8: </span>bindsym $mod+8 workspace $ws8
+<span class="linenr"> 9: </span>bindsym $mod+9 workspace $ws9
+<span class="linenr">10: </span>bindsym $mod+0 workspace $ws10
+</pre>
+</div>
+</div>
+<ul class="org-ul">
+<li><a id="org4b43454"></a>switch to workspace prev / next<br />
+<div class="outline-text-5" id="text-org4b43454">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+bracketleft workspace prev
+<span class="linenr">2: </span>bindsym $mod+bracketright workspace next
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgc8c8dd1"></a>move focused containerto workspace<br />
+<div class="outline-text-5" id="text-orgc8c8dd1">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span>bindsym $mod+Shift+1 move container to workspace $ws1
+<span class="linenr"> 2: </span>bindsym $mod+Shift+2 move container to workspace $ws2
+<span class="linenr"> 3: </span>bindsym $mod+Shift+3 move container to workspace $ws3
+<span class="linenr"> 4: </span>bindsym $mod+Shift+4 move container to workspace $ws4
+<span class="linenr"> 5: </span>bindsym $mod+Shift+5 move container to workspace $ws5
+<span class="linenr"> 6: </span>bindsym $mod+Shift+6 move container to workspace $ws6
+<span class="linenr"> 7: </span>bindsym $mod+Shift+7 move container to workspace $ws7
+<span class="linenr"> 8: </span>bindsym $mod+Shift+8 move container to workspace $ws8
+<span class="linenr"> 9: </span>bindsym $mod+Shift+9 move container to workspace $ws9
+<span class="linenr">10: </span>bindsym $mod+Shift+0 move container to workspace $ws10
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orge293821"></a>move using bracket keys<br />
+<div class="outline-text-5" id="text-orge293821">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym Control+Mod1+bracketleft move to workspace previous
+<span class="linenr">2: </span>bindsym Control+Mod1+bracketright move to workspace next
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org6c3fae4"></a>back and forth<br />
+<div class="outline-text-5" id="text-org6c3fae4">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Tab workspace back_and_forth
+<span class="linenr">2: </span>bindsym $mod+Shift+Tab move container to workspace back_and_forth
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga5331b4"></a>switch output focus<br />
+<div class="outline-text-5" id="text-orga5331b4">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+1 focus output primary
+<span class="linenr">2: </span>bindsym $mod+Control+2 focus output right
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org5c28599"></a>moving to output<br />
+<div class="outline-text-5" id="text-org5c28599">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+Shift+1 move workspace to output primary
+<span class="linenr">2: </span>bindsym $mod+Control+Shift+2 move workspace to output right
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org6e335fe"></a>Reload configuration<br />
+<div class="outline-text-4" id="text-org6e335fe">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Shift+F11 reload
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org36ca0a0"></a>Hot restart<br />
+<div class="outline-text-4" id="text-org36ca0a0">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+Control+r restart
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgbef3510"></a>exit i3<br />
+<div class="outline-text-4" id="text-orgbef3510">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+q exec ~/.local/bin/rofi-i3-logout
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org53b54b9"></a>picom transparency<br />
+<div class="outline-text-4" id="text-org53b54b9">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span>bindsym $mod+F3 exec picom-trans -c +5
+<span class="linenr">2: </span>bindsym $mod+F2 exec picom-trans -c -5
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org55848f8"></a>modes<br />
+<ul class="org-ul">
+<li><a id="org585c63a"></a>resize<br />
+<div class="outline-text-5" id="text-org585c63a">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr"> 1: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">resize window (you can also use the mouse for that)</span>
+<span class="linenr"> 2: </span><span style="color: #228b22;">mode </span><span style="color: #228b22;">"resize"</span> {
+<span class="linenr"> 3: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">These bindings trigger as soon as you enter the resize mode</span>
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">Pressing left will shrink the window&#8217;s width.</span>
+<span class="linenr"> 6: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">Pressing right will grow the window&#8217;s width.</span>
+<span class="linenr"> 7: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">Pressing up will shrink the window&#8217;s height.</span>
+<span class="linenr"> 8: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">Pressing down will grow the window&#8217;s height.</span>
+<span class="linenr"> 9: </span>bindsym $left       resize shrink width 10 px or 10 ppt
+<span class="linenr">10: </span>bindsym $down       resize grow height 10 px or 10 ppt
+<span class="linenr">11: </span>bindsym $up         resize shrink height 10 px or 10 ppt
+<span class="linenr">12: </span>bindsym $right      resize grow width 10 px or 10 ppt
+<span class="linenr">13: </span>
+<span class="linenr">14: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">same bindings, but for the arrow keys</span>
+<span class="linenr">15: </span>bindsym Left        resize shrink width 10 px or 10 ppt
+<span class="linenr">16: </span>bindsym Down        resize grow height 10 px or 10 ppt
+<span class="linenr">17: </span>bindsym Up          resize shrink height 10 px or 10 ppt
+<span class="linenr">18: </span>bindsym Right       resize grow width 10 px or 10 ppt
+<span class="linenr">19: </span>
+<span class="linenr">20: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">back to normal: Enter or Escape or $mod+r</span>
+<span class="linenr">21: </span>bindsym Return mode <span style="color: #bc8f8f;">"default"</span>
+<span class="linenr">22: </span>bindsym Escape mode <span style="color: #bc8f8f;">"default"</span>
+<span class="linenr">23: </span>bindsym $mod+r mode <span style="color: #bc8f8f;">"default"</span>
+<span class="linenr">24: </span>}
+<span class="linenr">25: </span>
+<span class="linenr">26: </span>bindsym $mod+r mode <span style="color: #bc8f8f;">"resize"</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge93893a" class="outline-2">
+<h2 id="orge93893a">i3status</h2>
+<div class="outline-text-2" id="text-orge93893a">
+</div>
+<div id="outline-container-orgd3780fd" class="outline-3">
+<h3 id="orgd3780fd">header</h3>
+<div class="outline-text-3" id="text-orgd3780fd">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">i3status configuration file.</span>
+<span class="linenr">2: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">see "man i3status" for documentation.</span>
+<span class="linenr">3: </span>
+<span class="linenr">4: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">It is important that this file is edited as UTF-8.</span>
+<span class="linenr">5: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">The following line should contain a sharp s:</span>
+<span class="linenr">6: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">&#223;</span>
+<span class="linenr">7: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">If the above line is not correctly displayed, fix your editor first!</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7e88fff" class="outline-3">
+<h3 id="org7e88fff">general</h3>
+<div class="outline-text-3" id="text-org7e88fff">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #228b22;">general</span> {
+<span class="linenr">2: </span>        <span style="color: #b8860b;">colors</span> = true
+<span class="linenr">3: </span>        <span style="color: #b8860b;">interval</span> = 5
+<span class="linenr">4: </span>        <span style="color: #b8860b;">output_format</span> = i3bar
+<span class="linenr">5: </span>}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6661623" class="outline-3">
+<h3 id="org6661623">order</h3>
+<div class="outline-text-3" id="text-org6661623">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"ipv6"</span>
+<span class="linenr">2: </span><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"wireless _first_"</span>
+<span class="linenr">3: </span><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"ethernet _first_"</span>
+<span class="linenr">4: </span><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"battery 0"</span>
+<span class="linenr">5: </span><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"memory"</span>
+<span class="linenr">6: </span><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"tztime local"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b52e9e" class="outline-3">
+<h3 id="org8b52e9e">wireless</h3>
+<div class="outline-text-3" id="text-org8b52e9e">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #228b22;">wireless _first_</span> {
+<span class="linenr">2: </span>        <span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#984489;: (%quality at %essid, %bitrate / %frequency) %ip"</span>
+<span class="linenr">3: </span>        <span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">"&#984489;: down"</span>
+<span class="linenr">4: </span>}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org78f799d" class="outline-3">
+<h3 id="org78f799d">ethernet</h3>
+<div class="outline-text-3" id="text-org78f799d">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #228b22;">ethernet _first_</span> {
+<span class="linenr">2: </span>        <span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#983552;: %ip (%speed)"</span>
+<span class="linenr">3: </span>        <span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">""</span>
+<span class="linenr">4: </span>}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4e8465b" class="outline-3">
+<h3 id="org4e8465b">battery</h3>
+<div class="outline-text-3" id="text-org4e8465b">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #228b22;">battery 0</span> {
+<span class="linenr">2: </span>        <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"%status %percentage %remaining"</span>
+<span class="linenr">3: </span>        <span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">""</span>
+<span class="linenr">4: </span>        <span style="color: #b8860b;">status_chr</span> = <span style="color: #bc8f8f;">"&#983172;"</span>
+<span class="linenr">5: </span>        <span style="color: #b8860b;">status_bat</span> = <span style="color: #bc8f8f;">"&#983170;"</span>
+<span class="linenr">6: </span>        <span style="color: #b8860b;">status_unk</span> = <span style="color: #bc8f8f;">"&#983185;"</span>
+<span class="linenr">7: </span>}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ac9863" class="outline-3">
+<h3 id="org5ac9863">memory</h3>
+<div class="outline-text-3" id="text-org5ac9863">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #228b22;">memory</span> {
+<span class="linenr">2: </span>        <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#983899; %used"</span>
+<span class="linenr">3: </span>        <span style="color: #b8860b;">threshold_degraded</span> = <span style="color: #bc8f8f;">"1G"</span>
+<span class="linenr">4: </span>        <span style="color: #b8860b;">format_degraded</span> = <span style="color: #bc8f8f;">"&#983899; &lt; %available"</span>
+<span class="linenr">5: </span>}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf198ad9" class="outline-3">
+<h3 id="orgf198ad9">time</h3>
+<div class="outline-text-3" id="text-orgf198ad9">
+<div class="org-src-container">
+<pre class="src src-conf"><span class="linenr">1: </span><span style="color: #228b22;">tztime local</span> {
+<span class="linenr">2: </span>        <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#985428; %Y-%m-%d %H:%M:%S"</span>
+<span class="linenr">3: </span>}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org00d1e62" class="outline-2">
+<h2 id="org00d1e62">Scripts</h2>
+<div class="outline-text-2" id="text-org00d1e62">
+</div>
+<div id="outline-container-org2dd5fc0" class="outline-3">
+<h3 id="org2dd5fc0">ocr</h3>
+<div class="outline-text-3" id="text-org2dd5fc0">
+<div class="org-src-container">
+<pre class="src src-sh">maim -u -s -b 5 -l -c 0.3,0.4,0.6,0.4 -d 0.1 | tesseract -l eng - - | xclip -selection clipboard
+notify-send -i ebook-reader <span style="color: #bc8f8f;">"OCR"</span> <span style="color: #bc8f8f;">"Saved to clipboard"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org40dfef8" class="outline-3">
+<h3 id="org40dfef8">Rofi</h3>
+<div class="outline-text-3" id="text-org40dfef8">
+</div>
+<ul class="org-ul">
+<li><a id="org1352dff"></a>i3-nord theme<br />
+<div class="outline-text-4" id="text-org1352dff">
+<div class="org-src-container">
+<pre class="src src-css"><span class="linenr">  1: </span><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css-*- </span><span style="color: #b22222;">*/</span>
+<span class="linenr">  2: </span><span style="color: #b22222;">/**</span>
+<span class="linenr">  3: </span><span style="color: #b22222;"> * Nordic rofi theme</span>
+<span class="linenr">  4: </span><span style="color: #b22222;"> * Adapted by undiabler <a href="mailto:undiabler%40gmail.com">&lt;undiabler@gmail.com&gt;</a></span>
+<span class="linenr">  5: </span><span style="color: #b22222;"> *</span>
+<span class="linenr">  6: </span><span style="color: #b22222;"> * Nord Color palette imported from https://www.nordtheme.com/</span>
+<span class="linenr">  7: </span><span style="color: #b22222;"> *</span>
+<span class="linenr">  8: </span><span style="color: #b22222;"> </span><span style="color: #b22222;">*/</span>
+<span class="linenr">  9: </span>
+<span class="linenr"> 10: </span>
+<span class="linenr"> 11: </span><span style="color: #0000ff;">* </span>{
+<span class="linenr"> 12: </span>    <span style="color: #4169e1;">nord0</span>: <span style="color: #ffffff; background-color: #2e3440;">#2e3440</span>;
+<span class="linenr"> 13: </span>    <span style="color: #4169e1;">nord1</span>: <span style="color: #ffffff; background-color: #3b4252;">#3b4252</span>;
+<span class="linenr"> 14: </span>    <span style="color: #4169e1;">nord2</span>: <span style="color: #ffffff; background-color: #434c5e;">#434c5e</span>;
+<span class="linenr"> 15: </span>    <span style="color: #4169e1;">nord3</span>: <span style="color: #ffffff; background-color: #4c566a;">#4c566a</span>;
+<span class="linenr"> 16: </span>
+<span class="linenr"> 17: </span>    <span style="color: #4169e1;">nord4</span>: <span style="color: #000000; background-color: #d8dee9;">#d8dee9</span>;
+<span class="linenr"> 18: </span>    <span style="color: #4169e1;">nord5</span>: <span style="color: #000000; background-color: #e5e9f0;">#e5e9f0</span>;
+<span class="linenr"> 19: </span>    <span style="color: #4169e1;">nord6</span>: <span style="color: #000000; background-color: #eceff4;">#eceff4</span>;
+<span class="linenr"> 20: </span>
+<span class="linenr"> 21: </span>    <span style="color: #4169e1;">nord7</span>: <span style="color: #000000; background-color: #8fbcbb;">#8fbcbb</span>;
+<span class="linenr"> 22: </span>    <span style="color: #4169e1;">nord8</span>: <span style="color: #000000; background-color: #88c0d0;">#88c0d0</span>;
+<span class="linenr"> 23: </span>    <span style="color: #4169e1;">nord9</span>: <span style="color: #000000; background-color: #81a1c1;">#81a1c1</span>;
+<span class="linenr"> 24: </span>    <span style="color: #4169e1;">nord10</span>: <span style="color: #000000; background-color: #5e81ac;">#5e81ac</span>;
+<span class="linenr"> 25: </span>    <span style="color: #4169e1;">nord11</span>: <span style="color: #ffffff; background-color: #bf616a;">#bf616a</span>;
+<span class="linenr"> 26: </span>
+<span class="linenr"> 27: </span>    <span style="color: #4169e1;">nord12</span>: <span style="color: #000000; background-color: #d08770;">#d08770</span>;
+<span class="linenr"> 28: </span>    <span style="color: #4169e1;">nord13</span>: <span style="color: #000000; background-color: #ebcb8b;">#ebcb8b</span>;
+<span class="linenr"> 29: </span>    <span style="color: #4169e1;">nord14</span>: <span style="color: #000000; background-color: #a3be8c;">#a3be8c</span>;
+<span class="linenr"> 30: </span>    <span style="color: #4169e1;">nord15</span>: <span style="color: #000000; background-color: #b48ead;">#b48ead</span>;
+<span class="linenr"> 31: </span>
+<span class="linenr"> 32: </span>    <span style="color: #4169e1;">foreground</span>:  <span style="color: #00008b;">@nord9</span>;
+<span class="linenr"> 33: </span>    <span style="color: #4169e1;">backlight</span>:   <span style="color: #000000; background-color: #ccffee;">#ccffeedd</span>;
+<span class="linenr"> 34: </span>    <span style="color: #4169e1;">background-color</span>:  transparent;
+<span class="linenr"> 35: </span>
+<span class="linenr"> 36: </span>    <span style="color: #4169e1;">highlight</span>:     underline bold <span style="color: #000000; background-color: #eceff4;">#eceff4</span>;
+<span class="linenr"> 37: </span>
+<span class="linenr"> 38: </span>    <span style="color: #4169e1;">transparent</span>: <span style="color: #ffffff; background-color: #2e3440;">rgba(46,52,64,0)</span>;
+<span class="linenr"> 39: </span>}
+<span class="linenr"> 40: </span>
+<span class="linenr"> 41: </span><span style="color: #0000ff;">window </span>{
+<span class="linenr"> 42: </span>    <span style="color: #4169e1;">location</span>: center;
+<span class="linenr"> 43: </span>    <span style="color: #4169e1;">anchor</span>:   center;
+<span class="linenr"> 44: </span>    <span style="color: #4169e1;">transparency</span>: <span style="color: #bc8f8f;">"screenshot"</span>;
+<span class="linenr"> 45: </span>    <span style="color: #4169e1;">padding</span>: 10px;
+<span class="linenr"> 46: </span>    <span style="color: #4169e1;">border</span>:  0px;
+<span class="linenr"> 47: </span>    <span style="color: #4169e1;">border-radius</span>: 6px;
+<span class="linenr"> 48: </span>
+<span class="linenr"> 49: </span>    <span style="color: #4169e1;">background-color</span>: <span style="color: #00008b;">@transparent</span>;
+<span class="linenr"> 50: </span>    <span style="color: #4169e1;">spacing</span>: 0;
+<span class="linenr"> 51: </span>    <span style="color: #4169e1;">children</span>:  [mainbox];
+<span class="linenr"> 52: </span>    <span style="color: #4169e1;">orientation</span>: horizontal;
+<span class="linenr"> 53: </span>}
+<span class="linenr"> 54: </span>
+<span class="linenr"> 55: </span><span style="color: #0000ff;">mainbox </span>{
+<span class="linenr"> 56: </span>    <span style="color: #4169e1;">spacing</span>: 0;
+<span class="linenr"> 57: </span>    <span style="color: #4169e1;">children</span>: [ inputbar, message, listview ];
+<span class="linenr"> 58: </span>}
+<span class="linenr"> 59: </span>
+<span class="linenr"> 60: </span><span style="color: #0000ff;">message </span>{
+<span class="linenr"> 61: </span>    <span style="color: #4169e1;">color</span>: <span style="color: #00008b;">@nord0</span>;
+<span class="linenr"> 62: </span>    <span style="color: #4169e1;">padding</span>: 5;
+<span class="linenr"> 63: </span>    <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@foreground</span>;
+<span class="linenr"> 64: </span>    <span style="color: #4169e1;">border</span>:  0px 2px 2px 2px;
+<span class="linenr"> 65: </span>    <span style="color: #4169e1;">background-color</span>: <span style="color: #00008b;">@nord7</span>;
+<span class="linenr"> 66: </span>}
+<span class="linenr"> 67: </span>
+<span class="linenr"> 68: </span><span style="color: #0000ff;">inputbar </span>{
+<span class="linenr"> 69: </span>    <span style="color: #4169e1;">color</span>: <span style="color: #00008b;">@nord6</span>;
+<span class="linenr"> 70: </span>    <span style="color: #4169e1;">padding</span>: 11px;
+<span class="linenr"> 71: </span>    <span style="color: #4169e1;">background-color</span>: <span style="color: #ffffff; background-color: #3b4252;">#3b4252</span>;
+<span class="linenr"> 72: </span>
+<span class="linenr"> 73: </span>    <span style="color: #4169e1;">border</span>: 1px;
+<span class="linenr"> 74: </span>    <span style="color: #4169e1;">border-radius</span>:  6px 6px 0px 0px;
+<span class="linenr"> 75: </span>    <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@nord10</span>;
+<span class="linenr"> 76: </span>}
+<span class="linenr"> 77: </span>
+<span class="linenr"> 78: </span><span style="color: #0000ff;">entry, prompt, case-indicator </span>{
+<span class="linenr"> 79: </span>    <span style="color: #4169e1;">text-font</span>: inherit;
+<span class="linenr"> 80: </span>    <span style="color: #4169e1;">text-color</span>:inherit;
+<span class="linenr"> 81: </span>}
+<span class="linenr"> 82: </span>
+<span class="linenr"> 83: </span><span style="color: #0000ff;">prompt </span>{
+<span class="linenr"> 84: </span>    <span style="color: #4169e1;">margin</span>: 0px 1em 0em 0em ;
+<span class="linenr"> 85: </span>}
+<span class="linenr"> 86: </span>
+<span class="linenr"> 87: </span><span style="color: #0000ff;">listview </span>{
+<span class="linenr"> 88: </span>    <span style="color: #4169e1;">padding</span>: 8px;
+<span class="linenr"> 89: </span>    <span style="color: #4169e1;">border-radius</span>: 0px 0px 6px 6px;
+<span class="linenr"> 90: </span>    <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@nord10</span>;
+<span class="linenr"> 91: </span>    <span style="color: #4169e1;">border</span>: 0px 1px 1px 1px;
+<span class="linenr"> 92: </span>    <span style="color: #4169e1;">background-color</span>: <span style="color: #ffffff; background-color: #2e3440;">rgba(46,52,64,0.9)</span>;
+<span class="linenr"> 93: </span>    <span style="color: #4169e1;">dynamic</span>: false;
+<span class="linenr"> 94: </span>}
+<span class="linenr"> 95: </span>
+<span class="linenr"> 96: </span><span style="color: #0000ff;">element </span>{
+<span class="linenr"> 97: </span>    <span style="color: #4169e1;">padding</span>: 3px;
+<span class="linenr"> 98: </span>    <span style="color: #4169e1;">vertical-align</span>: 0.5;
+<span class="linenr"> 99: </span>    <span style="color: #4169e1;">border-radius</span>: 4px;
+<span class="linenr">100: </span>    <span style="color: #4169e1;">background-color</span>: transparent;
+<span class="linenr">101: </span>    <span style="color: #4169e1;">color</span>: <span style="color: #00008b;">@foreground</span>;
+<span class="linenr">102: </span>    <span style="color: #4169e1;">text-color</span>: <span style="color: #000000; background-color: #d8dee9;">rgb(216, 222, 233)</span>;
+<span class="linenr">103: </span>}
+<span class="linenr">104: </span>
+<span class="linenr">105: </span><span style="color: #0000ff;">element selected.normal </span>{
+<span class="linenr">106: </span>    <span style="color: #4169e1;">background-color</span>: <span style="color: #00008b;">@nord7</span>;
+<span class="linenr">107: </span>    <span style="color: #4169e1;">text-color</span>: <span style="color: #ffffff; background-color: #2e3440;">#2e3440</span>;
+<span class="linenr">108: </span>}
+<span class="linenr">109: </span>
+<span class="linenr">110: </span><span style="color: #0000ff;">element-text, element-icon </span>{
+<span class="linenr">111: </span>    <span style="color: #4169e1;">background-color</span>: inherit;
+<span class="linenr">112: </span>    <span style="color: #4169e1;">text-color</span>:       inherit;
+<span class="linenr">113: </span>}
+<span class="linenr">114: </span>
+<span class="linenr">115: </span><span style="color: #0000ff;">button </span>{
+<span class="linenr">116: </span>    <span style="color: #4169e1;">padding</span>: 6px;
+<span class="linenr">117: </span>    <span style="color: #4169e1;">color</span>: <span style="color: #00008b;">@foreground</span>;
+<span class="linenr">118: </span>    <span style="color: #4169e1;">horizontal-align</span>: 0.5;
+<span class="linenr">119: </span>
+<span class="linenr">120: </span>    <span style="color: #4169e1;">border</span>: 2px 0px 2px 2px;
+<span class="linenr">121: </span>    <span style="color: #4169e1;">border-radius</span>: 4px 0px 0px 4px;
+<span class="linenr">122: </span>    <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@foreground</span>;
+<span class="linenr">123: </span>}
+<span class="linenr">124: </span>
+<span class="linenr">125: </span><span style="color: #0000ff;">button selected normal </span>{
+<span class="linenr">126: </span>    <span style="color: #4169e1;">border</span>: 2px 0px 2px 2px;
+<span class="linenr">127: </span>    <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@foreground</span>;
+<span class="linenr">128: </span>}
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org9ce7b2b"></a>i3-apps theme<br />
+<div class="outline-text-4" id="text-org9ce7b2b">
+<div class="org-src-container">
+<pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css -*- </span><span style="color: #b22222;">*/</span>
+<span class="linenr"> 2: </span><span style="color: #00008b;">@theme</span> <span style="color: #bc8f8f;">"i3-nord"</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #0000ff;">window </span>{
+<span class="linenr"> 5: </span>    <span style="color: #4169e1;">location</span>: southwest;
+<span class="linenr"> 6: </span>    <span style="color: #b22222;">/* </span><span style="color: #b22222;">anchor: center; </span><span style="color: #b22222;">*/</span>
+<span class="linenr"> 7: </span>    <span style="color: #4169e1;">width</span>: 40%;
+<span class="linenr"> 8: </span>    <span style="color: #4169e1;">x-offset</span>: 380;
+<span class="linenr"> 9: </span>    <span style="color: #4169e1;">y-offset</span>: -140;
+<span class="linenr">10: </span>    <span style="color: #b22222;">/* </span><span style="color: #b22222;">padding-right: 25px; </span><span style="color: #b22222;">*/</span>
+<span class="linenr">11: </span>}
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #0000ff;">listview </span>{
+<span class="linenr">14: </span>    <span style="color: #4169e1;">columns</span>: 2;
+<span class="linenr">15: </span>    <span style="color: #4169e1;">lines</span>: 6;
+<span class="linenr">16: </span>}
+<span class="linenr">17: </span>
+<span class="linenr">18: </span><span style="color: #b22222;">/* </span><span style="color: #b22222;">inputbar { </span><span style="color: #b22222;">*/</span>
+<span class="linenr">19: </span><span style="color: #b22222;">/*     </span><span style="color: #b22222;">children: [textbox-prompt]; </span><span style="color: #b22222;">*/</span>
+<span class="linenr">20: </span><span style="color: #b22222;">/* </span><span style="color: #b22222;">} </span><span style="color: #b22222;">*/</span>
+<span class="linenr">21: </span>
+<span class="linenr">22: </span><span style="color: #b22222;">/* </span><span style="color: #b22222;">textbox-prompt { </span><span style="color: #b22222;">*/</span>
+<span class="linenr">23: </span><span style="color: #b22222;">/*     </span><span style="color: #b22222;">str: "Apps"; </span><span style="color: #b22222;">*/</span>
+<span class="linenr">24: </span><span style="color: #b22222;">/*     </span><span style="color: #b22222;">text-color: inherit; </span><span style="color: #b22222;">*/</span>
+<span class="linenr">25: </span><span style="color: #b22222;">/* </span><span style="color: #b22222;">} </span><span style="color: #b22222;">*/</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org18e8934"></a>i3-logout theme<br />
+<div class="outline-text-4" id="text-org18e8934">
+<div class="org-src-container">
+<pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css -*- </span><span style="color: #b22222;">*/</span>
+<span class="linenr"> 2: </span><span style="color: #00008b;">@theme</span> <span style="color: #bc8f8f;">"i3-nord"</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #0000ff;">window </span>{
+<span class="linenr"> 5: </span>    <span style="color: #4169e1;">location</span>: northeast;
+<span class="linenr"> 6: </span>    <span style="color: #4169e1;">anchor</span>:   center;
+<span class="linenr"> 7: </span>    <span style="color: #4169e1;">transparency</span>: <span style="color: #bc8f8f;">"screenshot"</span>;
+<span class="linenr"> 8: </span>    <span style="color: #4169e1;">width</span>: 10%;
+<span class="linenr"> 9: </span>    <span style="color: #4169e1;">padding</span>: 10px;
+<span class="linenr">10: </span>    <span style="color: #4169e1;">border</span>:  0px;
+<span class="linenr">11: </span>    <span style="color: #4169e1;">border-radius</span>: 6px;
+<span class="linenr">12: </span>    <span style="color: #4169e1;">x-offset</span>: -90;
+<span class="linenr">13: </span>    <span style="color: #4169e1;">y-offset</span>: 90;
+<span class="linenr">14: </span>    <span style="color: #4169e1;">spacing</span>: 0;
+<span class="linenr">15: </span>    <span style="color: #4169e1;">children</span>: [mainbox];
+<span class="linenr">16: </span>}
+<span class="linenr">17: </span>
+<span class="linenr">18: </span><span style="color: #0000ff;">listview </span>{
+<span class="linenr">19: </span>    <span style="color: #4169e1;">columns</span>: 1;
+<span class="linenr">20: </span>    <span style="color: #4169e1;">lines</span>: 4;
+<span class="linenr">21: </span>}
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgd65e735"></a>i3-logout<br />
+<div class="outline-text-4" id="text-orgd65e735">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #b8860b;">question</span>=$(<span style="color: #00008b;">echo</span> <span style="color: #bc8f8f;">"&#983870; lock|&#983875; logout|&#984841; reboot|&#984101; shutdown"</span> | rofi -sep <span style="color: #bc8f8f;">"|"</span> <span style="color: #bc8f8f;">\</span>
+    -dmenu -i -p <span style="color: #bc8f8f;">'System: '</span> <span style="color: #bc8f8f;">""</span> <span style="color: #bc8f8f;">\</span>
+    -hide-scrollbar <span style="color: #bc8f8f;">\</span>
+    -eh 1 <span style="color: #bc8f8f;">\</span>
+    -color-enabled true <span style="color: #bc8f8f;">\</span>
+    -theme <span style="color: #bc8f8f;">"i3-logout"</span>)
+
+<span style="color: #4169e1;">case</span> $<span style="color: #b8860b;">question</span><span style="color: #4169e1;"> in</span>
+    *lock)
+        <span style="color: #4169e1;">case</span> $<span style="color: #b8860b;">DESKTOP_SESSION</span><span style="color: #4169e1;"> in</span>
+            hyprland)
+                hyprctl dispatcher exit
+                ;;
+            *)
+                <span style="color: #4169e1;">if</span> [ <span style="color: #bc8f8f;">"$(pgrep -x lightdm)"</span> ] &amp;&amp; [ <span style="color: #bc8f8f;">"$(command -v light-locker)"</span> ]; <span style="color: #4169e1;">then</span>
+                    light-locker-command -l
+                <span style="color: #4169e1;">fi</span>
+                ;;
+        <span style="color: #4169e1;">esac</span>
+        ;;
+    *logout)
+        <span style="color: #4169e1;">case</span> $<span style="color: #b8860b;">DESKTOP_SESSION</span><span style="color: #4169e1;"> in</span>
+            hyprland)
+                hyprctl dispatcher exit
+                ;;
+            openbox)
+                openbox --exit
+                ;;
+            i3)
+                i3-msg exit
+                ;;
+        <span style="color: #4169e1;">esac</span>
+        ;;
+    *reboot)
+        <span style="color: #4169e1;">if</span> [[ $(command -v systemctl) ]]; <span style="color: #4169e1;">then</span>
+            systemctl reboot
+        <span style="color: #4169e1;">else</span>
+            shutdown -r now
+        <span style="color: #4169e1;">fi</span>
+        ;;
+    *shutdown)
+        <span style="color: #4169e1;">if</span> [[ $(command -v systemctl) ]]; <span style="color: #4169e1;">then</span>
+            systemctl poweroff
+        <span style="color: #4169e1;">else</span>
+            poweroff
+        <span style="color: #4169e1;">fi</span>
+        ;;
+    *)
+        <span style="color: #4169e1;">exit</span> 0  <span style="color: #b22222;"># </span><span style="color: #b22222;">do nothing on wrong response</span>
+        ;;
+<span style="color: #4169e1;">esac</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2022-06-08 Wed 00:00</p>
+<p class="author">Author: Kristian Alexander P</p>
+<p class="date">Created: 2024-03-11 Mon 03:54</p>
+</div>
+</body>
+</html>
