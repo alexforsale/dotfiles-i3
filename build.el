@@ -12,7 +12,6 @@
 
 (package-install 'htmlize)
 (package-install 'reformatter)
-(package-install 'nix-mode)
 (package-install 'color-theme-modern)
 
 (require 'htmlize)

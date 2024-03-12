@@ -1,1 +1,1 @@
-((org-mode . ((eval (org-confirm-babel-evaluate nil)))))
+((org-mode . ((org-confirm-babel-evaluate . nil))))
