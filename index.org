@@ -673,6 +673,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
           status_chr = "󰂄"
           status_bat = "󰂂"
           status_unk = "󰂑"
+          last_full_capacity = true
   }
 #+end_src
 ** memory
