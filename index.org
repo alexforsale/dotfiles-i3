@@ -846,10 +846,10 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
 
   window {
       location: southwest;
-      /* anchor: center; */
+      anchor: center;
       width: 40%;
-      x-offset: 480;
-      y-offset: -140;
+      x-offset: 20%;
+      y-offset: -10%;
       /* padding-right: 25px; */
   }
 
@@ -884,8 +884,8 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
       padding: 10px;
       border:  0px;
       border-radius: 6px;
-      x-offset: -120;
-      y-offset: 100;
+      x-offset: -5%;
+      y-offset: 10%;
       spacing: 0;
       children: [mainbox];
   }
