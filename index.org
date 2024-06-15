@@ -24,7 +24,7 @@ This is my personal /i3wm/ configuration. The actual code itself is inside this 
 :header-args: :tangle ./.config/i3/config :mkdirp t
 :END:
 The [[https://wiki.archlinux.org/title/i3][i3-wm]] package that I used is from the default repository in /archlinux/.
-** header                                                         :noexport:
+** header :noexport:
 #+begin_src conf +n
   # i3 config file (v4) -*- eval: (rainbow-mode 1) -*-
   #
