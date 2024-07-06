@@ -191,11 +191,13 @@ Also set keybinding for toggling bar.
   exec --no-startup-id wal -R
   exec --no-startup-id ~/.fehbg
   #exec --no-startup-id feh --no-fehbg --bg-fill '/home/mkncorp.com/kristian.alexander/.local/share/wallpapers/manga/Sora-no-Otoshimono/angels_sora_no_otoshimono_ikaros_anime_anime_g_by_kardolen65_d6wp5ec.jpg'
+  exec --no-startup-id xclipboard
 #+end_src
 
 ** window rule
 #+begin_src conf -n
   for_window [class=".*"] border pixel 0
+  for_window [class="(?i)xclipboard"] , move scratchpad
   for_window [instance="(?i)pavucontrol"] floating enable
   for_window [window_role="pop-up"] floating enable
   for_window [instance="(?i)engrampa"] floating enable
@@ -514,6 +516,7 @@ Move the current focused window into the scratchpad
 Show the next scratchpad window or hide the focused scratchpad window. If there are multiple scratchpad windows, this command cycles through them.
 #+begin_src conf -n
   bindsym $mod+minus scratchpad show; exec $notify "Show scratchpad"
+  bindsym $mod+Shift+c [class="(?i)xclipboard"] scratchpad show
 #+end_src
 *** workspace management
 #+begin_src conf -n
