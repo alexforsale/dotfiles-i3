@@ -25,7 +25,7 @@ This is my personal /i3wm/ configuration. The actual code itself is inside this 
 :END:
 The [[https://wiki.archlinux.org/title/i3][i3-wm]] package that I used is from the default repository in /archlinux/.
 ** header :noexport:
-#+begin_src conf +n
+#+begin_src conf
   # i3 config file (v4) -*- eval: (rainbow-mode 1) -*-
   #
   # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -36,24 +36,24 @@ The [[https://wiki.archlinux.org/title/i3][i3-wm]] package that I used is from t
 Mostly these variables are set to avoid repetion.
 *** mod key
 =Mod4= is the =Super= key, or =Win= key for the rest of the world. =Mod1= is =Alt=[fn:1]. You don't have to set this variable, but by using variable, we can change the /mod/ key without having to change each individual lines of keybindings.
-#+begin_src conf -n
+#+begin_src conf
   set $mod Mod4
 #+end_src
 *** notify
 I used [[https://wiki.archlinux.org/title/Dunst][dunst]] as a desktop notification, though there's many other packages that can replace it. I prefer /dunst/ because it's easier to configure.
-#+begin_src conf -n
+#+begin_src conf
   set $notify exec notify-send -t 1000
 #+end_src
 
 *** refresh i3status
 The preferred status bar for /i3/, I like the simplicity of [[https://github.com/i3/i3status][i3status]].
-#+begin_src conf -n
+#+begin_src conf
   set $refresh_i3status killall -SIGUSR1 i3status
 #+end_src
 
 *** navigation keys
 I use /vim/ keys obviously.
-#+begin_src conf -n
+#+begin_src conf
   set $up k
   set $down j
   set $left h
@@ -62,7 +62,7 @@ I use /vim/ keys obviously.
 
 *** workspaces
 I tried to have a uniformed workspaces across all my window manager configurations. Some
-#+begin_src conf -n
+#+begin_src conf
   set $ws1 "1: Term"
   set $ws2 "2: Code"
   set $ws3 "3: Web"
@@ -76,12 +76,12 @@ I tried to have a uniformed workspaces across all my window manager configuratio
 #+end_src
 
 Set ==workspace_back_and_forth=
-#+begin_src conf -n
+#+begin_src conf
   workspace_auto_back_and_forth yes
 #+end_src
 *** applications
-#+begin_src conf -n
-  set $terminal alacritty
+#+begin_src conf
+  set $terminal xterm
   set $browser firefox
   set $mail thunderbird
   set $guiemacs emacsclient -c -a emacs
@@ -90,7 +90,7 @@ Set ==workspace_back_and_forth=
 #+end_src
 
 *** Xresouces
-#+begin_src conf -n
+#+begin_src conf
   #### https://build.i3wm.org/docs/userguide.html#xresources
   set_from_resource         $background_i3wm  background      #000000
   set_from_resource         $foreground_i3wm  foreground      #000000
@@ -113,7 +113,7 @@ Set ==workspace_back_and_forth=
 #+end_src
 
 *** Colors
-#+begin_src conf -n
+#+begin_src conf
   # Theme colors
   # class                 border          backgr.         text            indic.                  child_border
   # My colors
@@ -127,18 +127,18 @@ Set ==workspace_back_and_forth=
 #+end_src
 
 *** font
-#+begin_src conf -n
+#+begin_src conf
   # font
   font pango:JetBrainsMonoNL Nerd Font Mono 10
 #+end_src
 
 *** floating modifier
-#+begin_src conf -n
+#+begin_src conf
   floating_modifier $mod
 #+end_src
 
 ** bar
-#+begin_src conf -n
+#+begin_src conf
   bar {
     status_command i3status
     position bottom
@@ -159,12 +159,12 @@ Set ==workspace_back_and_forth=
 #+end_src
 
 Also set keybinding for toggling bar.
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+m bar mode toggle
 #+end_src
 
 ** application autostart
-#+begin_src conf -n
+#+begin_src conf
   # exec --no-startup-id ~/.local/bin/monitor-setup
   exec --no-startup-id systemctl --user import-environment DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME QT_XCB_GL_INTEGRATION
   exec --no-startup-id dbus-update-activation-environment --systemd --all
@@ -191,13 +191,13 @@ Also set keybinding for toggling bar.
   exec --no-startup-id wal -R
   exec --no-startup-id ~/.fehbg
   #exec --no-startup-id feh --no-fehbg --bg-fill '/home/mkncorp.com/kristian.alexander/.local/share/wallpapers/manga/Sora-no-Otoshimono/angels_sora_no_otoshimono_ikaros_anime_anime_g_by_kardolen65_d6wp5ec.jpg'
-  exec --no-startup-id xclipboard
+  # exec --no-startup-id xclipboard
 #+end_src
 
 ** window rule
-#+begin_src conf -n
+#+begin_src conf
   for_window [class=".*"] border pixel 0
-  for_window [class="(?i)xclipboard"] , move scratchpad
+  # for_window [class="(?i)xclipboard"] , move scratchpad
   for_window [instance="(?i)pavucontrol"] floating enable
   for_window [window_role="pop-up"] floating enable
   for_window [instance="(?i)engrampa"] floating enable
@@ -214,9 +214,9 @@ Also set keybinding for toggling bar.
   for_window [class="^org.kde.polkit-kde-authentication-agent-1"] floating enable
   for_window [class="thunderbird" title="status"] floating enable
   for_window [class="thunderbird" title="(.*)Reminders"] floating enable
-  for_window [class="thunderbird" title="Write.*"] floating enable
+  for_window [class="thunderbird" title="Write.*"] floating enable resize set 680 680
   for_window [class="thunderbird" title="Send.*"] floating enable
-  for_window [class="Msgcompose.*"] floating enable
+  for_window [class="Msgcompose.*"] floating enable resize set 680 680
   for_window [class="QtPass"] floating enable
   for_window [class="(?i)zoom"] floating enable
   for_window [class="(?i)file-roller"] floating enable
@@ -240,7 +240,7 @@ Also set keybinding for toggling bar.
 ** workspace assignment
 
 *** workspace 1
-#+begin_src conf -n
+#+begin_src conf
   assign [class="XTerm"] $ws1
   assign [class="URxvt"] $ws1
   assign [class="Gnome-terminal"] $ws1
@@ -248,7 +248,7 @@ Also set keybinding for toggling bar.
 #+end_src
 
 *** workspace 2
-#+begin_src conf -n
+#+begin_src conf
   assign [class="Emacs"] $ws2
   assign [class="Leafpad"] $ws2
   assign [class="L3afpad"] $ws2
@@ -257,7 +257,7 @@ Also set keybinding for toggling bar.
 #+end_src
 
 *** workspace 3
-#+begin_src conf -n
+#+begin_src conf
   assign [class="qutebrowser"] $ws3
   assign [class="firefox"] $ws3
   assign [class="google-chrome"] $ws3
@@ -266,13 +266,13 @@ Also set keybinding for toggling bar.
 #+end_src
 
 *** workspace 4
-#+begin_src conf -n
+#+begin_src conf
   assign [class="Evolution"] $ws4
   assign [class="thunderbird"] $ws4
 #+end_src
 
 *** workspace 5
-#+begin_src conf -n
+#+begin_src conf
   assign [class="Rhythmbox"] $ws5
   assign [class="vlc"] $ws5
   assign [class="mpv"] $ws5
@@ -282,37 +282,37 @@ Also set keybinding for toggling bar.
 #+end_src
 
 *** workspace 6
-#+begin_src conf -n
+#+begin_src conf
   assign [class="org.remmina.remmina"] $ws6
   assign [class="Virt-manager"] $ws6
   assign [class="Vncviewer"] $ws6
 #+end_src
 
 *** workspace 7
-#+begin_src conf -n
+#+begin_src conf
   assign [class="Steam"] $ws7
   assign [title="Steam"] $ws7
 #+end_src
 *** workspace 8
-#+begin_src conf -n
+#+begin_src conf
   assign [title="Libreoffice"] $ws8
   assign [title="com-sonicwall-NetExtender"] $ws8
   assign [title="Bitwarden"] $ws8
   assign [title="zoom"] $ws8
 #+end_src
 *** workspace 9
-#+begin_src conf -n
+#+begin_src conf
   assign [class="Gucharmap"] $ws9
   assign [class="org.gnome.Characters"] $ws9
   assign [class="Thunar"] $ws9
 #+end_src
 *** workspace 0
-#+begin_src conf -n
+#+begin_src conf
 assign [class="winbox.exe"] $ws10
 #+end_src
 ** Keybindings
 *** media keys
-#+begin_src conf -n
+#+begin_src conf
   bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/dunst-volume -i 1 && $refresh_i3status
   bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/dunst-volume -d 1 && $refresh_i3status
   bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/dunst-volume -t && $refresh_i3status
@@ -329,7 +329,7 @@ assign [class="winbox.exe"] $ws10
 #+end_src
 
 For keyboard with no media keys:
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+F9 exec --no-startup-id ~/.local/bin/dunst-volume -i 1 && $refresh_i3status
   bindsym $mod+F8 exec --no-startup-id ~/.local/bin/dunst-volume -d 1 && $refresh_i3status
   bindsym $mod+F7 exec --no-startup-id ~/.local/bin/dunst-volume -t && $refresh_i3status
@@ -342,33 +342,33 @@ For keyboard with no media keys:
   bindsym $mod+Shift+F2 exec --no-startup-id brightnessctl set 1%-
 #+end_src
 *** browser
-#+begin_src conf -n
+#+begin_src conf
   bindsym XF86MyComputer exec $browser
   bindsym $mod+Mod1+f exec $browser
 #+end_src
 *** mail
-#+begin_src conf -n
+#+begin_src conf
   bindsym XF86Mail exec $mail
   bindsym $mod+Mod1+t exec $mail
 #+end_src
 *** music
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+m exec $terminal --class ncmpcpp -e ncmpcpp
 #+end_src
 *** htop
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+h exec $terminal --class htop -e htop
 #+end_src
 *** nmtui
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+w exec $terminal --class nmtui -e nmtui
 #+end_src
 *** khal
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+k exec $terminal --class khal -e khal interactive
 #+end_src
 *** vim
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+v exec $terminal --class vim -e vim
 #+end_src
 *** dired
@@ -381,85 +381,85 @@ For keyboard with no media keys:
 :END:
 [[./assets/img/rofi-pass.png][file:./assets/img/rofi-pass.png]]
 Rofi front end for [[https://www.passwordstore.org/][pass]]. It stores passwords using /git/ and encrypted with /GnuPG/. It also has an /OTP/ extensions.
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+p exec rofi-pass
 #+end_src
 *** rofi-calc
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme calculator
 #+end_src
 *** rofi-rbw
 Similar to rofi-pass, but for /bitwarden/.
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+b exec rofi-rbw
 #+end_src
 *** text editor
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+n exec $guiemacs
   bindsym $mod+Control+n exec $terminal -e $tuiemacs
 #+end_src
 *** file manager
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+e exec $file
 #+end_src
 *** terminal
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Return exec $terminal
 #+end_src
 *** terminal + screen
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+Return exec $terminal -e screen -m
 #+end_src
 *** kill focused window
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+F4 kill
   bindsym Mod1+F4 kill
 #+end_src
 *** rofi-menu
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+d exec --no-startup-id rofi -show drun -theme i3-apps
 #+end_src
 *** rofi-greenclip
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+c exec --no-startup-id rofi -theme i3-apps -modi "clipboard:greenclip print" -show clipboard
 #+end_src
 *** rofi window menu
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+shift+w exec rofi -theme i3-apps -show windowcd
   bindsym $mod+w exec rofi -theme i3-apps -show window
 #+end_src
 *** tesseract
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+shift+t exec ~/.local/bin/ocr
 #+end_src
 *** screenkey
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+s exec screenkey
 #+end_src
 *** window management
 **** change focus
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+$left focus left
   bindsym $mod+$down focus down
   bindsym $mod+$up focus up
   bindsym $mod+$right focus right
 #+end_src
 Alternatively, with arrow keys:
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Left focus left
   bindsym $mod+Down focus down
   bindsym $mod+Up focus up
   bindsym $mod+Right focus right
 #+end_src
 **** move focused window
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+$left move left
   bindsym $mod+Shift+$down move down
   bindsym $mod+Shift+$up move up
   bindsym $mod+Shift+$right move right
 #+end_src
 Also, with arrow keys:
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+Left move left
   bindsym $mod+Shift+Down move down
   bindsym $mod+Shift+Up move up
@@ -467,59 +467,59 @@ Also, with arrow keys:
 #+end_src
 **** split
 horizontally
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+h split h; exec $notify "Horizontal split"
 #+end_src
 vertically
-#+begin_src conf -n
+#+begin_src conf
     bindsym $mod+Control+v split v exec $notify "Vertical split"
 #+end_src
 **** fullscreen toggle
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+f fullscreen toggle; exec $notify "Fullscreen toggle"
 #+end_src
 **** container layout
 stacked
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+s layout stacking; exec $notify "Stacking layout"
 #+end_src
 tabbed
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+w layout tabbed; exec $notify "Tabbed layout"
 #+end_src
 split
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+e layout toggle split; exec $notify "Split toggle"
 #+end_src
 **** toggle tiling / floating
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+space floating toggle; exec $notify "Floating toggle"
 #+end_src
 **** change focus between tiling / floating windows
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+space focus mode_toggle; exec $notify "Window focus toggle"
 #+end_src
 **** focus parent container
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+a focus parent; exec $notify "Focus parentcontainer"
 #+end_src
 **** focus child container
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+d focus child; exec $notify "Focus child container"
 #+end_src
 **** move to scratchpad
 Move the current focused window into the scratchpad
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+minus move scratchpad; exec $notify "Moved to scratchpad"
 #+end_src
 **** show scratchpad
 Show the next scratchpad window or hide the focused scratchpad window. If there are multiple scratchpad windows, this command cycles through them.
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+minus scratchpad show; exec $notify "Show scratchpad"
   bindsym $mod+Shift+c [class="(?i)xclipboard"] scratchpad show
 #+end_src
 *** workspace management
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+1 workspace $ws1
   bindsym $mod+2 workspace $ws2
   bindsym $mod+3 workspace $ws3
@@ -532,12 +532,12 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   bindsym $mod+0 workspace $ws10
 #+end_src
 **** switch to workspace prev / next
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+bracketleft workspace prev
   bindsym $mod+bracketright workspace next
 #+end_src
 **** move focused containerto workspace
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+1 move container to workspace $ws1
   bindsym $mod+Shift+2 move container to workspace $ws2
   bindsym $mod+Shift+3 move container to workspace $ws3
@@ -550,44 +550,44 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   bindsym $mod+Shift+0 move container to workspace $ws10
 #+end_src
 **** move using bracket keys
-#+begin_src conf -n
+#+begin_src conf
   bindsym Control+Mod1+bracketleft move to workspace previous
   bindsym Control+Mod1+bracketright move to workspace next
 #+end_src
 **** back and forth
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Tab workspace back_and_forth
   bindsym $mod+Shift+Tab move container to workspace back_and_forth
 #+end_src
 **** switch output focus
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+1 focus output primary
   bindsym $mod+Control+2 focus output right
 #+end_src
 **** moving to output
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+Shift+1 move workspace to output primary
   bindsym $mod+Control+Shift+2 move workspace to output right
 #+end_src
 *** Reload configuration
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Shift+F11 reload
 #+end_src
 *** Hot restart
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Control+r restart
 #+end_src
 *** exit i3
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+q exec ~/.local/bin/rofi-i3-logout
 #+end_src
 *** picom transparency
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+F3 exec picom-trans -c +5
   bindsym $mod+F2 exec picom-trans -c -5
 #+end_src
 *** dunst
-#+begin_src conf -n
+#+begin_src conf
   bindsym $mod+Mod1+grave exec dunstctl history-pop
   bindsym $mod+Shift+grave exec dunstctl context
   bindsym $mod+Control+grave exec dunstctl close
@@ -595,7 +595,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 #+end_src
 *** modes
 **** resize
-#+begin_src conf -n
+#+begin_src conf
   # resize window (you can also use the mouse for that)
   mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
@@ -628,7 +628,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 :header-args: :tangle ./.config/i3status/config :mkdirp t
 :END:
 ** header                                                         :noexport:
-#+begin_src conf -n
+#+begin_src conf
   # i3status configuration file.
   # see "man i3status" for documentation.
 
@@ -638,7 +638,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   # If the above line is not correctly displayed, fix your editor first!
 #+end_src
 ** general
-#+begin_src conf -n
+#+begin_src conf
   general {
           colors = true
           interval = 5
@@ -646,7 +646,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   }
 #+end_src
 ** order
-#+begin_src conf -n
+#+begin_src conf
   order += "ipv6"
   order += "wireless _first_"
   order += "ethernet _first_"
@@ -655,21 +655,21 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   order += "tztime local"
 #+end_src
 ** wireless
-#+begin_src conf -n
+#+begin_src conf
   wireless _first_ {
           format_up = "󰖩: (%quality at %essid, %bitrate / %frequency) %ip"
           format_down = "󰖩: down"
   }
 #+end_src
 ** ethernet
-#+begin_src conf -n
+#+begin_src conf
   ethernet _first_ {
           format_up = "󰈀: %ip (%speed)"
           format_down = ""
   }
 #+end_src
 ** battery
-#+begin_src conf -n
+#+begin_src conf
   battery 0 {
           format = "%status %percentage %remaining"
           format_down = ""
@@ -680,7 +680,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   }
 #+end_src
 ** memory
-#+begin_src conf -n
+#+begin_src conf
   memory {
           format = "󰍛 %used"
           threshold_degraded = "1G"
@@ -688,7 +688,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   }
 #+end_src
 ** time
-#+begin_src conf -n
+#+begin_src conf
   tztime local {
           format = "󰥔 %Y-%m-%d %H:%M:%S"
   }
@@ -709,7 +709,7 @@ This utilize the [[https://github.com/tesseract-ocr/tesseract/][tesseract]] pack
 :header-args: :tangle ./.config/rofi/themes/i3-nord.rasi :mkdirp t
 :END:
 I separate the main /nord/ theme here so I can make changes to it without 'disturbing' other window manager settings.
-#+begin_src css -n
+#+begin_src css
   /* -*-css-*- */
   /**
    ,* Nordic rofi theme
@@ -843,7 +843,7 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
 :PROPERTIES:
 :header-args: :tangle ./.config/rofi/themes/i3-apps.rasi :mkdirp t
 :END:
-#+begin_src css -n
+#+begin_src css
   /* -*-css -*- */
   @theme "i3-nord"
 
@@ -875,7 +875,7 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
 :header-args: :tangle ./.config/rofi/themes/i3-logout.rasi :mkdirp t
 :END:
 
-#+begin_src css -n
+#+begin_src css
   /* -*-css -*- */
   @theme "i3-nord"
 
