@@ -19,6 +19,12 @@
 * About
 This is my personal /i3wm/ configuration. The actual code itself is inside this one /org-mode/ file that can be /tangled/ from inside /Emacs/ with the command =org-babel-tangle-file=. I'm using [[https://www.gnu.org/software/stow/][Gnu Stow]] to create symlinks from the files tangled in this /org/ file into my home directory since not all the files in this repository needs to be symlinked[fn:2].
 [[./assets/img/i3wm.png][file:./assets/img/i3wm.png]]
+** The Rework
+After playing with [[https://github.com/alexforsale/dotfiles-hyprland][hyprland]] for a while, I realized that I still need to have an Xorg configuration for my desktop experience. And this i3 configuration has not been updated for a long time.
+
+The thing is, the Xorg itself needs configuring, and the i3 configuration itself doesn't configure X. I've had a separate repository for Xorg configuration files, but it's a pain to update them just for small changes in the window manager.
+
+My goal is to have a repository for i3 window manager, but also have the configuration for X, and also i3 supporting apps.
 * i3wm
 :PROPERTIES:
 :header-args: :tangle ./.config/i3/config :mkdirp t
