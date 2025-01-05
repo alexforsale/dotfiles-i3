@@ -448,6 +448,16 @@ Set environment variables for systemd user services as well for traditional D-Bu
   [ "$(command -v udiskie)" ] &&
       udiskie -C -t &
 #+end_src
+**** 04-qt.sh
+:PROPERTIES:
+:header-args: :tangle .config/xprofile.d/04-qt.sh :shebang #!/bin/sh
+:END:
+#+begin_src sh
+  # ~/.config/xprofile.d/04-qt.sh
+  # QT Environment variables
+
+  [ -z "${QT_STYLE_OVERRIDE}" ] && export QT_STYLE_OVERRIDE=Breeze
+#+end_src
 * GTK
 GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK is suitable for projects ranging from small one-off tools to complete application suites.
 ** GTK 3
