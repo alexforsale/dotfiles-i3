@@ -1795,8 +1795,8 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
       location: southwest;
       anchor: center;
       width: 40%;
-      x-offset: 20%;
-      y-offset: -10%;
+      x-offset: 19.5%;
+      y-offset: -17.5%;
       /* padding-right: 25px; */
   }
 
@@ -1831,8 +1831,8 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
       padding: 10px;
       border:  0px;
       border-radius: 6px;
-      x-offset: -5%;
-      y-offset: 10%;
+      x-offset: -5.5%;
+      y-offset: 12.5%;
       spacing: 0;
       children: [mainbox];
   }
