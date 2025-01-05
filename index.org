@@ -775,6 +775,7 @@ Also set keybinding for toggling bar.
   assign [class="Gucharmap"] $ws7
   assign [class="org.gnome.Characters"] $ws7
   assign [class="winbox.exe"] $ws7
+  assign [class="discord"] $ws7
 #+end_src
 *** workspace 8
 #+begin_src conf
