@@ -30,6 +30,7 @@ I'm using /archlinux/ as my main system for years, so I don't really know if the
 - Full Xorg package  :: by installing the [[https://archlinux.org/groups/x86_64/xorg/][xorg]] package group, perhaps not all are required, but I rather have them from the start just in case.
 - [[https://archlinux.org/packages/?name=i3-wm][i3-wm]] :: /Archlinux/ package for i3-wm. Also install the optional dependencies:
   - [[https://github.com/meskarune/i3lock-fancy][i3lock-fancy-git]] :: i3lock script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
+  -  [[https://github.com/jD91mZM2/xidlehook/][xidlehook]] :: xautolock rewrite in Rust, with a few extra features.
   - i3status :: for the default status bar generator.
   - perl-anyevent-i3 :: for i3-save-tree.
 - [[https://wiki.archlinux.org/title/Dunst][dunst]] :: a lightweight replacement for the notification-daemons provided by most desktop environments. Should be started using systemd, unless you only used it for i3.
@@ -59,6 +60,9 @@ I'm using /archlinux/ as my main system for years, so I don't really know if the
 - [[https://community.kde.org/Frameworks][Breeze-Icons]] :: Breeze icon theme.
 - [[https://github.com/Airblader/unclutter-xfixes][Unclutter]] :: A small program for hiding the mouse cursor, this is already the =unclutter-xfixes= package on /archlinux/.
 - [[https://github.com/Maato/volumeicon][Volumeicon]] :: Volume control for the system tray.
+** Apps Used
+*** Multimedia
+- [[https://github.com/ncmpcpp/ncmpcpp][ncmpcpp]] :: Featureful ncurses based MPD client inspired by ncmpc
 * Xorg
 ** TODO [0%] xinitrc
 :PROPERTIES:
