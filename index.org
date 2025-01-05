@@ -29,7 +29,6 @@ My goal is to have a repository for i3 window manager, but also have the configu
 I'm using /archlinux/ as my main system for years, so I don't really know if the application listed here are also available on other distribution.
 - Full Xorg package  :: by installing the [[https://archlinux.org/groups/x86_64/xorg/][xorg]] package group, perhaps not all are required, but I rather have them from the start just in case.
 - [[https://archlinux.org/packages/?name=i3-wm][i3-wm]] :: /Archlinux/ package for i3-wm. Also install the optional dependencies:
-  - [[https://wiki.archlinux.org/title/Dmenu][dmenu]] :: a fast and lightweight dynamic menu for X.
   - [[https://github.com/meskarune/i3lock-fancy][i3lock-fancy-git]] :: i3lock script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
   - i3status :: for the default status bar generator.
   - perl-anyevent-i3 :: for i3-save-tree.
