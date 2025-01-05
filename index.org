@@ -563,8 +563,12 @@ I use /vim/ keys obviously.
   set $right l
 #+end_src
 
-*** workspaces
-I tried to have a uniformed workspaces across all my window manager configurations. Some
+*** TODO workspaces
+:LOGBOOK:
+- State "TODO"       from              [2025-01-01 Wed 18:48]
+:END:
+I tried to have a uniformed workspaces across all my window manager configurations. 
+I should work on this.
 #+begin_src conf
   set $ws1 "1: Term"
   set $ws2 "2: Code"
@@ -572,19 +576,20 @@ I tried to have a uniformed workspaces across all my window manager configuratio
   set $ws4 "4: Mail"
   set $ws5 "5: File"
   set $ws6 "6: Office"
-  set $ws7 "7: Games"
-  set $ws8 "8: Remote"
-  set $ws9 "9: Torrent"
-  set $ws10 "10: Chat"
+  set $ws7 "7: Others"
+  set $ws8 "8: Media"
+  set $ws9 "9: Remote"
+  set $ws10 "10: Steam"
 #+end_src
 
 Set ==workspace_back_and_forth=
+Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window manager I use.
 #+begin_src conf
   workspace_auto_back_and_forth yes
 #+end_src
 *** applications
 #+begin_src conf
-  set $terminal xterm
+  set $terminal alacritty
   set $browser firefox
   set $mail thunderbird
   set $guiemacs emacsclient -c -a emacs
@@ -663,32 +668,16 @@ Also set keybinding for toggling bar.
 ** application autostart
 #+begin_src conf
   # exec --no-startup-id ~/.local/bin/monitor-setup
-  exec --no-startup-id systemctl --user import-environment DISPLAY XDG_CURRENT_DESKTOP QT_QPA_PLATFORMTHEME QT_XCB_GL_INTEGRATION
-  exec --no-startup-id dbus-update-activation-environment --systemd --all
-  exec --no-startup-id dbus-launch --exit-with-session gnome-keyring-daemon --components=pkcs11,secrets,ssh -r -d
-  exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &
   exec --no-startup-id xsetroot -cursor_name left_ptr
-  exec --no-startup-id xset r rate 300 30
-  exec --no-startup-id xrdb -merge ~/.Xresources
-  #exec --no-startup-id dex --autostart --environment i3
   exec --no-startup-id dbus-launch --exit-with-session picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
-  exec --no-startup-id dbus-launch --exit-with-session udiskie -t &
-  exec --no-startup-id dbus-launch dunst -conf ~/.config/dunst/dunstrc &
   exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
-  exec --no-startup-id dbus-launch --exit-with-session /usr/lib/kdeconnectd &
-  exec --no-startup-id dbus-launch --exit-with-session nm-applet --indicator &
-  exec --no-startup-id dbus-launch --exit-with-session xsettingsd &
-  exec --no-startup-id dbus-launch blueman-applet &
   exec --no-startup-id dbus-launch --exit-with-session unclutter &
   exec --no-startup-id dbus-launch volumeicon &
   exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null &
   exec --no-startup-id $file --daemon &
   exec --no-startup-id ~/.local/bin/transfer-sleep-lock-i3lock-fancy &
-  exec --no-startup-id systemctl --user start redshift-gtk
-  exec --no-startup-id wal -R
   exec --no-startup-id ~/.fehbg
-  #exec --no-startup-id feh --no-fehbg --bg-fill '/home/mkncorp.com/kristian.alexander/.local/share/wallpapers/manga/Sora-no-Otoshimono/angels_sora_no_otoshimono_ikaros_anime_anime_g_by_kardolen65_d6wp5ec.jpg'
-  # exec --no-startup-id xclipboard
+  exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpass-Nerd-Font-Reg -detectsleep
 #+end_src
 
 ** window rule
@@ -770,42 +759,42 @@ Also set keybinding for toggling bar.
 
 *** workspace 5
 #+begin_src conf
-  assign [class="Rhythmbox"] $ws5
-  assign [class="vlc"] $ws5
-  assign [class="mpv"] $ws5
-  assign [class="Cheese"] $ws5
-  assign [class="Spotify"] $ws5
-  assign [class="Picard"] $ws5
+  assign [class="Thunar"] $ws5
 #+end_src
 
 *** workspace 6
 #+begin_src conf
-  assign [class="org.remmina.remmina"] $ws6
-  assign [class="Virt-manager"] $ws6
-  assign [class="Vncviewer"] $ws6
+  assign [title="Libreoffice"] $ws6
+  assign [title="com-sonicwall-NetExtender"] $ws6
+  assign [title="Bitwarden"] $ws6
+  assign [title="zoom"] $ws6
 #+end_src
 
 *** workspace 7
 #+begin_src conf
-  assign [class="Steam"] $ws7
-  assign [title="Steam"] $ws7
+  assign [class="Gucharmap"] $ws7
+  assign [class="org.gnome.Characters"] $ws7
+  assign [class="winbox.exe"] $ws7
 #+end_src
 *** workspace 8
 #+begin_src conf
-  assign [title="Libreoffice"] $ws8
-  assign [title="com-sonicwall-NetExtender"] $ws8
-  assign [title="Bitwarden"] $ws8
-  assign [title="zoom"] $ws8
+  assign [class="Rhythmbox"] $ws8
+  assign [class="vlc"] $ws8
+  assign [class="mpv"] $ws8
+  assign [class="Cheese"] $ws8
+  assign [class="Spotify"] $ws8
+  assign [class="Picard"] $ws8
 #+end_src
 *** workspace 9
 #+begin_src conf
-  assign [class="Gucharmap"] $ws9
-  assign [class="org.gnome.Characters"] $ws9
-  assign [class="Thunar"] $ws9
+  assign [class="org.remmina.remmina"] $ws9
+  assign [class="Virt-manager"] $ws9
+  assign [class="Vncviewer"] $ws9
 #+end_src
 *** workspace 0
 #+begin_src conf
-assign [class="winbox.exe"] $ws10
+  assign [class="Steam"] $ws10
+  assign [title="Steam"] $ws10
 #+end_src
 ** Keybindings
 *** media keys
@@ -1124,6 +1113,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 :PROPERTIES:
 :header-args: :tangle ./.config/i3status/config :mkdirp t
 :END:
+I don't mess much with /i3status/, it's usually hidden most of the times.
 ** header                                                         :noexport:
 #+begin_src conf
   # i3status configuration file.
@@ -1916,7 +1906,7 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
       'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
     `# Undim & lock after 10 more seconds` \
     --timer 10 \
-      'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock-fancy -d ' \
+      'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock-fancy -f Overpass-Nerd-Font-Reg -d ' \
       '' \
     `# Finally, suspend an hour after it locks` \
     --timer 3600 \
