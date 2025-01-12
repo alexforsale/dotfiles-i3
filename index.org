@@ -938,6 +938,11 @@ Alternatively, with arrow keys:
   bindsym $mod+Up focus up
   bindsym $mod+Right focus right
 #+end_src
+Adding ALT-TAB functionality just in case.
+#+begin_src conf
+  bindsym Mod1+Tab focus right
+  bindsym Mod1+Shift+Tab focus left
+#+end_src
 **** move focused window
 #+begin_src conf
   bindsym $mod+Shift+$left move left
