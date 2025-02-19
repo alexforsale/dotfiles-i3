@@ -720,8 +720,8 @@ Also set keybinding for toggling bar.
   for_window [class="(?i)transmission.*"] floating enable
   for_window [class="(?i)anydesk.*"] floating enable
   for_window [class="(?i)lxappearance"] floating enable
-  for_window [class="virt-manager"] floating enable move position center resize set 680 680
-  for_window [class="(?i)steam.*"] floating enable move position center resize set 680 680
+  for_window [class="virt-manager"] floating enable resize set 680 680 move position center
+  for_window [class="(?i)steam.*"] floating enable resize set 680 680 move position center
 #+end_src
 
 ** workspace assignment
