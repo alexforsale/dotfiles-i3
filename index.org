@@ -672,6 +672,7 @@ Also set keybinding for toggling bar.
   exec --no-startup-id dbus-launch --exit-with-session picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
   exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
   exec --no-startup-id dbus-launch --exit-with-session unclutter &
+  exec --no-startup-id dbus-launch nm-applet &
   exec --no-startup-id dbus-launch volumeicon &
   exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null &
   exec --no-startup-id $file --daemon &
@@ -1735,11 +1736,11 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
       location: northeast;
       anchor:   center;
       transparency: "screenshot";
-      width: 10%;
+      width: 15%;
       padding: 10px;
       border:  0px;
       border-radius: 6px;
-      x-offset: -5.5%;
+      x-offset: -7.5%;
       y-offset: 12.5%;
       spacing: 0;
       children: [mainbox];
