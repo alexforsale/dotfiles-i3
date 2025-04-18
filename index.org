@@ -642,6 +642,13 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
   floating_modifier $mod
 #+end_src
 
+** Gaps
+[[./assets/img/i3wm-2025-04-18_21-42.png][file:./assets/img/i3wm-2025-04-18_21-42.png]]
+#+begin_src conf
+  gaps inner 2px
+  gaps outer 2px
+  smart_gaps on
+#+end_src
 ** bar
 #+begin_src conf
   bar {
