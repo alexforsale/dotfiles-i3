@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-01-05 Sun 18:22 -->
+<!-- 2025-04-18 Fri 14:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>i3wm Configuration Files</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Kristian Alexander P" />
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
 <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
@@ -17,81 +17,95 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style> #content{max-width:1800px;}</style>
+<style> p{max-width:800px;}</style>
+<style> li{max-width:800px;}</style>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">i3wm Configuration Files</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2734358">About</a>
+<li><a href="#org9623738">About</a>
 <ul>
-<li><a href="#org2f6b4cb">The Rework</a></li>
-<li><a href="#org824d30b">Required packages</a></li>
-<li><a href="#orgd36bf20">Optional packages</a></li>
-<li><a href="#orgffba4c5">Themes, fonts, and other UI related packages</a></li>
-<li><a href="#orgc38e323">Apps Used</a></li>
+<li><a href="#org89df1a0">The Rework</a></li>
+<li><a href="#org733f666">Required packages</a></li>
+<li><a href="#org6561028">Optional packages</a></li>
+<li><a href="#org1ed9924">Themes, fonts, and other UI related packages</a></li>
+<li><a href="#org536b248">Apps Used</a></li>
 </ul>
 </li>
-<li><a href="#orge836f86">Xorg</a>
+<li><a href="#org7bce2e7">Xorg</a>
 <ul>
-<li><a href="#org6b127ff"><span class="todo TODO">TODO</span> <code>[0%]</code> xinitrc</a></li>
-<li><a href="#org99663f1">Xresources</a></li>
-<li><a href="#org31ad8bb">Xprofile</a></li>
+<li><a href="#orgb72838a"><span class="todo TODO">TODO</span> <code>[0%]</code> xinitrc</a></li>
+<li><a href="#orgbca1371">Xresources</a></li>
+<li><a href="#org863053e">Xprofile</a></li>
 </ul>
 </li>
-<li><a href="#org49ec065">GTK</a>
+<li><a href="#org95f014d">GTK</a>
 <ul>
-<li><a href="#orga5b143b">GTK 3</a></li>
-<li><a href="#org9c268ef">GTK 4</a></li>
+<li><a href="#org66a5924">GTK 3</a></li>
+<li><a href="#orgbd30df8">GTK 4</a></li>
 </ul>
 </li>
-<li><a href="#org45d90fa">i3wm</a>
+<li><a href="#orgfb65728">i3wm</a>
 <ul>
-<li><a href="#org268bba3">variables</a></li>
-<li><a href="#org0e6f4ce">bar</a></li>
-<li><a href="#org92c10b0">application autostart</a></li>
-<li><a href="#org7e21d79">window rule</a></li>
-<li><a href="#org864ce15">workspace assignment</a></li>
-<li><a href="#orgbf7c5d7">Keybindings</a></li>
+<li><a href="#orge30d010">variables</a></li>
+<li><a href="#org9dc3c50">bar</a></li>
+<li><a href="#org54f0369">application autostart</a></li>
+<li><a href="#orgeaae906">window rule</a></li>
+<li><a href="#org8a49759">workspace assignment</a></li>
+<li><a href="#orgb16d0d8">Keybindings</a></li>
 </ul>
 </li>
-<li><a href="#org753379d">i3status</a>
+<li><a href="#org0a7a8a7">i3status</a>
 <ul>
-<li><a href="#orgcb227a8">general</a></li>
-<li><a href="#orgab7b1be">order</a></li>
-<li><a href="#org91b073b">wireless</a></li>
-<li><a href="#org3efa563">ethernet</a></li>
-<li><a href="#orgf6b043f">battery</a></li>
-<li><a href="#orga227780">memory</a></li>
-<li><a href="#org02dff00">time</a></li>
+<li><a href="#org1393273">general</a></li>
+<li><a href="#orga1f82f2">order</a></li>
+<li><a href="#orgabb1598">wireless</a></li>
+<li><a href="#org4d278a9">ethernet</a></li>
+<li><a href="#org1bff127">battery</a></li>
+<li><a href="#orgbb03044">memory</a></li>
+<li><a href="#org5b24295">time</a></li>
 </ul>
 </li>
-<li><a href="#org0b772ce">picom</a></li>
-<li><a href="#org4a75979">Scripts</a>
+<li><a href="#orgb7fc650">picom</a>
 <ul>
-<li><a href="#orgc5d3756">ocr</a></li>
-<li><a href="#orgeb48957">Rofi</a></li>
-<li><a href="#org54daa22">i3-logout</a></li>
-<li><a href="#orgbf38547">transfer screen lock</a></li>
+<li><a href="#orga446b06">Shadows</a></li>
+<li><a href="#org8eee873">Fading</a></li>
+<li><a href="#org7a162c6">Transparency</a></li>
+<li><a href="#org5516254">Corners</a></li>
+<li><a href="#orge6f9c76">Blur</a></li>
+<li><a href="#org0065f75">General Settings</a></li>
+<li><a href="#org146a726">Rules</a></li>
+<li><a href="#org3cbb81e">Includes</a></li>
+</ul>
+</li>
+<li><a href="#org153cae6">Scripts</a>
+<ul>
+<li><a href="#org8bbe94b">ocr</a></li>
+<li><a href="#org9772255">Rofi</a></li>
+<li><a href="#org37187af">i3-logout</a></li>
+<li><a href="#org3c02dd7">transfer screen lock</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2734358" class="outline-2">
-<h2 id="org2734358">About</h2>
-<div class="outline-text-2" id="text-org2734358">
+<div id="outline-container-org9623738" class="outline-2">
+<h2 id="org9623738">About</h2>
+<div class="outline-text-2" id="text-org9623738">
 <p>
-This is my personal <i>i3wm</i> configuration. The actual code itself is inside this one <i>org-mode</i> file that can be <i>tangled</i> from inside <i>Emacs</i> with the command <code>org-babel-tangle-file</code>. I'm using <a href="https://www.gnu.org/software/stow/">Gnu Stow</a> to create symlinks from the files tangled in this <i>org</i> file into my home directory since not all the files in this repository needs to be symlinked<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+This is my personal <i>i3wm</i> configuration. The actual code itself is inside this one <i>org-mode</i> file that can be <i>tangled</i> from inside <i>Emacs</i> with the command <code>org-babel-tangle-file</code>. I'm using <a href="https://www.gnu.org/software/stow/">Gnu Stow</a> to create symlinks from the files tangled in this <i>org</i> file into my home directory since not all the files in this repository needs to be symlinked<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>.
 <a href="./assets/img/i3wm.png"><img src="./assets/img/i3wm.png" alt="i3wm.png" /></a>
 </p>
 </div>
-<div id="outline-container-org2f6b4cb" class="outline-3">
-<h3 id="org2f6b4cb">The Rework</h3>
-<div class="outline-text-3" id="text-org2f6b4cb">
+<div id="outline-container-org89df1a0" class="outline-3">
+<h3 id="org89df1a0">The Rework</h3>
+<div class="outline-text-3" id="text-org89df1a0">
 <p>
 After playing with <a href="https://github.com/alexforsale/dotfiles-hyprland">hyprland</a> for a while, I realized that I still need to have an Xorg configuration for my desktop experience. And this i3 configuration has not been updated for a long time.
 </p>
@@ -105,9 +119,9 @@ My goal is to have a repository for i3 window manager, but also have the configu
 </p>
 </div>
 </div>
-<div id="outline-container-org824d30b" class="outline-3">
-<h3 id="org824d30b">Required packages</h3>
-<div class="outline-text-3" id="text-org824d30b">
+<div id="outline-container-org733f666" class="outline-3">
+<h3 id="org733f666">Required packages</h3>
+<div class="outline-text-3" id="text-org733f666">
 <p>
 I'm using <i>archlinux</i> as my main system for years, so I don't really know if the application listed here are also available on other distribution.
 </p>
@@ -127,9 +141,9 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </dl>
 </div>
 </div>
-<div id="outline-container-orgd36bf20" class="outline-3">
-<h3 id="orgd36bf20">Optional packages</h3>
-<div class="outline-text-3" id="text-orgd36bf20">
+<div id="outline-container-org6561028" class="outline-3">
+<h3 id="org6561028">Optional packages</h3>
+<div class="outline-text-3" id="text-org6561028">
 <dl class="org-dl">
 <dt>archlinux-wallpaper</dt><dd>for initial wallpapers.</dd>
 <dt><a href="https://wiki.archlinux.org/title/Feh">feh</a></dt><dd>a lightweight image viewer aimed mainly at users of command line interfaces. Unlike most graphical image viewers.</dd>
@@ -146,9 +160,9 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </dl>
 </div>
 </div>
-<div id="outline-container-orgffba4c5" class="outline-3">
-<h3 id="orgffba4c5">Themes, fonts, and other UI related packages</h3>
-<div class="outline-text-3" id="text-orgffba4c5">
+<div id="outline-container-org1ed9924" class="outline-3">
+<h3 id="org1ed9924">Themes, fonts, and other UI related packages</h3>
+<div class="outline-text-3" id="text-org1ed9924">
 <dl class="org-dl">
 <dt><a href="https://github.com/ryanoasis/nerd-fonts">ttf-jetbrains-mono-nerd</a></dt><dd>Patched font JetBrains Mono from nerd fonts library</dd>
 <dt><a href="https://github.com/ryanoasis/nerd-fonts">otf-overpass-nerd</a></dt><dd>Patched font Overpass from nerd fonts library.</dd>
@@ -162,13 +176,13 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </dl>
 </div>
 </div>
-<div id="outline-container-orgc38e323" class="outline-3">
-<h3 id="orgc38e323">Apps Used</h3>
-<div class="outline-text-3" id="text-orgc38e323">
+<div id="outline-container-org536b248" class="outline-3">
+<h3 id="org536b248">Apps Used</h3>
+<div class="outline-text-3" id="text-org536b248">
 </div>
 <ul class="org-ul">
-<li><a id="org3336de6"></a>Multimedia<br />
-<div class="outline-text-4" id="text-org3336de6">
+<li><a id="orgf424c5b"></a>Multimedia<br />
+<div class="outline-text-4" id="text-orgf424c5b">
 <dl class="org-dl">
 <dt><a href="https://github.com/ncmpcpp/ncmpcpp">ncmpcpp</a></dt><dd>Featureful ncurses based MPD client inspired by ncmpc</dd>
 </dl>
@@ -177,13 +191,13 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </ul>
 </div>
 </div>
-<div id="outline-container-orge836f86" class="outline-2">
-<h2 id="orge836f86">Xorg</h2>
-<div class="outline-text-2" id="text-orge836f86">
+<div id="outline-container-org7bce2e7" class="outline-2">
+<h2 id="org7bce2e7">Xorg</h2>
+<div class="outline-text-2" id="text-org7bce2e7">
 </div>
-<div id="outline-container-org6b127ff" class="outline-3">
-<h3 id="org6b127ff"><span class="todo TODO">TODO</span> <code>[0%]</code> xinitrc</h3>
-<div class="outline-text-3" id="text-org6b127ff">
+<div id="outline-container-orgb72838a" class="outline-3">
+<h3 id="orgb72838a"><span class="todo TODO">TODO</span> <code>[0%]</code> xinitrc</h3>
+<div class="outline-text-3" id="text-orgb72838a">
 <p>
 <i>archlinux</i> users would want to install <a href="https://archlinux.org/packages/?name=xorg-xinit">xorg-xinit</a> first.
 </p>
@@ -194,8 +208,8 @@ The xinit program allows a user to manually start an Xorg display server. The st
 </div>
 
 <ul class="org-ul">
-<li><a id="org31759cf"></a><span class="todo TODO">TODO</span> [ ] OS-related system configuration<br />
-<div class="outline-text-4" id="text-org31759cf">
+<li><a id="org1f3b8c2"></a><span class="todo TODO">TODO</span> [ ] OS-related system configuration<br />
+<div class="outline-text-4" id="text-org1f3b8c2">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #b22222;"># </span><span style="color: #b22222;">~/.xinitrc</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Configuration script for manual X session.</span>
@@ -246,8 +260,8 @@ Some distro have their own configuration, rather than copying their contents her
 </div>
 </li>
 
-<li><a id="orgd5d743f"></a><span class="todo TODO">TODO</span> [ ] Source xprofile<br />
-<div class="outline-text-4" id="text-orgd5d743f">
+<li><a id="orgfc834e9"></a><span class="todo TODO">TODO</span> [ ] Source xprofile<br />
+<div class="outline-text-4" id="text-orgfc834e9">
 <p>
 This is to make sure xprofile is sourced when using xinit.
 </p>
@@ -262,8 +276,8 @@ By putting those 2 lines will also source xprofile for any display manager that 
 </div>
 </li>
 
-<li><a id="org3e4fb5f"></a><span class="todo TODO">TODO</span> [ ] Initial wallpapers<br />
-<div class="outline-text-4" id="text-org3e4fb5f">
+<li><a id="orgb908b70"></a><span class="todo TODO">TODO</span> [ ] Initial wallpapers<br />
+<div class="outline-text-4" id="text-orgb908b70">
 <p>
 By itself i3 doesn't provide wallpapers, luckily <i>archlinux</i> have its own wallpaper package.
 </p>
@@ -278,8 +292,8 @@ This snippet should be removed if wallpaper is configured inside the i3 config f
 </div>
 </li>
 
-<li><a id="orge6e0b33"></a><span class="todo TODO">TODO</span> [ ] <i>chemacs</i> configuration<br />
-<div class="outline-text-4" id="text-orge6e0b33">
+<li><a id="org03ceb14"></a><span class="todo TODO">TODO</span> [ ] <i>chemacs</i> configuration<br />
+<div class="outline-text-4" id="text-org03ceb14">
 <p>
 I sometimes used <a href="https://github.com/plexus/chemacs2">chemacs2</a> for using multiple <i>Emacs</i> configuration at once.
 </p>
@@ -298,8 +312,8 @@ I sometimes used <a href="https://github.com/plexus/chemacs2">chemacs2</a> for u
 </div>
 </li>
 
-<li><a id="org0d32c1b"></a>Start i3<br />
-<div class="outline-text-4" id="text-org0d32c1b">
+<li><a id="org334c820"></a>Start i3<br />
+<div class="outline-text-4" id="text-org334c820">
 <p>
 This is taken from the i3 manual.
 </p>
@@ -325,9 +339,9 @@ mkdir -p ~/.local/share/i3
 </ul>
 </div>
 
-<div id="outline-container-org99663f1" class="outline-3">
-<h3 id="org99663f1">Xresources</h3>
-<div class="outline-text-3" id="text-org99663f1">
+<div id="outline-container-orgbca1371" class="outline-3">
+<h3 id="orgbca1371">Xresources</h3>
+<div class="outline-text-3" id="text-orgbca1371">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#</span><span style="color: #b22222;">include ".config/Xresources.d/xterm"</span>
 <span style="color: #b22222;">#</span><span style="color: #b22222;">include ".config/Xresources.d/URxvt"</span>
@@ -338,10 +352,10 @@ mkdir -p ~/.local/share/i3
 </div>
 
 <ul class="org-ul">
-<li><a id="org52de992"></a>Modules<br />
+<li><a id="org9a0e1b6"></a>Modules<br />
 <ul class="org-ul">
-<li><a id="org08289b8"></a>xterm<br />
-<div class="outline-text-5" id="text-org08289b8">
+<li><a id="orgdea18d5"></a>xterm<br />
+<div class="outline-text-5" id="text-orgdea18d5">
 <div class="org-src-container">
 <pre class="src src-conf">xterm*termName: xterm-256color
 xterm.vt100.geometry: 80x24
@@ -371,8 +385,8 @@ xterm*faceSize: 12
 </div>
 </div>
 </li>
-<li><a id="orged0ac14"></a>URxvt<br />
-<div class="outline-text-5" id="text-orged0ac14">
+<li><a id="org2de3a32"></a>URxvt<br />
+<div class="outline-text-5" id="text-org2de3a32">
 <div class="org-src-container">
 <pre class="src src-conf"><span class="linenr"> 1: </span>xterm*termName: xterm-256color
 <span class="linenr"> 2: </span>xterm.vt100.geometry: 80x24
@@ -403,8 +417,8 @@ xterm*faceSize: 12
 </div>
 </li>
 
-<li><a id="orgef45434"></a>colors<br />
-<div class="outline-text-5" id="text-orgef45434">
+<li><a id="org3be99c9"></a>colors<br />
+<div class="outline-text-5" id="text-org3be99c9">
 <p>
 This is (I think) <i>nord</i> color scheme.
 </p>
@@ -484,8 +498,8 @@ This is (I think) <i>nord</i> color scheme.
 </div>
 </li>
 
-<li><a id="org3971dbd"></a>cursor<br />
-<div class="outline-text-5" id="text-org3971dbd">
+<li><a id="org812a422"></a>cursor<br />
+<div class="outline-text-5" id="text-org812a422">
 <p>
 For cursor configuration
 </p>
@@ -509,9 +523,9 @@ Xft.dpi: 96
 </li>
 </ul>
 </div>
-<div id="outline-container-org31ad8bb" class="outline-3">
-<h3 id="org31ad8bb">Xprofile</h3>
-<div class="outline-text-3" id="text-org31ad8bb">
+<div id="outline-container-org863053e" class="outline-3">
+<h3 id="org863053e">Xprofile</h3>
+<div class="outline-text-3" id="text-org863053e">
 <p>
 An xprofile file, ~/.xprofile and /etc/xprofile, allows you to execute commands at the beginning of the X user session - before the window manager is started. 
 </p>
@@ -546,15 +560,15 @@ Also source a file name <code>~/.xprofile.local</code> or <code>~/.config/xprofi
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="orgc7d10c0"></a>Modules<br />
+<li><a id="org47c46c1"></a>Modules<br />
 <ul class="org-ul">
-<li><a id="orgfd4ebe9"></a>00-security.sh<br />
-<div class="outline-text-5" id="text-orgfd4ebe9">
+<li><a id="org66e9927"></a>00-security.sh<br />
+<div class="outline-text-5" id="text-org66e9927">
 </div>
 
 <ul class="org-ul">
-<li><a id="orgc2626cf"></a>SSH-askpass<br />
-<div class="outline-text-6" id="text-orgc2626cf">
+<li><a id="orgd87542d"></a>SSH-askpass<br />
+<div class="outline-text-6" id="text-orgd87542d">
 <p>
 This will link the executable from <code>/usr/lib/ssh/</code> to <code>~/.local/bin/</code>. I forgot why I did this, when I could just use the actual location.
 </p>
@@ -572,8 +586,8 @@ This will link the executable from <code>/usr/lib/ssh/</code> to <code>~/.local/
 </div>
 </div>
 </li>
-<li><a id="org9889e8a"></a>dbus<br />
-<div class="outline-text-6" id="text-org9889e8a">
+<li><a id="orga550f3a"></a>dbus<br />
+<div class="outline-text-6" id="text-orga550f3a">
 <p>
 Set environment variables for systemd user services as well for traditional D-Bus session services.
 </p>
@@ -589,8 +603,8 @@ Set environment variables for systemd user services as well for traditional D-Bu
 </ul>
 </li>
 
-<li><a id="org1efc725"></a>01-bluetooth.sh<br />
-<div class="outline-text-5" id="text-org1efc725">
+<li><a id="org32877fe"></a>01-bluetooth.sh<br />
+<div class="outline-text-5" id="text-org32877fe">
 <div class="org-src-container">
 <pre class="src src-sh"><span class="linenr">1: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">~/.config/xprofile.d/04-bluetooth.sh</span>
 <span class="linenr">2: </span><span style="color: #b22222;"># </span><span style="color: #b22222;">bluetooth configuration</span>
@@ -605,8 +619,8 @@ Set environment variables for systemd user services as well for traditional D-Bu
 </div>
 </div>
 </li>
-<li><a id="org1b6277f"></a>02-cursor.sh<br />
-<div class="outline-text-5" id="text-org1b6277f">
+<li><a id="orgd12b56b"></a>02-cursor.sh<br />
+<div class="outline-text-5" id="text-orgd12b56b">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #b22222;"># </span><span style="color: #b22222;">~/.config/xprofile.d/02-cursor.sh</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">various ui settings</span>
@@ -620,8 +634,8 @@ Set environment variables for systemd user services as well for traditional D-Bu
 </div>
 </div>
 </li>
-<li><a id="orgf13da10"></a>03-udiskie.sh<br />
-<div class="outline-text-5" id="text-orgf13da10">
+<li><a id="orgaadb877"></a>03-udiskie.sh<br />
+<div class="outline-text-5" id="text-orgaadb877">
 <p>
 <code>-C</code> for no config file since I don't use any. <code>-s</code> for enabling the smart tray icon.
 </p>
@@ -635,8 +649,8 @@ Set environment variables for systemd user services as well for traditional D-Bu
 </div>
 </div>
 </li>
-<li><a id="org5a90ba0"></a>04-qt.sh<br />
-<div class="outline-text-5" id="text-org5a90ba0">
+<li><a id="org35dd0ba"></a>04-qt.sh<br />
+<div class="outline-text-5" id="text-org35dd0ba">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #b22222;"># </span><span style="color: #b22222;">~/.config/xprofile.d/04-qt.sh</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">QT Environment variables</span>
@@ -651,20 +665,20 @@ Set environment variables for systemd user services as well for traditional D-Bu
 </ul>
 </div>
 </div>
-<div id="outline-container-org49ec065" class="outline-2">
-<h2 id="org49ec065">GTK</h2>
-<div class="outline-text-2" id="text-org49ec065">
+<div id="outline-container-org95f014d" class="outline-2">
+<h2 id="org95f014d">GTK</h2>
+<div class="outline-text-2" id="text-org95f014d">
 <p>
 GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK is suitable for projects ranging from small one-off tools to complete application suites. Most of these settings are taken from <i>Arch</i> <a href="https://wiki.archlinux.org/title/GTK">wiki</a>.
 </p>
 </div>
-<div id="outline-container-orga5b143b" class="outline-3">
-<h3 id="orga5b143b">GTK 3</h3>
-<div class="outline-text-3" id="text-orga5b143b">
+<div id="outline-container-org66a5924" class="outline-3">
+<h3 id="org66a5924">GTK 3</h3>
+<div class="outline-text-3" id="text-org66a5924">
 </div>
 <ul class="org-ul">
-<li><a id="org69d1368"></a>Settings<br />
-<div class="outline-text-4" id="text-org69d1368">
+<li><a id="org0390fb0"></a>Settings<br />
+<div class="outline-text-4" id="text-org0390fb0">
 <div class="org-src-container">
 <pre class="src src-conf">[<span style="color: #228b22;">Settings</span>]
 <span style="color: #b8860b;">gtk-theme-name</span>=Breeze-Dark
@@ -691,13 +705,13 @@ GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical use
 </li>
 </ul>
 </div>
-<div id="outline-container-org9c268ef" class="outline-3">
-<h3 id="org9c268ef">GTK 4</h3>
-<div class="outline-text-3" id="text-org9c268ef">
+<div id="outline-container-orgbd30df8" class="outline-3">
+<h3 id="orgbd30df8">GTK 4</h3>
+<div class="outline-text-3" id="text-orgbd30df8">
 </div>
 <ul class="org-ul">
-<li><a id="org1c89d04"></a>Settings<br />
-<div class="outline-text-4" id="text-org1c89d04">
+<li><a id="orga0e8b27"></a>Settings<br />
+<div class="outline-text-4" id="text-orga0e8b27">
 <div class="org-src-container">
 <pre class="src src-conf">[<span style="color: #228b22;">Settings</span>]
 <span style="color: #b8860b;">gtk-theme-name</span>=Breeze-Dark
@@ -725,25 +739,25 @@ GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical use
 </div>
 </div>
 
-<div id="outline-container-org45d90fa" class="outline-2">
-<h2 id="org45d90fa">i3wm</h2>
-<div class="outline-text-2" id="text-org45d90fa">
+<div id="outline-container-orgfb65728" class="outline-2">
+<h2 id="orgfb65728">i3wm</h2>
+<div class="outline-text-2" id="text-orgfb65728">
 <p>
 The <a href="https://wiki.archlinux.org/title/i3">i3-wm</a> package that I used is from the default repository in <i>archlinux</i>.
 </p>
 </div>
-<div id="outline-container-org268bba3" class="outline-3">
-<h3 id="org268bba3">variables</h3>
-<div class="outline-text-3" id="text-org268bba3">
+<div id="outline-container-orge30d010" class="outline-3">
+<h3 id="orge30d010">variables</h3>
+<div class="outline-text-3" id="text-orge30d010">
 <p>
 Mostly these variables are set to avoid repetion.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgaceb47f"></a>mod key<br />
-<div class="outline-text-4" id="text-orgaceb47f">
+<li><a id="org6b73a81"></a>mod key<br />
+<div class="outline-text-4" id="text-org6b73a81">
 <p>
-<code>Mod4</code> is the <code>Super</code> key, or <code>Win</code> key for the rest of the world. <code>Mod1</code> is <code>Alt</code><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. You don't have to set this variable, but by using variable, we can change the <i>mod</i> key without having to change each individual lines of keybindings.
+<code>Mod4</code> is the <code>Super</code> key, or <code>Win</code> key for the rest of the world. <code>Mod1</code> is <code>Alt</code><sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. You don't have to set this variable, but by using variable, we can change the <i>mod</i> key without having to change each individual lines of keybindings.
 </p>
 <div class="org-src-container">
 <pre class="src src-conf">set $mod Mod4
@@ -751,8 +765,8 @@ Mostly these variables are set to avoid repetion.
 </div>
 </div>
 </li>
-<li><a id="orgc6e7efd"></a>font<br />
-<div class="outline-text-4" id="text-orgc6e7efd">
+<li><a id="org2f74ead"></a>font<br />
+<div class="outline-text-4" id="text-org2f74ead">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">font</span>
 font pango:JetBrainsMonoNL Nerd Font Mono 10
@@ -761,8 +775,8 @@ font pango:JetBrainsMonoNL Nerd Font Mono 10
 </div>
 </li>
 
-<li><a id="org9f24a03"></a>notify<br />
-<div class="outline-text-4" id="text-org9f24a03">
+<li><a id="org19086ad"></a>notify<br />
+<div class="outline-text-4" id="text-org19086ad">
 <p>
 I used <a href="https://wiki.archlinux.org/title/Dunst">dunst</a> as a desktop notification, though there's many other packages that can replace it. I prefer <i>dunst</i> because it's easier to configure.
 </p>
@@ -773,8 +787,8 @@ I used <a href="https://wiki.archlinux.org/title/Dunst">dunst</a> as a desktop n
 </div>
 </li>
 
-<li><a id="org86c9805"></a>refresh i3status<br />
-<div class="outline-text-4" id="text-org86c9805">
+<li><a id="org1c5a44c"></a>refresh i3status<br />
+<div class="outline-text-4" id="text-org1c5a44c">
 <p>
 The preferred status bar for <i>i3</i>, I like the simplicity of <a href="https://github.com/i3/i3status">i3status</a>.
 </p>
@@ -785,8 +799,8 @@ The preferred status bar for <i>i3</i>, I like the simplicity of <a href="https:
 </div>
 </li>
 
-<li><a id="org33218ed"></a>navigation keys<br />
-<div class="outline-text-4" id="text-org33218ed">
+<li><a id="orge4e1ce3"></a>navigation keys<br />
+<div class="outline-text-4" id="text-orge4e1ce3">
 <p>
 I use <i>vim</i> keys obviously.
 </p>
@@ -800,8 +814,8 @@ set $right l
 </div>
 </li>
 
-<li><a id="org86b671c"></a><span class="todo TODO">TODO</span> workspaces<br />
-<div class="outline-text-4" id="text-org86b671c">
+<li><a id="orgedb7325"></a><span class="todo TODO">TODO</span> workspaces<br />
+<div class="outline-text-4" id="text-orgedb7325">
 <p>
 I tried to have a uniformed workspaces across all my window manager configurations. 
 I should work on this.
@@ -830,8 +844,8 @@ Bound to <code>$mod+TAB</code>, I really use this alot, this is mandatory in eve
 </div>
 </div>
 </li>
-<li><a id="org0a641b0"></a>applications<br />
-<div class="outline-text-4" id="text-org0a641b0">
+<li><a id="org5593379"></a>applications<br />
+<div class="outline-text-4" id="text-org5593379">
 <div class="org-src-container">
 <pre class="src src-conf">set $terminal alacritty
 set $browser firefox
@@ -844,8 +858,8 @@ set $file thunar
 </div>
 </li>
 
-<li><a id="org27329ae"></a>Xresouces<br />
-<div class="outline-text-4" id="text-org27329ae">
+<li><a id="orgb8e2b72"></a>Xresouces<br />
+<div class="outline-text-4" id="text-orgb8e2b72">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#### </span><span style="color: #b22222;">https://build.i3wm.org/docs/userguide.html#xresources</span>
 set_from_resource         $background_i3wm  background      <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
@@ -871,8 +885,8 @@ set_from_resource         $color15_i3wm         color15         <span style="col
 </div>
 </li>
 
-<li><a id="org87ee914"></a>Colors<br />
-<div class="outline-text-4" id="text-org87ee914">
+<li><a id="org3c7fd11"></a>Colors<br />
+<div class="outline-text-4" id="text-org3c7fd11">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">Theme colors</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">class                 border          backgr.         text            indic.                  child_border</span>
@@ -889,8 +903,8 @@ client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $ba
 </div>
 </li>
 
-<li><a id="org77d28a5"></a>floating modifier<br />
-<div class="outline-text-4" id="text-org77d28a5">
+<li><a id="org31e4e1c"></a>floating modifier<br />
+<div class="outline-text-4" id="text-org31e4e1c">
 <div class="org-src-container">
 <pre class="src src-conf">floating_modifier $mod
 </pre>
@@ -900,26 +914,26 @@ client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $ba
 </ul>
 </div>
 
-<div id="outline-container-org0e6f4ce" class="outline-3">
-<h3 id="org0e6f4ce">bar</h3>
-<div class="outline-text-3" id="text-org0e6f4ce">
+<div id="outline-container-org9dc3c50" class="outline-3">
+<h3 id="org9dc3c50">bar</h3>
+<div class="outline-text-3" id="text-org9dc3c50">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">bar</span> {
-  status_command i3status
-  position bottom
-  workspace_buttons yes
-  mode dock
-  <span style="color: #228b22;">colors</span> {
-    statusline          $color04_i3wm
-    background          $background_i3wm
-    separator           $color03_i3wm
-    <span style="color: #b22222;">#                   </span><span style="color: #b22222;">BORDER          BACKGROUND        TEXT</span>
-    focused_workspace   $color03_i3wm   $color00_i3wm     $color02_i3wm
-    inactive_workspace  $color00_i3wm   $color00_i3wm     $color02_i3wm
-    active_workspace    $color00_i3wm   $color00_i3wm     $color01_i3wm
-    urgent_workspace    $color01_i3wm   $background_i3wm  $color00_i3wm
-    binding_mode        $color03_i3wm   $background_i3wm  $color00_i3wm
-    }
+status_command i3status
+position bottom
+workspace_buttons yes
+mode dock
+<span style="color: #228b22;">colors</span> {
+statusline          $color04_i3wm
+background          $background_i3wm
+separator           $color03_i3wm
+<span style="color: #b22222;">#                   </span><span style="color: #b22222;">BORDER          BACKGROUND        TEXT</span>
+focused_workspace   $color03_i3wm   $color00_i3wm     $color02_i3wm
+inactive_workspace  $color00_i3wm   $color00_i3wm     $color02_i3wm
+active_workspace    $color00_i3wm   $color00_i3wm     $color01_i3wm
+urgent_workspace    $color01_i3wm   $background_i3wm  $color00_i3wm
+binding_mode        $color03_i3wm   $background_i3wm  $color00_i3wm
+}
 }
 </pre>
 </div>
@@ -934,15 +948,16 @@ Also set keybinding for toggling bar.
 </div>
 </div>
 
-<div id="outline-container-org92c10b0" class="outline-3">
-<h3 id="org92c10b0">application autostart</h3>
-<div class="outline-text-3" id="text-org92c10b0">
+<div id="outline-container-org54f0369" class="outline-3">
+<h3 id="org54f0369">application autostart</h3>
+<div class="outline-text-3" id="text-org54f0369">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">exec --no-startup-id ~/.local/bin/monitor-setup</span>
 exec --no-startup-id xsetroot -cursor_name left_ptr
 exec --no-startup-id dbus-launch --exit-with-session picom -b --config <span style="color: #bc8f8f;">"${XDG_CONFIG_HOME}"</span>/picom/picom.conf &amp;
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &amp;
 exec --no-startup-id dbus-launch --exit-with-session unclutter &amp;
+exec --no-startup-id dbus-launch nm-applet &amp;
 exec --no-startup-id dbus-launch volumeicon &amp;
 exec --no-startup-id dbus-launch --exit-with-session greenclip daemon&gt;/dev/null &amp;
 exec --no-startup-id $file --daemon &amp;
@@ -954,9 +969,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </div>
 
-<div id="outline-container-org7e21d79" class="outline-3">
-<h3 id="org7e21d79">window rule</h3>
-<div class="outline-text-3" id="text-org7e21d79">
+<div id="outline-container-orgeaae906" class="outline-3">
+<h3 id="orgeaae906">window rule</h3>
+<div class="outline-text-3" id="text-orgeaae906">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">".*"</span>] border pixel 0
 <span style="color: #b22222;"># </span><span style="color: #b22222;">for_window [class="(?i)xclipboard"] , move scratchpad</span>
@@ -996,19 +1011,21 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 <span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)transmission.*"</span>] floating enable
 <span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)anydesk.*"</span>] floating enable
 <span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)lxappearance"</span>] floating enable
-<span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)steam.*"</span>] floating enable
+<span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"virt-manager"</span>] floating enable resize set 680 680 move position center
+<span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">"(?i)steam.*"</span>] floating enable resize set 680 680 move position center
+<span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">".*FileRoller"</span>] floating enable resize set 680 680 move position center
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org864ce15" class="outline-3">
-<h3 id="org864ce15">workspace assignment</h3>
-<div class="outline-text-3" id="text-org864ce15">
+<div id="outline-container-org8a49759" class="outline-3">
+<h3 id="org8a49759">workspace assignment</h3>
+<div class="outline-text-3" id="text-org8a49759">
 </div>
 <ul class="org-ul">
-<li><a id="orga368434"></a>workspace 1<br />
-<div class="outline-text-4" id="text-orga368434">
+<li><a id="org5d566b8"></a>workspace 1<br />
+<div class="outline-text-4" id="text-org5d566b8">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"XTerm"</span>] $ws1
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"URxvt"</span>] $ws1
@@ -1019,8 +1036,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </li>
 
-<li><a id="org99b385d"></a>workspace 2<br />
-<div class="outline-text-4" id="text-org99b385d">
+<li><a id="org6d06a38"></a>workspace 2<br />
+<div class="outline-text-4" id="text-org6d06a38">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Emacs"</span>] $ws2
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Leafpad"</span>] $ws2
@@ -1032,8 +1049,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </li>
 
-<li><a id="org90aba62"></a>workspace 3<br />
-<div class="outline-text-4" id="text-org90aba62">
+<li><a id="orga127ad1"></a>workspace 3<br />
+<div class="outline-text-4" id="text-orga127ad1">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"qutebrowser"</span>] $ws3
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"firefox"</span>] $ws3
@@ -1045,8 +1062,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </li>
 
-<li><a id="orge0eb9d0"></a>workspace 4<br />
-<div class="outline-text-4" id="text-orge0eb9d0">
+<li><a id="org6a43889"></a>workspace 4<br />
+<div class="outline-text-4" id="text-org6a43889">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Evolution"</span>] $ws4
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"thunderbird"</span>] $ws4
@@ -1055,8 +1072,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </li>
 
-<li><a id="org2adaf68"></a>workspace 5<br />
-<div class="outline-text-4" id="text-org2adaf68">
+<li><a id="orgba24c1e"></a>workspace 5<br />
+<div class="outline-text-4" id="text-orgba24c1e">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Thunar"</span>] $ws5
 </pre>
@@ -1064,8 +1081,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </li>
 
-<li><a id="org18405b6"></a>workspace 6<br />
-<div class="outline-text-4" id="text-org18405b6">
+<li><a id="org6865759"></a>workspace 6<br />
+<div class="outline-text-4" id="text-org6865759">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"Libreoffice"</span>] $ws6
 <span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"com-sonicwall-NetExtender"</span>] $ws6
@@ -1076,8 +1093,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </li>
 
-<li><a id="orgadf06b6"></a>workspace 7<br />
-<div class="outline-text-4" id="text-orgadf06b6">
+<li><a id="org2f257d0"></a>workspace 7<br />
+<div class="outline-text-4" id="text-org2f257d0">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Gucharmap"</span>] $ws7
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"org.gnome.Characters"</span>] $ws7
@@ -1087,8 +1104,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </div>
 </li>
-<li><a id="org264e513"></a>workspace 8<br />
-<div class="outline-text-4" id="text-org264e513">
+<li><a id="org7234a2b"></a>workspace 8<br />
+<div class="outline-text-4" id="text-org7234a2b">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Rhythmbox"</span>] $ws8
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"vlc"</span>] $ws8
@@ -1100,8 +1117,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </div>
 </li>
-<li><a id="org5910889"></a>workspace 9<br />
-<div class="outline-text-4" id="text-org5910889">
+<li><a id="org68f360e"></a>workspace 9<br />
+<div class="outline-text-4" id="text-org68f360e">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"org.remmina.remmina"</span>] $ws9
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Virt-manager"</span>] $ws9
@@ -1110,8 +1127,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </div>
 </div>
 </li>
-<li><a id="orgdb540bc"></a>workspace 0<br />
-<div class="outline-text-4" id="text-orgdb540bc">
+<li><a id="orgb2b642f"></a>workspace 0<br />
+<div class="outline-text-4" id="text-orgb2b642f">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Steam"</span>] $ws10
 <span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"Steam"</span>] $ws10
@@ -1121,13 +1138,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpa
 </li>
 </ul>
 </div>
-<div id="outline-container-orgbf7c5d7" class="outline-3">
-<h3 id="orgbf7c5d7">Keybindings</h3>
-<div class="outline-text-3" id="text-orgbf7c5d7">
+<div id="outline-container-orgb16d0d8" class="outline-3">
+<h3 id="orgb16d0d8">Keybindings</h3>
+<div class="outline-text-3" id="text-orgb16d0d8">
 </div>
 <ul class="org-ul">
-<li><a id="orga0c1e11"></a>media keys<br />
-<div class="outline-text-4" id="text-orga0c1e11">
+<li><a id="orgf034a8d"></a>media keys<br />
+<div class="outline-text-4" id="text-orgf034a8d">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/dunst-volume -i 1 &amp;&amp; $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/dunst-volume -d 1 &amp;&amp; $refresh_i3status
@@ -1163,8 +1180,8 @@ bindsym $mod+Shift+F2 exec --no-startup-id brightnessctl set 1%-
 </div>
 </div>
 </li>
-<li><a id="orgd05a0ad"></a>browser<br />
-<div class="outline-text-4" id="text-orgd05a0ad">
+<li><a id="org39915de"></a>browser<br />
+<div class="outline-text-4" id="text-org39915de">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym XF86MyComputer exec $browser
 bindsym $mod+Mod1+f exec $browser
@@ -1172,8 +1189,8 @@ bindsym $mod+Mod1+f exec $browser
 </div>
 </div>
 </li>
-<li><a id="org42df1d9"></a>mail<br />
-<div class="outline-text-4" id="text-org42df1d9">
+<li><a id="org158bc57"></a>mail<br />
+<div class="outline-text-4" id="text-org158bc57">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym XF86Mail exec $mail
 bindsym $mod+Mod1+t exec $mail
@@ -1181,56 +1198,56 @@ bindsym $mod+Mod1+t exec $mail
 </div>
 </div>
 </li>
-<li><a id="org88852a3"></a>music<br />
-<div class="outline-text-4" id="text-org88852a3">
+<li><a id="org67feb93"></a>music<br />
+<div class="outline-text-4" id="text-org67feb93">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+m exec $terminal --class ncmpcpp -e ncmpcpp
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orga0f1926"></a>htop<br />
-<div class="outline-text-4" id="text-orga0f1926">
+<li><a id="org2195b7c"></a>htop<br />
+<div class="outline-text-4" id="text-org2195b7c">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+h exec $terminal --class htop -e htop
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orge6b0de0"></a>nmtui<br />
-<div class="outline-text-4" id="text-orge6b0de0">
+<li><a id="org114bea9"></a>nmtui<br />
+<div class="outline-text-4" id="text-org114bea9">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+w exec $terminal --class nmtui -e nmtui
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org5beb1ba"></a>khal<br />
-<div class="outline-text-4" id="text-org5beb1ba">
+<li><a id="org3751708"></a>khal<br />
+<div class="outline-text-4" id="text-org3751708">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+k exec $terminal --class khal -e khal interactive
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org357dd11"></a>vim<br />
-<div class="outline-text-4" id="text-org357dd11">
+<li><a id="orgf0b67ad"></a>vim<br />
+<div class="outline-text-4" id="text-orgf0b67ad">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+v exec $terminal --class vim -e vim
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org5f2c9ba"></a>dired<br />
-<div class="outline-text-4" id="text-org5f2c9ba">
+<li><a id="org4a1dff2"></a>dired<br />
+<div class="outline-text-4" id="text-org4a1dff2">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+e exec emacsclient -c -a emacs -e <span style="color: #bc8f8f;">'(dired (getenv "HOME"))'</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org9118bd7"></a>rofi-pass<br />
-<div class="outline-text-4" id="text-org9118bd7">
+<li><a id="orgc941293"></a>rofi-pass<br />
+<div class="outline-text-4" id="text-orgc941293">
 <p>
 <a href="./assets/img/rofi-pass.png"><img src="./assets/img/rofi-pass.png" alt="rofi-pass.png" /></a>
 Rofi front end for <a href="https://www.passwordstore.org/">pass</a>. It stores passwords using <i>git</i> and encrypted with <i>GnuPG</i>. It also has an <i>OTP</i> extensions.
@@ -1241,16 +1258,16 @@ Rofi front end for <a href="https://www.passwordstore.org/">pass</a>. It stores 
 </div>
 </div>
 </li>
-<li><a id="orge339367"></a>rofi-calc<br />
-<div class="outline-text-4" id="text-orge339367">
+<li><a id="org5579f1f"></a>rofi-calc<br />
+<div class="outline-text-4" id="text-org5579f1f">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme calculator
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgd9c4809"></a>rofi-rbw<br />
-<div class="outline-text-4" id="text-orgd9c4809">
+<li><a id="orge051eb1"></a>rofi-rbw<br />
+<div class="outline-text-4" id="text-orge051eb1">
 <p>
 Similar to rofi-pass, but for <i>bitwarden</i>.
 </p>
@@ -1260,8 +1277,8 @@ Similar to rofi-pass, but for <i>bitwarden</i>.
 </div>
 </div>
 </li>
-<li><a id="orgc42e927"></a>text editor<br />
-<div class="outline-text-4" id="text-orgc42e927">
+<li><a id="orge2f8dc2"></a>text editor<br />
+<div class="outline-text-4" id="text-orge2f8dc2">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+n exec $guiemacs
 bindsym $mod+Control+n exec $terminal -e $tuiemacs
@@ -1269,32 +1286,32 @@ bindsym $mod+Control+n exec $terminal -e $tuiemacs
 </div>
 </div>
 </li>
-<li><a id="orga5c725e"></a>file manager<br />
-<div class="outline-text-4" id="text-orga5c725e">
+<li><a id="org165ff30"></a>file manager<br />
+<div class="outline-text-4" id="text-org165ff30">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+e exec $file
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org99b10b4"></a>terminal<br />
-<div class="outline-text-4" id="text-org99b10b4">
+<li><a id="orgdc53237"></a>terminal<br />
+<div class="outline-text-4" id="text-orgdc53237">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Return exec $terminal
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgb0733ba"></a>terminal + screen<br />
-<div class="outline-text-4" id="text-orgb0733ba">
+<li><a id="org8ab372a"></a>terminal + screen<br />
+<div class="outline-text-4" id="text-org8ab372a">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+Return exec $terminal -e screen -m
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org080c792"></a>kill focused window<br />
-<div class="outline-text-4" id="text-org080c792">
+<li><a id="orgb9dd73a"></a>kill focused window<br />
+<div class="outline-text-4" id="text-orgb9dd73a">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+F4 kill
 bindsym Mod1+F4 kill
@@ -1302,24 +1319,24 @@ bindsym Mod1+F4 kill
 </div>
 </div>
 </li>
-<li><a id="orgc313707"></a>rofi-menu<br />
-<div class="outline-text-4" id="text-orgc313707">
+<li><a id="orgdc5e7b9"></a>rofi-menu<br />
+<div class="outline-text-4" id="text-orgdc5e7b9">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+d exec --no-startup-id rofi -show drun -theme i3-apps
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orge2862d3"></a>rofi-greenclip<br />
-<div class="outline-text-4" id="text-orge2862d3">
+<li><a id="orgdc2596b"></a>rofi-greenclip<br />
+<div class="outline-text-4" id="text-orgdc2596b">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+c exec --no-startup-id rofi -theme i3-apps -modi <span style="color: #bc8f8f;">"clipboard:greenclip print"</span> -show clipboard
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgf69990f"></a>rofi window menu<br />
-<div class="outline-text-4" id="text-orgf69990f">
+<li><a id="org3d8f3a1"></a>rofi window menu<br />
+<div class="outline-text-4" id="text-org3d8f3a1">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+shift+w exec rofi -theme i3-apps -show windowcd
 bindsym $mod+w exec rofi -theme i3-apps -show window
@@ -1327,26 +1344,26 @@ bindsym $mod+w exec rofi -theme i3-apps -show window
 </div>
 </div>
 </li>
-<li><a id="org7da3a14"></a>tesseract<br />
-<div class="outline-text-4" id="text-org7da3a14">
+<li><a id="org9d1070f"></a>tesseract<br />
+<div class="outline-text-4" id="text-org9d1070f">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+shift+t exec ~/.local/bin/ocr
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orge976969"></a>screenkey<br />
-<div class="outline-text-4" id="text-orge976969">
+<li><a id="orga58882e"></a>screenkey<br />
+<div class="outline-text-4" id="text-orga58882e">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+s exec screenkey
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org27c06b2"></a>window management<br />
+<li><a id="org06e43dd"></a>window management<br />
 <ul class="org-ul">
-<li><a id="org8653965"></a>change focus<br />
-<div class="outline-text-5" id="text-org8653965">
+<li><a id="org88cc52a"></a>change focus<br />
+<div class="outline-text-5" id="text-org88cc52a">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -1364,10 +1381,18 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 </pre>
 </div>
+<p>
+Adding ALT-TAB functionality just in case.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
+</pre>
+</div>
 </div>
 </li>
-<li><a id="orgaf34fb0"></a>move focused window<br />
-<div class="outline-text-5" id="text-orgaf34fb0">
+<li><a id="org6ca065e"></a>move focused window<br />
+<div class="outline-text-5" id="text-org6ca065e">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
@@ -1387,8 +1412,8 @@ bindsym $mod+Shift+Right move right
 </div>
 </div>
 </li>
-<li><a id="org4c6f6e6"></a>split<br />
-<div class="outline-text-5" id="text-org4c6f6e6">
+<li><a id="org142e299"></a>split<br />
+<div class="outline-text-5" id="text-org142e299">
 <p>
 horizontally
 </p>
@@ -1405,16 +1430,16 @@ vertically
 </div>
 </div>
 </li>
-<li><a id="org7bb8306"></a>fullscreen toggle<br />
-<div class="outline-text-5" id="text-org7bb8306">
+<li><a id="orgd27ffdc"></a>fullscreen toggle<br />
+<div class="outline-text-5" id="text-orgd27ffdc">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+f fullscreen toggle; exec $notify <span style="color: #bc8f8f;">"Fullscreen toggle"</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgb0f5ed5"></a>container layout<br />
-<div class="outline-text-5" id="text-orgb0f5ed5">
+<li><a id="org8e62f33"></a>container layout<br />
+<div class="outline-text-5" id="text-org8e62f33">
 <p>
 stacked
 </p>
@@ -1438,40 +1463,40 @@ split
 </div>
 </div>
 </li>
-<li><a id="orgac7b8ab"></a>toggle tiling / floating<br />
-<div class="outline-text-5" id="text-orgac7b8ab">
+<li><a id="orgddfa37a"></a>toggle tiling / floating<br />
+<div class="outline-text-5" id="text-orgddfa37a">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+space floating toggle; exec $notify <span style="color: #bc8f8f;">"Floating toggle"</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgc112883"></a>change focus between tiling / floating windows<br />
-<div class="outline-text-5" id="text-orgc112883">
+<li><a id="org7dac6f0"></a>change focus between tiling / floating windows<br />
+<div class="outline-text-5" id="text-org7dac6f0">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+space focus mode_toggle; exec $notify <span style="color: #bc8f8f;">"Window focus toggle"</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org33955fe"></a>focus parent container<br />
-<div class="outline-text-5" id="text-org33955fe">
+<li><a id="orgf1b93b4"></a>focus parent container<br />
+<div class="outline-text-5" id="text-orgf1b93b4">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+a focus parent; exec $notify <span style="color: #bc8f8f;">"Focus parentcontainer"</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgff07acc"></a>focus child container<br />
-<div class="outline-text-5" id="text-orgff07acc">
+<li><a id="org6b9786d"></a>focus child container<br />
+<div class="outline-text-5" id="text-org6b9786d">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+d focus child; exec $notify <span style="color: #bc8f8f;">"Focus child container"</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org9e71548"></a>move to scratchpad<br />
-<div class="outline-text-5" id="text-org9e71548">
+<li><a id="org23dad3e"></a>move to scratchpad<br />
+<div class="outline-text-5" id="text-org23dad3e">
 <p>
 Move the current focused window into the scratchpad
 </p>
@@ -1481,8 +1506,8 @@ Move the current focused window into the scratchpad
 </div>
 </div>
 </li>
-<li><a id="orgc69371a"></a>show scratchpad<br />
-<div class="outline-text-5" id="text-orgc69371a">
+<li><a id="org795b1dd"></a>show scratchpad<br />
+<div class="outline-text-5" id="text-org795b1dd">
 <p>
 Show the next scratchpad window or hide the focused scratchpad window. If there are multiple scratchpad windows, this command cycles through them.
 </p>
@@ -1495,8 +1520,8 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 </li>
 </ul>
 </li>
-<li><a id="orga0d2cd5"></a>workspace management<br />
-<div class="outline-text-4" id="text-orga0d2cd5">
+<li><a id="org2e54cc5"></a>workspace management<br />
+<div class="outline-text-4" id="text-org2e54cc5">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -1512,8 +1537,8 @@ bindsym $mod+0 workspace $ws10
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="org6d3f6e6"></a>switch to workspace prev / next<br />
-<div class="outline-text-5" id="text-org6d3f6e6">
+<li><a id="org33c2374"></a>switch to workspace prev / next<br />
+<div class="outline-text-5" id="text-org33c2374">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+bracketleft workspace prev
 bindsym $mod+bracketright workspace next
@@ -1521,8 +1546,8 @@ bindsym $mod+bracketright workspace next
 </div>
 </div>
 </li>
-<li><a id="orgee46bb4"></a>move focused containerto workspace<br />
-<div class="outline-text-5" id="text-orgee46bb4">
+<li><a id="orgc43f7b9"></a>move focused containerto workspace<br />
+<div class="outline-text-5" id="text-orgc43f7b9">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -1538,8 +1563,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 </div>
 </div>
 </li>
-<li><a id="org5548917"></a>move using bracket keys<br />
-<div class="outline-text-5" id="text-org5548917">
+<li><a id="orgcd5fa5d"></a>move using bracket keys<br />
+<div class="outline-text-5" id="text-orgcd5fa5d">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym Control+Mod1+bracketleft move to workspace previous
 bindsym Control+Mod1+bracketright move to workspace next
@@ -1547,8 +1572,8 @@ bindsym Control+Mod1+bracketright move to workspace next
 </div>
 </div>
 </li>
-<li><a id="org0faec65"></a>back and forth<br />
-<div class="outline-text-5" id="text-org0faec65">
+<li><a id="org4058fc8"></a>back and forth<br />
+<div class="outline-text-5" id="text-org4058fc8">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth
@@ -1556,8 +1581,8 @@ bindsym $mod+Shift+Tab move container to workspace back_and_forth
 </div>
 </div>
 </li>
-<li><a id="org9fce670"></a>switch output focus<br />
-<div class="outline-text-5" id="text-org9fce670">
+<li><a id="orgd182341"></a>switch output focus<br />
+<div class="outline-text-5" id="text-orgd182341">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+1 focus output primary
 bindsym $mod+Control+2 focus output right
@@ -1565,8 +1590,8 @@ bindsym $mod+Control+2 focus output right
 </div>
 </div>
 </li>
-<li><a id="org9a998d9"></a>moving to output<br />
-<div class="outline-text-5" id="text-org9a998d9">
+<li><a id="org73f4758"></a>moving to output<br />
+<div class="outline-text-5" id="text-org73f4758">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+Shift+1 move workspace to output primary
 bindsym $mod+Control+Shift+2 move workspace to output right
@@ -1576,32 +1601,32 @@ bindsym $mod+Control+Shift+2 move workspace to output right
 </li>
 </ul>
 </li>
-<li><a id="org886f93c"></a>Reload configuration<br />
-<div class="outline-text-4" id="text-org886f93c">
+<li><a id="org9ded9d4"></a>Reload configuration<br />
+<div class="outline-text-4" id="text-org9ded9d4">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+F11 reload
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org4d7bc72"></a>Hot restart<br />
-<div class="outline-text-4" id="text-org4d7bc72">
+<li><a id="org3447b66"></a>Hot restart<br />
+<div class="outline-text-4" id="text-org3447b66">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+r restart
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org9286a40"></a>exit i3<br />
-<div class="outline-text-4" id="text-org9286a40">
+<li><a id="orge7ece72"></a>exit i3<br />
+<div class="outline-text-4" id="text-orge7ece72">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+q exec ~/.local/bin/rofi-i3-logout
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org121fe74"></a>picom transparency<br />
-<div class="outline-text-4" id="text-org121fe74">
+<li><a id="orgcdc6c23"></a>picom transparency<br />
+<div class="outline-text-4" id="text-orgcdc6c23">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+F3 exec picom-trans -c +5
 bindsym $mod+F2 exec picom-trans -c -5
@@ -1609,8 +1634,8 @@ bindsym $mod+F2 exec picom-trans -c -5
 </div>
 </div>
 </li>
-<li><a id="org416cbce"></a>dunst<br />
-<div class="outline-text-4" id="text-org416cbce">
+<li><a id="orga0f7687"></a>dunst<br />
+<div class="outline-text-4" id="text-orga0f7687">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+grave exec dunstctl history-pop
 bindsym $mod+Shift+grave exec dunstctl context
@@ -1620,10 +1645,10 @@ bindsym $mod+grave exec dunstctl action
 </div>
 </div>
 </li>
-<li><a id="org7019ec9"></a>modes<br />
+<li><a id="org69b3d63"></a>modes<br />
 <ul class="org-ul">
-<li><a id="org4ab937b"></a>resize<br />
-<div class="outline-text-5" id="text-org4ab937b">
+<li><a id="org7cf880d"></a>resize<br />
+<div class="outline-text-5" id="text-org7cf880d">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">resize window (you can also use the mouse for that)</span>
 <span style="color: #228b22;">mode </span><span style="color: #228b22;">"resize"</span> {
@@ -1660,29 +1685,29 @@ bindsym $mod+r mode <span style="color: #bc8f8f;">"resize"</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org753379d" class="outline-2">
-<h2 id="org753379d">i3status</h2>
-<div class="outline-text-2" id="text-org753379d">
+<div id="outline-container-org0a7a8a7" class="outline-2">
+<h2 id="org0a7a8a7">i3status</h2>
+<div class="outline-text-2" id="text-org0a7a8a7">
 <p>
 I don't mess much with <i>i3status</i>, it's usually hidden most of the times.
 </p>
 </div>
-<div id="outline-container-orgcb227a8" class="outline-3">
-<h3 id="orgcb227a8">general</h3>
-<div class="outline-text-3" id="text-orgcb227a8">
+<div id="outline-container-org1393273" class="outline-3">
+<h3 id="org1393273">general</h3>
+<div class="outline-text-3" id="text-org1393273">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">general</span> {
-        <span style="color: #b8860b;">colors</span> = true
-        <span style="color: #b8860b;">interval</span> = 5
-        <span style="color: #b8860b;">output_format</span> = i3bar
+<span style="color: #b8860b;">colors</span> = true
+<span style="color: #b8860b;">interval</span> = 5
+<span style="color: #b8860b;">output_format</span> = i3bar
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgab7b1be" class="outline-3">
-<h3 id="orgab7b1be">order</h3>
-<div class="outline-text-3" id="text-orgab7b1be">
+<div id="outline-container-orga1f82f2" class="outline-3">
+<h3 id="orga1f82f2">order</h3>
+<div class="outline-text-3" id="text-orga1f82f2">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"ipv6"</span>
 <span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"wireless _first_"</span>
@@ -1694,468 +1719,381 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times.
 </div>
 </div>
 </div>
-<div id="outline-container-org91b073b" class="outline-3">
-<h3 id="org91b073b">wireless</h3>
-<div class="outline-text-3" id="text-org91b073b">
+<div id="outline-container-orgabb1598" class="outline-3">
+<h3 id="orgabb1598">wireless</h3>
+<div class="outline-text-3" id="text-orgabb1598">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">wireless _first_</span> {
-        <span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#984489;: (%quality at %essid, %bitrate / %frequency) %ip"</span>
-        <span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">"&#984489;: down"</span>
+<span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#984489;: (%quality at %essid, %bitrate / %frequency) %ip"</span>
+<span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">"&#984489;: down"</span>
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3efa563" class="outline-3">
-<h3 id="org3efa563">ethernet</h3>
-<div class="outline-text-3" id="text-org3efa563">
+<div id="outline-container-org4d278a9" class="outline-3">
+<h3 id="org4d278a9">ethernet</h3>
+<div class="outline-text-3" id="text-org4d278a9">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">ethernet _first_</span> {
-        <span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#983552;: %ip (%speed)"</span>
-        <span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">""</span>
+<span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#983552;: %ip (%speed)"</span>
+<span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">""</span>
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf6b043f" class="outline-3">
-<h3 id="orgf6b043f">battery</h3>
-<div class="outline-text-3" id="text-orgf6b043f">
+<div id="outline-container-org1bff127" class="outline-3">
+<h3 id="org1bff127">battery</h3>
+<div class="outline-text-3" id="text-org1bff127">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">battery 0</span> {
-        <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"%status %percentage %remaining"</span>
-        <span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">""</span>
-        <span style="color: #b8860b;">status_chr</span> = <span style="color: #bc8f8f;">"&#983172;"</span>
-        <span style="color: #b8860b;">status_bat</span> = <span style="color: #bc8f8f;">"&#983170;"</span>
-        <span style="color: #b8860b;">status_unk</span> = <span style="color: #bc8f8f;">"&#983185;"</span>
-        <span style="color: #b8860b;">last_full_capacity</span> = true
+<span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"%status %percentage %remaining"</span>
+<span style="color: #b8860b;">format_down</span> = <span style="color: #bc8f8f;">""</span>
+<span style="color: #b8860b;">status_chr</span> = <span style="color: #bc8f8f;">"&#983172;"</span>
+<span style="color: #b8860b;">status_bat</span> = <span style="color: #bc8f8f;">"&#983170;"</span>
+<span style="color: #b8860b;">status_unk</span> = <span style="color: #bc8f8f;">"&#983185;"</span>
+<span style="color: #b8860b;">last_full_capacity</span> = true
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga227780" class="outline-3">
-<h3 id="orga227780">memory</h3>
-<div class="outline-text-3" id="text-orga227780">
+<div id="outline-container-orgbb03044" class="outline-3">
+<h3 id="orgbb03044">memory</h3>
+<div class="outline-text-3" id="text-orgbb03044">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">memory</span> {
-        <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#983899; %used"</span>
-        <span style="color: #b8860b;">threshold_degraded</span> = <span style="color: #bc8f8f;">"1G"</span>
-        <span style="color: #b8860b;">format_degraded</span> = <span style="color: #bc8f8f;">"&#983899; &lt; %available"</span>
+<span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#983899; %used"</span>
+<span style="color: #b8860b;">threshold_degraded</span> = <span style="color: #bc8f8f;">"1G"</span>
+<span style="color: #b8860b;">format_degraded</span> = <span style="color: #bc8f8f;">"&#983899; &lt; %available"</span>
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org02dff00" class="outline-3">
-<h3 id="org02dff00">time</h3>
-<div class="outline-text-3" id="text-org02dff00">
+<div id="outline-container-org5b24295" class="outline-3">
+<h3 id="org5b24295">time</h3>
+<div class="outline-text-3" id="text-org5b24295">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">tztime local</span> {
-        <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#985428; %Y-%m-%d %H:%M:%S"</span>
+<span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#985428; %Y-%m-%d %H:%M:%S"</span>
 }
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org0b772ce" class="outline-2">
-<h2 id="org0b772ce">picom</h2>
-<div class="outline-text-2" id="text-org0b772ce">
+<div id="outline-container-orgb7fc650" class="outline-2">
+<h2 id="orgb7fc650">picom</h2>
+<div class="outline-text-2" id="text-orgb7fc650">
+<p>
+A standalone compositor for Xorg.
+</p>
+</div>
+<div id="outline-container-orga446b06" class="outline-3">
+<h3 id="orga446b06">Shadows</h3>
+<div class="outline-text-3" id="text-orga446b06">
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #b22222;">#################################</span>
-<span style="color: #b22222;">#             </span><span style="color: #b22222;">Shadows           #</span>
-<span style="color: #b22222;">#################################</span>
-
-
+<pre class="src src-conf">
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Enabled client-side shadows on windows. Note desktop windows</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">(windows with '_NET_WM_WINDOW_TYPE_DESKTOP') never get shadow,</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">unless explicitly requested using the wintypes option.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow = false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Can be set per-window using rules.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b8860b;">shadow</span> = true;
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">The blur radius for shadows, in pixels. (defaults to 12)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-radius = 12</span>
-<span style="color: #b8860b;">shadow-radius</span> = 20;
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">The opacity of shadows. (0.0 - 1.0, defaults to 0.75)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-opacity = .75</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">The left offset for shadows, in pixels. (defaults to -15)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-offset-x = -15</span>
-<span style="color: #b8860b;">shadow-offset-x</span> = -20;
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">The top offset for shadows, in pixels. (defaults to -15)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-offset-y = -15</span>
-<span style="color: #b8860b;">shadow-offset-y</span> = -20;
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Avoid drawing shadows on dock/panel windows. This option is deprecated,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">you should use the *wintypes* option in your config file instead.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">The blur radius for shadows, in pixels.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">no-dock-shadow = false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: 12</span>
+<span style="color: #b8860b;">shadow-radius</span> = 1;
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Don't draw shadows on drag-and-drop windows. This option is deprecated,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">you should use the *wintypes* option in your config file instead.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">The opacity of shadows.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">no-dnd-shadow = false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Range: 0.0 - 1.0</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: 0.75</span>
+<span style="color: #b8860b;">shadow-opacity</span> = .25
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Red color value of shadow (0.0 - 1.0, defaults to 0).</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-red = 0</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Green color value of shadow (0.0 - 1.0, defaults to 0).</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-green = 0</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Blue color value of shadow (0.0 - 1.0, defaults to 0).</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-blue = 0</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Do not paint shadows on shaped windows. Note shaped windows</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">here means windows setting its shape through X Shape extension.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Those using ARGB background is beyond our control.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Deprecated, use</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">shadow-exclude = 'bounding_shaped'</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">or</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">shadow-exclude = 'bounding_shaped &amp;&amp; !rounded_corners'</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">instead.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">The left offset for shadows, in pixels.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-ignore-shaped = ''</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: -15</span>
+<span style="color: #b8860b;">shadow-offset-x</span> = -1;
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify a list of conditions of windows that should have no shadow.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">The top offset for shadows, in pixels.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">examples:</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">shadow-exclude = "n:e:Notification";</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: -15</span>
+<span style="color: #b8860b;">shadow-offset-y</span> = -1;
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Hex string color value of shadow. Formatted like "#RRGGBB", e.g. "#C0FFEE".</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-exclude = []</span>
-<span style="color: #b8860b;">shadow-exclude</span> = [
-  <span style="color: #bc8f8f;">"name = 'Notification'"</span>,
-  <span style="color: #bc8f8f;">"class_g = 'Conky'"</span>,
-  <span style="color: #bc8f8f;">"class_g ?= 'Notify-osd'"</span>,
-  <span style="color: #bc8f8f;">"class_g = 'Cairo-clock'"</span>,
-  <span style="color: #bc8f8f;">"_GTK_FRAME_EXTENTS@:c"</span>,
-  <span style="color: #bc8f8f;">"class_g = 'Rofi'"</span>
-];
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: #000000</span>
+<span style="color: #b8860b;">shadow-color</span> = <span style="color: #bc8f8f;">"#2E3440"</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify a X geometry that describes the region in which shadow should not</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">be painted in, such as a dock window region. Use</span>
-<span style="color: #b22222;">#    </span><span style="color: #b22222;">shadow-exclude-reg = "x10+0+0"</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">for example, if the 10 pixels on the bottom of the screen should not have shadows painted on.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Crop shadow of a window fully on a particular monitor to that monitor. This is</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">currently implemented using the X RandR extension.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">shadow-exclude-reg = ""</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Crop shadow of a window fully on a particular Xinerama screen to the screen.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">xinerama-shadow-crop = false</span>
-
-
-<span style="color: #b22222;">#################################</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b8860b;">crop-shadow-to-monitor</span> = true
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8eee873" class="outline-3">
+<h3 id="org8eee873">Fading</h3>
+<div class="outline-text-3" id="text-org8eee873">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#           </span><span style="color: #b22222;">Fading              #</span>
 <span style="color: #b22222;">#################################</span>
 
-
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Fade windows in/out when opening/closing and when opacity changes,</span>
-<span style="color: #b22222;">#  </span><span style="color: #b22222;">unless no-fading-openclose is used.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">fading = false</span>
-<span style="color: #b8860b;">fading</span> = true
+<span style="color: #b22222;"># </span><span style="color: #b22222;">unless no-fading-openclose is used. Can be set per-window using rules.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b8860b;">fading</span> = true;
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Opacity change between steps while fading in. (0.01 - 1.0, defaults to 0.028)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">fade-in-step = 0.028</span>
-<span style="color: #b8860b;">fade-in-step</span> = 0.03;
+<span style="color: #b8860b;">fade-in-step</span> = 0.05;
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Opacity change between steps while fading out. (0.01 - 1.0, defaults to 0.03)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">fade-out-step = 0.03</span>
-<span style="color: #b8860b;">fade-out-step</span> = 0.03;
+<span style="color: #b8860b;">fade-out-step</span> = 0.05;
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">The time between steps in fade step, in milliseconds. (&gt; 0, defaults to 10)</span>
-<span style="color: #b8860b;">fade-delta</span> = 3
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify a list of conditions of windows that should not be faded.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">fade-exclude = []</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">fade-delta = 10</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Do not fade on window open/close.</span>
-<span style="color: #b8860b;">no-fading-openclose</span> = false
+<span style="color: #b8860b;">no-fading-openclose</span> = true
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Do not fade destroyed ARGB windows with WM frame. Workaround of bugs in Openbox, Fluxbox, etc.</span>
-<span style="color: #b8860b;">no-fading-destroyed-argb</span> = false
-
-
-<span style="color: #b22222;">#################################</span>
+<span style="color: #b8860b;">no-fading-destroyed-argb</span> = true
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7a162c6" class="outline-3">
+<h3 id="org7a162c6">Transparency</h3>
+<div class="outline-text-3" id="text-org7a162c6">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#   </span><span style="color: #b22222;">Transparency / Opacity      #</span>
 <span style="color: #b22222;">#################################</span>
 
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Opacity of inactive windows. (0.1 - 1.0, defaults to 1.0)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">inactive-opacity = 1</span>
-<span style="color: #b8860b;">inactive-opacity</span> = 0.9;
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">frame-opacity = 1.0</span>
-<span style="color: #b8860b;">frame-opacity</span> = 0.8;
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Default opacity for dropdown menus and popup menus. (0.0 - 1.0, defaults to 1.0)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">menu-opacity = 1.0</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Let inactive opacity set by -i override the '_NET_WM_OPACITY' values of windows.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">inactive-opacity-override = true</span>
-<span style="color: #b8860b;">inactive-opacity-override</span> = false;
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Default opacity for active windows. (0.0 - 1.0, defaults to 1.0)</span>
-<span style="color: #b8860b;">active-opacity</span> = 1.0
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Dim inactive windows. (0.0 - 1.0, defaults to 0.0)</span>
-<span style="color: #b8860b;">inactive-dim</span> = 0.0
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify a list of conditions of windows that should always be considered focused.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">focus-exclude = []</span>
-<span style="color: #b8860b;">focus-exclude</span> = [ <span style="color: #bc8f8f;">"class_g = 'Cairo-clock'"</span>,
-                  <span style="color: #bc8f8f;">"class_g ?= 'rofi'"</span>,
-                  <span style="color: #bc8f8f;">"class_g ?= 'Steam'"</span>
-];
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Opacity of window titlebars and borders.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Range: 0.1 - 1.0</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: 1.0 (disabled)</span>
+<span style="color: #b8860b;">frame-opacity</span> = 0.9;
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Use fixed inactive dim value, instead of adjusting according to window opacity.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">inactive-dim-fixed = 1.0</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify a list of opacity rules, in the format `PERCENT:PATTERN`,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">like `50:name *= "Firefox"`. picom-trans is recommended over this.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Note we don't make any guarantee about possible conflicts with other</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">programs that set '_NET_WM_WINDOW_OPACITY' on frame or client windows.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">example:</span>
-<span style="color: #b22222;">#    </span><span style="color: #b22222;">opacity-rule = [ "80:class_g = 'URxvt'" ];</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">opacity-rule = []</span>
-<span style="color: #b8860b;">opacity-rule</span> = [ <span style="color: #bc8f8f;">"90:name *= '*'"</span>,
-                 <span style="color: #bc8f8f;">"99:class_g = 'Emacs' &amp;&amp; argb"</span>,
-                 <span style="color: #bc8f8f;">"98:class_g = 'Firefox' &amp;&amp; argb"</span>,
-                 <span style="color: #bc8f8f;">"98:class_g = 'Brave-browser' &amp;&amp; argb"</span>,
-                 <span style="color: #bc8f8f;">"98:class_g = 'Google-chrome'"</span>,
-                 <span style="color: #bc8f8f;">"99:class_g = 'vlc'"</span>,
-                 <span style="color: #bc8f8f;">"99:class_g = 'mpv'"</span>,
-                 <span style="color: #bc8f8f;">"80:class_g = 'URxvt'"</span>,
-                 <span style="color: #bc8f8f;">"80:class_g = 'UXTerm'"</span>,
-                 <span style="color: #bc8f8f;">"80:class_g = 'Alacritty'"</span>,
-                 <span style="color: #bc8f8f;">"80:class_g = 'XTerm'"</span>
-                ]
-
-<span style="color: #b22222;">#################################</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">Background-Blurring       #</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">inactive-dim-fixed = true</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5516254" class="outline-3">
+<h3 id="org5516254">Corners</h3>
+<div class="outline-text-3" id="text-org5516254">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #b22222;">#################################</span>
+<span style="color: #b22222;">#           </span><span style="color: #b22222;">Corners             #</span>
 <span style="color: #b22222;">#################################</span>
 
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Sets the radius of rounded window corners. When &gt; 0, the compositor will</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">round the corners of windows. Does not interact well with</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">`transparent-clipping`.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: 0 (disabled)</span>
+<span style="color: #b8860b;">corner-radius</span> = 0
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge6f9c76" class="outline-3">
+<h3 id="orge6f9c76">Blur</h3>
+<div class="outline-text-3" id="text-orge6f9c76">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #b22222;">#################################</span>
+<span style="color: #b22222;">#            </span><span style="color: #b22222;">Blur               #</span>
+<span style="color: #b22222;">#################################</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Parameters for background blurring, see the *BLUR* section for more information.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Parameters for background blurring, see BLUR section in the man page for more information.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">blur-method =</span>
-<span style="color: #b8860b;">blur-method</span> = <span style="color: #bc8f8f;">"gaussian"</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">blur-size = 12</span>
-<span style="color: #b8860b;">blur-size</span> = 12
 <span style="color: #b22222;">#</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">blur-deviation = false</span>
-<span style="color: #b8860b;">blur-deviation</span> = 1.0
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">blur-strength = 5</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Blur background of semi-transparent / ARGB windows.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Bad in performance, with driver-dependent behavior.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">The name of the switch may change without prior notifications.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Can be set per-window using rules.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">blur-background = false</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">blur-background = true</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Blur background of windows when the window frame is not opaque.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Implies:</span>
 <span style="color: #b22222;">#    </span><span style="color: #b22222;">blur-background</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Bad in performance, with driver-dependent behavior. The name may change.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">blur-background-frame = false</span>
 
-
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Use fixed blur strength rather than adjusting according to window opacity.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">blur-background-fixed = false</span>
 
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Specify the blur convolution kernel, with the following format:</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">example:</span>
 <span style="color: #b22222;">#   </span><span style="color: #b22222;">blur-kern = "5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1";</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Can also be a pre-defined kernel, see the man page.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">blur-kern = ''</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: ""</span>
 <span style="color: #b8860b;">blur-kern</span> = <span style="color: #bc8f8f;">"3x3box"</span>;
-
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Exclude conditions for background blur.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">blur-background-exclude = []</span>
-<span style="color: #b8860b;">blur-background-exclude</span> = [
-  <span style="color: #bc8f8f;">"window_type = 'dock'"</span>,
-  <span style="color: #bc8f8f;">"window_type = 'desktop'"</span>,
-  <span style="color: #bc8f8f;">"_GTK_FRAME_EXTENTS@:c"</span>
-];
-
-<span style="color: #b22222;">#################################</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0065f75" class="outline-3">
+<h3 id="org0065f75">General Settings</h3>
+<div class="outline-text-3" id="text-org0065f75">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#       </span><span style="color: #b22222;">General Settings        #</span>
 <span style="color: #b22222;">#################################</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Enable remote control via D-Bus. See the man page for more details.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">dbus = true</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Daemonize process. Fork to background after initialization. Causes issues with certain (badly-written) drivers.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">daemon = false</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify the backend to use: `xrender`, `glx`, or `xr_glx_hybrid`.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">`xrender` is the default one.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify the backend to use: `xrender`, `glx`, or `egl`.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">backend = 'glx'</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">backend = "xrender";</span>
-<span style="color: #b8860b;">backend</span> = <span style="color: #bc8f8f;">"glx"</span>;
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: "xrender"</span>
+<span style="color: #b8860b;">backend</span> = <span style="color: #bc8f8f;">"xrender"</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Use higher precision during rendering, and apply dither when presenting the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">rendered screen. Reduces banding artifacts, but may cause performance</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">degradation. Only works with OpenGL.</span>
+<span style="color: #b8860b;">dithered-present</span> = false;
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Enable/disable VSync.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">vsync = false</span>
-<span style="color: #b8860b;">vsync</span> = true
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Enable remote control via D-Bus. See the *D-BUS API* section below for more details.</span>
-<span style="color: #b8860b;">dbus</span> = false
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Try to detect WM windows (a non-override-redirect window with no</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">child that has 'WM_STATE') and mark them as active.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">mark-wmwin-focused = false</span>
-<span style="color: #b8860b;">mark-wmwin-focused</span> = true;
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Mark override-redirect windows that doesn't have a child window with 'WM_STATE' focused.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">mark-ovredir-focused = false</span>
-<span style="color: #b8860b;">mark-ovredir-focused</span> = true;
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">vsync = true;</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Try to detect windows with rounded corners and don't consider them</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">shaped windows. The accuracy is not very high, unfortunately.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">detect-rounded-corners = false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Has nothing to do with `corner-radius`.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b8860b;">detect-rounded-corners</span> = true;
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Detect '_NET_WM_OPACITY' on client windows, useful for window managers</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">not passing '_NET_WM_OPACITY' of client windows to frame windows.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Detect '_NET_WM_WINDOW_OPACITY' on client windows, useful for window managers</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">not passing '_NET_WM_WINDOW_OPACITY' of client windows to frame windows.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">detect-client-opacity = false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b8860b;">detect-client-opacity</span> = true;
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify refresh rate of the screen. If not specified or 0, picom will</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">try detecting this with X RandR extension.</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">refresh-rate = 60</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">refresh-rate = 0</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Limit picom to repaint at most once every 1 / 'refresh_rate' second to</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">boost performance. This should not be used with</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">vsync drm/opengl/opengl-oml</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">as they essentially does sw-opti's job already,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">unless you wish to specify a lower refresh rate than the actual value.</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">sw-opti =</span>
-
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Use EWMH '_NET_ACTIVE_WINDOW' to determine currently focused window,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">rather than listening to 'FocusIn'/'FocusOut' event. Might have more accuracy,</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">rather than listening to 'FocusIn'/'FocusOut' event. May be more accurate,</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">provided that the WM supports it.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">use-ewmh-active-win = false</span>
-<span style="color: #b8860b;">use-ewmh-active-win</span> = true
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Unredirect all windows if a full-screen opaque window is detected,</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">to maximize performance for full-screen windows. Known to cause flickering</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">when redirecting/unredirecting windows.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">unredir-if-possible = false</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Delay before unredirecting the window, in milliseconds. Defaults to 0.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Delay before unredirecting the window, in milliseconds.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: 0.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">unredir-if-possible-delay = 0</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Conditions of windows that shouldn't be considered full-screen for unredirecting screen.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">unredir-if-possible-exclude = []</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Use 'WM_TRANSIENT_FOR' to group windows, and consider windows</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">in the same group focused at the same time.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">detect-transient = false</span>
-<span style="color: #b8860b;">detect-transient</span> = true
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b8860b;">detect-transient</span> = true;
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Use 'WM_CLIENT_LEADER' to group windows, and consider windows in the same</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">group focused at the same time. 'WM_TRANSIENT_FOR' has higher priority if</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">detect-transient is enabled, too.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">group focused at the same time. This usually means windows from the same application</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">will be considered focused or unfocused at the same time.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">'WM_TRANSIENT_FOR' has higher priority if detect-transient is enabled, too.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">detect-client-leader = false</span>
-<span style="color: #b8860b;">detect-client-leader</span> = true
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Resize damaged region by a specific number of pixels.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">A positive value enlarges it while a negative one shrinks it.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">If the value is positive, those additional pixels will not be actually painted</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">to screen, only used in blur calculation, and such. (Due to technical limitations,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">with use-damage, those pixels will still be incorrectly painted to screen.)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Primarily used to fix the line corruption issues of blur,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">in which case you should use the blur radius value here</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">(e.g. with a 3x3 kernel, you should use `--resize-damage 1`,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">with a 5x5 one you use `--resize-damage 2`, and so on).</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">May or may not work with *--glx-no-stencil*. Shrinking doesn't function correctly.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Use of damage information for rendering. This cause the only the part of the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">screen that has actually changed to be redrawn, instead of the whole screen</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">every time. Should improve performance.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">resize-damage = 1</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b8860b;">use-damage</span> = true;
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Specify a list of conditions of windows that should be painted with inverted color.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Resource-hogging, and is not well tested.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Use X Sync fence to wait for the completion of rendering of other windows,</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">before using their content to render the current screen.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">invert-color-include = []</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">GLX backend: Avoid using stencil buffer, useful if you don't have a stencil buffer.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Might cause incorrect opacity when rendering transparent content (but never</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">practically happened) and may not work with blur-background.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">My tests show a 15% performance boost. Recommended.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Required for explicit sync drivers, such as nvidia.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">glx-no-stencil = false</span>
-<span style="color: #b8860b;">glx-no-stencil</span> = true
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">GLX backend: Avoid rebinding pixmap on window damage.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Probably could improve performance on rapid window content changes,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">but is known to break things on some drivers (LLVMpipe, xf86-video-intel, etc.).</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Recommended if it works.</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">glx-no-rebind-pixmap = false</span>
-<span style="color: #b8860b;">glx-no-rebind-pixmap</span> = true
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Disable the use of damage information.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">This cause the whole screen to be redrawn everytime, instead of the part of the screen</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">has actually changed. Potentially degrades the performance, but might fix some artifacts.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">The opposing option is use-damage</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">no-use-damage = false</span>
-<span style="color: #b8860b;">use-damage</span> = true
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Use X Sync fence to sync clients' draw calls, to make sure all draw</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">calls are finished before picom starts drawing. Needed on nvidia-drivers</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">with GLX backend for some users.</span>
-<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">xrender-sync-fence = false</span>
 
-<span style="color: #b22222;"># </span><span style="color: #b22222;">GLX backend: Use specified GLSL fragment shader for rendering window contents.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">See `compton-default-fshader-win.glsl` and `compton-fake-transparency-fshader-win.glsl`</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">in the source tree for examples.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">GLX backend: Use specified GLSL fragment shader for rendering window</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">contents. Read the man page for a detailed explanation of the interface.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">glx-fshader-win = ''</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Can be set per-window using rules.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">window-shader-fg = "default"</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Force all windows to be painted with blending. Useful if you</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">have a glx-fshader-win that could turn opaque pixels transparent.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">have a `window-shader-fg` that could turn opaque pixels transparent.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">force-win-blend = false</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Do not use EWMH to detect fullscreen windows.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Reverts to checking if a window is fullscreen based only on its size and coordinates.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">no-ewmh-fullscreen = false</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Dimming bright windows so their brightness doesn't exceed this set value.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Brightness of a window is estimated by averaging all pixels in the window,</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">so this could comes with a performance hit.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Setting this to 1.0 disables this behaviour. Requires --use-damage to be disabled. (default: 1.0)</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Setting this to 1.0 disables this behaviour. Requires --use-damage to be disabled.</span>
 <span style="color: #b22222;">#</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: 1.0 (disabled)</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">max-brightness = 1.0</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Make transparent windows clip other windows like non-transparent windows do,</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">instead of blending on top of them.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">instead of blending on top of them. e.g. placing a transparent window on top</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">of another window will cut a "hole" in that window, and show the desktop background</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">underneath.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b8860b;">transparent-clipping</span> = false
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">transparent-clipping = false</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Set the log level. Possible values are:</span>
 <span style="color: #b22222;">#  </span><span style="color: #b22222;">"trace", "debug", "info", "warn", "error"</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">in increasing level of importance. Case doesn't matter.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">in increasing level of importance. Case insensitive.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">If using the "TRACE" log level, it's better to log into a file</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">using *--log-file*, since it can generate a huge stream of logs.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">log-level = "debug"</span>
-<span style="color: #b8860b;">log-level</span> = <span style="color: #bc8f8f;">"warn"</span>;
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Default: "warn"</span>
+<span style="color: #b8860b;">log-level</span> = <span style="color: #bc8f8f;">"info"</span>;
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Set the log file.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">If *--log-file* is never specified, logs will be written to stderr.</span>
@@ -2163,72 +2101,96 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times.
 <span style="color: #b22222;"># </span><span style="color: #b22222;">logs might still be written to the stderr.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">When setting this option from the config file, it is recommended to use an absolute path.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">log-file = '/path/to/your/log/file'</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Show all X errors (for debugging)</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">show-all-xerrors = false</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">log-file = "/path/to/your/log/file"</span>
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Write process ID to a file.</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">write-pid-path = '/path/to/your/log/file'</span>
-
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Window type settings</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">write-pid-path = "/path/to/your/log/file"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org146a726" class="outline-3">
+<h3 id="org146a726">Rules</h3>
+<div class="outline-text-3" id="text-org146a726">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">Rule-based per-window options.</span>
 <span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">'WINDOW_TYPE' is one of the 15 window types defined in EWMH standard:</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">"unknown", "desktop", "dock", "toolbar", "menu", "utility",</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">"splash", "dialog", "normal", "dropdown_menu", "popup_menu",</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">"tooltip", "notification", "combo", and "dnd".</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;"># </span><span style="color: #b22222;">Following per window-type options are available: ::</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">fade, shadow:::</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">Controls window-type-specific shadow and fade settings.</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">opacity:::</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">Controls default opacity of the window type.</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">focus:::</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">Controls whether the window of this type is to be always considered focused.</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">(By default, all window types except "normal" and "dialog" has this on.)</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">full-shadow:::</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">Controls whether shadow is drawn under the parts of the window that you</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">normally won't be able to see. Useful when the window has parts of it</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">transparent, and you want shadows in those areas.</span>
-<span style="color: #b22222;">#</span>
-<span style="color: #b22222;">#   </span><span style="color: #b22222;">redir-ignore:::</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">Controls whether this type of windows should cause screen to become</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">redirected again after been unredirected. If you have unredir-if-possible</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">set, and doesn't want certain window to cause unnecessary screen redirection,</span>
-<span style="color: #b22222;">#     </span><span style="color: #b22222;">you can set this to `true`.</span>
-<span style="color: #b22222;">#</span>
-wintypes:
-{
-  <span style="color: #b8860b;">tooltip</span> = { fade = true; shadow = true; opacity = 0.90; focus = true; full-shadow = false; };
-  <span style="color: #b8860b;">normal</span> = { full-shadow = false; };
-  <span style="color: #b8860b;">dock</span> = { shadow = false; };
-  <span style="color: #b8860b;">dnd</span> = { shadow = false; };
-  <span style="color: #b8860b;">popup_menu</span> = { shadow = true; focus = false; blur-background = false; opacity = 0.8; };
-  <span style="color: #b8860b;">dropdown_menu</span> = { shadow = false; focus = false; opacity = 0.8; };
-  <span style="color: #b8860b;">above</span>  = { shadow = true; };
-  <span style="color: #b8860b;">splash</span> = { shadow = false; };
-  <span style="color: #b8860b;">utility</span> = { focus = false; shadow = false; blur-background = false };
-  <span style="color: #b8860b;">notification</span> = { shadow = false; };
-  <span style="color: #b8860b;">desktop</span> = { shadow = false; blur-background = false; };
-  <span style="color: #b8860b;">menu</span> = { focus = false; };
-  <span style="color: #b8860b;">dialog</span> = { shadow = true; };
-};
+<span style="color: #b22222;"># </span><span style="color: #b22222;">See WINDOW RULES section in the man page for how these work.</span>
+rules: ({
+  <span style="color: #b8860b;">match</span> = <span style="color: #bc8f8f;">"window_type = 'tooltip'"</span>;
+  <span style="color: #b8860b;">fade</span> = false;
+  <span style="color: #b8860b;">shadow</span> = true;
+  <span style="color: #b8860b;">opacity</span> = 0.97;
+  <span style="color: #b8860b;">full-shadow</span> = false;
+<span style="color: #228b22;">},</span> {
+  <span style="color: #b8860b;">match</span> = <span style="color: #bc8f8f;">"window_type = 'dock'    || "</span>
+          <span style="color: #bc8f8f;">"window_type = 'desktop' || "</span>
+          <span style="color: #bc8f8f;">"_GTK_FRAME_EXTENTS@"</span>;
+  <span style="color: #b8860b;">blur-background</span> = false;
+<span style="color: #228b22;">},</span> {
+  <span style="color: #b8860b;">match</span> = <span style="color: #bc8f8f;">"window_type != 'dock'"</span>;
+  <span style="color: #b22222;"># </span><span style="color: #b22222;">shader = "my_shader.frag";</span>
+<span style="color: #228b22;">},</span> {
+  <span style="color: #b8860b;">match</span> = <span style="color: #bc8f8f;">"window_type = 'dock' || "</span>
+          <span style="color: #bc8f8f;">"window_type = 'desktop'"</span>;
+  <span style="color: #b8860b;">corner-radius</span> = 0;
+<span style="color: #228b22;">},</span> {
+  <span style="color: #b8860b;">match</span> = <span style="color: #bc8f8f;">"name = 'Notification'   || "</span>
+          <span style="color: #bc8f8f;">"class_g = 'Conky'       || "</span>
+          <span style="color: #bc8f8f;">"class_g ?= 'Notify-osd' || "</span>
+          <span style="color: #bc8f8f;">"class_g = 'Cairo-clock' || "</span>
+          <span style="color: #bc8f8f;">"_GTK_FRAME_EXTENTS@"</span>;
+  <span style="color: #b8860b;">shadow</span> = false;
+},
+  <span style="color: #b8860b;">{ match</span> = <span style="color: #bc8f8f;">"window_type = 'normal'"</span>; full-shadow = false; },
+  <span style="color: #b8860b;">{ match</span> = <span style="color: #bc8f8f;">"window_type = 'dropdown_menu'"</span>; shadow = false; focus = false; },
+ <span style="color: #228b22;"> </span>{
+   <span style="color: #b8860b;">match</span> =
+           <span style="color: #bc8f8f;">"class_g = 'vlc' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'mpv' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'URxvt' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'UXTerm' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'Alacritty' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'XTerm' "</span>;
+   <span style="color: #b8860b;">opacity</span> = 0.95;
+<span style="color: #228b22;">},</span>
+   {
+   <span style="color: #b8860b;">match</span> = <span style="color: #bc8f8f;">"class_g = 'Emacs' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'firefox' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'Google-chrome' || "</span>
+           <span style="color: #bc8f8f;">"class_g = 'Brave-browser'"</span>
+   <span style="color: #b8860b;">opacity</span> = 0.99;
+   <span style="color: #b8860b;">argb</span> = true;
+},
+  <span style="color: #b8860b;">{ match</span> = <span style="color: #bc8f8f;">"class_g = 'steam'"</span>;}
+)
 
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4a75979" class="outline-2">
-<h2 id="org4a75979">Scripts</h2>
-<div class="outline-text-2" id="text-org4a75979">
+<div id="outline-container-org3cbb81e" class="outline-3">
+<h3 id="org3cbb81e">Includes</h3>
+<div class="outline-text-3" id="text-org3cbb81e">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">`@include` directive can be used to include additional configuration files.</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Relative paths are search either in the parent of this configuration file</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">(when the configuration is loaded through a symlink, the symlink will be</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">resolved first). Or in `$XDG_CONFIG_HOME/picom/include`.</span>
+<span style="color: #b22222;">#</span>
+<span style="color: #b22222;">#</span><span style="color: #b22222;">@include "extra.conf"</span>
+</pre>
 </div>
-<div id="outline-container-orgc5d3756" class="outline-3">
-<h3 id="orgc5d3756">ocr</h3>
-<div class="outline-text-3" id="text-orgc5d3756">
+</div>
+</div>
+</div>
+<div id="outline-container-org153cae6" class="outline-2">
+<h2 id="org153cae6">Scripts</h2>
+<div class="outline-text-2" id="text-org153cae6">
+</div>
+<div id="outline-container-org8bbe94b" class="outline-3">
+<h3 id="org8bbe94b">ocr</h3>
+<div class="outline-text-3" id="text-org8bbe94b">
 <p>
 This utilize the <a href="https://github.com/tesseract-ocr/tesseract/">tesseract</a> package. The script simply select an area in the desktop with <i><a href="https://github.com/naelstrof/maim/">maim</a></i>, <i>pipe</i> it into <i>tesseract</i>, which also pipes it into <i><a href="https://github.com/astrand/xclip/">xclip</a></i>.
 </p>
@@ -2239,28 +2201,28 @@ notify-send -i ebook-reader <span style="color: #bc8f8f;">"OCR"</span> <span sty
 </div>
 </div>
 </div>
-<div id="outline-container-orgeb48957" class="outline-3">
-<h3 id="orgeb48957">Rofi</h3>
-<div class="outline-text-3" id="text-orgeb48957">
+<div id="outline-container-org9772255" class="outline-3">
+<h3 id="org9772255">Rofi</h3>
+<div class="outline-text-3" id="text-org9772255">
 </div>
 <ul class="org-ul">
-<li><a id="orgf8e0a7d"></a>i3-nord theme<br />
-<div class="outline-text-4" id="text-orgf8e0a7d">
+<li><a id="orgb834512"></a>i3-nord theme<br />
+<div class="outline-text-4" id="text-orgb834512">
 <p>
 I separate the main <i>nord</i> theme here so I can make changes to it without 'disturbing' other window manager settings.
 </p>
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css-*- </span><span style="color: #b22222;">*/</span>
+<pre class="src src-css"><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css-*-</span><span style="color: #b22222;"> */</span>
 <span style="color: #b22222;">/**</span>
 <span style="color: #b22222;"> * Nordic rofi theme</span>
 <span style="color: #b22222;"> * Adapted by undiabler <a href="mailto:undiabler%40gmail.com">&lt;undiabler@gmail.com&gt;</a></span>
 <span style="color: #b22222;"> *</span>
 <span style="color: #b22222;"> * Nord Color palette imported from https://www.nordtheme.com/</span>
 <span style="color: #b22222;"> *</span>
-<span style="color: #b22222;"> </span><span style="color: #b22222;">*/</span>
+<span style="color: #b22222;"> */</span>
 
 
-<span style="color: #0000ff;">* </span>{
+<span style="color: #0000ff;">*</span> {
     <span style="color: #4169e1;">nord0</span>: <span style="color: #ffffff; background-color: #2e3440;">#2e3440</span>;
     <span style="color: #4169e1;">nord1</span>: <span style="color: #ffffff; background-color: #3b4252;">#3b4252</span>;
     <span style="color: #4169e1;">nord2</span>: <span style="color: #ffffff; background-color: #434c5e;">#434c5e</span>;
@@ -2279,7 +2241,7 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">nord12</span>: <span style="color: #000000; background-color: #d08770;">#d08770</span>;
     <span style="color: #4169e1;">nord13</span>: <span style="color: #000000; background-color: #ebcb8b;">#ebcb8b</span>;
     <span style="color: #4169e1;">nord14</span>: <span style="color: #000000; background-color: #a3be8c;">#a3be8c</span>;
-    <span style="color: #4169e1;">nord15</span>: <span style="color: #000000; background-color: #b48ead;">#b48ead</span>;
+    <span style="color: #4169e1;">nord15</span>: <span style="color: #ffffff; background-color: #b48ead;">#b48ead</span>;
 
     <span style="color: #4169e1;">foreground</span>:  <span style="color: #00008b;">@nord9</span>;
     <span style="color: #4169e1;">backlight</span>:   <span style="color: #000000; background-color: #ccffee;">#ccffeedd</span>;
@@ -2290,7 +2252,7 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">transparent</span>: <span style="color: #ffffff; background-color: #2e3440;">rgba(46,52,64,0)</span>;
 }
 
-<span style="color: #0000ff;">window </span>{
+<span style="color: #0000ff;">window</span> {
     <span style="color: #4169e1;">location</span>: center;
     <span style="color: #4169e1;">anchor</span>:   center;
     <span style="color: #4169e1;">transparency</span>: <span style="color: #bc8f8f;">"screenshot"</span>;
@@ -2304,12 +2266,12 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">orientation</span>: horizontal;
 }
 
-<span style="color: #0000ff;">mainbox </span>{
+<span style="color: #0000ff;">mainbox</span> {
     <span style="color: #4169e1;">spacing</span>: 0;
     <span style="color: #4169e1;">children</span>: [ inputbar, message, listview ];
 }
 
-<span style="color: #0000ff;">message </span>{
+<span style="color: #0000ff;">message</span> {
     <span style="color: #4169e1;">color</span>: <span style="color: #00008b;">@nord0</span>;
     <span style="color: #4169e1;">padding</span>: 5;
     <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@foreground</span>;
@@ -2317,7 +2279,7 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">background-color</span>: <span style="color: #00008b;">@nord7</span>;
 }
 
-<span style="color: #0000ff;">inputbar </span>{
+<span style="color: #0000ff;">inputbar</span> {
     <span style="color: #4169e1;">color</span>: <span style="color: #00008b;">@nord6</span>;
     <span style="color: #4169e1;">padding</span>: 11px;
     <span style="color: #4169e1;">background-color</span>: <span style="color: #00008b;">@nord1</span>;
@@ -2327,16 +2289,16 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@nord10</span>;
 }
 
-<span style="color: #0000ff;">entry, prompt, case-indicator </span>{
+<span style="color: #0000ff;">entry, prompt, case-indicator</span> {
     <span style="color: #4169e1;">text-font</span>: inherit;
     <span style="color: #4169e1;">text-color</span>:inherit;
 }
 
-<span style="color: #0000ff;">prompt </span>{
+<span style="color: #0000ff;">prompt</span> {
     <span style="color: #4169e1;">margin</span>: 0px 1em 0em 0em ;
 }
 
-<span style="color: #0000ff;">listview </span>{
+<span style="color: #0000ff;">listview</span> {
     <span style="color: #4169e1;">padding</span>: 8px;
     <span style="color: #4169e1;">border-radius</span>: 0px 0px 6px 6px;
     <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@nord10</span>;
@@ -2345,7 +2307,7 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">dynamic</span>: false;
 }
 
-<span style="color: #0000ff;">element </span>{
+<span style="color: #0000ff;">element</span> {
     <span style="color: #4169e1;">padding</span>: 3px;
     <span style="color: #4169e1;">vertical-align</span>: 0.5;
     <span style="color: #4169e1;">border-radius</span>: 4px;
@@ -2354,17 +2316,17 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">text-color</span>: <span style="color: #000000; background-color: #d8dee9;">rgb(216, 222, 233)</span>;
 }
 
-<span style="color: #0000ff;">element selected.normal </span>{
+<span style="color: #0000ff;">element selected.normal</span> {
     <span style="color: #4169e1;">background-color</span>: <span style="color: #00008b;">@nord7</span>;
     <span style="color: #4169e1;">text-color</span>: <span style="color: #ffffff; background-color: #2e3440;">#2e3440</span>;
 }
 
-<span style="color: #0000ff;">element-text, element-icon </span>{
+<span style="color: #0000ff;">element-text, element-icon</span> {
     <span style="color: #4169e1;">background-color</span>: inherit;
     <span style="color: #4169e1;">text-color</span>:       inherit;
 }
 
-<span style="color: #0000ff;">button </span>{
+<span style="color: #0000ff;">button</span> {
     <span style="color: #4169e1;">padding</span>: 6px;
     <span style="color: #4169e1;">color</span>: <span style="color: #00008b;">@foreground</span>;
     <span style="color: #4169e1;">horizontal-align</span>: 0.5;
@@ -2374,7 +2336,7 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
     <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@foreground</span>;
 }
 
-<span style="color: #0000ff;">button selected normal </span>{
+<span style="color: #0000ff;">button selected normal</span> {
     <span style="color: #4169e1;">border</span>: 2px 0px 2px 2px;
     <span style="color: #4169e1;">border-color</span>: <span style="color: #00008b;">@foreground</span>;
 }
@@ -2382,59 +2344,59 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
 </div>
 </div>
 </li>
-<li><a id="org05ea9af"></a>i3-apps theme<br />
-<div class="outline-text-4" id="text-org05ea9af">
+<li><a id="orgaacf426"></a>i3-apps theme<br />
+<div class="outline-text-4" id="text-orgaacf426">
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css -*- </span><span style="color: #b22222;">*/</span>
+<pre class="src src-css"><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css -*-</span><span style="color: #b22222;"> */</span>
 <span style="color: #00008b;">@theme</span> <span style="color: #bc8f8f;">"i3-nord"</span>
 
-<span style="color: #0000ff;">window </span>{
+<span style="color: #0000ff;">window</span> {
     <span style="color: #4169e1;">location</span>: southwest;
     <span style="color: #4169e1;">anchor</span>: center;
     <span style="color: #4169e1;">width</span>: 40%;
     <span style="color: #4169e1;">x-offset</span>: 19.5%;
     <span style="color: #4169e1;">y-offset</span>: -17.5%;
-    <span style="color: #b22222;">/* </span><span style="color: #b22222;">padding-right: 25px; </span><span style="color: #b22222;">*/</span>
+    <span style="color: #b22222;">/* </span><span style="color: #b22222;">padding-right: 25px;</span><span style="color: #b22222;"> */</span>
 }
 
-<span style="color: #0000ff;">listview </span>{
+<span style="color: #0000ff;">listview</span> {
     <span style="color: #4169e1;">columns</span>: 2;
     <span style="color: #4169e1;">lines</span>: 6;
 }
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">inputbar { </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/*     </span><span style="color: #b22222;">children: [textbox-prompt]; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">} </span><span style="color: #b22222;">*/</span>
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">inputbar {</span><span style="color: #b22222;"> */</span>
+<span style="color: #b22222;">/*     </span><span style="color: #b22222;">children: [textbox-prompt];</span><span style="color: #b22222;"> */</span>
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">}</span><span style="color: #b22222;"> */</span>
 
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">textbox-prompt { </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/*     </span><span style="color: #b22222;">str: "Apps"; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/*     </span><span style="color: #b22222;">text-color: inherit; </span><span style="color: #b22222;">*/</span>
-<span style="color: #b22222;">/* </span><span style="color: #b22222;">} </span><span style="color: #b22222;">*/</span>
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">textbox-prompt {</span><span style="color: #b22222;"> */</span>
+<span style="color: #b22222;">/*     </span><span style="color: #b22222;">str: "Apps";</span><span style="color: #b22222;"> */</span>
+<span style="color: #b22222;">/*     </span><span style="color: #b22222;">text-color: inherit;</span><span style="color: #b22222;"> */</span>
+<span style="color: #b22222;">/* </span><span style="color: #b22222;">}</span><span style="color: #b22222;"> */</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgec6bb66"></a>i3-logout theme<br />
-<div class="outline-text-4" id="text-orgec6bb66">
+<li><a id="orgd3044db"></a>i3-logout theme<br />
+<div class="outline-text-4" id="text-orgd3044db">
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css -*- </span><span style="color: #b22222;">*/</span>
+<pre class="src src-css"><span style="color: #b22222;">/* </span><span style="color: #b22222;">-*-css -*-</span><span style="color: #b22222;"> */</span>
 <span style="color: #00008b;">@theme</span> <span style="color: #bc8f8f;">"i3-nord"</span>
 
-<span style="color: #0000ff;">window </span>{
+<span style="color: #0000ff;">window</span> {
     <span style="color: #4169e1;">location</span>: northeast;
     <span style="color: #4169e1;">anchor</span>:   center;
     <span style="color: #4169e1;">transparency</span>: <span style="color: #bc8f8f;">"screenshot"</span>;
-    <span style="color: #4169e1;">width</span>: 10%;
+    <span style="color: #4169e1;">width</span>: 15%;
     <span style="color: #4169e1;">padding</span>: 10px;
     <span style="color: #4169e1;">border</span>:  0px;
     <span style="color: #4169e1;">border-radius</span>: 6px;
-    <span style="color: #4169e1;">x-offset</span>: -5.5%;
+    <span style="color: #4169e1;">x-offset</span>: -7.5%;
     <span style="color: #4169e1;">y-offset</span>: 12.5%;
     <span style="color: #4169e1;">spacing</span>: 0;
     <span style="color: #4169e1;">children</span>: [mainbox];
 }
 
-<span style="color: #0000ff;">listview </span>{
+<span style="color: #0000ff;">listview</span> {
     <span style="color: #4169e1;">columns</span>: 1;
     <span style="color: #4169e1;">lines</span>: 4;
 }
@@ -2444,9 +2406,9 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
 </li>
 </ul>
 </div>
-<div id="outline-container-org54daa22" class="outline-3">
-<h3 id="org54daa22">i3-logout</h3>
-<div class="outline-text-3" id="text-org54daa22">
+<div id="outline-container-org37187af" class="outline-3">
+<h3 id="org37187af">i3-logout</h3>
+<div class="outline-text-3" id="text-org37187af">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #b8860b;">question</span>=$(<span style="color: #00008b;">echo</span> <span style="color: #bc8f8f;">"&#983870; lock|&#983875; logout|&#984841; reboot|&#984101; shutdown"</span> | rofi -sep <span style="color: #bc8f8f;">"|"</span> <span style="color: #bc8f8f;">\</span>
     -dmenu -i -p <span style="color: #bc8f8f;">'System: '</span> <span style="color: #bc8f8f;">""</span> <span style="color: #bc8f8f;">\</span>
@@ -2484,9 +2446,9 @@ I separate the main <i>nord</i> theme here so I can make changes to it without '
 </div>
 </div>
 </div>
-<div id="outline-container-orgbf38547" class="outline-3">
-<h3 id="orgbf38547">transfer screen lock</h3>
-<div class="outline-text-3" id="text-orgbf38547">
+<div id="outline-container-org3c02dd7" class="outline-3">
+<h3 id="org3c02dd7">transfer screen lock</h3>
+<div class="outline-text-3" id="text-org3c02dd7">
 <p>
 A locker script for i3lock-fancy and xss-lock. Requires <a href="https://github.com/jD91mZM2/xidlehook">xidlehook</a>
 </p>
@@ -2496,20 +2458,20 @@ A locker script for i3lock-fancy and xss-lock. Requires <a href="https://github.
 
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Run xidlehook</span>
 xidlehook <span style="color: #bc8f8f;">\</span>
-  <span style="font-weight: bold;">`# Don't lock when there's a fullscreen application`</span> <span style="color: #bc8f8f;">\</span>
-  --not-when-fullscreen <span style="color: #bc8f8f;">\</span>
-  <span style="font-weight: bold;">`# Don't lock when there's audio playing`</span> <span style="color: #bc8f8f;">\</span>
-  --not-when-audio <span style="color: #bc8f8f;">\</span>
-  <span style="font-weight: bold;">`# Dim the screen after 60 seconds, undim if user becomes active`</span> <span style="color: #bc8f8f;">\</span>
-  --timer 60 <span style="color: #bc8f8f;">\</span>
+    <span style="font-weight: bold;">`# Don't lock when there's a fullscreen application`</span> <span style="color: #bc8f8f;">\</span>
+    --not-when-fullscreen <span style="color: #bc8f8f;">\</span>
+    <span style="font-weight: bold;">`# Don't lock when there's audio playing`</span> <span style="color: #bc8f8f;">\</span>
+    --not-when-audio <span style="color: #bc8f8f;">\</span>
+    <span style="font-weight: bold;">`# Dim the screen after 60 seconds, undim if user becomes active`</span> <span style="color: #bc8f8f;">\</span>
+    --timer 60 <span style="color: #bc8f8f;">\</span>
     <span style="color: #bc8f8f;">'xrandr --output "$PRIMARY_DISPLAY" --brightness .1'</span> <span style="color: #bc8f8f;">\</span>
     <span style="color: #bc8f8f;">'xrandr --output "$PRIMARY_DISPLAY" --brightness 1'</span> <span style="color: #bc8f8f;">\</span>
-  <span style="font-weight: bold;">`# Undim &amp; lock after 10 more seconds`</span> <span style="color: #bc8f8f;">\</span>
-  --timer 10 <span style="color: #bc8f8f;">\</span>
+    <span style="font-weight: bold;">`# Undim &amp; lock after 10 more seconds`</span> <span style="color: #bc8f8f;">\</span>
+    --timer 10 <span style="color: #bc8f8f;">\</span>
     <span style="color: #bc8f8f;">'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock-fancy -f Overpass-Nerd-Font-Reg -d '</span> <span style="color: #bc8f8f;">\</span>
     <span style="color: #bc8f8f;">''</span> <span style="color: #bc8f8f;">\</span>
-  <span style="font-weight: bold;">`# Finally, suspend an hour after it locks`</span> <span style="color: #bc8f8f;">\</span>
-  --timer 3600 <span style="color: #bc8f8f;">\</span>
+    <span style="font-weight: bold;">`# Finally, suspend an hour after it locks`</span> <span style="color: #bc8f8f;">\</span>
+    --timer 3600 <span style="color: #bc8f8f;">\</span>
     <span style="color: #bc8f8f;">'systemctl suspend'</span> <span style="color: #bc8f8f;">\</span>
     <span style="color: #bc8f8f;">''</span>
 </pre>
@@ -2521,11 +2483,11 @@ xidlehook <span style="color: #bc8f8f;">\</span>
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
 see <a href="https://github.com/alexforsale/dotfiles-i3/blob/main/.stow-local-ignore/">.stow-local-ignore</a> for the files excluded.
 </p></div></div>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
 <a href="https://unix.stackexchange.com/questions/119212/understanding-window-manager-terminology-mod-keys-meta-keys-and-key-naming-co">https://unix.stackexchange.com/questions/119212/understanding-window-manager-terminology-mod-keys-meta-keys-and-key-naming-co</a>
 </p></div></div>
 
@@ -2535,7 +2497,7 @@ see <a href="https://github.com/alexforsale/dotfiles-i3/blob/main/.stow-local-ig
 <div id="postamble" class="status">
 <p class="date">Date: 2022-06-08 Wed 00:00</p>
 <p class="author">Author: Kristian Alexander P</p>
-<p class="date">Created: 2025-01-05 Sun 18:22</p>
+<p class="date">Created: 2025-04-18 Fri 14:30</p>
 </div>
 </body>
 </html>
