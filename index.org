@@ -592,7 +592,7 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
 #+end_src
 *** applications
 #+begin_src conf
-  set $terminal alacritty
+  set $terminal xterm
   set $browser firefox
   set $mail thunderbird
   set $guiemacs emacsclient -c -a emacs
