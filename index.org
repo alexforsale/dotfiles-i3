@@ -683,7 +683,8 @@ Also set keybinding for toggling bar.
   exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
   exec --no-startup-id dbus-launch --exit-with-session unclutter &
   exec --no-startup-id dbus-launch nm-applet &
-  exec --no-startup-id dbus-launch volumeicon &
+  exec --no-startup-id volumeicon &
+  exec --no-startup-id dbus-launch flameshot &
   exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null &
   exec --no-startup-id $file --daemon &
   exec --no-startup-id ~/.local/bin/transfer-sleep-lock-i3lock-fancy &
