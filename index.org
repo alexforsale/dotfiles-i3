@@ -521,7 +521,8 @@ Similar to rofi-pass, but for /bitwarden/.
 #+begin_src conf
   bindsym $mod+d exec --no-startup-id rofi -show drun -theme i3-apps
 #+end_src
-*** rofi-greenclip
+*** [[https://github.com/erebe/greenclip][rofi-greenclip]]
+This package is available in the /aur/.
 #+begin_src conf
   bindsym $mod+c exec --no-startup-id rofi -theme i3-apps -modi "clipboard:greenclip print" -show clipboard
 #+end_src
