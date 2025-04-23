@@ -490,7 +490,7 @@ Rofi front end for [[https://www.passwordstore.org/][pass]]. It stores passwords
 #+end_src
 *** rofi-calc
 #+begin_src conf
-  bindsym $mod+Mod1+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme calculator
+  bindsym $mod+Mod1+c exec rofi -show calc -modi calc -no-show-match -no-sort
 #+end_src
 *** rofi-rbw
 Similar to rofi-pass, but for /bitwarden/.
@@ -537,6 +537,7 @@ This package is available in the /aur/.
 #+begin_src conf
   bindsym $mod+shift+t exec ~/.local/bin/ocr
 #+end_src
+The recommended full package to install is =ocrdesktop= according to /archlinux/ [[https://wiki.archlinux.org/title/Ocrdesktop][wiki]]. I got this script from the internet which basically doing the same thing only with /maim/ and the /tesseract/ package.
 *** screenkey
 #+begin_src conf
   bindsym $mod+Mod1+s exec screenkey
@@ -696,6 +697,7 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   bindsym $mod+F3 exec picom-trans -c +5
   bindsym $mod+F2 exec picom-trans -c -5
 #+end_src
+A showcase of /picom/ capability, changing transparency on the fly. I set this to ~F2~ and ~F3~ since it's the media keys for brightness on my laptop.
 *** dunst
 #+begin_src conf
   bindsym $mod+Mod1+grave exec dunstctl history-pop
