@@ -705,6 +705,10 @@ A showcase of /picom/ capability, changing transparency on the fly. I set this t
   bindsym $mod+Control+grave exec dunstctl close
   bindsym $mod+grave exec dunstctl action
 #+end_src
+Notice all keybindings is on ~grave~ key?
+- =context= :: opens up the context menu.
+- =history-pop= :: Redisplay the most recently closed notification.
+- =close= :: Closes current notification.
 *** modes
 **** resize
 #+begin_src conf
