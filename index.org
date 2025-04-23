@@ -1441,6 +1441,6 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
 [fn:1] https://unix.stackexchange.com/questions/119212/understanding-window-manager-terminology-mod-keys-meta-keys-and-key-naming-co
 
 * Local variables :noexport:
-local variables:
-eval: (rainbow-mode +1)
-end:
+# local variables:
+# eval: (rainbow-mode +1)
+# end:
