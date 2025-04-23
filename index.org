@@ -338,16 +338,11 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   for_window [class=".*FileRoller"] floating enable resize set 680 680 move position center
 #+end_src
 
+This section sets the window rules for specific window classes, which can be determined using the =xprop= command.
 ** workspace assignment
-
+Workspace specific assignment.
 *** workspace 1
-#+begin_src conf
-  assign [class="XTerm"] $ws1
-  assign [class="URxvt"] $ws1
-  assign [class="Gnome-terminal"] $ws1
-  assign [class="Termite"] $ws1
-#+end_src
-
+The first workspace is reserved for terminals. But I'm not assigning apps into this workspace since I'd like to open terminals on other workspaces.
 *** workspace 2
 #+begin_src conf
   assign [class="Emacs"] $ws2
@@ -1131,11 +1126,7 @@ A standalone compositor for Xorg.
     {
      match =
              "class_g = 'vlc' || "
-             "class_g = 'mpv' || "
-             "class_g = 'URxvt' || "
-             "class_g = 'UXTerm' || "
-             "class_g = 'Alacritty' || "
-             "class_g = 'XTerm' ";
+             "class_g = 'mpv' ";
      opacity = 0.95;
   },
      {
