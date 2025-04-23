@@ -271,7 +271,7 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
   }
 #+end_src
 
-Also set keybinding for toggling bar.
+Also set keybinding for toggling bar. This is useful since I don't need the status bar all the time, and setting it to auto-hide it will show each time I hold the /mod/ key, which also works inside a fullscreen virtual machine, making it easier to switch back to /i3wm/.
 #+begin_src conf
   bindsym $mod+Control+m bar mode toggle
 #+end_src
