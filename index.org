@@ -351,7 +351,7 @@ The first workspace is reserved for terminals. But I'm not assigning apps into t
   assign [class="Gedit"] $ws2
   assign [class="code-oss"] $ws2
 #+end_src
-
+Text editing is on workspace 2.
 *** workspace 3
 #+begin_src conf
   assign [class="qutebrowser"] $ws3
@@ -360,18 +360,18 @@ The first workspace is reserved for terminals. But I'm not assigning apps into t
   assign [class="Nyxt"] $ws3
   assign [class="pidgin"] $ws7
 #+end_src
-
+Web browser goes here.
 *** workspace 4
 #+begin_src conf
   assign [class="Evolution"] $ws4
   assign [class="thunderbird"] $ws4
 #+end_src
-
+For when I use GUI mail client.
 *** workspace 5
 #+begin_src conf
   assign [class="Thunar"] $ws5
 #+end_src
-
+File manager.
 *** workspace 6
 #+begin_src conf
   assign [title="Libreoffice"] $ws6
@@ -379,7 +379,7 @@ The first workspace is reserved for terminals. But I'm not assigning apps into t
   assign [title="Bitwarden"] $ws6
   assign [title="zoom"] $ws6
 #+end_src
-
+Office-related
 *** workspace 7
 #+begin_src conf
   assign [class="Gucharmap"] $ws7
@@ -387,6 +387,7 @@ The first workspace is reserved for terminals. But I'm not assigning apps into t
   assign [class="winbox.exe"] $ws7
   assign [class="discord"] $ws7
 #+end_src
+This suppose to be my chat workspace.
 *** workspace 8
 #+begin_src conf
   assign [class="Rhythmbox"] $ws8
@@ -396,17 +397,20 @@ The first workspace is reserved for terminals. But I'm not assigning apps into t
   assign [class="Spotify"] $ws8
   assign [class="Picard"] $ws8
 #+end_src
+Multimedia related.
 *** workspace 9
 #+begin_src conf
   assign [class="org.remmina.remmina"] $ws9
   assign [class="Virt-manager"] $ws9
   assign [class="Vncviewer"] $ws9
 #+end_src
+Remoting the remotes.
 *** workspace 0
 #+begin_src conf
   assign [class="Steam"] $ws10
   assign [title="Steam"] $ws10
 #+end_src
+Game!
 ** Keybindings
 *** media keys
 #+begin_src conf
@@ -438,6 +442,9 @@ For keyboard with no media keys:
   bindsym $mod+Shift+F3 exec --no-startup-id brightnessctl set +1%
   bindsym $mod+Shift+F2 exec --no-startup-id brightnessctl set 1%-
 #+end_src
+- =pamixer= package is needed for volume, even if you're using /pipewire/.
+- =brightnessctl= package for setting up brightness.
+- =playerctl= works on most MPRIS player.
 *** browser
 #+begin_src conf
   bindsym XF86MyComputer exec $browser
