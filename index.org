@@ -284,6 +284,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
   exec --no-startup-id dbus-launch --exit-with-session unclutter &
   exec --no-startup-id dbus-launch nm-applet &
+  exec --no-startup-id dbus-launch blueman-applet &
   exec --no-startup-id volumeicon &
   exec --no-startup-id flameshot &
   exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null &
