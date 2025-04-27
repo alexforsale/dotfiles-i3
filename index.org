@@ -256,6 +256,7 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
       status_command i3status
       position bottom
       workspace_buttons yes
+      font pango:JetBrainsMonoNL Nerd Font Mono 8
       mode dock
       colors {
           statusline          $color04_i3wm
