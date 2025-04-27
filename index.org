@@ -1142,7 +1142,7 @@ A standalone compositor for Xorg.
      match =
              "class_g = 'vlc' || "
              "class_g = 'mpv' ";
-     opacity = 0.95;
+     opacity = 1;
   },
      {
      match = "class_g = 'Emacs' || "
