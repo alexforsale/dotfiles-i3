@@ -143,7 +143,7 @@ Mostly these variables are set to avoid repetion.
 *** font
 #+begin_src conf
   # font
-  font pango:JetBrainsMonoNL Nerd Font Mono 10
+  font pango:JetBrainsMonoNL Nerd Font Mono 8
 #+end_src
 
 *** notify
