@@ -87,7 +87,7 @@ GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical use
   gtk-xft-hinting=1
   gtk-xft-hintstyle=hintfull
   gtk-key-theme-name=Emacs
-  gtk-font-name=JetBrainsMonoNL Nerd Font Mono 10
+  gtk-font-name=JetBrainsMonoNL Nerd Font Mono 8
   gtk-sound-theme-name=freedesktop
   gtk-icon-theme-name=Papirus
   gtk-cursor-theme-name=Bibata-Modern-Classic
@@ -113,7 +113,7 @@ GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical use
   gtk-xft-hinting=1
   gtk-xft-hintstyle=hintfull
   gtk-key-theme-name=Emacs
-  gtk-font-name=JetBrainsMonoNL Nerd Font Mono, 10
+  gtk-font-name=JetBrainsMonoNL Nerd Font Mono, 8
   gtk-sound-theme-name=freedesktop
   gtk-icon-theme-name=Papirus
   gtk-cursor-theme-name=Bibata-Modern-Classic
