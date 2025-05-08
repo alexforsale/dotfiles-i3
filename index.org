@@ -186,7 +186,7 @@ I should work on this.
   set $ws10 "10: Steam"
 #+end_src
 
-Set ==workspace_back_and_forth=
+Set =workspace_back_and_forth=
 Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window manager I use.
 #+begin_src conf
   workspace_auto_back_and_forth yes
