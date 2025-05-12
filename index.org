@@ -295,6 +295,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id emacs --daemon
   #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpass-Nerd-Font-Reg -detectsleep
   exec --no-startup-id $terminal -class ncmpcpp -e ncmpcpp
+  exec --no-startup-id ~/.local/bin/conky-start &
 #+end_src
 
 ** window rule
@@ -340,7 +341,9 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   for_window [class="virt-manager"] floating enable resize set 680 680 move position center
   for_window [class="(?i)steam.*"] floating enable resize set 680 680 move position center
   for_window [class=".*FileRoller"] floating enable resize set 680 680 move position center
+  for_window [class=".*vokoscreenNG"] floating enable resize set 680 680 move position center
   for_window [class=".*ncmpcpp"] , move scratchpad
+  for_window [class=".*vokoscreenNG"] , move scratchpad
 #+end_src
 
 This section sets the window rules for specific window classes, which can be determined using the =xprop= command.
