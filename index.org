@@ -815,7 +815,7 @@ This only work in floating mode.
   bindsym $mod+r mode "resize"
 #+end_src
 *** Emoji
-Using the same keybinding as /windows/. Needs noto-fonts-emoji package. Clicking or pressing ~RET~ on the emoji will immediately paste it.
+Using the same keybinding as /windows/. Needs [[https://archlinux.org/packages/extra/any/noto-fonts-emoji/][noto-fonts-emoji]] package. Clicking or pressing ~RET~ on the emoji will immediately paste it.
 #+caption: rofi-emoji
 [[./assets/img/rofi-emoji-2025-05-16_21-26.png][file:./assets/img/rofi-emoji-2025-05-16_21-26.png]]
 #+begin_src conf
