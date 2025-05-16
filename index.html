@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-16 Fri 10:11 -->
+<!-- 2025-05-16 Fri 10:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>i3wm Configuration Files</title>
@@ -28,176 +28,176 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf8edcae">About</a>
+<li><a href="#org9ba15ab">About</a>
 <ul>
-<li><a href="#org484cf03">The Rework</a></li>
-<li><a href="#orgd548f6a">Required packages</a></li>
-<li><a href="#org67a9460">Optional packages</a></li>
-<li><a href="#orgdf76cc1">Themes, fonts, and other UI related packages</a></li>
-<li><a href="#orgd7528ef">Apps Used</a>
+<li><a href="#org4faaf3a">The Rework</a></li>
+<li><a href="#orge775f13">Required packages</a></li>
+<li><a href="#org639ea55">Optional packages</a></li>
+<li><a href="#org4a0f45b">Themes, fonts, and other UI related packages</a></li>
+<li><a href="#org773e628">Apps Used</a>
 <ul>
-<li><a href="#org39b2b78">Multimedia</a></li>
+<li><a href="#org3e7d66a">Multimedia</a></li>
 </ul>
 </li>
-<li><a href="#orgdda6803">Other related repository</a></li>
+<li><a href="#org5f04715">Other related repository</a></li>
 </ul>
 </li>
-<li><a href="#org98ab779">GTK</a>
+<li><a href="#orgef8c231">GTK</a>
 <ul>
-<li><a href="#orgf845831">GTK 3</a>
+<li><a href="#orgb918c12">GTK 3</a>
 <ul>
-<li><a href="#org8f36904">Settings</a></li>
+<li><a href="#orgc6fe270">Settings</a></li>
 </ul>
 </li>
-<li><a href="#org9bba4eb">GTK 4</a>
+<li><a href="#org52705b4">GTK 4</a>
 <ul>
-<li><a href="#org234d715">Settings</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2f52cfe">i3wm</a>
-<ul>
-<li><a href="#org54fa555">variables</a>
-<ul>
-<li><a href="#orgdc85439">mod key</a></li>
-<li><a href="#orge06c2cd">font</a></li>
-<li><a href="#org213bf47">notify</a></li>
-<li><a href="#org220181e">refresh i3status</a></li>
-<li><a href="#org8416918">navigation keys</a></li>
-<li><a href="#orgc0955fd"><span class="todo TODO">TODO</span> workspaces</a></li>
-<li><a href="#org22aa2d7">applications</a></li>
-<li><a href="#org23adc6f">Xresouces</a></li>
-<li><a href="#org227b8b1">Colors</a></li>
-<li><a href="#org3dfa2a1">floating modifier</a></li>
-</ul>
-</li>
-<li><a href="#org2609a51">Gaps</a></li>
-<li><a href="#org442b60d">bar</a></li>
-<li><a href="#org4649c12">application autostart</a></li>
-<li><a href="#org9e5812a">window rule</a></li>
-<li><a href="#orgadd6065">workspace assignment</a>
-<ul>
-<li><a href="#org8a68109">workspace 1</a></li>
-<li><a href="#orge3aa575">workspace 2</a></li>
-<li><a href="#org43fbab8">workspace 3</a></li>
-<li><a href="#org0933d98">workspace 4</a></li>
-<li><a href="#org76d5b6f">workspace 5</a></li>
-<li><a href="#org14a0010">workspace 6</a></li>
-<li><a href="#org81fcee7">workspace 7</a></li>
-<li><a href="#org8182aed">workspace 8</a></li>
-<li><a href="#org46e1c3c">workspace 9</a></li>
-<li><a href="#org9c38889">workspace 0</a></li>
-</ul>
-</li>
-<li><a href="#org57bae8a">Keybindings</a>
-<ul>
-<li><a href="#orgd650258">media keys</a></li>
-<li><a href="#org01d7668">browser</a></li>
-<li><a href="#org86065ff">mail</a></li>
-<li><a href="#orgdf0637e">music</a></li>
-<li><a href="#org91fbf5c">htop</a></li>
-<li><a href="#orga997902">nmtui</a></li>
-<li><a href="#org4c229d8">khal</a></li>
-<li><a href="#orgc64d33b">vim</a></li>
-<li><a href="#orgd90c11d">dired</a></li>
-<li><a href="#org8e8e28e">rofi-pass</a></li>
-<li><a href="#org522ed2f">rofi-calc</a></li>
-<li><a href="#org742382d">rofi-rbw</a></li>
-<li><a href="#orgd2b24c9">text editor</a></li>
-<li><a href="#org68d5e02">file manager</a></li>
-<li><a href="#org75b23fd">terminal</a></li>
-<li><a href="#org8373f61">terminal + screen</a></li>
-<li><a href="#orgf88aba7">kill focused window</a></li>
-<li><a href="#org0dcb7c1">rofi-menu</a></li>
-<li><a href="#org08303e6">rofi-greenclip</a></li>
-<li><a href="#org2731e85">rofi window menu</a></li>
-<li><a href="#org1954d27">tesseract</a></li>
-<li><a href="#org33d73bf">screenkey</a></li>
-<li><a href="#orgc2744e3">window management</a>
-<ul>
-<li><a href="#org9e0b4cb">change focus</a></li>
-<li><a href="#orgc7e825d">move focused window</a></li>
-<li><a href="#org02bce48">split</a></li>
-<li><a href="#org17de9ed">fullscreen toggle</a></li>
-<li><a href="#orgb33ce51">container layout</a></li>
-<li><a href="#org15fba90">toggle tiling / floating</a></li>
-<li><a href="#org2827c18">change focus between tiling / floating windows</a></li>
-<li><a href="#orgcd7aa03">focus parent container</a></li>
-<li><a href="#orgd1a1c37">focus child container</a></li>
-<li><a href="#orgd0e29e3">move to scratchpad</a></li>
-<li><a href="#org4a428ef">show scratchpad</a></li>
-</ul>
-</li>
-<li><a href="#org6eb9a72">workspace management</a>
-<ul>
-<li><a href="#org7be95a6">switch to workspace prev / next</a></li>
-<li><a href="#orge282d59">move focused containerto workspace</a></li>
-<li><a href="#org8c30a08">move using bracket keys</a></li>
-<li><a href="#org3fb5c2b">back and forth</a></li>
-<li><a href="#orgd0e43fd">switch output focus</a></li>
-<li><a href="#orgdf29aa1">moving to output</a></li>
-</ul>
-</li>
-<li><a href="#orgcc1d282">Reload configuration</a></li>
-<li><a href="#orgf8f9610">Hot restart</a></li>
-<li><a href="#org79c07ef">exit i3</a></li>
-<li><a href="#orgbeb554c">picom transparency</a></li>
-<li><a href="#org02ca866">dunst</a></li>
-<li><a href="#org90837f7">modes</a>
-<ul>
-<li><a href="#orgd8806a7">resize</a></li>
+<li><a href="#org5944980">Settings</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#org14fc8cc">i3wm</a>
+<ul>
+<li><a href="#org6f7a2ea">variables</a>
+<ul>
+<li><a href="#orgedf1ea1">mod key</a></li>
+<li><a href="#org87060ce">font</a></li>
+<li><a href="#orgc780b00">notify</a></li>
+<li><a href="#orgcc40cd9">refresh i3status</a></li>
+<li><a href="#orgfe95dd1">navigation keys</a></li>
+<li><a href="#org914ed1e"><span class="todo TODO">TODO</span> workspaces</a></li>
+<li><a href="#org8abc18a">applications</a></li>
+<li><a href="#org312afa2">Xresouces</a></li>
+<li><a href="#orgef7a7a3">Colors</a></li>
+<li><a href="#orgc8dac2d">floating modifier</a></li>
 </ul>
 </li>
-<li><a href="#orgceeb48a">i3status</a>
+<li><a href="#orge95a8bd">Gaps</a></li>
+<li><a href="#orgc4e47f0">bar</a></li>
+<li><a href="#org4a2ee65">application autostart</a></li>
+<li><a href="#org438eab5">window rule</a></li>
+<li><a href="#org5784cc1">workspace assignment</a>
 <ul>
-<li><a href="#org3e5e5c1">general</a></li>
-<li><a href="#orga51ce03">order</a></li>
-<li><a href="#orga683cc4">wireless</a></li>
-<li><a href="#org8f4bab6">ethernet</a></li>
-<li><a href="#orgff54eee">battery</a></li>
-<li><a href="#orgcc3526e">memory</a></li>
-<li><a href="#org9b58ff8">time</a></li>
+<li><a href="#org7c40b25">workspace 1</a></li>
+<li><a href="#org7667066">workspace 2</a></li>
+<li><a href="#org8ed6c69">workspace 3</a></li>
+<li><a href="#orgda1e4ad">workspace 4</a></li>
+<li><a href="#orgd5956c4">workspace 5</a></li>
+<li><a href="#org3825738">workspace 6</a></li>
+<li><a href="#org138b04e">workspace 7</a></li>
+<li><a href="#org958cd72">workspace 8</a></li>
+<li><a href="#org74ced15">workspace 9</a></li>
+<li><a href="#org95af60c">workspace 0</a></li>
 </ul>
 </li>
-<li><a href="#org891912f">picom</a>
+<li><a href="#orge1554c8">Keybindings</a>
 <ul>
-<li><a href="#org7279db5">Shadows</a></li>
-<li><a href="#org9375dca">Fading</a></li>
-<li><a href="#orgdfdbe26">Transparency</a></li>
-<li><a href="#orgb78b4e5">Corners</a></li>
-<li><a href="#orgaa75346">Blur</a></li>
-<li><a href="#orgab0ba73">General Settings</a></li>
-<li><a href="#org8fcbe93">Rules</a></li>
-<li><a href="#org8a28dfd">Includes</a></li>
+<li><a href="#orgc9f568e">media keys</a></li>
+<li><a href="#org363c63c">browser</a></li>
+<li><a href="#orgf6c8cc3">mail</a></li>
+<li><a href="#orgd8af79c">music</a></li>
+<li><a href="#orgf1f7359">htop</a></li>
+<li><a href="#org467e90c">nmtui</a></li>
+<li><a href="#orgd68849f">khal</a></li>
+<li><a href="#orge462598">vim</a></li>
+<li><a href="#org0c58a5e">dired</a></li>
+<li><a href="#org005467e">rofi-pass</a></li>
+<li><a href="#org988f5fe">rofi-calc</a></li>
+<li><a href="#org9a1b8e0">rofi-rbw</a></li>
+<li><a href="#orga523bb7">text editor</a></li>
+<li><a href="#orgf8c501e">file manager</a></li>
+<li><a href="#org35d8e3b">terminal</a></li>
+<li><a href="#org4f6957b">terminal + screen</a></li>
+<li><a href="#orgcd2f862">kill focused window</a></li>
+<li><a href="#orgca70ca3">rofi-menu</a></li>
+<li><a href="#orgcdc4d24">rofi-greenclip</a></li>
+<li><a href="#org2834c9d">rofi window menu</a></li>
+<li><a href="#orgf56dbe8">tesseract</a></li>
+<li><a href="#org39732aa">screenkey</a></li>
+<li><a href="#org1adfc9e">window management</a>
+<ul>
+<li><a href="#orgd570de0">change focus</a></li>
+<li><a href="#org9ac6ebf">move focused window</a></li>
+<li><a href="#orgdc37c94">split</a></li>
+<li><a href="#orgfabd319">fullscreen toggle</a></li>
+<li><a href="#org00fe1c1">container layout</a></li>
+<li><a href="#orgaa3cecb">toggle tiling / floating</a></li>
+<li><a href="#org0af9bf9">change focus between tiling / floating windows</a></li>
+<li><a href="#org70c2eae">focus parent container</a></li>
+<li><a href="#org5e0c19d">focus child container</a></li>
+<li><a href="#orgaeb5e27">move to scratchpad</a></li>
+<li><a href="#org4ccc31b">show scratchpad</a></li>
 </ul>
 </li>
-<li><a href="#orgf294d31">Scripts</a>
+<li><a href="#org8329b99">workspace management</a>
 <ul>
-<li><a href="#orgf97299a">ocr</a></li>
-<li><a href="#org7294026">i3-logout</a></li>
-<li><a href="#orgb7a9733">transfer screen lock</a></li>
+<li><a href="#orgcf625f0">switch to workspace prev / next</a></li>
+<li><a href="#orgd920bd8">move focused containerto workspace</a></li>
+<li><a href="#org203b2d3">move using bracket keys</a></li>
+<li><a href="#orgaaa30fc">back and forth</a></li>
+<li><a href="#org7889afc">switch output focus</a></li>
+<li><a href="#orgb3735c1">moving to output</a></li>
+</ul>
+</li>
+<li><a href="#org7dc555a">Reload configuration</a></li>
+<li><a href="#orgfef0227">Hot restart</a></li>
+<li><a href="#org3b0f112">exit i3</a></li>
+<li><a href="#org19e43f8">picom transparency</a></li>
+<li><a href="#org1845508">dunst</a></li>
+<li><a href="#org1e8af25">modes</a>
+<ul>
+<li><a href="#org945183f">resize</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfed862b">i3status</a>
+<ul>
+<li><a href="#org53b440f">general</a></li>
+<li><a href="#orgb252ed4">order</a></li>
+<li><a href="#orgd98ad7d">wireless</a></li>
+<li><a href="#org8e0fc27">ethernet</a></li>
+<li><a href="#orged8a052">battery</a></li>
+<li><a href="#org784b345">memory</a></li>
+<li><a href="#org324a9f5">time</a></li>
+</ul>
+</li>
+<li><a href="#orga60ae95">picom</a>
+<ul>
+<li><a href="#org3d5e630">Shadows</a></li>
+<li><a href="#org049af7e">Fading</a></li>
+<li><a href="#orgaaec23e">Transparency</a></li>
+<li><a href="#orga02feb2">Corners</a></li>
+<li><a href="#org9320390">Blur</a></li>
+<li><a href="#orge23ed42">General Settings</a></li>
+<li><a href="#orga48db90">Rules</a></li>
+<li><a href="#org17b7aaf">Includes</a></li>
+</ul>
+</li>
+<li><a href="#orge42f38a">Scripts</a>
+<ul>
+<li><a href="#org48ec04a">ocr</a></li>
+<li><a href="#org8225750">i3-logout</a></li>
+<li><a href="#org6011399">transfer screen lock</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf8edcae" class="outline-2">
-<h2 id="orgf8edcae">About</h2>
-<div class="outline-text-2" id="text-orgf8edcae">
+<div id="outline-container-org9ba15ab" class="outline-2">
+<h2 id="org9ba15ab">About</h2>
+<div class="outline-text-2" id="text-org9ba15ab">
 <p>
 This is my personal <i>i3wm</i> configuration. The actual code itself is inside this one <i>org-mode</i> file that can be <i>tangled</i> from inside <i>Emacs</i> with the command <code>org-babel-tangle-file</code>. I'm using <a href="https://www.gnu.org/software/stow/">Gnu Stow</a> to create symlinks from the files tangled in this <i>org</i> file into my home directory since not all the files in this repository needs to be symlinked<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>.
 <a href="./assets/img/i3wm.png"><img src="./assets/img/i3wm.png" alt="i3wm.png" /></a>
 </p>
 </div>
-<div id="outline-container-org484cf03" class="outline-3">
-<h3 id="org484cf03">The Rework</h3>
-<div class="outline-text-3" id="text-org484cf03">
+<div id="outline-container-org4faaf3a" class="outline-3">
+<h3 id="org4faaf3a">The Rework</h3>
+<div class="outline-text-3" id="text-org4faaf3a">
 <p>
 After playing with <a href="https://github.com/alexforsale/dotfiles-hyprland">hyprland</a> for a while, I realized that I still need to have an Xorg configuration for my desktop experience. And this i3 configuration has not been updated for a long time.
 </p>
@@ -211,9 +211,9 @@ My goal is to have a repository for i3 window manager, but also have the configu
 </p>
 </div>
 </div>
-<div id="outline-container-orgd548f6a" class="outline-3">
-<h3 id="orgd548f6a">Required packages</h3>
-<div class="outline-text-3" id="text-orgd548f6a">
+<div id="outline-container-orge775f13" class="outline-3">
+<h3 id="orge775f13">Required packages</h3>
+<div class="outline-text-3" id="text-orge775f13">
 <p>
 I'm using <i>archlinux</i> as my main system for years, so I don't really know if the application listed here are also available on other distribution.
 </p>
@@ -233,9 +233,9 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </dl>
 </div>
 </div>
-<div id="outline-container-org67a9460" class="outline-3">
-<h3 id="org67a9460">Optional packages</h3>
-<div class="outline-text-3" id="text-org67a9460">
+<div id="outline-container-org639ea55" class="outline-3">
+<h3 id="org639ea55">Optional packages</h3>
+<div class="outline-text-3" id="text-org639ea55">
 <dl class="org-dl">
 <dt>archlinux-wallpaper</dt><dd>for initial wallpapers.</dd>
 <dt><a href="https://wiki.archlinux.org/title/Feh">feh</a></dt><dd>a lightweight image viewer aimed mainly at users of command line interfaces. Unlike most graphical image viewers.</dd>
@@ -245,7 +245,7 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 <dt><a href="https://github.com/blueman-project/blueman">Blueman</a></dt><dd>GTK+ Bluetooth Manager.</dd>
 <dt><a href="https://pypi.python.org/pypi/udiskie">Udiskie</a></dt><dd>Removable disk automounter using udisks.</dd>
 <dt><a href="https://docs.xfce.org/xfce/thunar/start">Thunar</a></dt><dd>Modern, fast and easy-to-use file manager for Xfce. Install all the optional dependencies if needed.</dd>
-<dt>+<a href="https://github.com/resurrecting-open-source-projects/scrot">Scrot</a></dt><dd>Simple command-line screenshot utility for X.+</dd>
+<dt><del><a href="https://github.com/resurrecting-open-source-projects/scrot">Scrot</a></del></dt><dd><del>Simple command-line screenshot utility for X.</del></dd>
 <dt><a href="https://flameshot.org/">flameshot</a></dt><dd>Powerful, yet simple to use open-source screenshot software.</dd>
 <dt><a href="http://tripie.sweb.cz/utils/wmctrl/">Wmctrl</a></dt><dd>Control your EWMH compliant window manager from command line.</dd>
 <dt><a href="https://github.com/naelstrof/maim">Maim</a></dt><dd>Utility to take a screenshot using imlib2.</dd>
@@ -253,9 +253,9 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </dl>
 </div>
 </div>
-<div id="outline-container-orgdf76cc1" class="outline-3">
-<h3 id="orgdf76cc1">Themes, fonts, and other UI related packages</h3>
-<div class="outline-text-3" id="text-orgdf76cc1">
+<div id="outline-container-org4a0f45b" class="outline-3">
+<h3 id="org4a0f45b">Themes, fonts, and other UI related packages</h3>
+<div class="outline-text-3" id="text-org4a0f45b">
 <dl class="org-dl">
 <dt><a href="https://github.com/ryanoasis/nerd-fonts">ttf-jetbrains-mono-nerd</a></dt><dd>Patched font JetBrains Mono from nerd fonts library</dd>
 <dt><a href="https://github.com/ryanoasis/nerd-fonts">otf-overpass-nerd</a></dt><dd>Patched font Overpass from nerd fonts library.</dd>
@@ -269,22 +269,22 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </dl>
 </div>
 </div>
-<div id="outline-container-orgd7528ef" class="outline-3">
-<h3 id="orgd7528ef">Apps Used</h3>
-<div class="outline-text-3" id="text-orgd7528ef">
+<div id="outline-container-org773e628" class="outline-3">
+<h3 id="org773e628">Apps Used</h3>
+<div class="outline-text-3" id="text-org773e628">
 </div>
-<div id="outline-container-org39b2b78" class="outline-4">
-<h4 id="org39b2b78">Multimedia</h4>
-<div class="outline-text-4" id="text-org39b2b78">
+<div id="outline-container-org3e7d66a" class="outline-4">
+<h4 id="org3e7d66a">Multimedia</h4>
+<div class="outline-text-4" id="text-org3e7d66a">
 <dl class="org-dl">
 <dt><a href="https://github.com/ncmpcpp/ncmpcpp">ncmpcpp</a></dt><dd>Featureful ncurses based MPD client inspired by ncmpc</dd>
 </dl>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdda6803" class="outline-3">
-<h3 id="orgdda6803">Other related repository</h3>
-<div class="outline-text-3" id="text-orgdda6803">
+<div id="outline-container-org5f04715" class="outline-3">
+<h3 id="org5f04715">Other related repository</h3>
+<div class="outline-text-3" id="text-org5f04715">
 <ul class="org-ul">
 <li><a href="https://alexforsale.github.io/dotfiles-shells/">Common Shell Initialization</a></li>
 <li><a href="https://alexforsale.github.io/dotfiles-bash/">bash</a></li>
@@ -297,20 +297,20 @@ I'm using <i>archlinux</i> as my main system for years, so I don't really know i
 </div>
 </div>
 </div>
-<div id="outline-container-org98ab779" class="outline-2">
-<h2 id="org98ab779">GTK</h2>
-<div class="outline-text-2" id="text-org98ab779">
+<div id="outline-container-orgef8c231" class="outline-2">
+<h2 id="orgef8c231">GTK</h2>
+<div class="outline-text-2" id="text-orgef8c231">
 <p>
 GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK is suitable for projects ranging from small one-off tools to complete application suites. Most of these settings are taken from <i>Arch</i> <a href="https://wiki.archlinux.org/title/GTK">wiki</a>.
 </p>
 </div>
-<div id="outline-container-orgf845831" class="outline-3">
-<h3 id="orgf845831">GTK 3</h3>
-<div class="outline-text-3" id="text-orgf845831">
+<div id="outline-container-orgb918c12" class="outline-3">
+<h3 id="orgb918c12">GTK 3</h3>
+<div class="outline-text-3" id="text-orgb918c12">
 </div>
-<div id="outline-container-org8f36904" class="outline-4">
-<h4 id="org8f36904">Settings</h4>
-<div class="outline-text-4" id="text-org8f36904">
+<div id="outline-container-orgc6fe270" class="outline-4">
+<h4 id="orgc6fe270">Settings</h4>
+<div class="outline-text-4" id="text-orgc6fe270">
 <div class="org-src-container">
 <pre class="src src-conf">[<span style="color: #228b22;">Settings</span>]
 <span style="color: #b8860b;">gtk-theme-name</span>=Breeze-Dark
@@ -336,13 +336,13 @@ GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical use
 </div>
 </div>
 </div>
-<div id="outline-container-org9bba4eb" class="outline-3">
-<h3 id="org9bba4eb">GTK 4</h3>
-<div class="outline-text-3" id="text-org9bba4eb">
+<div id="outline-container-org52705b4" class="outline-3">
+<h3 id="org52705b4">GTK 4</h3>
+<div class="outline-text-3" id="text-org52705b4">
 </div>
-<div id="outline-container-org234d715" class="outline-4">
-<h4 id="org234d715">Settings</h4>
-<div class="outline-text-4" id="text-org234d715">
+<div id="outline-container-org5944980" class="outline-4">
+<h4 id="org5944980">Settings</h4>
+<div class="outline-text-4" id="text-org5944980">
 <div class="org-src-container">
 <pre class="src src-conf">[<span style="color: #228b22;">Settings</span>]
 <span style="color: #b8860b;">gtk-theme-name</span>=Breeze-Dark
@@ -369,23 +369,23 @@ GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical use
 </div>
 </div>
 
-<div id="outline-container-org2f52cfe" class="outline-2">
-<h2 id="org2f52cfe">i3wm</h2>
-<div class="outline-text-2" id="text-org2f52cfe">
+<div id="outline-container-org14fc8cc" class="outline-2">
+<h2 id="org14fc8cc">i3wm</h2>
+<div class="outline-text-2" id="text-org14fc8cc">
 <p>
 The <a href="https://wiki.archlinux.org/title/i3">i3-wm</a> package that I used is from the default repository in <i>archlinux</i>.
 </p>
 </div>
-<div id="outline-container-org54fa555" class="outline-3">
-<h3 id="org54fa555">variables</h3>
-<div class="outline-text-3" id="text-org54fa555">
+<div id="outline-container-org6f7a2ea" class="outline-3">
+<h3 id="org6f7a2ea">variables</h3>
+<div class="outline-text-3" id="text-org6f7a2ea">
 <p>
 Mostly these variables are set to avoid repetion.
 </p>
 </div>
-<div id="outline-container-orgdc85439" class="outline-4">
-<h4 id="orgdc85439">mod key</h4>
-<div class="outline-text-4" id="text-orgdc85439">
+<div id="outline-container-orgedf1ea1" class="outline-4">
+<h4 id="orgedf1ea1">mod key</h4>
+<div class="outline-text-4" id="text-orgedf1ea1">
 <p>
 <code>Mod4</code> is the <code>Super</code> key, or <code>Win</code> key for the rest of the world. <code>Mod1</code> is <code>Alt</code><sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. You don't have to set this variable, but by using variable, we can change the <i>mod</i> key without having to change each individual lines of keybindings.
 </p>
@@ -395,9 +395,9 @@ Mostly these variables are set to avoid repetion.
 </div>
 </div>
 </div>
-<div id="outline-container-orge06c2cd" class="outline-4">
-<h4 id="orge06c2cd">font</h4>
-<div class="outline-text-4" id="text-orge06c2cd">
+<div id="outline-container-org87060ce" class="outline-4">
+<h4 id="org87060ce">font</h4>
+<div class="outline-text-4" id="text-org87060ce">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">font</span>
 font pango:JetBrainsMonoNL Nerd Font Mono 8
@@ -406,9 +406,9 @@ font pango:JetBrainsMonoNL Nerd Font Mono 8
 </div>
 </div>
 
-<div id="outline-container-org213bf47" class="outline-4">
-<h4 id="org213bf47">notify</h4>
-<div class="outline-text-4" id="text-org213bf47">
+<div id="outline-container-orgc780b00" class="outline-4">
+<h4 id="orgc780b00">notify</h4>
+<div class="outline-text-4" id="text-orgc780b00">
 <p>
 I used <a href="https://wiki.archlinux.org/title/Dunst">dunst</a> as a desktop notification, though there's many other packages that can replace it. I prefer <i>dunst</i> because it's easier to configure.
 </p>
@@ -419,9 +419,9 @@ I used <a href="https://wiki.archlinux.org/title/Dunst">dunst</a> as a desktop n
 </div>
 </div>
 
-<div id="outline-container-org220181e" class="outline-4">
-<h4 id="org220181e">refresh i3status</h4>
-<div class="outline-text-4" id="text-org220181e">
+<div id="outline-container-orgcc40cd9" class="outline-4">
+<h4 id="orgcc40cd9">refresh i3status</h4>
+<div class="outline-text-4" id="text-orgcc40cd9">
 <p>
 The preferred status bar for <i>i3</i>, I like the simplicity of <a href="https://github.com/i3/i3status">i3status</a>.
 </p>
@@ -432,9 +432,9 @@ The preferred status bar for <i>i3</i>, I like the simplicity of <a href="https:
 </div>
 </div>
 
-<div id="outline-container-org8416918" class="outline-4">
-<h4 id="org8416918">navigation keys</h4>
-<div class="outline-text-4" id="text-org8416918">
+<div id="outline-container-orgfe95dd1" class="outline-4">
+<h4 id="orgfe95dd1">navigation keys</h4>
+<div class="outline-text-4" id="text-orgfe95dd1">
 <p>
 I use <i>vim</i> keys obviously.
 </p>
@@ -448,9 +448,9 @@ set $right l
 </div>
 </div>
 
-<div id="outline-container-orgc0955fd" class="outline-4">
-<h4 id="orgc0955fd"><span class="todo TODO">TODO</span> workspaces</h4>
-<div class="outline-text-4" id="text-orgc0955fd">
+<div id="outline-container-org914ed1e" class="outline-4">
+<h4 id="org914ed1e"><span class="todo TODO">TODO</span> workspaces</h4>
+<div class="outline-text-4" id="text-org914ed1e">
 <p>
 I tried to have a uniformed workspaces across all my window manager configurations. 
 I should work on this.
@@ -479,9 +479,9 @@ Bound to <code>$mod+TAB</code>, I really use this alot, this is mandatory in eve
 </div>
 </div>
 </div>
-<div id="outline-container-org22aa2d7" class="outline-4">
-<h4 id="org22aa2d7">applications</h4>
-<div class="outline-text-4" id="text-org22aa2d7">
+<div id="outline-container-org8abc18a" class="outline-4">
+<h4 id="org8abc18a">applications</h4>
+<div class="outline-text-4" id="text-org8abc18a">
 <div class="org-src-container">
 <pre class="src src-conf">set $terminal xterm
 set $browser firefox
@@ -494,9 +494,9 @@ set $file thunar
 </div>
 </div>
 
-<div id="outline-container-org23adc6f" class="outline-4">
-<h4 id="org23adc6f">Xresouces</h4>
-<div class="outline-text-4" id="text-org23adc6f">
+<div id="outline-container-org312afa2" class="outline-4">
+<h4 id="org312afa2">Xresouces</h4>
+<div class="outline-text-4" id="text-org312afa2">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#### </span><span style="color: #b22222;">https://build.i3wm.org/docs/userguide.html#xresources</span>
 set_from_resource         $background_i3wm  background      <span style="color: #b22222;">#</span><span style="color: #b22222;">000000</span>
@@ -522,9 +522,9 @@ set_from_resource         $color15_i3wm         color15         <span style="col
 </div>
 </div>
 
-<div id="outline-container-org227b8b1" class="outline-4">
-<h4 id="org227b8b1">Colors</h4>
-<div class="outline-text-4" id="text-org227b8b1">
+<div id="outline-container-orgef7a7a3" class="outline-4">
+<h4 id="orgef7a7a3">Colors</h4>
+<div class="outline-text-4" id="text-orgef7a7a3">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">Theme colors</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">class                 border          backgr.         text            indic.                  child_border</span>
@@ -541,9 +541,9 @@ client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $ba
 </div>
 </div>
 
-<div id="outline-container-org3dfa2a1" class="outline-4">
-<h4 id="org3dfa2a1">floating modifier</h4>
-<div class="outline-text-4" id="text-org3dfa2a1">
+<div id="outline-container-orgc8dac2d" class="outline-4">
+<h4 id="orgc8dac2d">floating modifier</h4>
+<div class="outline-text-4" id="text-orgc8dac2d">
 <div class="org-src-container">
 <pre class="src src-conf">floating_modifier $mod
 </pre>
@@ -552,11 +552,11 @@ client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $ba
 </div>
 </div>
 
-<div id="outline-container-org2609a51" class="outline-3">
-<h3 id="org2609a51">Gaps</h3>
-<div class="outline-text-3" id="text-org2609a51">
+<div id="outline-container-orge95a8bd" class="outline-3">
+<h3 id="orge95a8bd">Gaps</h3>
+<div class="outline-text-3" id="text-orge95a8bd">
 
-<div id="org5eee91f" class="figure">
+<div id="orgf1b7af1" class="figure">
 <p><a href="./assets/img/i3wm-2025-04-18_21-42.png"><img src="./assets/img/i3wm-2025-04-18_21-42.png" alt="i3wm-2025-04-18_21-42.png" /></a>
 </p>
 </div>
@@ -568,9 +568,9 @@ smart_gaps on
 </div>
 </div>
 </div>
-<div id="outline-container-org442b60d" class="outline-3">
-<h3 id="org442b60d">bar</h3>
-<div class="outline-text-3" id="text-org442b60d">
+<div id="outline-container-orgc4e47f0" class="outline-3">
+<h3 id="orgc4e47f0">bar</h3>
+<div class="outline-text-3" id="text-orgc4e47f0">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">bar</span> {
     status_command i3status
@@ -603,9 +603,9 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
 </div>
 </div>
 
-<div id="outline-container-org4649c12" class="outline-3">
-<h3 id="org4649c12">application autostart</h3>
-<div class="outline-text-3" id="text-org4649c12">
+<div id="outline-container-org4a2ee65" class="outline-3">
+<h3 id="org4a2ee65">application autostart</h3>
+<div class="outline-text-3" id="text-org4a2ee65">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">exec --no-startup-id ~/.local/bin/monitor-setup</span>
 exec --no-startup-id xsetroot -cursor_name left_ptr
@@ -629,9 +629,9 @@ exec --no-startup-id ~/.local/bin/conky-start &amp;
 </div>
 </div>
 
-<div id="outline-container-org9e5812a" class="outline-3">
-<h3 id="org9e5812a">window rule</h3>
-<div class="outline-text-3" id="text-org9e5812a">
+<div id="outline-container-org438eab5" class="outline-3">
+<h3 id="org438eab5">window rule</h3>
+<div class="outline-text-3" id="text-org438eab5">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">for_window [class</span>=<span style="color: #bc8f8f;">".*"</span>] border pixel 0
 <span style="color: #b22222;"># </span><span style="color: #b22222;">for_window [class="(?i)xclipboard"] , move scratchpad</span>
@@ -685,24 +685,24 @@ This section sets the window rules for specific window classes, which can be det
 </p>
 </div>
 </div>
-<div id="outline-container-orgadd6065" class="outline-3">
-<h3 id="orgadd6065">workspace assignment</h3>
-<div class="outline-text-3" id="text-orgadd6065">
+<div id="outline-container-org5784cc1" class="outline-3">
+<h3 id="org5784cc1">workspace assignment</h3>
+<div class="outline-text-3" id="text-org5784cc1">
 <p>
 Workspace specific assignment.
 </p>
 </div>
-<div id="outline-container-org8a68109" class="outline-4">
-<h4 id="org8a68109">workspace 1</h4>
-<div class="outline-text-4" id="text-org8a68109">
+<div id="outline-container-org7c40b25" class="outline-4">
+<h4 id="org7c40b25">workspace 1</h4>
+<div class="outline-text-4" id="text-org7c40b25">
 <p>
 The first workspace is reserved for terminals. But I'm not assigning apps into this workspace since I'd like to open terminals on other workspaces.
 </p>
 </div>
 </div>
-<div id="outline-container-orge3aa575" class="outline-4">
-<h4 id="orge3aa575">workspace 2</h4>
-<div class="outline-text-4" id="text-orge3aa575">
+<div id="outline-container-org7667066" class="outline-4">
+<h4 id="org7667066">workspace 2</h4>
+<div class="outline-text-4" id="text-org7667066">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Emacs"</span>] $ws2
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Leafpad"</span>] $ws2
@@ -716,9 +716,9 @@ Text editing is on workspace 2.
 </p>
 </div>
 </div>
-<div id="outline-container-org43fbab8" class="outline-4">
-<h4 id="org43fbab8">workspace 3</h4>
-<div class="outline-text-4" id="text-org43fbab8">
+<div id="outline-container-org8ed6c69" class="outline-4">
+<h4 id="org8ed6c69">workspace 3</h4>
+<div class="outline-text-4" id="text-org8ed6c69">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"qutebrowser"</span>] $ws3
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"firefox"</span>] $ws3
@@ -732,9 +732,9 @@ Web browser goes here.
 </p>
 </div>
 </div>
-<div id="outline-container-org0933d98" class="outline-4">
-<h4 id="org0933d98">workspace 4</h4>
-<div class="outline-text-4" id="text-org0933d98">
+<div id="outline-container-orgda1e4ad" class="outline-4">
+<h4 id="orgda1e4ad">workspace 4</h4>
+<div class="outline-text-4" id="text-orgda1e4ad">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Evolution"</span>] $ws4
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"thunderbird"</span>] $ws4
@@ -745,9 +745,9 @@ For when I use GUI mail client.
 </p>
 </div>
 </div>
-<div id="outline-container-org76d5b6f" class="outline-4">
-<h4 id="org76d5b6f">workspace 5</h4>
-<div class="outline-text-4" id="text-org76d5b6f">
+<div id="outline-container-orgd5956c4" class="outline-4">
+<h4 id="orgd5956c4">workspace 5</h4>
+<div class="outline-text-4" id="text-orgd5956c4">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Thunar"</span>] $ws5
 </pre>
@@ -757,9 +757,9 @@ File manager.
 </p>
 </div>
 </div>
-<div id="outline-container-org14a0010" class="outline-4">
-<h4 id="org14a0010">workspace 6</h4>
-<div class="outline-text-4" id="text-org14a0010">
+<div id="outline-container-org3825738" class="outline-4">
+<h4 id="org3825738">workspace 6</h4>
+<div class="outline-text-4" id="text-org3825738">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"Libreoffice"</span>] $ws6
 <span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"com-sonicwall-NetExtender"</span>] $ws6
@@ -772,9 +772,9 @@ Office-related
 </p>
 </div>
 </div>
-<div id="outline-container-org81fcee7" class="outline-4">
-<h4 id="org81fcee7">workspace 7</h4>
-<div class="outline-text-4" id="text-org81fcee7">
+<div id="outline-container-org138b04e" class="outline-4">
+<h4 id="org138b04e">workspace 7</h4>
+<div class="outline-text-4" id="text-org138b04e">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Gucharmap"</span>] $ws7
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"org.gnome.Characters"</span>] $ws7
@@ -787,9 +787,9 @@ This suppose to be my chat workspace.
 </p>
 </div>
 </div>
-<div id="outline-container-org8182aed" class="outline-4">
-<h4 id="org8182aed">workspace 8</h4>
-<div class="outline-text-4" id="text-org8182aed">
+<div id="outline-container-org958cd72" class="outline-4">
+<h4 id="org958cd72">workspace 8</h4>
+<div class="outline-text-4" id="text-org958cd72">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Rhythmbox"</span>] $ws8
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"vlc"</span>] $ws8
@@ -804,9 +804,9 @@ Multimedia related.
 </p>
 </div>
 </div>
-<div id="outline-container-org46e1c3c" class="outline-4">
-<h4 id="org46e1c3c">workspace 9</h4>
-<div class="outline-text-4" id="text-org46e1c3c">
+<div id="outline-container-org74ced15" class="outline-4">
+<h4 id="org74ced15">workspace 9</h4>
+<div class="outline-text-4" id="text-org74ced15">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"org.remmina.remmina"</span>] $ws9
 <span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Virt-manager"</span>] $ws9
@@ -818,9 +818,9 @@ Remoting the remotes.
 </p>
 </div>
 </div>
-<div id="outline-container-org9c38889" class="outline-4">
-<h4 id="org9c38889">workspace 0</h4>
-<div class="outline-text-4" id="text-org9c38889">
+<div id="outline-container-org95af60c" class="outline-4">
+<h4 id="org95af60c">workspace 0</h4>
+<div class="outline-text-4" id="text-org95af60c">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">assign [class</span>=<span style="color: #bc8f8f;">"Steam"</span>] $ws10
 <span style="color: #b8860b;">assign [title</span>=<span style="color: #bc8f8f;">"Steam"</span>] $ws10
@@ -832,13 +832,13 @@ Game!
 </div>
 </div>
 </div>
-<div id="outline-container-org57bae8a" class="outline-3">
-<h3 id="org57bae8a">Keybindings</h3>
-<div class="outline-text-3" id="text-org57bae8a">
+<div id="outline-container-orge1554c8" class="outline-3">
+<h3 id="orge1554c8">Keybindings</h3>
+<div class="outline-text-3" id="text-orge1554c8">
 </div>
-<div id="outline-container-orgd650258" class="outline-4">
-<h4 id="orgd650258">media keys</h4>
-<div class="outline-text-4" id="text-orgd650258">
+<div id="outline-container-orgc9f568e" class="outline-4">
+<h4 id="orgc9f568e">media keys</h4>
+<div class="outline-text-4" id="text-orgc9f568e">
 <p>
 On my laptop these media keys are on <code>F10</code>, <code>F11</code>, and <code>F12</code> for <code>Previous</code>, <code>Play/Pause</code>, and <code>Next</code>. There's also <code>F7</code>, <code>F8</code>, and <code>F9</code> for <code>Mic toggle</code>, <code>Volume up</code>, and <code>Volume down</code>, so that's what I set for my other keyboards, even those without media keys, since pressing <code>Fn</code> with the mod keys is not very convenient.
 </p>
@@ -885,16 +885,16 @@ bindsym $mod+Shift+F2 exec --no-startup-id ~/.local/bin/dunst-backlight 1%-
 I've been using <a href="https://wiki.archlinux.org/title/PipeWire">pipewire</a> for a while, and though I didn't notice any difference with <a href="https://wiki.archlinux.org/title/PulseAudio">pulseaudio</a> I think I'll use it for my main machine. It's also play nice with other applications that relies on <i>pulseaudio</i>.
 </p>
 
-<div id="org3d05cb8" class="figure">
+<div id="orgcc0bc84" class="figure">
 <p><a href="./assets/img/i3wm-Peek-2025-05-16_15-13.gif"><img src="./assets/img/i3wm-Peek-2025-05-16_15-13.gif" alt="i3wm-Peek-2025-05-16_15-13.gif" /></a>
 </p>
 <p><span class="figure-number">Figure 1: </span>transparency binding using <i>picom-trans</i>.</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org01d7668" class="outline-4">
-<h4 id="org01d7668">browser</h4>
-<div class="outline-text-4" id="text-org01d7668">
+<div id="outline-container-org363c63c" class="outline-4">
+<h4 id="org363c63c">browser</h4>
+<div class="outline-text-4" id="text-org363c63c">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym XF86MyComputer exec $browser
 bindsym $mod+Mod1+f exec $browser
@@ -904,16 +904,16 @@ bindsym $mod+Mod1+f exec $browser
 My goto browser has always been <a href="https://wiki.archlinux.org/title/Firefox">firefox</a>.
 </p>
 
-<div id="org012d726" class="figure">
+<div id="org6aef3db" class="figure">
 <p><a href="./assets/img/Peek-firefox-2025-05-16_15-56.gif"><img src="./assets/img/Peek-firefox-2025-05-16_15-56.gif" alt="Peek-firefox-2025-05-16_15-56.gif" /></a>
 </p>
 <p><span class="figure-number">Figure 2: </span><i>firefox</i> using <i>vim</i> addons.</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org86065ff" class="outline-4">
-<h4 id="org86065ff">mail</h4>
-<div class="outline-text-4" id="text-org86065ff">
+<div id="outline-container-orgf6c8cc3" class="outline-4">
+<h4 id="orgf6c8cc3">mail</h4>
+<div class="outline-text-4" id="text-orgf6c8cc3">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym XF86Mail exec $mail
 bindsym $mod+Mod1+t exec $mail
@@ -923,16 +923,16 @@ bindsym $mod+Mod1+t exec $mail
 Using <a href="https://wiki.archlinux.org/title/Thunderbird">thunderbird</a>. Both <i>thunderbird</i> and <i>firefox</i> works well using the GTK theme.
 </p>
 
-<div id="orga39a741" class="figure">
+<div id="orgaa2af08" class="figure">
 <p><a href="./assets/img/thunderbird-2025-05-16_15-52.png"><img src="./assets/img/thunderbird-2025-05-16_15-52.png" alt="thunderbird-2025-05-16_15-52.png" /></a>
 </p>
 <p><span class="figure-number">Figure 3: </span>thunderbird</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdf0637e" class="outline-4">
-<h4 id="orgdf0637e">music</h4>
-<div class="outline-text-4" id="text-orgdf0637e">
+<div id="outline-container-orgd8af79c" class="outline-4">
+<h4 id="orgd8af79c">music</h4>
+<div class="outline-text-4" id="text-orgd8af79c">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+m exec $terminal -class ncmpcpp -e ncmpcpp
 </pre>
@@ -941,31 +941,31 @@ Using <a href="https://wiki.archlinux.org/title/Thunderbird">thunderbird</a>. Bo
 Since I've placed window with the class name <i>ncmpcpp</i> on the scratchpad, the window won't automatically shows up when the keybinding is pressed. To view this we must view the scratchpad window (here bound to <code>$mod -</code>).
 </p>
 
-<div id="orgdf8a99f" class="figure">
+<div id="org03e976c" class="figure">
 <p><a href="./assets/img/ncmpcpp-Peek-2025-05-16_16-06.gif"><img src="./assets/img/ncmpcpp-Peek-2025-05-16_16-06.gif" alt="ncmpcpp-Peek-2025-05-16_16-06.gif" /></a>
 </p>
 <p><span class="figure-number">Figure 4: </span>terminal window with <i>ncmpcpp</i> on scratchpad</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org91fbf5c" class="outline-4">
-<h4 id="org91fbf5c">htop</h4>
-<div class="outline-text-4" id="text-org91fbf5c">
+<div id="outline-container-orgf1f7359" class="outline-4">
+<h4 id="orgf1f7359">htop</h4>
+<div class="outline-text-4" id="text-orgf1f7359">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+h exec $terminal -class htop -e htop
 </pre>
 </div>
 
-<div id="orgfaf51b7" class="figure">
+<div id="org7dafe8d" class="figure">
 <p><a href="./assets/img/htop-Peek-2025-05-16_16-13.gif"><img src="./assets/img/htop-Peek-2025-05-16_16-13.gif" alt="htop-Peek-2025-05-16_16-13.gif" /></a>
 </p>
 <p><span class="figure-number">Figure 5: </span>htop</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orga997902" class="outline-4">
-<h4 id="orga997902">nmtui</h4>
-<div class="outline-text-4" id="text-orga997902">
+<div id="outline-container-org467e90c" class="outline-4">
+<h4 id="org467e90c">nmtui</h4>
+<div class="outline-text-4" id="text-org467e90c">
 <p>
 For machine running <a href="https://wiki.archlinux.org/title/NetworkManager">networkmanager</a>.
 </p>
@@ -974,16 +974,16 @@ For machine running <a href="https://wiki.archlinux.org/title/NetworkManager">ne
 </pre>
 </div>
 
-<div id="orgcfc7db1" class="figure">
+<div id="org8517a43" class="figure">
 <p><a href="./assets/img/nmtui-2025-05-16_16-16.png"><img src="./assets/img/nmtui-2025-05-16_16-16.png" alt="nmtui-2025-05-16_16-16.png" /></a>
 </p>
 <p><span class="figure-number">Figure 6: </span>nmtui for connection settings</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org4c229d8" class="outline-4">
-<h4 id="org4c229d8">khal</h4>
-<div class="outline-text-4" id="text-org4c229d8">
+<div id="outline-container-orgd68849f" class="outline-4">
+<h4 id="orgd68849f">khal</h4>
+<div class="outline-text-4" id="text-orgd68849f">
 <p>
 A simple calendar application.
 </p>
@@ -992,16 +992,16 @@ A simple calendar application.
 </pre>
 </div>
 
-<div id="orgc730012" class="figure">
+<div id="org07d4850" class="figure">
 <p><a href="./assets/img/khal-2025-05-16_16-18.png"><img src="./assets/img/khal-2025-05-16_16-18.png" alt="khal-2025-05-16_16-18.png" /></a>
 </p>
 <p><span class="figure-number">Figure 7: </span>khal</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc64d33b" class="outline-4">
-<h4 id="orgc64d33b">vim</h4>
-<div class="outline-text-4" id="text-orgc64d33b">
+<div id="outline-container-orge462598" class="outline-4">
+<h4 id="orge462598">vim</h4>
+<div class="outline-text-4" id="text-orge462598">
 <p>
 For when I'm feeling like using <i>vim</i>.
 </p>
@@ -1010,16 +1010,16 @@ For when I'm feeling like using <i>vim</i>.
 </pre>
 </div>
 
-<div id="org28c8c3f" class="figure">
+<div id="orgfcdd062" class="figure">
 <p><a href="./assets/img/vim-2025-05-16_16-19.png"><img src="./assets/img/vim-2025-05-16_16-19.png" alt="vim-2025-05-16_16-19.png" /></a>
 </p>
 <p><span class="figure-number">Figure 8: </span>vim</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd90c11d" class="outline-4">
-<h4 id="orgd90c11d">dired</h4>
-<div class="outline-text-4" id="text-orgd90c11d">
+<div id="outline-container-org0c58a5e" class="outline-4">
+<h4 id="org0c58a5e">dired</h4>
+<div class="outline-text-4" id="text-org0c58a5e">
 <p>
 File manager under <i>Emacs</i>.
 </p>
@@ -1028,16 +1028,16 @@ File manager under <i>Emacs</i>.
 </pre>
 </div>
 
-<div id="orgdcafeb0" class="figure">
+<div id="orgc7a3ddb" class="figure">
 <p><a href="./assets/img/dired-Peek-2025-05-16_16-22.gif"><img src="./assets/img/dired-Peek-2025-05-16_16-22.gif" alt="dired-Peek-2025-05-16_16-22.gif" /></a>
 </p>
 <p><span class="figure-number">Figure 9: </span>dired</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org8e8e28e" class="outline-4">
-<h4 id="org8e8e28e">rofi-pass</h4>
-<div class="outline-text-4" id="text-org8e8e28e">
+<div id="outline-container-org005467e" class="outline-4">
+<h4 id="org005467e">rofi-pass</h4>
+<div class="outline-text-4" id="text-org005467e">
 <p>
 <a href="./assets/img/rofi-pass.png"><img src="./assets/img/rofi-pass.png" alt="rofi-pass.png" /></a>
 Rofi front end for <a href="https://www.passwordstore.org/">pass</a>. It stores passwords using <i>git</i> and encrypted with <i>GnuPG</i>. It also has an <i>OTP</i> extensions.
@@ -1048,9 +1048,9 @@ Rofi front end for <a href="https://www.passwordstore.org/">pass</a>. It stores 
 </div>
 </div>
 </div>
-<div id="outline-container-org522ed2f" class="outline-4">
-<h4 id="org522ed2f">rofi-calc</h4>
-<div class="outline-text-4" id="text-org522ed2f">
+<div id="outline-container-org988f5fe" class="outline-4">
+<h4 id="org988f5fe">rofi-calc</h4>
+<div class="outline-text-4" id="text-org988f5fe">
 <p>
 Simple calculator using <i>rofi</i>.
 </p>
@@ -1059,16 +1059,16 @@ Simple calculator using <i>rofi</i>.
 </pre>
 </div>
 
-<div id="org699fcaa" class="figure">
+<div id="org937dcbd" class="figure">
 <p><a href="./assets/img/rofi-calc-2025-05-16_16-24.png"><img src="./assets/img/rofi-calc-2025-05-16_16-24.png" alt="rofi-calc-2025-05-16_16-24.png" /></a>
 </p>
 <p><span class="figure-number">Figure 10: </span>rofi-calc</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org742382d" class="outline-4">
-<h4 id="org742382d">rofi-rbw</h4>
-<div class="outline-text-4" id="text-org742382d">
+<div id="outline-container-org9a1b8e0" class="outline-4">
+<h4 id="org9a1b8e0">rofi-rbw</h4>
+<div class="outline-text-4" id="text-org9a1b8e0">
 <p>
 Similar to rofi-pass, but for <i>bitwarden</i>. I don't use this often since I used the <i>firefox</i> extension.
 </p>
@@ -1078,9 +1078,9 @@ Similar to rofi-pass, but for <i>bitwarden</i>. I don't use this often since I u
 </div>
 </div>
 </div>
-<div id="outline-container-orgd2b24c9" class="outline-4">
-<h4 id="orgd2b24c9">text editor</h4>
-<div class="outline-text-4" id="text-orgd2b24c9">
+<div id="outline-container-orga523bb7" class="outline-4">
+<h4 id="orga523bb7">text editor</h4>
+<div class="outline-text-4" id="text-orga523bb7">
 <p>
 Just your regular <i>Emacs</i>, bound to a key.
 </p>
@@ -1091,9 +1091,9 @@ bindsym $mod+Control+n exec $terminal -e $tuiemacs
 </div>
 </div>
 </div>
-<div id="outline-container-org68d5e02" class="outline-4">
-<h4 id="org68d5e02">file manager</h4>
-<div class="outline-text-4" id="text-org68d5e02">
+<div id="outline-container-orgf8c501e" class="outline-4">
+<h4 id="orgf8c501e">file manager</h4>
+<div class="outline-text-4" id="text-orgf8c501e">
 <p>
 Default to <a href="https://wiki.archlinux.org/title/Thunar">thunar</a>.
 </p>
@@ -1102,16 +1102,16 @@ Default to <a href="https://wiki.archlinux.org/title/Thunar">thunar</a>.
 </pre>
 </div>
 
-<div id="orgb79568d" class="figure">
+<div id="orge1e8c7d" class="figure">
 <p><a href="./assets/img/thunar-2025-05-16_16-27.png"><img src="./assets/img/thunar-2025-05-16_16-27.png" alt="thunar-2025-05-16_16-27.png" /></a>
 </p>
 <p><span class="figure-number">Figure 11: </span>thunar</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org75b23fd" class="outline-4">
-<h4 id="org75b23fd">terminal</h4>
-<div class="outline-text-4" id="text-org75b23fd">
+<div id="outline-container-org35d8e3b" class="outline-4">
+<h4 id="org35d8e3b">terminal</h4>
+<div class="outline-text-4" id="text-org35d8e3b">
 <p>
 Now default to <a href="https://wiki.archlinux.org/title/Xterm">xterm</a>.
 </p>
@@ -1120,16 +1120,16 @@ Now default to <a href="https://wiki.archlinux.org/title/Xterm">xterm</a>.
 </pre>
 </div>
 
-<div id="org6a05637" class="figure">
+<div id="orga2b8233" class="figure">
 <p><a href="./assets/img/xterm-2025-05-16_16-33.png"><img src="./assets/img/xterm-2025-05-16_16-33.png" alt="xterm-2025-05-16_16-33.png" /></a>
 </p>
 <p><span class="figure-number">Figure 12: </span>xterm</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org8373f61" class="outline-4">
-<h4 id="org8373f61">terminal + screen</h4>
-<div class="outline-text-4" id="text-org8373f61">
+<div id="outline-container-org4f6957b" class="outline-4">
+<h4 id="org4f6957b">terminal + screen</h4>
+<div class="outline-text-4" id="text-org4f6957b">
 <p>
 I don't use <a href="https://wiki.archlinux.org/title/GNU_Screen">screen</a> much anymore. Been tinkering with <a href="https://wiki.archlinux.org/title/Tmux">tmux</a> and until now haven't been disappointed yet.
 </p>
@@ -1139,9 +1139,9 @@ I don't use <a href="https://wiki.archlinux.org/title/GNU_Screen">screen</a> muc
 </div>
 </div>
 </div>
-<div id="outline-container-orgf88aba7" class="outline-4">
-<h4 id="orgf88aba7">kill focused window</h4>
-<div class="outline-text-4" id="text-orgf88aba7">
+<div id="outline-container-orgcd2f862" class="outline-4">
+<h4 id="orgcd2f862">kill focused window</h4>
+<div class="outline-text-4" id="text-orgcd2f862">
 <p>
 Useful for windows without a kill button (looking at you <i>spotify</i>).
 </p>
@@ -1152,9 +1152,9 @@ bindsym Mod1+F4 kill
 </div>
 </div>
 </div>
-<div id="outline-container-org0dcb7c1" class="outline-4">
-<h4 id="org0dcb7c1">rofi-menu</h4>
-<div class="outline-text-4" id="text-org0dcb7c1">
+<div id="outline-container-orgca70ca3" class="outline-4">
+<h4 id="orgca70ca3">rofi-menu</h4>
+<div class="outline-text-4" id="text-orgca70ca3">
 <p>
 Using <a href="https://wiki.archlinux.org/title/Rofi">rofi</a> as an application launcher.
 </p>
@@ -1163,16 +1163,16 @@ Using <a href="https://wiki.archlinux.org/title/Rofi">rofi</a> as an application
 </pre>
 </div>
 
-<div id="org3041ca3" class="figure">
+<div id="orgd0d44f1" class="figure">
 <p><a href="./assets/img/rofi-menu-2025-05-16_16-39.png"><img src="./assets/img/rofi-menu-2025-05-16_16-39.png" alt="rofi-menu-2025-05-16_16-39.png" /></a>
 </p>
 <p><span class="figure-number">Figure 13: </span>rofi-menu</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org08303e6" class="outline-4">
-<h4 id="org08303e6"><a href="https://github.com/erebe/greenclip">rofi-greenclip</a></h4>
-<div class="outline-text-4" id="text-org08303e6">
+<div id="outline-container-orgcdc4d24" class="outline-4">
+<h4 id="orgcdc4d24"><a href="https://github.com/erebe/greenclip">rofi-greenclip</a></h4>
+<div class="outline-text-4" id="text-orgcdc4d24">
 <p>
 This package is available in the <i>aur</i>.
 </p>
@@ -1181,16 +1181,16 @@ This package is available in the <i>aur</i>.
 </pre>
 </div>
 
-<div id="org6ed9146" class="figure">
+<div id="org9603aec" class="figure">
 <p><a href="./assets/img/rofi-greenclip-2025-05-16_16-41.png"><img src="./assets/img/rofi-greenclip-2025-05-16_16-41.png" alt="rofi-greenclip-2025-05-16_16-41.png" /></a>
 </p>
 <p><span class="figure-number">Figure 14: </span>rofi-greenclip</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org2731e85" class="outline-4">
-<h4 id="org2731e85">rofi window menu</h4>
-<div class="outline-text-4" id="text-org2731e85">
+<div id="outline-container-org2834c9d" class="outline-4">
+<h4 id="org2834c9d">rofi window menu</h4>
+<div class="outline-text-4" id="text-org2834c9d">
 <p>
 With <code>Shift</code> key will only show window in the current workspace.
 </p>
@@ -1200,16 +1200,16 @@ bindsym $mod+w exec rofi -theme i3-apps -show window
 </pre>
 </div>
 
-<div id="org33efdc4" class="figure">
+<div id="org9a9959f" class="figure">
 <p><a href="./assets/img/rofi-window-menu-2025-05-16_16-44.png"><img src="./assets/img/rofi-window-menu-2025-05-16_16-44.png" alt="rofi-window-menu-2025-05-16_16-44.png" /></a>
 </p>
 <p><span class="figure-number">Figure 15: </span>rofi window menu</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org1954d27" class="outline-4">
-<h4 id="org1954d27">tesseract</h4>
-<div class="outline-text-4" id="text-org1954d27">
+<div id="outline-container-orgf56dbe8" class="outline-4">
+<h4 id="orgf56dbe8">tesseract</h4>
+<div class="outline-text-4" id="text-orgf56dbe8">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+shift+t exec ~/.local/bin/ocr
 </pre>
@@ -1218,16 +1218,16 @@ bindsym $mod+w exec rofi -theme i3-apps -show window
 The recommended full package to install is <code>ocrdesktop</code> according to <i>archlinux</i> <a href="https://wiki.archlinux.org/title/Ocrdesktop">wiki</a>. I got this script from the internet which basically doing the same thing only with <i>maim</i> and the <i>tesseract</i> package.
 </p>
 
-<div id="org260ad78" class="figure">
+<div id="org5651ab1" class="figure">
 <p><a href="./assets/img/ocr-Peek-2025-05-16_15-37.gif"><img src="./assets/img/ocr-Peek-2025-05-16_15-37.gif" alt="ocr-Peek-2025-05-16_15-37.gif" /></a>
 </p>
 <p><span class="figure-number">Figure 16: </span>OCR using <i>tesseract</i>.</p>
 </div>
 </div>
 </div>
-<div id="outline-container-org33d73bf" class="outline-4">
-<h4 id="org33d73bf"><a href="https://gitlab.com/screenkey/screenkey">screenkey</a></h4>
-<div class="outline-text-4" id="text-org33d73bf">
+<div id="outline-container-org39732aa" class="outline-4">
+<h4 id="org39732aa"><a href="https://gitlab.com/screenkey/screenkey">screenkey</a></h4>
+<div class="outline-text-4" id="text-org39732aa">
 <p>
 A screencast tool to display your keys inspired by Screenflick.
 </p>
@@ -1237,13 +1237,13 @@ A screencast tool to display your keys inspired by Screenflick.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc2744e3" class="outline-4">
-<h4 id="orgc2744e3">window management</h4>
-<div class="outline-text-4" id="text-orgc2744e3">
+<div id="outline-container-org1adfc9e" class="outline-4">
+<h4 id="org1adfc9e">window management</h4>
+<div class="outline-text-4" id="text-org1adfc9e">
 </div>
-<div id="outline-container-org9e0b4cb" class="outline-5">
-<h5 id="org9e0b4cb">change focus</h5>
-<div class="outline-text-5" id="text-org9e0b4cb">
+<div id="outline-container-orgd570de0" class="outline-5">
+<h5 id="orgd570de0">change focus</h5>
+<div class="outline-text-5" id="text-orgd570de0">
 <p>
 The basic window navigation key.
 </p>
@@ -1274,9 +1274,9 @@ bindsym Mod1+Shift+Tab focus left
 </div>
 </div>
 </div>
-<div id="outline-container-orgc7e825d" class="outline-5">
-<h5 id="orgc7e825d">move focused window</h5>
-<div class="outline-text-5" id="text-orgc7e825d">
+<div id="outline-container-org9ac6ebf" class="outline-5">
+<h5 id="org9ac6ebf">move focused window</h5>
+<div class="outline-text-5" id="text-org9ac6ebf">
 <p>
 Used for moving window within workspace.
 </p>
@@ -1299,9 +1299,9 @@ bindsym $mod+Shift+Right move right
 </div>
 </div>
 </div>
-<div id="outline-container-org02bce48" class="outline-5">
-<h5 id="org02bce48">split</h5>
-<div class="outline-text-5" id="text-org02bce48">
+<div id="outline-container-orgdc37c94" class="outline-5">
+<h5 id="orgdc37c94">split</h5>
+<div class="outline-text-5" id="text-orgdc37c94">
 <p>
 horizontally
 </p>
@@ -1318,18 +1318,18 @@ vertically
 </div>
 </div>
 </div>
-<div id="outline-container-org17de9ed" class="outline-5">
-<h5 id="org17de9ed">fullscreen toggle</h5>
-<div class="outline-text-5" id="text-org17de9ed">
+<div id="outline-container-orgfabd319" class="outline-5">
+<h5 id="orgfabd319">fullscreen toggle</h5>
+<div class="outline-text-5" id="text-orgfabd319">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+f fullscreen toggle; exec $notify <span style="color: #bc8f8f;">"Fullscreen toggle"</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb33ce51" class="outline-5">
-<h5 id="orgb33ce51">container layout</h5>
-<div class="outline-text-5" id="text-orgb33ce51">
+<div id="outline-container-org00fe1c1" class="outline-5">
+<h5 id="org00fe1c1">container layout</h5>
+<div class="outline-text-5" id="text-org00fe1c1">
 <p>
 stacked
 </p>
@@ -1353,45 +1353,45 @@ split, this is the default behavior.
 </div>
 </div>
 </div>
-<div id="outline-container-org15fba90" class="outline-5">
-<h5 id="org15fba90">toggle tiling / floating</h5>
-<div class="outline-text-5" id="text-org15fba90">
+<div id="outline-container-orgaa3cecb" class="outline-5">
+<h5 id="orgaa3cecb">toggle tiling / floating</h5>
+<div class="outline-text-5" id="text-orgaa3cecb">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+space floating toggle; exec $notify <span style="color: #bc8f8f;">"Floating toggle"</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2827c18" class="outline-5">
-<h5 id="org2827c18">change focus between tiling / floating windows</h5>
-<div class="outline-text-5" id="text-org2827c18">
+<div id="outline-container-org0af9bf9" class="outline-5">
+<h5 id="org0af9bf9">change focus between tiling / floating windows</h5>
+<div class="outline-text-5" id="text-org0af9bf9">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+space focus mode_toggle; exec $notify <span style="color: #bc8f8f;">"Window focus toggle"</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcd7aa03" class="outline-5">
-<h5 id="orgcd7aa03">focus parent container</h5>
-<div class="outline-text-5" id="text-orgcd7aa03">
+<div id="outline-container-org70c2eae" class="outline-5">
+<h5 id="org70c2eae">focus parent container</h5>
+<div class="outline-text-5" id="text-org70c2eae">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+a focus parent; exec $notify <span style="color: #bc8f8f;">"Focus parent container"</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd1a1c37" class="outline-5">
-<h5 id="orgd1a1c37">focus child container</h5>
-<div class="outline-text-5" id="text-orgd1a1c37">
+<div id="outline-container-org5e0c19d" class="outline-5">
+<h5 id="org5e0c19d">focus child container</h5>
+<div class="outline-text-5" id="text-org5e0c19d">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+d focus child; exec $notify <span style="color: #bc8f8f;">"Focus child container"</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd0e29e3" class="outline-5">
-<h5 id="orgd0e29e3">move to scratchpad</h5>
-<div class="outline-text-5" id="text-orgd0e29e3">
+<div id="outline-container-orgaeb5e27" class="outline-5">
+<h5 id="orgaeb5e27">move to scratchpad</h5>
+<div class="outline-text-5" id="text-orgaeb5e27">
 <p>
 Move the current focused window into the scratchpad
 </p>
@@ -1401,9 +1401,9 @@ Move the current focused window into the scratchpad
 </div>
 </div>
 </div>
-<div id="outline-container-org4a428ef" class="outline-5">
-<h5 id="org4a428ef">show scratchpad</h5>
-<div class="outline-text-5" id="text-org4a428ef">
+<div id="outline-container-org4ccc31b" class="outline-5">
+<h5 id="org4ccc31b">show scratchpad</h5>
+<div class="outline-text-5" id="text-org4ccc31b">
 <p>
 Show the next scratchpad window or hide the focused scratchpad window. If there are multiple scratchpad windows, this command cycles through them.
 </p>
@@ -1415,9 +1415,9 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
 </div>
 </div>
 </div>
-<div id="outline-container-org6eb9a72" class="outline-4">
-<h4 id="org6eb9a72">workspace management</h4>
-<div class="outline-text-4" id="text-org6eb9a72">
+<div id="outline-container-org8329b99" class="outline-4">
+<h4 id="org8329b99">workspace management</h4>
+<div class="outline-text-4" id="text-org8329b99">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -1432,9 +1432,9 @@ bindsym $mod+0 workspace $ws10
 </pre>
 </div>
 </div>
-<div id="outline-container-org7be95a6" class="outline-5">
-<h5 id="org7be95a6">switch to workspace prev / next</h5>
-<div class="outline-text-5" id="text-org7be95a6">
+<div id="outline-container-orgcf625f0" class="outline-5">
+<h5 id="orgcf625f0">switch to workspace prev / next</h5>
+<div class="outline-text-5" id="text-orgcf625f0">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+bracketleft workspace prev
 bindsym $mod+bracketright workspace next
@@ -1442,9 +1442,9 @@ bindsym $mod+bracketright workspace next
 </div>
 </div>
 </div>
-<div id="outline-container-orge282d59" class="outline-5">
-<h5 id="orge282d59">move focused containerto workspace</h5>
-<div class="outline-text-5" id="text-orge282d59">
+<div id="outline-container-orgd920bd8" class="outline-5">
+<h5 id="orgd920bd8">move focused containerto workspace</h5>
+<div class="outline-text-5" id="text-orgd920bd8">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -1460,9 +1460,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 </div>
 </div>
 </div>
-<div id="outline-container-org8c30a08" class="outline-5">
-<h5 id="org8c30a08">move using bracket keys</h5>
-<div class="outline-text-5" id="text-org8c30a08">
+<div id="outline-container-org203b2d3" class="outline-5">
+<h5 id="org203b2d3">move using bracket keys</h5>
+<div class="outline-text-5" id="text-org203b2d3">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym Control+Mod1+bracketleft move to workspace previous
 bindsym Control+Mod1+bracketright move to workspace next
@@ -1470,9 +1470,9 @@ bindsym Control+Mod1+bracketright move to workspace next
 </div>
 </div>
 </div>
-<div id="outline-container-org3fb5c2b" class="outline-5">
-<h5 id="org3fb5c2b">back and forth</h5>
-<div class="outline-text-5" id="text-org3fb5c2b">
+<div id="outline-container-orgaaa30fc" class="outline-5">
+<h5 id="orgaaa30fc">back and forth</h5>
+<div class="outline-text-5" id="text-orgaaa30fc">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth
@@ -1480,9 +1480,9 @@ bindsym $mod+Shift+Tab move container to workspace back_and_forth
 </div>
 </div>
 </div>
-<div id="outline-container-orgd0e43fd" class="outline-5">
-<h5 id="orgd0e43fd">switch output focus</h5>
-<div class="outline-text-5" id="text-orgd0e43fd">
+<div id="outline-container-org7889afc" class="outline-5">
+<h5 id="org7889afc">switch output focus</h5>
+<div class="outline-text-5" id="text-org7889afc">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+1 focus output primary
 bindsym $mod+Control+2 focus output right
@@ -1490,9 +1490,9 @@ bindsym $mod+Control+2 focus output right
 </div>
 </div>
 </div>
-<div id="outline-container-orgdf29aa1" class="outline-5">
-<h5 id="orgdf29aa1">moving to output</h5>
-<div class="outline-text-5" id="text-orgdf29aa1">
+<div id="outline-container-orgb3735c1" class="outline-5">
+<h5 id="orgb3735c1">moving to output</h5>
+<div class="outline-text-5" id="text-orgb3735c1">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+Shift+1 move workspace to output primary
 bindsym $mod+Control+Shift+2 move workspace to output right
@@ -1501,27 +1501,27 @@ bindsym $mod+Control+Shift+2 move workspace to output right
 </div>
 </div>
 </div>
-<div id="outline-container-orgcc1d282" class="outline-4">
-<h4 id="orgcc1d282">Reload configuration</h4>
-<div class="outline-text-4" id="text-orgcc1d282">
+<div id="outline-container-org7dc555a" class="outline-4">
+<h4 id="org7dc555a">Reload configuration</h4>
+<div class="outline-text-4" id="text-org7dc555a">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Shift+F11 reload
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8f9610" class="outline-4">
-<h4 id="orgf8f9610">Hot restart</h4>
-<div class="outline-text-4" id="text-orgf8f9610">
+<div id="outline-container-orgfef0227" class="outline-4">
+<h4 id="orgfef0227">Hot restart</h4>
+<div class="outline-text-4" id="text-orgfef0227">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Control+r restart
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org79c07ef" class="outline-4">
-<h4 id="org79c07ef">exit i3</h4>
-<div class="outline-text-4" id="text-org79c07ef">
+<div id="outline-container-org3b0f112" class="outline-4">
+<h4 id="org3b0f112">exit i3</h4>
+<div class="outline-text-4" id="text-org3b0f112">
 <p>
 A simple script using rofi for logout menu.
 </p>
@@ -1530,16 +1530,16 @@ A simple script using rofi for logout menu.
 </pre>
 </div>
 
-<div id="orgf9c2595" class="figure">
+<div id="orgeef9f54" class="figure">
 <p><a href="./assets/img/rofi-logout-2025-05-16_16-52.png"><img src="./assets/img/rofi-logout-2025-05-16_16-52.png" alt="rofi-logout-2025-05-16_16-52.png" /></a>
 </p>
 <p><span class="figure-number">Figure 17: </span>rofi-logout</p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbeb554c" class="outline-4">
-<h4 id="orgbeb554c">picom transparency</h4>
-<div class="outline-text-4" id="text-orgbeb554c">
+<div id="outline-container-org19e43f8" class="outline-4">
+<h4 id="org19e43f8">picom transparency</h4>
+<div class="outline-text-4" id="text-org19e43f8">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+F3 exec picom-trans -c +5
 bindsym $mod+F2 exec picom-trans -c -5
@@ -1550,9 +1550,9 @@ A showcase of <i>picom</i> capability, changing transparency on the fly. I set t
 </p>
 </div>
 </div>
-<div id="outline-container-org02ca866" class="outline-4">
-<h4 id="org02ca866">dunst</h4>
-<div class="outline-text-4" id="text-org02ca866">
+<div id="outline-container-org1845508" class="outline-4">
+<h4 id="org1845508">dunst</h4>
+<div class="outline-text-4" id="text-org1845508">
 <div class="org-src-container">
 <pre class="src src-conf">bindsym $mod+Mod1+grave exec dunstctl history-pop
 bindsym $mod+Shift+grave exec dunstctl context
@@ -1570,13 +1570,13 @@ Notice all keybindings is on <code>grave</code> key?
 </dl>
 </div>
 </div>
-<div id="outline-container-org90837f7" class="outline-4">
-<h4 id="org90837f7">modes</h4>
-<div class="outline-text-4" id="text-org90837f7">
+<div id="outline-container-org1e8af25" class="outline-4">
+<h4 id="org1e8af25">modes</h4>
+<div class="outline-text-4" id="text-org1e8af25">
 </div>
-<div id="outline-container-orgd8806a7" class="outline-5">
-<h5 id="orgd8806a7">resize</h5>
-<div class="outline-text-5" id="text-orgd8806a7">
+<div id="outline-container-org945183f" class="outline-5">
+<h5 id="org945183f">resize</h5>
+<div class="outline-text-5" id="text-org945183f">
 <p>
 This only work in floating mode.
 </p>
@@ -1614,16 +1614,16 @@ bindsym $mod+r mode <span style="color: #bc8f8f;">"resize"</span>
 </div>
 </div>
 </div>
-<div id="outline-container-orgceeb48a" class="outline-2">
-<h2 id="orgceeb48a">i3status</h2>
-<div class="outline-text-2" id="text-orgceeb48a">
+<div id="outline-container-orgfed862b" class="outline-2">
+<h2 id="orgfed862b">i3status</h2>
+<div class="outline-text-2" id="text-orgfed862b">
 <p>
 I don't mess much with <i>i3status</i>, it's usually hidden most of the times. Also since I'm already use <i>conky</i> there's not much else to show in <i>i3status</i>.
 </p>
 </div>
-<div id="outline-container-org3e5e5c1" class="outline-3">
-<h3 id="org3e5e5c1">general</h3>
-<div class="outline-text-3" id="text-org3e5e5c1">
+<div id="outline-container-org53b440f" class="outline-3">
+<h3 id="org53b440f">general</h3>
+<div class="outline-text-3" id="text-org53b440f">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">general</span> {
 <span style="color: #b8860b;">colors</span> = true
@@ -1634,9 +1634,9 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times. A
 </div>
 </div>
 </div>
-<div id="outline-container-orga51ce03" class="outline-3">
-<h3 id="orga51ce03">order</h3>
-<div class="outline-text-3" id="text-orga51ce03">
+<div id="outline-container-orgb252ed4" class="outline-3">
+<h3 id="orgb252ed4">order</h3>
+<div class="outline-text-3" id="text-orgb252ed4">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"ipv6"</span>
 <span style="color: #b8860b;">order +</span>= <span style="color: #bc8f8f;">"wireless _first_"</span>
@@ -1648,9 +1648,9 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times. A
 </div>
 </div>
 </div>
-<div id="outline-container-orga683cc4" class="outline-3">
-<h3 id="orga683cc4">wireless</h3>
-<div class="outline-text-3" id="text-orga683cc4">
+<div id="outline-container-orgd98ad7d" class="outline-3">
+<h3 id="orgd98ad7d">wireless</h3>
+<div class="outline-text-3" id="text-orgd98ad7d">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">wireless _first_</span> {
 <span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#984489;: (%quality at %essid, %bitrate / %frequency) %ip"</span>
@@ -1660,9 +1660,9 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times. A
 </div>
 </div>
 </div>
-<div id="outline-container-org8f4bab6" class="outline-3">
-<h3 id="org8f4bab6">ethernet</h3>
-<div class="outline-text-3" id="text-org8f4bab6">
+<div id="outline-container-org8e0fc27" class="outline-3">
+<h3 id="org8e0fc27">ethernet</h3>
+<div class="outline-text-3" id="text-org8e0fc27">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">ethernet _first_</span> {
 <span style="color: #b8860b;">format_up</span> = <span style="color: #bc8f8f;">"&#983552;: %ip (%speed)"</span>
@@ -1672,9 +1672,9 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times. A
 </div>
 </div>
 </div>
-<div id="outline-container-orgff54eee" class="outline-3">
-<h3 id="orgff54eee">battery</h3>
-<div class="outline-text-3" id="text-orgff54eee">
+<div id="outline-container-orged8a052" class="outline-3">
+<h3 id="orged8a052">battery</h3>
+<div class="outline-text-3" id="text-orged8a052">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">battery 0</span> {
 <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"%status %percentage %remaining"</span>
@@ -1688,9 +1688,9 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times. A
 </div>
 </div>
 </div>
-<div id="outline-container-orgcc3526e" class="outline-3">
-<h3 id="orgcc3526e">memory</h3>
-<div class="outline-text-3" id="text-orgcc3526e">
+<div id="outline-container-org784b345" class="outline-3">
+<h3 id="org784b345">memory</h3>
+<div class="outline-text-3" id="text-org784b345">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">memory</span> {
 <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#983899; %used"</span>
@@ -1701,9 +1701,9 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times. A
 </div>
 </div>
 </div>
-<div id="outline-container-org9b58ff8" class="outline-3">
-<h3 id="org9b58ff8">time</h3>
-<div class="outline-text-3" id="text-org9b58ff8">
+<div id="outline-container-org324a9f5" class="outline-3">
+<h3 id="org324a9f5">time</h3>
+<div class="outline-text-3" id="text-org324a9f5">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #228b22;">tztime local</span> {
 <span style="color: #b8860b;">format</span> = <span style="color: #bc8f8f;">"&#985428; %Y-%m-%d %H:%M:%S"</span>
@@ -1713,16 +1713,16 @@ I don't mess much with <i>i3status</i>, it's usually hidden most of the times. A
 </div>
 </div>
 </div>
-<div id="outline-container-org891912f" class="outline-2">
-<h2 id="org891912f">picom</h2>
-<div class="outline-text-2" id="text-org891912f">
+<div id="outline-container-orga60ae95" class="outline-2">
+<h2 id="orga60ae95">picom</h2>
+<div class="outline-text-2" id="text-orga60ae95">
 <p>
 A standalone compositor for Xorg. This should be on it's own separate repository, but I don't use any other window manager.
 </p>
 </div>
-<div id="outline-container-org7279db5" class="outline-3">
-<h3 id="org7279db5">Shadows</h3>
-<div class="outline-text-3" id="text-org7279db5">
+<div id="outline-container-org3d5e630" class="outline-3">
+<h3 id="org3d5e630">Shadows</h3>
+<div class="outline-text-3" id="text-org3d5e630">
 <div class="org-src-container">
 <pre class="src src-conf">
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Enabled client-side shadows on windows. Note desktop windows</span>
@@ -1769,9 +1769,9 @@ A standalone compositor for Xorg. This should be on it's own separate repository
 </div>
 </div>
 </div>
-<div id="outline-container-org9375dca" class="outline-3">
-<h3 id="org9375dca">Fading</h3>
-<div class="outline-text-3" id="text-org9375dca">
+<div id="outline-container-org049af7e" class="outline-3">
+<h3 id="org049af7e">Fading</h3>
+<div class="outline-text-3" id="text-org049af7e">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#           </span><span style="color: #b22222;">Fading              #</span>
@@ -1801,9 +1801,9 @@ A standalone compositor for Xorg. This should be on it's own separate repository
 </div>
 </div>
 </div>
-<div id="outline-container-orgdfdbe26" class="outline-3">
-<h3 id="orgdfdbe26">Transparency</h3>
-<div class="outline-text-3" id="text-orgdfdbe26">
+<div id="outline-container-orgaaec23e" class="outline-3">
+<h3 id="orgaaec23e">Transparency</h3>
+<div class="outline-text-3" id="text-orgaaec23e">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#   </span><span style="color: #b22222;">Transparency / Opacity      #</span>
@@ -1823,9 +1823,9 @@ A standalone compositor for Xorg. This should be on it's own separate repository
 </div>
 </div>
 </div>
-<div id="outline-container-orgb78b4e5" class="outline-3">
-<h3 id="orgb78b4e5">Corners</h3>
-<div class="outline-text-3" id="text-orgb78b4e5">
+<div id="outline-container-orga02feb2" class="outline-3">
+<h3 id="orga02feb2">Corners</h3>
+<div class="outline-text-3" id="text-orga02feb2">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#           </span><span style="color: #b22222;">Corners             #</span>
@@ -1841,9 +1841,9 @@ A standalone compositor for Xorg. This should be on it's own separate repository
 </div>
 </div>
 </div>
-<div id="outline-container-orgaa75346" class="outline-3">
-<h3 id="orgaa75346">Blur</h3>
-<div class="outline-text-3" id="text-orgaa75346">
+<div id="outline-container-org9320390" class="outline-3">
+<h3 id="org9320390">Blur</h3>
+<div class="outline-text-3" id="text-org9320390">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#            </span><span style="color: #b22222;">Blur               #</span>
@@ -1887,9 +1887,9 @@ A standalone compositor for Xorg. This should be on it's own separate repository
 </div>
 </div>
 </div>
-<div id="outline-container-orgab0ba73" class="outline-3">
-<h3 id="orgab0ba73">General Settings</h3>
-<div class="outline-text-3" id="text-orgab0ba73">
+<div id="outline-container-orge23ed42" class="outline-3">
+<h3 id="orge23ed42">General Settings</h3>
+<div class="outline-text-3" id="text-orge23ed42">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;">#################################</span>
 <span style="color: #b22222;">#       </span><span style="color: #b22222;">General Settings        #</span>
@@ -2038,9 +2038,9 @@ A standalone compositor for Xorg. This should be on it's own separate repository
 </div>
 </div>
 </div>
-<div id="outline-container-org8fcbe93" class="outline-3">
-<h3 id="org8fcbe93">Rules</h3>
-<div class="outline-text-3" id="text-org8fcbe93">
+<div id="outline-container-orga48db90" class="outline-3">
+<h3 id="orga48db90">Rules</h3>
+<div class="outline-text-3" id="text-orga48db90">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">Rule-based per-window options.</span>
 <span style="color: #b22222;">#</span>
@@ -2093,9 +2093,9 @@ rules: ({
 </div>
 </div>
 </div>
-<div id="outline-container-org8a28dfd" class="outline-3">
-<h3 id="org8a28dfd">Includes</h3>
-<div class="outline-text-3" id="text-org8a28dfd">
+<div id="outline-container-org17b7aaf" class="outline-3">
+<h3 id="org17b7aaf">Includes</h3>
+<div class="outline-text-3" id="text-org17b7aaf">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #b22222;"># </span><span style="color: #b22222;">`@include` directive can be used to include additional configuration files.</span>
 <span style="color: #b22222;"># </span><span style="color: #b22222;">Relative paths are search either in the parent of this configuration file</span>
@@ -2108,13 +2108,13 @@ rules: ({
 </div>
 </div>
 </div>
-<div id="outline-container-orgf294d31" class="outline-2">
-<h2 id="orgf294d31">Scripts</h2>
-<div class="outline-text-2" id="text-orgf294d31">
+<div id="outline-container-orge42f38a" class="outline-2">
+<h2 id="orge42f38a">Scripts</h2>
+<div class="outline-text-2" id="text-orge42f38a">
 </div>
-<div id="outline-container-orgf97299a" class="outline-3">
-<h3 id="orgf97299a">ocr</h3>
-<div class="outline-text-3" id="text-orgf97299a">
+<div id="outline-container-org48ec04a" class="outline-3">
+<h3 id="org48ec04a">ocr</h3>
+<div class="outline-text-3" id="text-org48ec04a">
 <p>
 This utilize the <a href="https://github.com/tesseract-ocr/tesseract/">tesseract</a> package. The script simply select an area in the desktop with <i><a href="https://github.com/naelstrof/maim/">maim</a></i>, <i>pipe</i> it into <i>tesseract</i>, which also pipes it into <i><a href="https://github.com/astrand/xclip/">xclip</a></i>.
 </p>
@@ -2125,9 +2125,9 @@ notify-send -i ebook-reader <span style="color: #bc8f8f;">"OCR"</span> <span sty
 </div>
 </div>
 </div>
-<div id="outline-container-org7294026" class="outline-3">
-<h3 id="org7294026">i3-logout</h3>
-<div class="outline-text-3" id="text-org7294026">
+<div id="outline-container-org8225750" class="outline-3">
+<h3 id="org8225750">i3-logout</h3>
+<div class="outline-text-3" id="text-org8225750">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #b8860b;">question</span>=$(<span style="color: #00008b;">echo</span> <span style="color: #bc8f8f;">"&#983870; lock|&#983875; logout|&#984841; reboot|&#984101; shutdown"</span> | rofi -sep <span style="color: #bc8f8f;">"|"</span> <span style="color: #bc8f8f;">\</span>
     -dmenu -i -p <span style="color: #bc8f8f;">'System: '</span> <span style="color: #bc8f8f;">""</span> <span style="color: #bc8f8f;">\</span>
@@ -2165,9 +2165,9 @@ notify-send -i ebook-reader <span style="color: #bc8f8f;">"OCR"</span> <span sty
 </div>
 </div>
 </div>
-<div id="outline-container-orgb7a9733" class="outline-3">
-<h3 id="orgb7a9733">transfer screen lock</h3>
-<div class="outline-text-3" id="text-orgb7a9733">
+<div id="outline-container-org6011399" class="outline-3">
+<h3 id="org6011399">transfer screen lock</h3>
+<div class="outline-text-3" id="text-org6011399">
 <p>
 A locker script for i3lock-fancy and xss-lock. Requires <a href="https://github.com/jD91mZM2/xidlehook">xidlehook</a>
 </p>
@@ -2196,7 +2196,7 @@ xidlehook <span style="color: #bc8f8f;">\</span>
 </pre>
 </div>
 
-<div id="orgbcc2b98" class="figure">
+<div id="org637e23a" class="figure">
 <p><a href="./assets/img/i3lock-fancy-2025-05-16_17-01.png"><img src="./assets/img/i3lock-fancy-2025-05-16_17-01.png" alt="i3lock-fancy-2025-05-16_17-01.png" /></a>
 </p>
 <p><span class="figure-number">Figure 18: </span>i3lock-fancy</p>
@@ -2222,7 +2222,7 @@ see <a href="https://github.com/alexforsale/dotfiles-i3/blob/main/.stow-local-ig
 <div id="postamble" class="status">
 <p class="date">Date: 2022-06-08 Wed 00:00</p>
 <p class="author">Author: Kristian Alexander P</p>
-<p class="date">Created: 2025-05-16 Fri 10:11</p>
+<p class="date">Created: 2025-05-16 Fri 10:13</p>
 </div>
 </body>
 </html>
