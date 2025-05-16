@@ -569,9 +569,12 @@ Useful for windows without a kill button (looking at you /spotify/).
   bindsym Mod1+F4 kill
 #+end_src
 *** rofi-menu
+Using [[https://wiki.archlinux.org/title/Rofi][rofi]] as an application launcher.
 #+begin_src conf
   bindsym $mod+d exec --no-startup-id rofi -show drun -theme i3-apps
 #+end_src
+#+caption: rofi-menu
+[[./assets/img/rofi-menu-2025-05-16_16-39.png][file:./assets/img/rofi-menu-2025-05-16_16-39.png]]
 *** [[https://github.com/erebe/greenclip][rofi-greenclip]]
 This package is available in the /aur/.
 #+begin_src conf
