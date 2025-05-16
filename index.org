@@ -479,6 +479,9 @@ Using [[https://wiki.archlinux.org/title/Thunderbird][thunderbird]]. Both /thund
 #+begin_src conf
   bindsym $mod+Mod1+m exec $terminal -class ncmpcpp -e ncmpcpp
 #+end_src
+Since I've placed window with the class name /ncmpcpp/ on the scratchpad, the window won't automatically shows up when the keybinding is pressed. To view this we must view the scratchpad window (here bound to ~$mod -~).
+#+caption: terminal window with /ncmpcpp/ on scratchpad
+[[./assets/img/ncmpcpp-Peek-2025-05-16_16-06.gif][file:./assets/img/ncmpcpp-Peek-2025-05-16_16-06.gif]]
 *** htop
 #+begin_src conf
   bindsym $mod+Mod1+h exec $terminal -class htop -e htop
