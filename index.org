@@ -470,6 +470,7 @@ My goto browser has always been [[https://wiki.archlinux.org/title/Firefox][fire
   bindsym XF86Mail exec $mail
   bindsym $mod+Mod1+t exec $mail
 #+end_src
+Using [[https://wiki.archlinux.org/title/Thunderbird][thunderbird]]. Both /thunderbird/ and /firefox/ works well using the GTK theme.
 *** music
 #+begin_src conf
   bindsym $mod+Mod1+m exec $terminal -class ncmpcpp -e ncmpcpp
