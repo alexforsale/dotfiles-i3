@@ -526,9 +526,12 @@ Rofi front end for [[https://www.passwordstore.org/][pass]]. It stores passwords
   bindsym $mod+Mod1+p exec rofi-pass
 #+end_src
 *** rofi-calc
+Simple calculator using /rofi/.
 #+begin_src conf
   bindsym $mod+Mod1+c exec rofi -show calc -modi calc -no-show-match -no-sort
 #+end_src
+#+caption: rofi-calc
+[[./assets/img/rofi-calc-2025-05-16_16-24.png][file:./assets/img/rofi-calc-2025-05-16_16-24.png]]
 *** rofi-rbw
 Similar to rofi-pass, but for /bitwarden/.
 #+begin_src conf
