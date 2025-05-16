@@ -41,7 +41,7 @@ I'm using /archlinux/ as my main system for years, so I don't really know if the
 - [[https://www.mozilla.org/firefox/][firefox]] :: I used to love /chromium/, but keeps falling back to /firefox/ eventually.
 - [[https://picom.app][picom]] :: Lightweight compositor for X11.
 ** Optional packages
-- archlinux-wallpaper :: for initial wallpapers.
+- [[https://archlinux.org/packages/extra/any/archlinux-wallpaper/][archlinux-wallpaper]] :: for initial wallpapers.
 - [[https://wiki.archlinux.org/title/Feh][feh]] ::  a lightweight image viewer aimed mainly at users of command line interfaces. Unlike most graphical image viewers.
 - [[https://github.com/jceb/dex][dex]] :: Program to generate and execute =DesktopEntry= files of type =Application=. If used, try running ~dex -d -v --autostart~ for testing which applications get auto started in dry run. Note that this will auto start every =.desktop= files in =/etc/xdg/autostart/=.
 - [[http://www.jmknoble.net/software/x11-ssh-askpass/][x11-ssh-askpass]] :: Lightweight passphrase dialog for SSH.
