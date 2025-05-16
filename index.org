@@ -456,6 +456,7 @@ For keyboard with no media keys:
 - =playerctl= :: works on most MPRIS player.
 - =dunst= :: the notification used in the scripts.
 I've been using [[https://wiki.archlinux.org/title/PipeWire][pipewire]] for a while, and though I didn't notice any difference with [[https://wiki.archlinux.org/title/PulseAudio][pulseaudio]] I think I'll use it for my main machine. It's also play nice with other applications that relies on /pulseaudio/.
+#+caption: transparency binding using /picom-trans/.
 [[./assets/img/i3wm-Peek-2025-05-16_15-13.gif][file:./assets/img/i3wm-Peek-2025-05-16_15-13.gif]]
 *** browser
 #+begin_src conf
