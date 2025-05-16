@@ -503,9 +503,12 @@ A simple calendar application.
 #+caption: khal
 [[./assets/img/khal-2025-05-16_16-18.png][file:./assets/img/khal-2025-05-16_16-18.png]]
 *** vim
+For when I'm feeling like using /vim/.
 #+begin_src conf
   bindsym $mod+Mod1+v exec $terminal -class vim -e vim
 #+end_src
+#+caption: vim
+[[./assets/img/vim-2025-05-16_16-19.png][file:./assets/img/vim-2025-05-16_16-19.png]]
 *** dired
 #+begin_src conf
   bindsym $mod+Mod1+e exec emacsclient -c -a emacs -e '(dired (getenv "HOME"))'
