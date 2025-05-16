@@ -815,9 +815,11 @@ This only work in floating mode.
   bindsym $mod+r mode "resize"
 #+end_src
 *** Emoji
-Using the same keybinding as /windows/.
+Using the same keybinding as /windows/. Needs noto-fonts-emoji package. Clicking or pressing ~RET~ on the emoji will immediately paste it.
+#+caption: rofi-emoji
+[[./assets/img/rofi-emoji-2025-05-16_21-26.png][file:./assets/img/rofi-emoji-2025-05-16_21-26.png]]
 #+begin_src conf
-  bindsym $mod+period exec --no-startup-id rofi -show emoji -theme i3-apps
+  bindsym $mod+period exec --no-startup-id rofi -show emoji -theme i3-emoji
 #+end_src
 * i3status
 :PROPERTIES:
@@ -1447,6 +1449,38 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
       lines: 4;
   }
 #+end_src
+*** i3-emoji
+:PROPERTIES:
+:header-args: :tangle ./.config/rofi/themes/i3-emoji.rasi :mkdirp t
+:END:
+#+begin_src css
+  /* -*-css -*- */
+  @theme "i3-nord"
+
+  window {
+      location: southwest;
+      anchor: center;
+      width: 70%;
+      x-offset: 35.5%;
+      y-offset: -14.5%;
+      /* padding-right: 25px; */
+  }
+
+  listview {
+      columns: 2;
+      lines: 4;
+  }
+
+  /* inputbar { */
+  /*     children: [textbox-prompt]; */
+  /* } */
+
+  /* textbox-prompt { */
+  /*     str: "Apps"; */
+  /*     text-color: inherit; */
+  /* } */
+#+end_src
+
 ** i3-logout
 :PROPERTIES:
 :header-args: :tangle ./.local/bin/rofi-i3-logout :mkdirp t :shebang #!/usr/bin/env bash
