@@ -880,7 +880,7 @@ I don't mess much with /i3status/, it's usually hidden most of the times. Also s
 :PROPERTIES:
 :header-args: :tangle .config/picom/picom.conf :mkdirp t
 :END:
-A standalone compositor for Xorg.
+A standalone compositor for Xorg. This should be on it's own separate repository, but I don't use any other window manager.
 ** Shadows
 #+begin_src conf
 
@@ -1500,6 +1500,8 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
       'systemctl suspend' \
       ''
 #+end_src
+#+caption: i3lock-fancy
+[[./assets/img/i3lock-fancy-2025-05-16_17-01.png][file:./assets/img/i3lock-fancy-2025-05-16_17-01.png]]
 * Footnotes
 [fn:2] see [[https://github.com/alexforsale/dotfiles-i3/blob/main/.stow-local-ignore/][.stow-local-ignore]] for the files excluded.
 
