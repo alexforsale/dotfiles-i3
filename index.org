@@ -421,6 +421,7 @@ Remoting the remotes.
 Game!
 ** Keybindings
 *** media keys
+On my laptop these media keys are on ~F10~, ~F11~, and ~F12~ for =Previous=, =Play/Pause=, and =Next=. There's also ~F7~, ~F8~, and ~F9~ for =Mic toggle=, =Volume up=, and =Volume down=, so that's what I set for my other keyboards, even those without media keys, since pressing ~Fn~ with the mod keys is not very convenient.
 #+begin_src conf
   bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/dunst-volume -i 1 && $refresh_i3status
   bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/dunst-volume -d 1 && $refresh_i3status
@@ -447,12 +448,15 @@ For keyboard with no media keys:
   bindsym $mod+F12 exec playerctl next
   bindsym $mod+F10 exec playerctl previous
 
-  bindsym $mod+Shift+F3 exec --no-startup-id brightnessctl set +1%
-  bindsym $mod+Shift+F2 exec --no-startup-id brightnessctl set 1%-
+  bindsym $mod+Shift+F3 exec --no-startup-id ~/.local/bin/dunst-backlight +1%
+  bindsym $mod+Shift+F2 exec --no-startup-id ~/.local/bin/dunst-backlight 1%-
 #+end_src
-- =pamixer= package is needed for volume, even if you're using /pipewire/.
-- =brightnessctl= package for setting up brightness.
-- =playerctl= works on most MPRIS player.
+- =pamixer= :: package is needed for volume, even if you're using /pipewire/.
+- =brightnessctl= :: package for setting up brightness.
+- =playerctl= :: works on most MPRIS player.
+- =dunst= :: the notification used in the scripts.
+I've been using [[https://wiki.archlinux.org/title/PipeWire][pipewire]] for a while, and though I didn't notice any difference with [[https://wiki.archlinux.org/title/PulseAudio][pulseaudio]] I think I'll use it for my main machine. It's also play nice with other applications that relies on /pulseaudio/.
+[[./assets/img/i3wm-Peek-2025-05-16_15-13.gif][file:./assets/img/i3wm-Peek-2025-05-16_15-13.gif]]
 *** browser
 #+begin_src conf
   bindsym XF86MyComputer exec $browser
