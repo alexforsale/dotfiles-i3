@@ -496,9 +496,12 @@ For machine running [[https://wiki.archlinux.org/title/NetworkManager][networkma
 #+caption: nmtui for connection settings
 [[./assets/img/nmtui-2025-05-16_16-16.png][file:./assets/img/nmtui-2025-05-16_16-16.png]]
 *** khal
+A simple calendar application.
 #+begin_src conf
   bindsym $mod+Mod1+k exec $terminal -class khal -e khal interactive
 #+end_src
+#+caption: khal
+[[./assets/img/khal-2025-05-16_16-18.png][file:./assets/img/khal-2025-05-16_16-18.png]]
 *** vim
 #+begin_src conf
   bindsym $mod+Mod1+v exec $terminal -class vim -e vim
