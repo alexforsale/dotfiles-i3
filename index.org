@@ -1,4 +1,4 @@
-#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: ':nil *:t -:t ::t <:t H:4 \n:nil ^:t arch:headline
 #+options: author:t broken-links:nil c:nil creator:nil {}:nil
 #+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:nil
 #+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
@@ -538,14 +538,18 @@ Similar to rofi-pass, but for /bitwarden/. I don't use this often since I used t
   bindsym $mod+Mod1+b exec rofi-rbw
 #+end_src
 *** text editor
+Just your regular /Emacs/, bound to a key.
 #+begin_src conf
   bindsym $mod+Mod1+n exec $guiemacs
   bindsym $mod+Control+n exec $terminal -e $tuiemacs
 #+end_src
 *** file manager
+Default to [[https://wiki.archlinux.org/title/Thunar][thunar]].
 #+begin_src conf
   bindsym $mod+e exec $file
 #+end_src
+#+caption: thunar
+[[./assets/img/thunar-2025-05-16_16-27.png][file:./assets/img/thunar-2025-05-16_16-27.png]]
 *** terminal
 #+begin_src conf
   bindsym $mod+Return exec $terminal
