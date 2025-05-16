@@ -489,9 +489,12 @@ Since I've placed window with the class name /ncmpcpp/ on the scratchpad, the wi
 #+caption: htop
 [[./assets/img/htop-Peek-2025-05-16_16-13.gif][file:./assets/img/htop-Peek-2025-05-16_16-13.gif]]
 *** nmtui
+For machine running [[https://wiki.archlinux.org/title/NetworkManager][networkmanager]].
 #+begin_src conf
   bindsym $mod+Mod1+w exec $terminal -class nmtui -e nmtui
 #+end_src
+#+caption: nmtui for connection settings
+[[./assets/img/nmtui-2025-05-16_16-16.png][file:./assets/img/nmtui-2025-05-16_16-16.png]]
 *** khal
 #+begin_src conf
   bindsym $mod+Mod1+k exec $terminal -class khal -e khal interactive
