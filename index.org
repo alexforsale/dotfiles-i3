@@ -583,10 +583,13 @@ This package is available in the /aur/.
 #+caption: rofi-greenclip
 [[./assets/img/rofi-greenclip-2025-05-16_16-41.png][file:./assets/img/rofi-greenclip-2025-05-16_16-41.png]]
 *** rofi window menu
+With ~Shift~ key will only show window in the current workspace.
 #+begin_src conf
   bindsym $mod+shift+w exec rofi -theme i3-apps -show windowcd
   bindsym $mod+w exec rofi -theme i3-apps -show window
 #+end_src
+#+caption: rofi window menu
+[[./assets/img/rofi-window-menu-2025-05-16_16-44.png][file:./assets/img/rofi-window-menu-2025-05-16_16-44.png]]
 *** tesseract
 #+begin_src conf
   bindsym $mod+shift+t exec ~/.local/bin/ocr
