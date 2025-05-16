@@ -776,6 +776,7 @@ Notice all keybindings is on ~grave~ key?
 - =close= :: Closes current notification.
 *** modes
 **** resize
+This only work in floating mode.
 #+begin_src conf
   # resize window (you can also use the mouse for that)
   mode "resize" {
