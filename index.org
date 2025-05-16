@@ -751,9 +751,12 @@ Show the next scratchpad window or hide the focused scratchpad window. If there 
   bindsym $mod+Control+r restart
 #+end_src
 *** exit i3
+A simple script using rofi for logout menu.
 #+begin_src conf
   bindsym $mod+q exec ~/.local/bin/rofi-i3-logout
 #+end_src
+#+caption: rofi-logout
+[[./assets/img/rofi-logout-2025-05-16_16-52.png][file:./assets/img/rofi-logout-2025-05-16_16-52.png]]
 *** picom transparency
 #+begin_src conf
   bindsym $mod+F3 exec picom-trans -c +5
