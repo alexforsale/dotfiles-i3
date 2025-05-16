@@ -809,7 +809,7 @@ This only work in floating mode.
 :PROPERTIES:
 :header-args: :tangle ./.config/i3status/config :mkdirp t
 :END:
-I don't mess much with /i3status/, it's usually hidden most of the times.
+I don't mess much with /i3status/, it's usually hidden most of the times. Also since I'm already use /conky/ there's not much else to show in /i3status/.
 ** header                                                         :noexport:
 #+begin_src conf
   # i3status configuration file.
