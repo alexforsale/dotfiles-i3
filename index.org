@@ -580,6 +580,8 @@ This package is available in the /aur/.
 #+begin_src conf
   bindsym $mod+c exec --no-startup-id rofi -theme i3-apps -modi "clipboard:greenclip print" -show clipboard
 #+end_src
+#+caption: rofi-greenclip
+[[./assets/img/rofi-greenclip-2025-05-16_16-41.png][file:./assets/img/rofi-greenclip-2025-05-16_16-41.png]]
 *** rofi window menu
 #+begin_src conf
   bindsym $mod+shift+w exec rofi -theme i3-apps -show windowcd
