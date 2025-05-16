@@ -69,7 +69,7 @@ I'm using /archlinux/ as my main system for years, so I don't really know if the
 - [[https://github.com/ncmpcpp/ncmpcpp][ncmpcpp]] :: Featureful ncurses based MPD client inspired by ncmpc
 ** Other related repository
 - [[https://alexforsale.github.io/dotfiles-shells/][Common Shell Initialization]]
-- [[https://github.com/alexforsale/dotfiles-bash/actions/workflows/publish.yml/badge.svg]]
+- [[https://alexforsale.github.io/dotfiles-bash/][bash]]
 - [[https://alexforsale.github.io/dotfiles-tmux/][Tmux]]
 - [[https://alexforsale.github.io/dotfiles-x/][Xorg Configuration]]
 - [[https://alexforsale.github.io/dotfiles-rofi/][Rofi]]
