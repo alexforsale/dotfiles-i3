@@ -464,6 +464,7 @@ I've been using [[https://wiki.archlinux.org/title/PipeWire][pipewire]] for a wh
   bindsym XF86MyComputer exec $browser
   bindsym $mod+Mod1+f exec $browser
 #+end_src
+My goto browser has always been [[https://wiki.archlinux.org/title/Firefox][firefox]].
 *** mail
 #+begin_src conf
   bindsym XF86Mail exec $mail
