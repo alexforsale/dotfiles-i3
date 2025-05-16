@@ -604,6 +604,7 @@ A screencast tool to display your keys inspired by Screenflick.
 #+end_src
 *** window management
 **** change focus
+The basic window navigation key.
 #+begin_src conf
   bindsym $mod+$left focus left
   bindsym $mod+$down focus down
@@ -623,6 +624,7 @@ Adding ALT-TAB functionality just in case.
   bindsym Mod1+Shift+Tab focus left
 #+end_src
 **** move focused window
+Used for moving window within workspace.
 #+begin_src conf
   bindsym $mod+Shift+$left move left
   bindsym $mod+Shift+$down move down
@@ -658,7 +660,7 @@ tabbed
 #+begin_src conf
   bindsym $mod+Control+w layout tabbed; exec $notify "Tabbed layout"
 #+end_src
-split
+split, this is the default behavior.
 #+begin_src conf
   bindsym $mod+Control+e layout toggle split; exec $notify "Split toggle"
 #+end_src
@@ -672,7 +674,7 @@ split
 #+end_src
 **** focus parent container
 #+begin_src conf
-  bindsym $mod+Control+a focus parent; exec $notify "Focus parentcontainer"
+  bindsym $mod+Control+a focus parent; exec $notify "Focus parent container"
 #+end_src
 **** focus child container
 #+begin_src conf
