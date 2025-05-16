@@ -16,11 +16,11 @@
 
 #+begin_html
 <a href="https://raw.githubusercontent.com/alexforsale/dotfiles-i3/main/LICENSE.md">
-<img alt="GPLv3" src="https://img.shields.io/github/license/alexforsale/dotfiles-i3" />
+<img alt="GPLv3" src="https://img.shields.io/github/license/alexforsale/dotfiles-i3"/>
 </a>
 
 <a href="https://github.com/alexforsale/dotfiles-i3/actions/workflows/publish.yml">
-<img alt="Build status" src="https://github.com/alexforsale/dotfiles-i3/actions/workflows/publish.yml/badge.svg" />
+<img alt="Build status" src="https://github.com/alexforsale/dotfiles-i3/actions/workflows/publish.yml/badge.svg"/>
 </a>
 #+end_html
 
