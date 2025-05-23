@@ -355,6 +355,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   for_window [class=".*ncmpcpp"] , move scratchpad
   for_window [class=".*vokoscreenNG"] , move scratchpad
   for_window [class=".*easyeffects"] floating enable resize set 680 680 move position center
+  for_window [class=".*Cheese"] floating enable resize set 680 680 move position center
 #+end_src
 
 This section sets the window rules for specific window classes, which can be determined using the =xprop= command.
