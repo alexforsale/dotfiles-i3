@@ -356,6 +356,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   for_window [class=".*vokoscreenNG"] , move scratchpad
   for_window [class=".*easyeffects"] floating enable resize set 680 680 move position center
   for_window [class=".*Cheese"] floating enable resize set 680 680 move position center
+  for_window [class=".*pwvucontrol"] floating enable resize set 680 680 move position center
 #+end_src
 
 This section sets the window rules for specific window classes, which can be determined using the =xprop= command.
@@ -462,11 +463,14 @@ For keyboard with no media keys:
 
   bindsym $mod+Shift+F3 exec --no-startup-id ~/.local/bin/dunst-backlight +1%
   bindsym $mod+Shift+F2 exec --no-startup-id ~/.local/bin/dunst-backlight 1%-
+
+  bindsym $mod+v exec pwvucontrol
 #+end_src
 - =pamixer= :: package is needed for volume, even if you're using /pipewire/.
 - =brightnessctl= :: package for setting up brightness.
 - =playerctl= :: works on most MPRIS player.
 - =dunst= :: the notification used in the scripts.
+- =pwvucontrol= :: volume control for pipewire
 I've been using [[https://wiki.archlinux.org/title/PipeWire][pipewire]] for a while, and though I didn't notice any difference with [[https://wiki.archlinux.org/title/PulseAudio][pulseaudio]] I think I'll use it for my main machine. It's also play nice with other applications that relies on /pulseaudio/.
 #+caption: transparency binding using /picom-trans/.
 [[./assets/img/i3wm-Peek-2025-05-16_15-13.gif][file:./assets/img/i3wm-Peek-2025-05-16_15-13.gif]]
