@@ -67,7 +67,6 @@ I'm using /archlinux/ as my main system for years, so I don't really know if the
 ** Apps Used
 *** Multimedia
 - [[https://github.com/ncmpcpp/ncmpcpp][ncmpcpp]] :: Featureful ncurses based MPD client inspired by ncmpc
-<<<<<<< HEAD
 ** Other related repository
 - [[https://alexforsale.github.io/dotfiles-shells/][Common Shell Initialization]]
 - [[https://alexforsale.github.io/dotfiles-bash/][bash]]
