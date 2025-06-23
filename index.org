@@ -1249,6 +1249,7 @@ A standalone compositor for Xorg. This should be on it's own separate repository
               "class_g = 'Spotify'"; opacity = 0.80;},
     { match = "class_g = 'picard' || "
               "class_g = 'Picard'"; opacity = 0.90;},
+    { match = "class_g = 'thunderbird'"; opacity = 0.90;},
   )
 
 #+end_src
