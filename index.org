@@ -1237,6 +1237,19 @@ A standalone compositor for Xorg. This should be on it's own separate repository
   },
     { match = "class_g = 'steam'";},
     { match = "class_g = 'Conky"; opacity = 0.80; shadow = false; fade = false;},
+    { match = "class_g = 'khal' || "
+              "class_g = 'nmtui' || "
+              "class_g = 'htop' || "
+              "class_g = 'ncmpcpp'"
+              "class_g = 'vim'"; opacity = 0.60;},
+    { match = "class_g = 'xterm' || "
+              "class_g = 'XTerm'"; opacity = 0.55;},
+    { match = "class_g = 'thunar' || "
+              "class_g = 'Thunar'"; opacity = 0.85;},
+    { match = "class_g = 'spotify' || "
+              "class_g = 'Spotify'"; opacity = 0.80;},
+    { match = "class_g = 'picard' || "
+              "class_g = 'Picard'"; opacity = 0.90;},
   )
 
 #+end_src
