@@ -1229,18 +1229,17 @@ A standalone compositor for Xorg. This should be on it's own separate repository
      opacity = 1;
   },
      {
-     match = "class_g = 'Emacs' || "
-             "class_g = 'Google-chrome' || "
-             "class_g = 'Brave-browser'"
+     match = "class_g = 'Google-chrome' || "
+             "class_g = 'Brave-browser'";
      opacity = 0.99;
      argb = true;
   },
     { match = "class_g = 'steam'";},
-    { match = "class_g = 'Conky"; opacity = 0.80; shadow = false; fade = false;},
+    { match = "class_g = 'Conky'"; opacity = 0.80; shadow = false; fade = false;},
     { match = "class_g = 'khal' || "
               "class_g = 'nmtui' || "
               "class_g = 'htop' || "
-              "class_g = 'ncmpcpp'"
+              "class_g = 'ncmpcpp' || "
               "class_g = 'vim'"; opacity = 0.60;},
     { match = "class_g = 'xterm' || "
               "class_g = 'XTerm'"; opacity = 0.55;},
