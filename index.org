@@ -365,7 +365,7 @@ Workspace specific assignment.
 The first workspace is reserved for terminals. But I'm not assigning apps into this workspace since I'd like to open terminals on other workspaces.
 *** workspace 2
 #+begin_src conf
-  assign [class="Emacs"] $ws2
+  #assign [class="Emacs"] $ws2
   assign [class="Leafpad"] $ws2
   assign [class="L3afpad"] $ws2
   assign [class="Gedit"] $ws2
