@@ -1241,8 +1241,8 @@ A standalone compositor for Xorg. This should be on it's own separate repository
               "class_g = 'htop' || "
               "class_g = 'ncmpcpp' || "
               "class_g = 'vim'"; opacity = 0.60;},
-    { match = "class_g = 'xterm' || "
-              "class_g = 'XTerm'"; opacity = 0.55;},
+    # { match = "class_g = 'xterm' || "
+    #           "class_g = 'XTerm'"; opacity = 0.95;},
     { match = "class_g = 'thunar' || "
               "class_g = 'Thunar'"; opacity = 0.85;},
     { match = "class_g = 'spotify' || "
