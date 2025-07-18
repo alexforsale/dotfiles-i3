@@ -231,6 +231,7 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
   set_from_resource         $color13_i3wm         color13         #000000
   set_from_resource         $color14_i3wm         color14         #000000
   set_from_resource         $color15_i3wm         color15         #000000
+  set_from_resource         $color16_i3wm         color16         #000000
 #+end_src
 
 *** Colors
@@ -240,8 +241,8 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
   # My colors
   client.background $background_i3wm
 
-  client.focused            $foreground_i3wm  $color02_i3wm     $foreground_i3wm $background_i3wm $background_i3wm
-  client.unfocused          $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+  client.focused            $foreground_i3wm  $color16_i3wm     $foreground_i3wm $background_i3wm $color00_i3wm
+  client.unfocused          $color08_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
   client.focused_inactive   $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
   client.urgent             $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
   client.placeholder        $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
