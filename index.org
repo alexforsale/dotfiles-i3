@@ -236,15 +236,16 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
 *** Colors
 #+begin_src conf
   # Theme colors
-  # class                 border          backgr.         text            indic.                  child_border
+  # class                   border            backgr.           text              indic.           child_border
   # My colors
   client.background $background_i3wm
 
-  client.focused          $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
-  client.unfocused        $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
-  client.focused_inactive $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
-  client.urgent           $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
-  client.placeholder      $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+  client.focused            $foreground_i3wm  $color02_i3wm     $foreground_i3wm $background_i3wm $background_i3wm
+  client.unfocused          $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+  client.focused_inactive   $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+  client.urgent             $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+  client.placeholder        $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
+  client.focused_tab_title  $foreground_i3wm  $background_i3wm  $foreground_i3wm $background_i3wm $background_i3wm
 #+end_src
 
 *** floating modifier
