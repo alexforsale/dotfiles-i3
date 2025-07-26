@@ -202,7 +202,7 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
 #+end_src
 *** applications
 #+begin_src conf
-  set $terminal xterm
+  set $terminal alacritty
   set $browser firefox
   set $mail thunderbird
   set $guiemacs emacsclient -c -a emacs
@@ -305,7 +305,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id ~/.fehbg
   exec --no-startup-id emacs --daemon
   #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpass-Nerd-Font-Reg -detectsleep
-  exec --no-startup-id $terminal -class ncmpcpp -e ncmpcpp
+  exec --no-startup-id $terminal --class ncmpcpp -e ncmpcpp
   exec --no-startup-id ~/.local/bin/conky-start &
 #+end_src
 
@@ -466,6 +466,8 @@ For keyboard with no media keys:
   bindsym $mod+Shift+F2 exec --no-startup-id ~/.local/bin/dunst-backlight 1%-
 
   bindsym $mod+v exec pwvucontrol
+
+  bindsym $mod+Shift+S exec flameshot gui
 #+end_src
 - =pamixer= :: package is needed for volume, even if you're using /pipewire/.
 - =brightnessctl= :: package for setting up brightness.
@@ -493,28 +495,28 @@ Using [[https://wiki.archlinux.org/title/Thunderbird][thunderbird]]. Both /thund
 [[./assets/img/thunderbird-2025-05-16_15-52.png][file:./assets/img/thunderbird-2025-05-16_15-52.png]]
 *** music
 #+begin_src conf
-  bindsym $mod+Mod1+m exec $terminal -class ncmpcpp -e ncmpcpp
+  bindsym $mod+Mod1+m exec $terminal --class ncmpcpp -e ncmpcpp
 #+end_src
 Since I've placed window with the class name /ncmpcpp/ on the scratchpad, the window won't automatically shows up when the keybinding is pressed. To view this we must view the scratchpad window (here bound to ~$mod -~).
 #+caption: terminal window with /ncmpcpp/ on scratchpad
 [[./assets/img/ncmpcpp-Peek-2025-05-16_16-06.gif][file:./assets/img/ncmpcpp-Peek-2025-05-16_16-06.gif]]
 *** htop
 #+begin_src conf
-  bindsym $mod+Mod1+h exec $terminal -class htop -e htop
+  bindsym $mod+Mod1+h exec $terminal --class htop -e htop
 #+end_src
 #+caption: htop
 [[./assets/img/htop-Peek-2025-05-16_16-13.gif][file:./assets/img/htop-Peek-2025-05-16_16-13.gif]]
 *** nmtui
 For machine running [[https://wiki.archlinux.org/title/NetworkManager][networkmanager]].
 #+begin_src conf
-  bindsym $mod+Mod1+w exec $terminal -class nmtui -e nmtui
+  bindsym $mod+Mod1+w exec $terminal --class nmtui -e nmtui
 #+end_src
 #+caption: nmtui for connection settings
 [[./assets/img/nmtui-2025-05-16_16-16.png][file:./assets/img/nmtui-2025-05-16_16-16.png]]
 *** khal
 A simple calendar application.
 #+begin_src conf
-  bindsym $mod+Mod1+k exec $terminal -class khal -e khal interactive
+  bindsym $mod+Mod1+k exec $terminal --class khal -e khal interactive
 #+end_src
 #+caption: khal
 [[./assets/img/khal-2025-05-16_16-18.png][file:./assets/img/khal-2025-05-16_16-18.png]]
