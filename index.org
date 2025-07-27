@@ -575,10 +575,10 @@ Now default to [[https://wiki.archlinux.org/title/Xterm][xterm]].
 #+end_src
 #+caption: xterm
 [[./assets/img/xterm-2025-05-16_16-33.png][file:./assets/img/xterm-2025-05-16_16-33.png]]
-*** terminal + screen
+*** terminal + tmux
 I don't use [[https://wiki.archlinux.org/title/GNU_Screen][screen]] much anymore. Been tinkering with [[https://wiki.archlinux.org/title/Tmux][tmux]] and until now haven't been disappointed yet.
 #+begin_src conf
-  bindsym $mod+Shift+Return exec $terminal -e screen -m
+  bindsym $mod+Shift+Return exec $terminal -e tmux new -A -s main
 #+end_src
 *** kill focused window
 Useful for windows without a kill button (looking at you /spotify/).
