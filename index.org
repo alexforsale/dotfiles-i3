@@ -78,6 +78,13 @@ I'm using /archlinux/ as my main system for years, so I don't really know if the
 * GTK
 GTK, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK is suitable for projects ranging from small one-off tools to complete application suites. Most of these settings are taken from /Arch/ [[https://wiki.archlinux.org/title/GTK][wiki]].
 ** GTK 3
+If somehow the settings got overwritten, you must set them manually using /gsettings/
+#+begin_src sh :tangle no
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  gsettings set org.gnome.desktop.interface gtk-theme "Breeze-Dark"
+  gsettings set org.gnome.desktop.interface icon-theme "Papirus"
+  gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+#+end_src
 *** Settings
 :PROPERTIES:
 :header-args: :tangle .config/gtk-3.0/settings.ini :mkdirp t
