@@ -416,6 +416,7 @@ Office-related
   assign [class="org.gnome.Characters"] $ws7
   assign [class="winbox.exe"] $ws7
   assign [class="discord"] $ws7
+  assign [class=".*(?i)zulip"] $ws7
 #+end_src
 This suppose to be my chat workspace.
 *** workspace 8
