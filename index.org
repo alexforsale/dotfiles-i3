@@ -494,6 +494,11 @@ I've been using [[https://wiki.archlinux.org/title/PipeWire][pipewire]] for a wh
 My goto browser has always been [[https://wiki.archlinux.org/title/Firefox][firefox]].
 #+caption: /firefox/ using /vim/ addons.
 [[./assets/img/Peek-firefox-2025-05-16_15-56.gif][file:./assets/img/Peek-firefox-2025-05-16_15-56.gif]]
+**** Browser search
+A simple browser search [[https://github.com/alexforsale/browser-search][I made using Rust]].
+#+begin_src conf
+  bindsym $mod+s exec browser-search
+#+end_src
 *** mail
 #+begin_src conf
   bindsym XF86Mail exec $mail
