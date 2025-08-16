@@ -337,6 +337,8 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   for_window [class="thunderbird" title="status"] floating enable
   for_window [class="thunderbird" title="(.*)Reminders"] floating enable
   for_window [class="thunderbird" title="Write.*"] floating enable resize set 680 680
+  for_window [class="thunderbird" title="Search.*"] floating enable resize set 600 200
+  for_window [class="thunderbird" title="Confirm.*"] floating enable resize set 600 200
   for_window [class="thunderbird" title="Send.*"] floating enable
   for_window [class="Msgcompose.*"] floating enable resize set 680 680
   for_window [class="QtPass"] floating enable
