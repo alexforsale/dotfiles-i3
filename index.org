@@ -433,9 +433,9 @@ This suppose to be my chat workspace.
 Multimedia related.
 *** workspace 9
 #+begin_src conf
-  assign [class="org.remmina.remmina"] $ws9
-  assign [class="Virt-manager"] $ws9
-  assign [class="Vncviewer"] $ws9
+  # assign [class="org.remmina.remmina"] $ws9
+  # assign [class="Virt-manager"] $ws9
+  # assign [class="Vncviewer"] $ws9
 #+end_src
 Remoting the remotes.
 *** workspace 0
