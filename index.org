@@ -846,6 +846,10 @@ Using the same keybinding as /windows/. Needs [[https://archlinux.org/packages/e
 #+begin_src conf
   bindsym $mod+period exec --no-startup-id rofi -show emoji -theme i3-emoji
 #+end_src
+*** Scroll Lock 
+#+begin_src conf
+  bindsym Scroll_Lock exec ~/.local/bin/scroll-lock
+#+end_src
 * i3status
 :PROPERTIES:
 :header-args: :tangle ./.config/i3status/config :mkdirp t
@@ -1291,6 +1295,20 @@ This utilize the [[https://github.com/tesseract-ocr/tesseract/][tesseract]] pack
 #+begin_src sh
   maim -u -s -b 5 -l -c 0.3,0.4,0.6,0.4 -d 0.1 | tesseract -l eng - - | xclip -selection clipboard
   notify-send -i ebook-reader "OCR" "Saved to clipboard"
+#+end_src
+** scroll-lock
+:PROPERTIES:
+:header-args: :tangle ./.local/bin/scroll-lock :mkdirp t :shebang #!/bin/sh
+:END:
+My keyboard is a low end chinese keyboard with backlight key on =Scroll-Lock=, it works normally on Windows, but on my /Arch/ the key won't do anything to the backlight. This simple script functions as a toggle so I can bind it from my I3 configuration.
+#+begin_src sh
+  STATUS=$(xset q | grep "Scroll Lock:" | sed -z 's/.*Scroll Lock: //')
+
+  if [ "$STATUS" = "off" ]; then
+      xset led named "Scroll Lock"  # Turn on the LED
+  else
+      xset -led named "Scroll Lock" # Turn off the LED
+  fi
 #+end_src
 ** Rofi
 *** i3-nord theme
