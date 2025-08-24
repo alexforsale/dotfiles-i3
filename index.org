@@ -311,6 +311,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id ~/.fehbg
   exec --no-startup-id emacs --daemon
   #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpass-Nerd-Font-Reg -detectsleep
+  exec --no-startup-id ~/.local/bin/transfer-sleep-lock-i3lock-fancy &
   exec --no-startup-id $terminal --class ncmpcpp -e ncmpcpp
   exec --no-startup-id ~/.local/bin/conky-start &
 #+end_src
@@ -1592,12 +1593,9 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
       --not-when-audio \
       `# Dim the screen after 60 seconds, undim if user becomes active` \
       --timer 60 \
-      'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
-      'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
       `# Undim & lock after 10 more seconds` \
       --timer 10 \
-      'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock-fancy -f Overpass-Nerd-Font-Reg -d ' \
-      '' \
+      'xrandr --output "$PRIMARY_DISPLAY"; i3lock-fancy -f Overpass-Nerd-Font-Reg -d ' \
       `# Finally, suspend an hour after it locks` \
       --timer 3600 \
       'systemctl suspend' \
