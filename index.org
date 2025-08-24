@@ -1592,7 +1592,7 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
       `# Don't lock when there's audio playing` \
       --not-when-audio \
       `# Dim the screen after 60 seconds, undim if user becomes active` \
-      --timer 60 \
+      --timer 300 \
       `# Undim & lock after 10 more seconds` \
       --timer 10 \
       'xrandr --output "$PRIMARY_DISPLAY"; i3lock-fancy -f Overpass-Nerd-Font-Reg -d ' \
