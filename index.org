@@ -308,7 +308,6 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id flameshot &
   exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null &
   exec --no-startup-id $file --daemon &
-  exec --no-startup-id ~/.local/bin/transfer-sleep-lock-i3lock-fancy &
   exec --no-startup-id ~/.fehbg
   exec --no-startup-id emacs --daemon
   #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpass-Nerd-Font-Reg -detectsleep
