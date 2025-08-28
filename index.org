@@ -1583,23 +1583,16 @@ I separate the main /nord/ theme here so I can make changes to it without 'distu
 A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD91mZM2/xidlehook][xidlehook]]
 #+begin_src sh
   # get the primary display
-  export PRIMARY_DISPLAY="$(xrandr | awk '/ primary/{print $1}')"
+  export PRIMARY_DISPLAY="$(xrandr | awk '/ connected/{print $1}')"
 
   # Run xidlehook
   xidlehook \
-      `# Don't lock when there's a fullscreen application` \
+      --detect-sleep \
       --not-when-fullscreen \
-      `# Don't lock when there's audio playing` \
       --not-when-audio \
-      `# Dim the screen after 60 seconds, undim if user becomes active` \
       --timer 300 \
-      `# Undim & lock after 10 more seconds` \
       --timer 10 \
-      'xrandr --output "$PRIMARY_DISPLAY"; i3lock-fancy -f Overpass-Nerd-Font-Reg -d ' \
-      `# Finally, suspend an hour after it locks` \
-      --timer 3600 \
-      'systemctl suspend' \
-      ''
+      'xrandr --output "$PRIMARY_DISPLAY"; i3lock-fancy -f Overpass-Nerd-Font-Reg -d '
 #+end_src
 #+caption: i3lock-fancy
 [[./assets/img/i3lock-fancy-2025-05-16_17-01.png][file:./assets/img/i3lock-fancy-2025-05-16_17-01.png]]
