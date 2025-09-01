@@ -816,30 +816,66 @@ This only work in floating mode.
 #+begin_src conf
   # resize window (you can also use the mouse for that)
   mode "resize" {
-  # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
+    
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym $left       resize shrink width 5 px or 5 ppt
+    bindsym $down       resize grow height 5 px or 5 ppt
+    bindsym $up         resize shrink height 5 px or 5 ppt
+    bindsym $right      resize grow width 5 px or 5 ppt
+    
+    # same bindings, but for the arrow keys
+    bindsym Left        resize shrink width 5 px or 5 ppt
+    bindsym Down        resize grow height 5 px or 5 ppt
+    bindsym Up          resize shrink height 5 px or 5 ppt
+    bindsym Right       resize grow width 5 px or 5 ppt
+    
+    bindsym $mod+$left move left
+    bindsym $mod+$down move down
+    bindsym $mod+$up move up
+    bindsym $mod+$right move right
 
-  # Pressing left will shrink the window’s width.
-  # Pressing right will grow the window’s width.
-  # Pressing up will shrink the window’s height.
-  # Pressing down will grow the window’s height.
-  bindsym $left       resize shrink width 10 px or 10 ppt
-  bindsym $down       resize grow height 10 px or 10 ppt
-  bindsym $up         resize shrink height 10 px or 10 ppt
-  bindsym $right      resize grow width 10 px or 10 ppt
+    bindsym $mod+Left move left
+    bindsym $mod+Down move down
+    bindsym $mod+Up move up
+    bindsym $mod+Right move right
 
-  # same bindings, but for the arrow keys
-  bindsym Left        resize shrink width 10 px or 10 ppt
-  bindsym Down        resize grow height 10 px or 10 ppt
-  bindsym Up          resize shrink height 10 px or 10 ppt
-  bindsym Right       resize grow width 10 px or 10 ppt
-
-  # back to normal: Enter or Escape or $mod+r
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+    bindsym Control+g mode "default"
+    bindsym Control+bracketleft mode "default"
   }
 
   bindsym $mod+r mode "resize"
+#+end_src
+**** move
+#+begin_src conf
+  mode "move" {
+    bindsym Mod1+Tab focus right
+
+    bindsym $left move left
+    bindsym $down move down
+    bindsym $up move up
+    bindsym $right move right
+
+    bindsym Left move left
+    bindsym Down move down
+    bindsym Up move up
+    bindsym Right move right
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+m mode "default"
+    bindsym Control+g mode "default"
+    bindsym Control+bracketleft mode "default"
+  }
+
+  bindsym $mod+m mode "move"
 #+end_src
 *** Emoji
 Using the same keybinding as /windows/. Needs [[https://archlinux.org/packages/extra/any/noto-fonts-emoji/][noto-fonts-emoji]] package. Clicking or pressing ~RET~ on the emoji will immediately paste it.
