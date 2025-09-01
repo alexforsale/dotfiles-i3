@@ -300,7 +300,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   # exec --no-startup-id ~/.local/bin/monitor-setup
   exec --no-startup-id xsetroot -cursor_name left_ptr
   exec --no-startup-id dbus-launch --exit-with-session picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
-  exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
+  # exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
   exec --no-startup-id dbus-launch --exit-with-session unclutter &
   exec --no-startup-id dbus-launch nm-applet &
   exec --no-startup-id dbus-launch blueman-applet &
@@ -309,7 +309,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id dbus-launch --exit-with-session greenclip daemon>/dev/null &
   exec --no-startup-id $file --daemon &
   exec --no-startup-id ~/.fehbg
-  exec --no-startup-id emacs --daemon
+  # exec --no-startup-id emacs --daemon
   #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -n -f Overpass-Nerd-Font-Reg -detectsleep
   exec --no-startup-id ~/.local/bin/transfer-sleep-lock-i3lock-fancy &
   exec --no-startup-id $terminal --class ncmpcpp -e ncmpcpp
