@@ -314,6 +314,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id ~/.local/bin/transfer-sleep-lock-i3lock-fancy &
   exec --no-startup-id $terminal --class ncmpcpp -e ncmpcpp
   exec --no-startup-id ~/.local/bin/conky-start &
+  exec --no-startup-id systemctl --user restart dunst
 #+end_src
 
 ** window rule
