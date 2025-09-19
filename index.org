@@ -1626,6 +1626,7 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
 
   # Run xidlehook
   xidlehook --socket /var/tmp/xidlehook.socket \
+  	--detect-sleep \
       `# Don't lock when there's a fullscreen application` \
       --not-when-fullscreen \
       --not-when-audio \
