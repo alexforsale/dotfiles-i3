@@ -291,6 +291,7 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
 ** application autostart
 #+begin_src conf
   # exec --no-startup-id ~/.local/bin/monitor-setup
+  exec --no-startup-id dbus-update-activation-environment --all
   exec --no-startup-id xsetroot -cursor_name left_ptr
   exec --no-startup-id dbus-launch --exit-with-session picom -b --config "${XDG_CONFIG_HOME}"/picom/picom.conf &
   exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
@@ -1550,13 +1551,13 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
   export PRIMARY_DISPLAY="$(xrandr | awk '/ primary/{print $1}')"
 
   # Run xidlehook
-  xidlehook \
+  xidlehook --socket /var/tmp/xidlehook.socket \
       `# Don't lock when there's a fullscreen application` \
       --not-when-fullscreen \
       `# Don't lock when there's audio playing` \
       --not-when-audio \
       `# Dim the screen after 60 seconds, undim if user becomes active` \
-      --timer 60 \
+      --timer 120 \
       'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
       'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
       `# Undim & lock after 10 more seconds` \
