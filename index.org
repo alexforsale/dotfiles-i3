@@ -1639,7 +1639,7 @@ A locker script for i3lock-fancy and xss-lock. Requires [[https://github.com/jD9
       'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
       `# Undim & lock after 10 more seconds` \
       --timer 10 \
-      'xrandr --output "$PRIMARY_DISPLAY"; i3lock-fancy -f Overpass-Nerd-Font-Reg -d '
+      'i3lock-fancy -f Overpass-Nerd-Font-Reg -d ' ''
 #+end_src
 #+caption: i3lock-fancy
 [[./assets/img/i3lock-fancy-2025-05-16_17-01.png][file:./assets/img/i3lock-fancy-2025-05-16_17-01.png]]
