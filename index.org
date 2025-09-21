@@ -316,6 +316,8 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id $terminal --class ncmpcpp -e ncmpcpp
   exec --no-startup-id ~/.local/bin/conky-start &
   exec --no-startup-id systemctl --user restart dunst
+  exec --no-startup-id /usr/bin/kdeconnectd &
+  exec --no-startup-id /usr/bin/kdeconnect-indicator
 #+end_src
 
 ** window rule
