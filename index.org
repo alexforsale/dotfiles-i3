@@ -910,9 +910,12 @@ I don't mess much with /i3status/, it's usually hidden most of the times. Also s
 ** general
 #+begin_src conf
   general {
-  colors = true
-  interval = 5
-  output_format = i3bar
+      colors = true
+      interval = 5
+      output_format = i3bar
+      color_good = "#81a1c1" # Light green
+      color_degraded = "#fafe7c" # Light yellow
+      color_bad = "#ff7770" # Light red
   }
 #+end_src
 ** order
