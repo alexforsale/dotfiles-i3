@@ -892,6 +892,12 @@ Using the same keybinding as /windows/. Needs [[https://archlinux.org/packages/e
 #+begin_src conf
   bindsym Scroll_Lock exec ~/.local/bin/scroll-lock
 #+end_src
+*** mouse cursor zoom
+#+begin_src conf
+  bindsym --whole-window $mod+button4 exec boomer
+  bindsym --whole-window $mod+button5 exec boomer
+#+end_src
+This will need the package [[https://github.com/tsoding/boomer][boomer]].
 * i3status
 :PROPERTIES:
 :header-args: :tangle ./.config/i3status/config :mkdirp t
