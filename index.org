@@ -475,9 +475,9 @@ For keyboard with no media keys:
   bindsym $mod+F8 exec --no-startup-id ~/.local/bin/dunst-volume -d 1 && $refresh_i3status
   bindsym $mod+F7 exec --no-startup-id ~/.local/bin/dunst-volume -t && $refresh_i3status
 
-  bindsym $mod+F11 exec playerctl play-pause
-  bindsym $mod+F12 exec playerctl next
-  bindsym $mod+F10 exec playerctl previous
+  bindsym $mod+F11 exec playerctl -p mpd play-pause
+  bindsym $mod+F12 exec playerctl -p mpd next
+  bindsym $mod+F10 exec playerctl -p mpd previous
 
   bindsym $mod+Shift+F3 exec --no-startup-id ~/.local/bin/dunst-backlight +1%
   bindsym $mod+Shift+F2 exec --no-startup-id ~/.local/bin/dunst-backlight 1%-
