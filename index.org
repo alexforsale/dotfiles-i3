@@ -271,7 +271,7 @@ Bound to ~$mod+TAB~, I really use this alot, this is mandatory in every window m
 ** bar
 #+begin_src conf
   bar {
-      status_command i3status
+      status_command i3status --config ~/.config/i3status/config-${HOSTNAME}
       position bottom
       workspace_buttons yes
       font pango:JetBrainsMonoNL Nerd Font Mono 8
@@ -901,11 +901,12 @@ Using the same keybinding as /windows/. Needs [[https://archlinux.org/packages/e
 #+end_src
 This will need the package [[https://github.com/tsoding/boomer][boomer]].
 * i3status
+** the default
 :PROPERTIES:
 :header-args: :tangle ./.config/i3status/config :mkdirp t
 :END:
-I don't mess much with /i3status/, it's usually hidden most of the times. Also since I'm already use /conky/ there's not much else to show in /i3status/.
-** header                                                         :noexport:
+I don't mess much with /i3status/, it's usually hidden most of the times. Also since I'm already use /conky/ there's not much else to show in /i3status/. This should be used if there's no ~~/.config/i3status/config-${HOSTNAME}~.
+*** header                                                         :noexport:
 #+begin_src conf
   # i3status configuration file.
   # see "man i3status" for documentation.
@@ -915,7 +916,7 @@ I don't mess much with /i3status/, it's usually hidden most of the times. Also s
   # ß
   # If the above line is not correctly displayed, fix your editor first!
 #+end_src
-** general
+*** general
 #+begin_src conf
   general {
       colors = true
@@ -927,7 +928,7 @@ I don't mess much with /i3status/, it's usually hidden most of the times. Also s
   	markup = "pango"
   }
 #+end_src
-** order
+*** order
 #+begin_src conf
   order += "ipv6"
   order += "wireless _first_"
@@ -936,21 +937,21 @@ I don't mess much with /i3status/, it's usually hidden most of the times. Also s
   order += "memory"
   order += "tztime local"
 #+end_src
-** wireless
+*** wireless
 #+begin_src conf
   wireless _first_ {
   format_up = "󰖩: (%quality at %essid, %bitrate / %frequency) %ip"
   format_down = "󰖩: down"
   }
 #+end_src
-** ethernet
+*** ethernet
 #+begin_src conf
   ethernet _first_ {
   format_up = "󰈀: %ip (%speed)"
   format_down = ""
   }
 #+end_src
-** battery
+*** battery
 #+begin_src conf
   battery 0 {
   format = "%status %percentage %remaining"
@@ -961,7 +962,7 @@ I don't mess much with /i3status/, it's usually hidden most of the times. Also s
   last_full_capacity = true
   }
 #+end_src
-** memory
+*** memory
 #+begin_src conf
   memory {
   format = "󰍛 %used"
@@ -969,7 +970,62 @@ I don't mess much with /i3status/, it's usually hidden most of the times. Also s
   format_degraded = "<span foreground='#eceff4'>󰍛 < %available </span>"
   }
 #+end_src
-** time
+*** time
+#+begin_src conf
+  tztime local {
+    format = "󰥔 %Y-%m-%d %H:%M:%S"
+  }
+#+end_src
+** kenya
+:PROPERTIES:
+:header-args: :tangle ./.config/i3status/config-kenya :mkdirp t
+:END:
+I don't mess much with /i3status/, it's usually hidden most of the times. Also since I'm already use /conky/ there's not much else to show in /i3status/. This should be used if there's no ~~/.config/i3status/config-${HOSTNAME}~.
+*** header                                                         :noexport:
+#+begin_src conf
+  # i3status configuration file.
+  # see "man i3status" for documentation.
+
+  # It is important that this file is edited as UTF-8.
+  # The following line should contain a sharp s:
+  # ß
+  # If the above line is not correctly displayed, fix your editor first!
+#+end_src
+*** general
+#+begin_src conf
+  general {
+      colors = true
+      interval = 5
+      output_format = i3bar
+      color_good = "#81a1c1" # Light green
+      color_degraded = "#fafe7c" # Light yellow
+      color_bad = "#ff7770" # Light red
+  	markup = "pango"
+  }
+#+end_src
+*** order
+#+begin_src conf
+  order += "ipv6"
+  order += "ethernet _first_"
+  order += "memory"
+  order += "tztime local"
+#+end_src
+*** ethernet
+#+begin_src conf
+  ethernet _first_ {
+  format_up = "󰈀: %ip (%speed)"
+  format_down = ""
+  }
+#+end_src
+*** memory
+#+begin_src conf
+  memory {
+  format = "󰍛 %used"
+  threshold_degraded = "1G"
+  format_degraded = "<span foreground='#eceff4'>󰍛 < %available </span>"
+  }
+#+end_src
+*** time
 #+begin_src conf
   tztime local {
     format = "󰥔 %Y-%m-%d %H:%M:%S"
