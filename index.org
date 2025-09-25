@@ -318,6 +318,8 @@ Also set keybinding for toggling bar. This is useful since I don't need the stat
   exec --no-startup-id systemctl --user restart dunst
   exec --no-startup-id /usr/bin/kdeconnectd &
   exec --no-startup-id /usr/bin/kdeconnect-indicator
+  exec --no-startup-id /usr/bin/xset s 360 360 # set blank time
+  exec --no-startup-id /usr/bin/xset dpms 600 0 0 # set standby 600s, 0 suspend, and 0 off
 #+end_src
 
 ** window rule
